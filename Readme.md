@@ -1,9 +1,15 @@
 # Ladybug Framework
 ###### A Welcome to Monday Project
 
+## Introduction
 
-Ladybug is an implementation of the MonoGame framework created to hasten development of games.
+Ladybug is a Game Framework built atop MonoGame. For more information about features and usage, [check out the full documentation](http://m-r-williams.com/ladybug)
 
-It is currently implemented as a series of wrapper classes around vital MonoGame functions, though it may be decoupled from MonoGame entirely in the distant future. We'll see!
+## Build Instructions
 
-The Ladybug Framework is currently in development, but a working proto-version of it is being used in a concurrent project. Once that project nears completion, its potentially portable components will be abstracted and moved to this project so that they can be reused in future projects.
+- Clone or Download the repository
+- Navigate to `build/xplatform`
+- Run `dotnet build`
+- Library files will be built in `bin`
+
+For instructions on setting up a Ladybug game project, check out the [Getting Started guide](http://m-r-williams.com/ladybug/articles/installation.html)
