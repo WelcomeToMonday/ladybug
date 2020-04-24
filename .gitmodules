@@ -1,0 +1,15 @@
+[submodule "src/module/scm"]
+	path = src/module/scm
+	url = git@github.com:welcometomonday/ladybug-scm
+[submodule "src/module/ecs"]
+	path = src/module/ecs
+	url = git@github.com:welcometomonday/ladybug-ecs
+[submodule "src/module/input"]
+	path = src/module/input
+	url = git@github.com:welcometomonday/ladybug-input
+[submodule "src/module/graphics"]
+	path = src/module/graphics
+	url = git@github.com:welcometomonday/ladybug-graphics
+[submodule "src/module/pathfinding"]
+	path = src/module/pathfinding
+	url = git@github.com:welcometomonday/ladybug-pathfinding
