@@ -10,19 +10,15 @@ namespace Ladybug.Core.Components
 	{
 		private TransformComponent _entityTransform;
 
-		private bool _isVisible = true;
-
 		private int _drawPriority;
 
 		public AnimatedSprite Sprite{get; private set;}
 
 		public int DrawPriority {get => _drawPriority;}
 
-		public bool Visible {get => _isVisible;}
+		public bool Visible {get => Active && Entity.Active;}
 		
 		public void SetSprite(AnimatedSprite s) => Sprite = s;
-
-		public void SetVisibility(bool visibility) => _isVisible = visibility;
 
 		public void SetDrawPriority(int priority)
 		{
@@ -68,7 +64,7 @@ namespace Ladybug.Core.Components
 		
 		public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
-			if (Sprite != null)
+			if (Sprite != null && Visible)
 			{
 				var frame = Sprite.GetCurrentFrame;
 				spriteBatch.Draw(
