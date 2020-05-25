@@ -19,6 +19,7 @@ namespace Ladybug.Core.TileMap
 		private int _tileHeight;
 		private int _columnCount;
 		private int _rowCount;
+		private int _spacing = 0;
 		private Texture2D _sourceImage;
 		private List<Texture2D> _tileTextures = new List<Texture2D>();
 		private string _filePath;
@@ -41,14 +42,15 @@ namespace Ladybug.Core.TileMap
 			BuildSpriteList();
 		}
 
-		public int TileCount { 
-			get => m_tileCount; 
-			private set => m_tileCount = value; 
-			}
+		public int TileCount
+		{
+			get => m_tileCount;
+			private set => m_tileCount = value;
+		}
 
 		public int FirstGID { get; set; } = 0;
 
-		public Vector2 TileRange { get => new Vector2(FirstGID, (TileCount + FirstGID) - 1);}
+		public Vector2 TileRange { get => new Vector2(FirstGID, (TileCount + FirstGID) - 1); }
 
 		public Texture2D this[int i]
 		{
@@ -64,7 +66,7 @@ namespace Ladybug.Core.TileMap
 					switch (reader.Name)
 					{
 						case "tileset":
-							
+
 							reader.MoveToAttribute("tilewidth");
 							int.TryParse(reader.Value, out _tileWidth);
 
@@ -74,6 +76,12 @@ namespace Ladybug.Core.TileMap
 							reader.MoveToAttribute("tilecount");
 							int.TryParse(reader.Value, out m_tileCount);
 
+							if (reader.GetAttribute("spacing") != null)
+							{
+								reader.MoveToAttribute("spacing");
+								int.TryParse(reader.Value, out _spacing);
+							}
+
 							reader.MoveToAttribute("columns");
 							int.TryParse(reader.Value, out _columnCount);
 
@@ -82,7 +90,7 @@ namespace Ladybug.Core.TileMap
 
 						case "image":
 							reader.MoveToAttribute("source");
-							var sourceImagePath = Path.Combine(Path.GetDirectoryName(_filePath),Path.GetFileNameWithoutExtension(reader.Value));
+							var sourceImagePath = Path.Combine(Path.GetDirectoryName(_filePath), Path.GetFileNameWithoutExtension(reader.Value));
 							_sourceImage = _contentManager.Load<Texture2D>(sourceImagePath);
 							break;
 					}
@@ -106,10 +114,20 @@ namespace Ladybug.Core.TileMap
 			{
 				for (int col = 0; col < _columnCount; col++)
 				{
-					var sourceRectangle = new Rectangle(col * _tileWidth, row * _tileHeight, _tileWidth, _tileHeight);
+					var xSpacing = 0;
+					var ySpacing = 0;
+					if (col != 0)
+					{
+						xSpacing = _spacing * 1;
+					}
+					if (row != 0)
+					{
+						ySpacing = _spacing * 1;
+					}
+					var sourceRectangle = new Rectangle(col * (_tileWidth + xSpacing), row * (_tileHeight + ySpacing), _tileWidth, _tileHeight);
 					var tex = new Texture2D(_graphicsDevice, _tileWidth, _tileHeight);
 					Color[] colorData = new Color[sourceRectangle.Width * sourceRectangle.Height];
-					_sourceImage.GetData(0,sourceRectangle,colorData,0,colorData.Length);
+					_sourceImage.GetData(0, sourceRectangle, colorData, 0, colorData.Length);
 					tex.SetData(colorData);
 					_tileTextures.Add(tex);
 				}
