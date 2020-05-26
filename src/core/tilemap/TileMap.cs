@@ -18,6 +18,8 @@ namespace Ladybug.Core.TileMap
 
 		private ContentManager _contentManager;
 
+		private List<TileLayer> _layers;
+
 		private List<TileSet> _tileSets = new List<TileSet>();
 
 		public TileMap(string filePath, ContentManager contentManager, GraphicsDevice graphicsDevice)
@@ -36,6 +38,14 @@ namespace Ladybug.Core.TileMap
 		protected ContentManager Content { get => _contentManager; }
 
 		public Texture2D MapTexture { get; private set; }
+
+		public int Width { get; private set; }
+
+		public int Height { get; private set; }
+
+		public int TileWidth { get; private set; }
+
+		public int TileHeight { get; private set; }
 
 		public List<MapObject> MapObjects { get; private set; }
 
@@ -135,9 +145,9 @@ namespace Ladybug.Core.TileMap
 
 							reader.MoveToAttribute("height");
 							float.TryParse(reader.Value, out objectHeight);
-							
+
 							reader.MoveToElement();
-							var props = new Dictionary<string,string>();
+							var props = new Dictionary<string, string>();
 							using (var mSubReader = reader.ReadSubtree())
 							{
 								while (mSubReader.Read())
@@ -154,7 +164,7 @@ namespace Ladybug.Core.TileMap
 												var propValue = mSubReader.Value;
 
 												props[propName] = propValue;
-											break;
+												break;
 										}
 									}
 								}
@@ -164,7 +174,12 @@ namespace Ladybug.Core.TileMap
 					}
 				}
 			}
-			BuildMapTexture(layers, width, height, tileWidth, tileHeight);
+			Width = width;
+			Height = height;
+			TileWidth = tileWidth;
+			TileHeight = tileHeight;
+			_layers = layers;
+			//BuildMapTexture(layers, width, height, tileWidth, tileHeight);
 		}
 
 		public List<T> GetMapObjects<T>() where T : MapObject
@@ -185,9 +200,9 @@ namespace Ladybug.Core.TileMap
 			return MapObjects.Where(o => o.Type == type).ToList();
 		}
 
-		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string,string> properties)
+		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
 		{
-			MapObject mapObject= null;
+			MapObject mapObject = null;
 			if (MapObjects == null) MapObjects = new List<MapObject>();
 
 			var sanType = type.ToLower();
@@ -220,13 +235,14 @@ namespace Ladybug.Core.TileMap
 			return null;
 		}
 
-		private void BuildMapTexture(List<TileLayer> layers, int width, int height, int tileWidth, int tileHeight)
+		//public void BuildMapTexture(List<TileLayer> layers, int width, int height, int tileWidth, int tileHeight)
+		public void BuildMapTexture()
 		{
 			RenderTarget2D target2D = new RenderTarget2D
 			(
 				graphicsDevice,
-				width * tileWidth,
-				height * tileHeight,
+				Width * TileWidth,
+				Height * TileHeight,
 				false,
 				graphicsDevice.PresentationParameters.BackBufferFormat,
 				DepthFormat.Depth24
@@ -239,11 +255,11 @@ namespace Ladybug.Core.TileMap
 
 			sb.Begin();
 
-			foreach (var layer in layers)
+			foreach (var layer in _layers)
 			{
-				for (var row = 0; row < height; row++)
+				for (var row = 0; row < Height; row++)
 				{
-					for (var col = 0; col < width; col++)
+					for (var col = 0; col < Width; col++)
 					{
 						// Tiled adds +1 to Tile IDs so 0 can represent empty fields.
 						// Since we're using the ID to determine position on the image file,
@@ -253,6 +269,7 @@ namespace Ladybug.Core.TileMap
 						{
 							var tileSet = findTileSet(tileID);
 							var tile = tileSet[tileID - (tileSet.FirstGID)];
+							/*
 							sb.Draw(
 								tile,
 								new Rectangle(
@@ -262,6 +279,19 @@ namespace Ladybug.Core.TileMap
 									tileHeight),
 								Color.White
 							);
+							*/
+							sb.Draw
+							(
+								tile.Texture,
+								new Rectangle(
+									TileWidth * col,
+									TileHeight * row,
+									TileWidth,
+									TileHeight
+									),
+								tile.Frame,
+								Color.White
+							);
 						}
 					}
 				}
@@ -269,7 +299,7 @@ namespace Ladybug.Core.TileMap
 
 			sb.End();
 
-			Texture2D fullTexture = new Texture2D(graphicsDevice, width * tileWidth, height * tileHeight);
+			Texture2D fullTexture = new Texture2D(graphicsDevice, Width * TileWidth, Height * TileHeight);
 
 			Color[] texdata = new Color[fullTexture.Width * fullTexture.Height];
 

@@ -21,7 +21,8 @@ namespace Ladybug.Core.TileMap
 		private int _rowCount;
 		private int _spacing = 0;
 		private Texture2D _sourceImage;
-		private List<Texture2D> _tileTextures = new List<Texture2D>();
+		//private List<Texture2D> _tileTextures = new List<Texture2D>();
+		private List<Sprite> _tileSprites = new List<Sprite>();
 		private string _filePath;
 		private ContentManager _contentManager;
 		private GraphicsDevice _graphicsDevice;
@@ -52,9 +53,16 @@ namespace Ladybug.Core.TileMap
 
 		public Vector2 TileRange { get => new Vector2(FirstGID, (TileCount + FirstGID) - 1); }
 
+		/*
 		public Texture2D this[int i]
 		{
 			get => _tileTextures[i];
+		}
+		*/
+
+		public Sprite this[int i]
+		{
+			get => _tileSprites[i];
 		}
 
 		public void ReadXml(XmlReader reader)
@@ -124,12 +132,17 @@ namespace Ladybug.Core.TileMap
 					{
 						ySpacing = _spacing * 1;
 					}
+					
 					var sourceRectangle = new Rectangle(col * (_tileWidth + xSpacing), row * (_tileHeight + ySpacing), _tileWidth, _tileHeight);
+					/*
 					var tex = new Texture2D(_graphicsDevice, _tileWidth, _tileHeight);
 					Color[] colorData = new Color[sourceRectangle.Width * sourceRectangle.Height];
 					_sourceImage.GetData(0, sourceRectangle, colorData, 0, colorData.Length);
 					tex.SetData(colorData);
 					_tileTextures.Add(tex);
+					*/
+					var tileSprite = new Sprite(_sourceImage, sourceRectangle);
+					_tileSprites.Add(tileSprite);
 				}
 			}
 		}
