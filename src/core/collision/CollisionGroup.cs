@@ -1,7 +1,8 @@
-using Microsoft.Xna.Framework;
+using System;
 using System.Linq;
-
 using System.Collections.Generic;
+
+using Microsoft.Xna.Framework;
 
 namespace Ladybug.Core
 {
@@ -39,30 +40,40 @@ namespace Ladybug.Core
 
 			foreach (var c in list)
 			{
-				if (
-						_targetCollider.CollisionBounds.Top - offset < c.CollisionBounds.Bottom &&
-						_targetCollider.CollisionBounds.Right > c.CollisionBounds.Left &&
-						_targetCollider.CollisionBounds.Bottom > c.CollisionBounds.Top &&
-						_targetCollider.CollisionBounds.Left < c.CollisionBounds.Right
-					) { results.Top.Add(c); }
-				if (
-					_targetCollider.CollisionBounds.Top < c.CollisionBounds.Bottom &&
-					_targetCollider.CollisionBounds.Right + offset > c.CollisionBounds.Left &&
-					_targetCollider.CollisionBounds.Bottom > c.CollisionBounds.Top &&
-					_targetCollider.CollisionBounds.Left < c.CollisionBounds.Right
-					) { results.Right.Add(c); }
-				if (
-					_targetCollider.CollisionBounds.Top < c.CollisionBounds.Bottom &&
-					_targetCollider.CollisionBounds.Right > c.CollisionBounds.Left &&
-					_targetCollider.CollisionBounds.Bottom + offset > c.CollisionBounds.Top &&
-					_targetCollider.CollisionBounds.Left < c.CollisionBounds.Right
-					) { results.Bottom.Add(c); }
-				if (
-					_targetCollider.CollisionBounds.Top < c.CollisionBounds.Bottom &&
-					_targetCollider.CollisionBounds.Right > c.CollisionBounds.Left &&
-					_targetCollider.CollisionBounds.Bottom > c.CollisionBounds.Top &&
-					_targetCollider.CollisionBounds.Left - offset < c.CollisionBounds.Right
-					) { results.Left.Add(c); }
+				float w = 0.5f * (_targetCollider.CollisionBounds.Width + c.CollisionBounds.Width);
+				float h = 0.5f * (_targetCollider.CollisionBounds.Height + c.CollisionBounds.Height);
+
+				float dx = _targetCollider.CollisionBounds.Center.X - c.CollisionBounds.Center.X;
+				float dy = _targetCollider.CollisionBounds.Center.Y - c.CollisionBounds.Center.Y;
+
+				if (Math.Abs(dx) <= w && Math.Abs(dy) <= h)
+				{
+					float wy = w * dy;
+					float hx = h * dx;
+
+					if (wy > hx)
+					{
+						if (wy > -hx)
+						{
+							results.Top.Add(c);
+						}
+						else
+						{
+							results.Right.Add(c);
+						}
+					}
+					else
+					{
+						if (wy > -hx)
+						{
+							results.Left.Add(c);
+						}
+						else
+						{
+							results.Bottom.Add(c);
+						}
+					}
+				}
 			}
 			return results;
 		}
