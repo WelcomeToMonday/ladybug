@@ -40,8 +40,8 @@ namespace Ladybug.Core
 
 			foreach (var c in list)
 			{
-				float w = 0.5f * (_targetCollider.CollisionBounds.Width + c.CollisionBounds.Width);
-				float h = 0.5f * (_targetCollider.CollisionBounds.Height + c.CollisionBounds.Height);
+				float w = 0.5f * ((_targetCollider.CollisionBounds.Width + offset) + c.CollisionBounds.Width);
+				float h = 0.5f * ((_targetCollider.CollisionBounds.Height + offset) + c.CollisionBounds.Height);
 
 				float dx = _targetCollider.CollisionBounds.Center.X - c.CollisionBounds.Center.X;
 				float dy = _targetCollider.CollisionBounds.Center.Y - c.CollisionBounds.Center.Y;
