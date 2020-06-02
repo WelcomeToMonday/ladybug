@@ -254,17 +254,6 @@ namespace Ladybug.Core.TileMap
 						{
 							var tileSet = findTileSet(tileID);
 							var tile = tileSet[tileID - (tileSet.FirstGID)];
-							/*
-							sb.Draw(
-								tile,
-								new Rectangle(
-									tileWidth * col,
-									tileHeight * row,
-									tileWidth,
-									tileHeight),
-								Color.White
-							);
-							*/
 							sb.Draw
 							(
 								tile.Texture,
