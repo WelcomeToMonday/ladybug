@@ -47,7 +47,7 @@ namespace Ladybug.Core.TileMap
 
 		public int TileHeight { get; private set; }
 
-		public List<MapObject> MapObjects { get; private set; }
+		public List<MapObject> MapObjects { get; protected set; }
 
 		public void ReadXml(XmlReader reader)
 		{
@@ -202,22 +202,7 @@ namespace Ladybug.Core.TileMap
 
 		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
 		{
-			MapObject mapObject = null;
-			if (MapObjects == null) MapObjects = new List<MapObject>();
-
-			var sanType = type.ToLower();
-
-			if (sanType == "collider" || sanType == "point")
-			{
-				mapObject = new MapObject(name, type, bounds, properties) { };
-				MapObjects.Add(mapObject);
-			}
-
-			if (sanType == "loadzone")
-			{
-				mapObject = new LoadZone(name, bounds, properties);
-				MapObjects.Add(mapObject);
-			}
+			// to be overridden in derived classes
 		}
 
 		public virtual void HandleMapProperty(string name, string value)
