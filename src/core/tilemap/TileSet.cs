@@ -32,11 +32,13 @@ namespace Ladybug.Core.TileMap
 		public TileSet(string filePath, ContentManager contentManager, GraphicsDevice graphicsDevice)
 		{
 			_filePath = filePath;
-			var fullFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, contentManager.RootDirectory, filePath);
+			//var fullFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, contentManager.RootDirectory, filePath);
 			_contentManager = contentManager;
 			_graphicsDevice = graphicsDevice;
 
-			using (XmlReader xReader = XmlReader.Create(fullFilePath))
+			var data = _contentManager.Load<XmlDocument>(filePath);
+
+			using (XmlReader xReader = data.GetReader())
 			{
 				ReadXml(xReader);
 			}

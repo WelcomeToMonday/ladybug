@@ -27,9 +27,10 @@ namespace Ladybug.Core.TileMap
 			_contentManager = contentManager;
 			this.graphicsDevice = graphicsDevice;
 			_filePath = filePath;
-			var fullFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _contentManager.RootDirectory, filePath);
+			//var fullFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _contentManager.RootDirectory, filePath);
+			var data = _contentManager.Load<XmlDocument>(filePath);
 
-			using (XmlReader xReader = XmlReader.Create(fullFilePath))
+			using (XmlReader xReader = data.GetReader())
 			{
 				ReadXml(xReader);
 			}
@@ -79,7 +80,7 @@ namespace Ladybug.Core.TileMap
 
 						case "tileset":
 							reader.MoveToAttribute("source");
-							string tilesetPath = Path.Combine(Path.GetDirectoryName(_filePath), reader.Value);
+							string tilesetPath = Path.ChangeExtension(Path.Combine(Path.GetDirectoryName(_filePath), reader.Value), null);
 							var tileSet = new TileSet(tilesetPath, _contentManager, graphicsDevice);
 
 							reader.MoveToAttribute("firstgid");
