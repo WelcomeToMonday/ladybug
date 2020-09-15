@@ -17,12 +17,15 @@ namespace Ladybug.Core.Components
 		public int DrawPriority {get => _drawPriority;}
 
 		public bool Visible {get => Active && Entity.Active;}
+
+		public Color Color {get; set;} = Color.White;
 		
 		public void SetSprite(AnimatedSprite s) => Sprite = s;
 
 		public void SetDrawPriority(int priority)
 		{
 			_drawPriority = priority;
+			System.SortDrawableComponents();
 		}
 
 		public void AddAnimation(
@@ -71,7 +74,7 @@ namespace Ladybug.Core.Components
 					frame.Texture,
 					_entityTransform.Bounds,
 					frame.Frame,
-					Color.White
+					Color
 				);
 			}
 		}
