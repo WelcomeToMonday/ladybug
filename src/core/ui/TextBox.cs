@@ -12,6 +12,8 @@ namespace Ladybug.Core.UI
 {
 	public class TextBox : Control
 	{
+		public event EventHandler Submitted;
+
 		private StringBuilder _stringBuilder;
 
 		public TextBox(Control parentControl = null, string name = "") : base(parentControl, name)
@@ -23,8 +25,14 @@ namespace Ladybug.Core.UI
 			ClickOut += OnClickOut;
 		}
 
+		public Vector2 TextOffset { get; set; } = Vector2.Zero;
+
+		public string Text { get => Label.Text; }
+
 		public Panel Panel { get; set; }
 		public Label Label { get; set; }
+
+		public Keys SubmitKey { get; set; } = Keys.Enter;
 
 		public int MaxCharacters { get; set; } = 16;
 
@@ -48,13 +56,13 @@ namespace Ladybug.Core.UI
 		private void OnPositionChanged(object sender, EventArgs e)
 		{
 			Panel.SetBounds(Bounds);
+			Label.SetBounds(Bounds);
+			var labelPosition = Bounds.Location.ToVector2() + TextOffset;
+
 			Label.SetBounds(Label.Bounds.CopyAtPosition
 				(
-					new Vector2(
-						(int)Panel.Bounds.GetHandlePosition(BoxHandle.BOTTOMLEFT).X + 5,
-						(int)Panel.Bounds.GetHandlePosition(BoxHandle.BOTTOMLEFT).Y - 5
-					),
-					BoxHandle.BOTTOMLEFT
+					labelPosition,
+					BoxHandle.TOPLEFT
 				)
 			);
 		}
@@ -93,16 +101,31 @@ namespace Ladybug.Core.UI
 					_stringBuilder.Remove(_stringBuilder.Length - 1, 1);
 				}
 			}
-			else if (e.Key != Keys.Enter && _stringBuilder.Length <= MaxCharacters)
+			else if (e.Key != SubmitKey && _stringBuilder.Length <= MaxCharacters)
 			{
 				if (glpyhs.ContainsKey(e.Character))
 				{
 					_stringBuilder.Append(e.Character);
 				}
 			}
-
+			else if (e.Key == SubmitKey)
+			{
+				Submitted?.Invoke(this, new EventArgs());
+			}
 
 			Label.SetText(_stringBuilder.ToString());
+		}
+
+		public void ClearText()
+		{
+			Label.SetText("");
+			_stringBuilder = new StringBuilder();
+		}
+
+		public override void SetFont(SpriteFont font)
+		{
+			base.SetFont(font);
+			Label.SetFont(font);
 		}
 
 		public override void Update()

@@ -38,8 +38,8 @@ namespace Ladybug.Core.UI
 					_textSprite = new TextSprite(newText, Font, new Rectangle(0, 0, 1000, 1000));
 				}
 				_textSprite.SetBounds(new Rectangle(
-					_textSprite.Bounds.X,
-					_textSprite.Bounds.Y,
+					(int)Bounds.Location.X,
+					(int)Bounds.Location.Y,
 					1000,
 					1000));
 				_textSprite.SetText(newText);
