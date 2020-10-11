@@ -273,6 +273,8 @@ namespace Ladybug.Core.UI
 			SizeChanged?.Invoke(this, new EventArgs());
 		}
 
+		public void SetBounds(int x, int y, int width, int height) => SetBounds(new Rectangle(x, y, width, height));
+
 		public virtual void SetFont(SpriteFont font) => Font = font;
 
 		public void Move(int x, int y) => Move(new Vector2(x, y));
