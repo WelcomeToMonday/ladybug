@@ -51,13 +51,13 @@ namespace Ladybug.Core.UI
 		#endregion
 
 		#region Constructors
-
+		/*
 		public Control()
 		{
 
 		}
-
-		public Control(Control parentControl = null, string name = "") : this()
+		*/
+		public Control(Control parentControl = null, string name = "")
 		{
 			Name = name;
 			if (parentControl != null)
@@ -312,8 +312,6 @@ namespace Ladybug.Core.UI
 				}
 
 				Controls.Add(newControl);
-
-				PositionChanged += newControl.OnParentPositionChange;
 			}
 		}
 
@@ -363,9 +361,6 @@ namespace Ladybug.Core.UI
 
 			return res;
 		}
-
-		protected virtual void OnParentPositionChange(object sender, EventArgs e) => SetBounds(Bounds);
-
 		#endregion
 	}
 }
