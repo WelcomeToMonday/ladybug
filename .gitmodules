@@ -13,3 +13,6 @@
 [submodule "src/module/pathfinding"]
 	path = src/module/pathfinding
 	url = git@github.com:welcometomonday/ladybug-pathfinding
+[submodule "src/module/fsm"]
+	path = src/module/fsm
+	url = git@github.com:WelcomeToMonday/ladybug-fcs
