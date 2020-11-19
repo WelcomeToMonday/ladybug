@@ -326,7 +326,7 @@ namespace Ladybug.Core.UI
 		{
 			var res = strictTypeMatch
 			? Controls.OfType<T>().Where(control => (name == null ? true : control.Name == name) && control.GetType() == typeof(T)).FirstOrDefault()
-			: Controls.OfType<T>().Where(control => control.Name == name).FirstOrDefault();
+			: Controls.OfType<T>().Where(control => (name == null ? true : control.Name == name)).FirstOrDefault();
 
 			if (recurse && res == null)
 			{
