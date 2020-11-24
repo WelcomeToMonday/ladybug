@@ -33,6 +33,7 @@ namespace Ladybug.Core.UI
 			if (Font != null)
 			{
 				Text = newText;
+				var dimensions = Text == "" ? new Vector2(0, 0) : new Vector2(1000, 100);
 				if (_textSprite == null)
 				{
 					_textSprite = new TextSprite(newText, Font, new Rectangle(0, 0, 1000, 1000));
@@ -40,8 +41,8 @@ namespace Ladybug.Core.UI
 				_textSprite.SetBounds(new Rectangle(
 					(int)Bounds.Location.X,
 					(int)Bounds.Location.Y,
-					1000,
-					1000));
+					(int)dimensions.X,
+					(int)dimensions.Y));
 				_textSprite.SetText(newText);
 				_textSprite.SetBoundsToText();
 				SetBounds(_textSprite.Bounds);
