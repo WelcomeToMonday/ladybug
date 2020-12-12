@@ -26,6 +26,10 @@ namespace Ladybug.Core.UI
 		public event EventHandler<UIClickEvent> ClickHold;
 		public event EventHandler<UIClickEvent> ClickEnd;
 
+		public event EventHandler<UIClickEvent> RightClickStart;
+		public event EventHandler<UIClickEvent> RightClickHold;
+		public event EventHandler<UIClickEvent> RightClickEnd;
+
 		public event EventHandler<UIStateChangeEvent> StateChanged;
 
 		private Panel m_rootPanel;
@@ -178,6 +182,21 @@ namespace Ladybug.Core.UI
 			ClickEnd?.Invoke(this, e);
 		}
 
+		protected void OnRightClickStart(UIClickEvent e)
+		{
+			RightClickStart?.Invoke(this, e);
+		}
+
+		protected void OnRightClickHold(UIClickEvent e)
+		{
+			RightClickHold?.Invoke(this, e);
+		}
+
+		protected void OnRightClickEnd(UIClickEvent e)
+		{
+			RightClickEnd?.Invoke(this, e);
+		}
+
 		protected virtual void HandleInput()
 		{
 			if (Inputs.HasFlag(Input.Mouse))
@@ -199,6 +218,21 @@ namespace Ladybug.Core.UI
 				if (MouseMonitor.CheckButton(MouseButtons.LeftClick, InputState.Released))
 				{
 					OnClickEnd(new UIClickEvent(cPos));
+				}
+
+				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Pressed))
+				{
+					OnRightClickStart(new UIClickEvent(cPos));
+				}
+
+				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Down))
+				{
+					OnRightClickHold(new UIClickEvent(cPos));
+				}
+
+				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Released))
+				{
+					OnRightClickEnd(new UIClickEvent(cPos));
 				}
 
 				MouseMonitor.EndUpdate();

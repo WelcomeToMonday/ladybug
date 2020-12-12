@@ -39,6 +39,12 @@ namespace Ladybug.Core.UI
 		public event EventHandler ClickEnd;
 		public event EventHandler ClickOut;
 
+		public event EventHandler RightClick;
+		public event EventHandler RightClickStart;
+		public event EventHandler RightClickHold;
+		public event EventHandler RightClickEnd;
+		public event EventHandler RightClickOut;
+
 		public event EventHandler CursorEnter;
 		public event EventHandler CursorLeave;
 
@@ -145,9 +151,14 @@ namespace Ladybug.Core.UI
 			if (UI != null)
 			{
 				UI.FocusChange += OnUIFocusChange;
+				
 				UI.ClickStart += OnUIClickStart;
 				UI.ClickHold += OnUIClickHold;
 				UI.ClickEnd += OnUIClickEnd;
+
+				UI.RightClickStart += OnUIRightClickStart;
+				UI.RightClickHold += OnUIRightClickHold;
+				UI.RightClickEnd += OnUIRightClickEnd;
 			}
 		}
 
@@ -190,6 +201,35 @@ namespace Ladybug.Core.UI
 			else
 			{
 				ClickOut?.Invoke(this, new EventArgs());
+			}
+		}
+
+		public virtual void OnUIRightClickStart(object sender, UIClickEvent e)
+		{
+			if (IsEnabled && Bounds.Contains(e.CursorPosition))
+			{
+				RightClickStart?.Invoke(this, new EventArgs());
+			}
+		}
+
+		public virtual void OnUIRightClickHold(object sender, UIClickEvent e)
+		{
+			if (IsEnabled && Bounds.Contains(e.CursorPosition))
+			{
+				RightClickHold?.Invoke(this, new EventArgs());
+			}
+		}
+
+		public virtual void OnUIRightClickEnd(object sender, UIClickEvent e)
+		{
+			if (IsEnabled && Bounds.Contains(e.CursorPosition))
+			{
+				RightClickEnd?.Invoke(this, new EventArgs());
+				RightClick?.Invoke(this, new EventArgs());
+			}
+			else
+			{
+				RightClickOut?.Invoke(this, new EventArgs());
 			}
 		}
 
