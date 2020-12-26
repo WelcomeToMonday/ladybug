@@ -100,7 +100,8 @@ namespace Ladybug.Core.TileMap
 
 						case "image":
 							reader.MoveToAttribute("source");
-							var sourceImagePath = Path.Combine(Path.GetDirectoryName(_filePath), Path.GetFileNameWithoutExtension(reader.Value));
+							//var sourceImagePath = Path.Combine(Path.GetDirectoryName(_filePath), Path.GetFileNameWithoutExtension(reader.Value));
+							var sourceImagePath = Path.ChangeExtension(Path.Combine(Path.GetDirectoryName(_filePath), reader.Value), null);
 							_sourceImage = _contentManager.Load<Texture2D>(sourceImagePath);
 							break;
 					}
