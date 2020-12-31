@@ -25,7 +25,7 @@ namespace Ladybug.Core
 		{
 			return CheckCollisionByBounds<ICollision>(offset);
 		}
-
+		// todo: Add Vector4 offset support
 		public CollisionResult<T> CheckCollisionByBounds<T>(int offset = 0) where T : ICollision
 		{
 			if (_otherColliders.Contains(_targetCollider)) _otherColliders.Remove(_targetCollider);
@@ -78,19 +78,22 @@ namespace Ladybug.Core
 			return results;
 		}
 
-		public CollisionResult<ICollision> CheckCollisionByPoints(int offset = 0)
-		{
-			return CheckCollisionByPoints<ICollision>();
-		}
+		public CollisionResult<ICollision> CheckCollisionByPoints(int offset = 0) => CheckCollisionByPoints<ICollision>(offset);
+		public CollisionResult<ICollision> CheckCollisionByPoints(Vector2 offset) => CheckCollisionByPoints<ICollision>(offset);
+		public CollisionResult<ICollision> CheckCollisionByPoints(Vector4 offset) => CheckCollisionByPoints<ICollision>(offset);
 
-		public CollisionResult<T> CheckCollisionByPoints<T>(int offset = 0) where T : ICollision
+		public CollisionResult<T> CheckCollisionByPoints<T>(int offset = 0) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset, offset, offset, offset));
+		public CollisionResult<T> CheckCollisionByPoints<T>(Vector2 offset) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset.X, offset.X, offset.Y, offset.Y));
+		
+		public CollisionResult<T> CheckCollisionByPoints<T>(Vector4 offset = default(Vector4)) where T : ICollision
 		{
+			var z = new Vector4();
 			if (typeof(T) == _targetCollider.GetType() && _otherColliders.Contains((T)_targetCollider)) _otherColliders.Remove((T)_targetCollider);
 
-			Vector2 topPoint = new Vector2(_targetCollider.CollisionBounds.Center.X, _targetCollider.CollisionBounds.Top - offset);
-			Vector2 rightPoint = new Vector2(_targetCollider.CollisionBounds.Right + offset, _targetCollider.CollisionBounds.Center.Y);
-			Vector2 bottomPoint = new Vector2(_targetCollider.CollisionBounds.Center.X, _targetCollider.CollisionBounds.Bottom + offset);
-			Vector2 leftPoint = new Vector2(_targetCollider.CollisionBounds.Left - offset, _targetCollider.CollisionBounds.Center.Y);
+			Vector2 topPoint = new Vector2(_targetCollider.CollisionBounds.Center.X, _targetCollider.CollisionBounds.Top - offset.Z);
+			Vector2 rightPoint = new Vector2(_targetCollider.CollisionBounds.Right + offset.Y, _targetCollider.CollisionBounds.Center.Y);
+			Vector2 bottomPoint = new Vector2(_targetCollider.CollisionBounds.Center.X, _targetCollider.CollisionBounds.Bottom + offset.W);
+			Vector2 leftPoint = new Vector2(_targetCollider.CollisionBounds.Left - offset.X, _targetCollider.CollisionBounds.Center.Y);
 
 			var results = new CollisionResult<T>();
 			results.Top = new List<T>();
