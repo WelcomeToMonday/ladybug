@@ -18,7 +18,8 @@ namespace Ladybug.Core.TileMap
 
 		private ContentManager _contentManager;
 
-		private List<TileLayer> _layers;
+		//private List<TileLayer> _layers;
+		private List<IDrawableLayer> _layers;
 
 		private List<TileSet> _tileSets = new List<TileSet>();
 
@@ -36,7 +37,7 @@ namespace Ladybug.Core.TileMap
 			}
 		}
 
-		protected ContentManager Content { get => _contentManager; }
+		public ContentManager Content { get => _contentManager; }
 
 		public Texture2D MapTexture { get; private set; }
 
@@ -52,7 +53,7 @@ namespace Ladybug.Core.TileMap
 
 		public void ReadXml(XmlReader reader)
 		{
-			List<TileLayer> layers = new List<TileLayer>();
+			List<IDrawableLayer> layers = new List<IDrawableLayer>();
 			int width = 0;
 			int height = 0;
 			int tileWidth = 0;
@@ -90,6 +91,49 @@ namespace Ladybug.Core.TileMap
 							if (gid > 0) tileSet.FirstGID = gid - 1;
 
 							_tileSets.Add(tileSet);
+							break;
+
+						case "imagelayer":
+							ImageLayer iLayer = new ImageLayer();
+							layers.Add(iLayer);
+
+							using (var subReader = reader.ReadSubtree())
+							{
+								while (subReader.Read())
+								{
+									if (subReader.NodeType == XmlNodeType.Element)
+									{
+										switch (reader.Name)
+										{
+											case "image":
+												reader.MoveToAttribute("source");
+												var imageSource = Path.ChangeExtension(Path.Combine(Path.GetDirectoryName(_filePath), reader.Value), null);
+
+												reader.MoveToAttribute("width");
+												int.TryParse(reader.Value, out int imageWidth);
+
+												reader.MoveToAttribute("height");
+												int.TryParse(reader.Value, out int imageHeight);
+
+												var imageOffsetX = 0;
+												var imageOffsetY = 0;
+
+												if (reader.MoveToAttribute("offsetx"))
+												{
+													int.TryParse(reader.Value, out imageOffsetX);
+												}
+
+												if (reader.MoveToAttribute("offsety"))
+												{
+													int.TryParse(reader.Value, out imageOffsetY);
+												}
+
+												iLayer.SetData(imageSource, imageWidth, imageHeight, imageOffsetX, imageOffsetY);
+												break;
+										}
+									}
+								}
+							}
 							break;
 
 						case "layer":
@@ -243,33 +287,7 @@ namespace Ladybug.Core.TileMap
 
 			foreach (var layer in _layers)
 			{
-				for (var row = 0; row < Height; row++)
-				{
-					for (var col = 0; col < Width; col++)
-					{
-						// Tiled adds +1 to Tile IDs so 0 can represent empty fields.
-						// Since we're using the ID to determine position on the image file,
-						// We're going to subtract one so the math checks out.
-						var tileID = layer.Data[col, row] - 1;
-						if (tileID >= 0)
-						{
-							var tileSet = findTileSet(tileID);
-							var tile = tileSet[tileID - (tileSet.FirstGID)];
-							sb.Draw
-							(
-								tile.Texture,
-								new Rectangle(
-									TileWidth * col,
-									TileHeight * row,
-									TileWidth,
-									TileHeight
-									),
-								tile.Frame,
-								Color.White
-							);
-						}
-					}
-				}
+				layer.Draw(this, sb);
 			}
 
 			sb.End();
@@ -287,7 +305,7 @@ namespace Ladybug.Core.TileMap
 			MapTexture = fullTexture;
 		}
 
-		private TileSet findTileSet(int id)
+		public TileSet FindTileSet(int id)
 		{
 			TileSet res = null;
 			foreach (var ts in _tileSets)
