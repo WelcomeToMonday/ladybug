@@ -334,6 +334,17 @@ namespace Ladybug.Core.TileMap
 			MapTexture = fullTexture;
 		}
 
+		public Vector2 CoordIso2Ortho(Vector2 isoCoord)
+		{
+			// Tiled is intersting in that the "origin" of an iso tile is at its foot and not its top.
+			// Therefore, we offset the Y by tileheight so that cooordinates show in-game where they 
+			// show in the Tiled editor.
+
+			return new Vector2(Height * (TileWidth / 2), TileHeight) // anchor
+			+ new Vector2(-isoCoord.Y, isoCoord.Y / 2)
+			+ new Vector2(isoCoord.X, isoCoord.X / 2);
+		}
+
 		public TileSet FindTileSet(int id)
 		{
 			TileSet res = null;
