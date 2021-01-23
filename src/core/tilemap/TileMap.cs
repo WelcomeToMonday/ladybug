@@ -13,6 +13,8 @@ namespace Ladybug.Core.TileMap
 {
 	public class TileMap : IXmlSerializable
 	{
+		public enum TileOrientation {ORTHOGRAPHIC, ISOMETRIC}
+
 		protected GraphicsDevice graphicsDevice;
 		private string _filePath;
 
@@ -36,6 +38,8 @@ namespace Ladybug.Core.TileMap
 				ReadXml(xReader);
 			}
 		}
+
+		public TileOrientation Orientation {get; set;} = TileOrientation.ORTHOGRAPHIC;
 
 		public ContentManager Content { get => _contentManager; }
 
@@ -265,14 +269,39 @@ namespace Ladybug.Core.TileMap
 			return null;
 		}
 
+		private Vector2 GetMapBounds()
+		{
+			var res = Vector2.Zero;
+			switch (Orientation)
+			{
+				default:
+				case TileOrientation.ORTHOGRAPHIC:
+					res = new Vector2(
+						Width * TileWidth,
+						Height * TileHeight
+					);
+					break;
+				case TileOrientation.ISOMETRIC:
+					var side = Height + Width;
+					res = new Vector2(
+						(int)(side * (TileWidth / 2)),
+						(int)(side * (TileHeight / 2))
+					);	
+					break;
+			}
+
+			return res;
+		}
+
 		//public void BuildMapTexture(List<TileLayer> layers, int width, int height, int tileWidth, int tileHeight)
 		public void BuildMapTexture()
 		{
+			var mapBounds = GetMapBounds();
 			RenderTarget2D target2D = new RenderTarget2D
 			(
 				graphicsDevice,
-				Width * TileWidth,
-				Height * TileHeight,
+				(int)mapBounds.X,
+				(int)mapBounds.Y,
 				false,
 				graphicsDevice.PresentationParameters.BackBufferFormat,
 				DepthFormat.Depth24
@@ -292,7 +321,7 @@ namespace Ladybug.Core.TileMap
 
 			sb.End();
 
-			Texture2D fullTexture = new Texture2D(graphicsDevice, Width * TileWidth, Height * TileHeight);
+			Texture2D fullTexture = new Texture2D(graphicsDevice, (int)mapBounds.X, (int)mapBounds.Y);
 
 			Color[] texdata = new Color[fullTexture.Width * fullTexture.Height];
 

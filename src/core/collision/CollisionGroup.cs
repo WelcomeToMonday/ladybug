@@ -85,7 +85,7 @@ namespace Ladybug.Core
 		public CollisionResult<T> CheckCollisionByPoints<T>(int offset = 0) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset, offset, offset, offset));
 		public CollisionResult<T> CheckCollisionByPoints<T>(Vector2 offset) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset.X, offset.X, offset.Y, offset.Y));
 		
-		public CollisionResult<T> CheckCollisionByPoints<T>(Vector4 offset = default(Vector4)) where T : ICollision
+		public CollisionResult<T> CheckCollisionByPoints<T>(Vector4 offset) where T : ICollision
 		{
 			var z = new Vector4();
 			if (typeof(T) == _targetCollider.GetType() && _otherColliders.Contains((T)_targetCollider)) _otherColliders.Remove((T)_targetCollider);

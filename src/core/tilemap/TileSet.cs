@@ -45,6 +45,10 @@ namespace Ladybug.Core.TileMap
 			BuildSpriteList();
 		}
 
+		public int TileWidth {get => _tileWidth;}
+
+		public int TileHeight{get => _tileHeight;}
+
 		public int TileCount
 		{
 			get => m_tileCount;
@@ -54,13 +58,6 @@ namespace Ladybug.Core.TileMap
 		public int FirstGID { get; set; } = 0;
 
 		public Vector2 TileRange { get => new Vector2(FirstGID, (TileCount + FirstGID) - 1); }
-
-		/*
-		public Texture2D this[int i]
-		{
-			get => _tileTextures[i];
-		}
-		*/
 
 		public Sprite this[int i]
 		{

@@ -45,14 +45,15 @@ namespace Ladybug.Core.TileMap
 						{
 							var tileSet = tileMap.FindTileSet(tileID);
 							var tile = tileSet[tileID - (tileSet.FirstGID)];
+							var pos = GetTilePosition(tileMap, col, row);
 							spriteBatch.Draw
 							(
 								tile.Texture,
 								new Rectangle(
-									tileMap.TileWidth * col,
-									tileMap.TileHeight * row,
-									tileMap.TileWidth,
-									tileMap.TileHeight
+									(int)pos.X,
+									(int)pos.Y,
+									tileSet.TileWidth,
+									tileSet.TileHeight
 									),
 								tile.Frame,
 								Color.White
@@ -60,6 +61,29 @@ namespace Ladybug.Core.TileMap
 						}
 				}
 			}
+		}
+
+		private Vector2 GetTilePosition(TileMap tileMap, int col, int row)
+		{
+			var res = Vector2.Zero;
+
+			switch (tileMap.Orientation)
+			{
+				default:
+				case TileMap.TileOrientation.ORTHOGRAPHIC:
+					res = new Vector2(
+						tileMap.TileWidth * col,
+						tileMap.TileHeight * row
+					);
+					break;
+				case TileMap.TileOrientation.ISOMETRIC:
+					res = new Vector2(tileMap.Height * (tileMap.TileWidth / 2), 0) - new Vector2(tileMap.TileWidth / 2, 0) //origin point
+					+ new Vector2(-row * (tileMap.TileWidth/2), row * (tileMap.TileHeight/2)) // row offset
+					+ new Vector2(col * tileMap.TileWidth / 2, col * tileMap.TileHeight / 2); // col offset
+					break;
+			}
+			
+			return res;
 		}
 	}
 }
