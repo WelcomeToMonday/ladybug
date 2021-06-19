@@ -7,7 +7,7 @@
             "**/*.csproj"
           ],
 					"exclude" : ["**/bin/**", "**/obj/**"],
-					"src": "../src-2.0"
+					"src": "../src"
         }
       ],
       "dest": "api",
