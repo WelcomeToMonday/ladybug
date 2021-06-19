@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SceneManager
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SceneManager
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../images/icon48.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Ladybug.Scene.SceneManager">
+  
+  
+  <h1 id="Ladybug_Scene_SceneManager" data-uid="Ladybug.Scene.SceneManager" class="text-break">Class SceneManager
+  </h1>
+  <div class="markdown level0 summary"><p>SceneManager extends MonoGame's Game class, adding tools for
+switching between scenes, each containing their own separate
+update and rendering logic.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SceneManager</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.Scene.html">Ladybug.Scene</a></h6>
+  <h6><strong>Assembly</strong>: ladybug.dll</h6>
+  <h5 id="Ladybug_Scene_SceneManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SceneManager : Game</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Ladybug_Scene_SceneManager__ctor_" data-uid="Ladybug.Scene.SceneManager.#ctor*"></a>
+  <h4 id="Ladybug_Scene_SceneManager__ctor" data-uid="Ladybug.Scene.SceneManager.#ctor">SceneManager()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneManager()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Ladybug_Scene_SceneManager_graphics" data-uid="Ladybug.Scene.SceneManager.graphics">graphics</h4>
+  <div class="markdown level1 summary"><p>The SceneManager's resident GraphicsDeviceManager, used by managed scenes for rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GraphicsDeviceManager graphics</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GraphicsDeviceManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Ladybug_Scene_SceneManager_SceneList" data-uid="Ladybug.Scene.SceneManager.SceneList">SceneList</h4>
+  <div class="markdown level1 summary"><p>The list of Scenes being managed by this SceneManager</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Scene&gt; SceneList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="Ladybug.Scene.Scene.html">Scene</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_Scene_SceneManager_SceneList_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use <code>LoadScene()</code> and <code>UnloadScene()</code> to add and remove Scenes from the list</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_ThreadManager_" data-uid="Ladybug.Scene.SceneManager.ThreadManager*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_ThreadManager" data-uid="Ladybug.Scene.SceneManager.ThreadManager">ThreadManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadManager ThreadManager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ThreadManager.html">ThreadManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_Draw_" data-uid="Ladybug.Scene.SceneManager.Draw*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_Draw_GameTime_" data-uid="Ladybug.Scene.SceneManager.Draw(GameTime)">Draw(GameTime)</h4>
+  <div class="markdown level1 summary"><p>Renders all Scenes managed by this SceneManager which are not Suspended.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Draw(GameTime gameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_Initialize_" data-uid="Ladybug.Scene.SceneManager.Initialize*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_Initialize" data-uid="Ladybug.Scene.SceneManager.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Initialize()</code></pre>
+  </div>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_LoadContent_" data-uid="Ladybug.Scene.SceneManager.LoadContent*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_LoadContent" data-uid="Ladybug.Scene.SceneManager.LoadContent">LoadContent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadContent()</code></pre>
+  </div>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_LoadScene_" data-uid="Ladybug.Scene.SceneManager.LoadScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_LoadScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.LoadScene(Ladybug.Scene.Scene)">LoadScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Loads a scene into the SceneManager, which will update the Scene every game loop.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_LoadSceneAsync_" data-uid="Ladybug.Scene.SceneManager.LoadSceneAsync*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_LoadSceneAsync_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.LoadSceneAsync(Ladybug.Scene.Scene)">LoadSceneAsync(Scene)</h4>
+  <div class="markdown level1 summary"><p>Loads a Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
+adding the scene to the SceneManager via LoadScene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async void LoadSceneAsync(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_Scene_SceneManager_LoadSceneAsync_Ladybug_Scene_Scene__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Calls LoadScene, meaning the scene's LoadContent and LoadScene methods are called
+after their async counterparts.</p>
+</div>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_PauseScene_" data-uid="Ladybug.Scene.SceneManager.PauseScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_PauseScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.PauseScene(Ladybug.Scene.Scene)">PauseScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Pauses a Scene, skipping its <code>Update()</code>, but continuing to run its <code>Draw()</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PauseScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_SuspendScene_" data-uid="Ladybug.Scene.SceneManager.SuspendScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_SuspendScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.SuspendScene(Ladybug.Scene.Scene)">SuspendScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Suspends a scene, causing both its <code>Update()</code> and <code>Draw()</code> to be skipped</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SuspendScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_UnloadScene_" data-uid="Ladybug.Scene.SceneManager.UnloadScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_UnloadScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.UnloadScene(Ladybug.Scene.Scene)">UnloadScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Removes a scene from the SceneManager, unloading its assets and removing it from the
+scene execution loop.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UnloadScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_UnpauseScene_" data-uid="Ladybug.Scene.SceneManager.UnpauseScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_UnpauseScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.UnpauseScene(Ladybug.Scene.Scene)">UnpauseScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Unpauses a Scene, causing it to resume its <code>Update()</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UnpauseScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_UnsuspendScene_" data-uid="Ladybug.Scene.SceneManager.UnsuspendScene*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_UnsuspendScene_Ladybug_Scene_Scene_" data-uid="Ladybug.Scene.SceneManager.UnsuspendScene(Ladybug.Scene.Scene)">UnsuspendScene(Scene)</h4>
+  <div class="markdown level1 summary"><p>Unsuspends a scene, resuming both its <code>Update()</code> and <code>Draw()</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UnsuspendScene(Scene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_Scene_SceneManager_Update_" data-uid="Ladybug.Scene.SceneManager.Update*"></a>
+  <h4 id="Ladybug_Scene_SceneManager_Update_GameTime_" data-uid="Ladybug.Scene.SceneManager.Update(GameTime)">Update(GameTime)</h4>
+  <div class="markdown level1 summary"><p>Updates all Scenes managed by this SceneManager which are neither Paused nor Suspended.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Update(GameTime gameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

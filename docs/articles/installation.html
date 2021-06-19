@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Installation and Setup </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Installation and Setup ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../images/icon48.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="installation-and-setup">Installation and Setup</h1>
+
+<p>In this section, we'll be showing you where to get the Ladybug libraries and how to include them in your project files in VSCode.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To get started, you'll need to install MonoGame and its dependencies. This guide is also assuming you will be using Visual Studio Code as your IDE -- steps will vary with any other IDE.</p>
+<ul>
+<li><a href="https://dotnet.microsoft.com/download">.NET Core Runtime and SDK</a></li>
+<li><a href="https://www.mono-project.com/download/stable/">Mono Runtime</a></li>
+<li><a href="http://monogame.net/downloads">MonoGame</a></li>
+<li><a href="/ladybug">One or more Ladybug Modules, or Ladybug Core</a></li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+<h2 id="setting-up-the-project">Setting up the Project</h2>
+<p>Once you have MonoGame and its dependencies installed and have chosen one or more Ladybug libraries, you're ready to set up your project. A sample project is also available for download <a href="/ladybug/files/ladybug-sample.zip">here</a>, free for you to use directly or as a reference -- either way, feel free to modify it to suit your needs.</p>
+<h3 id="project-structure">Project Structure</h3>
+<p>MonoGame projects can be set up in various ways, but we will proceed to show you the way Welcome to Monday sets up their game projects. The resulting project structure is typically as follows:</p>
+<pre><code>game_name/
+| - core/
+| - lib/
+| - ref/
+| - xplatform/
+</code></pre>
+<ul>
+<li>The <code>core</code> folder contains the Shared Project which contins the bulk of the game logic. A Shared Project contains code and resource files, but no instruction on how to build these files into an executable. It is used to house all <em>platform-independent</em> code in a central location.</li>
+<li>The <code>lib</code> folder is used to house any extra libraries used by the project. We keep our Ladybug libraries in this folder.
+<ul>
+<li>It is also possible to keep a single installation of Ladybug somewhere else on your computer and to reference it from there, but we like to include it directly in the game files so that the game will always have access to the exact copy (and version) of Ladybug it was built with.</li>
+</ul>
+</li>
+<li>The <code>ref</code> folder is used to house asset source files for the game, including audio projects, psd files, and other &quot;editor-friendly&quot; files that can't be directly consumed by the game. We like this approach because we can keep the files together with the game in the same folder, so it makes version control via git much easier.</li>
+<li>The <code>xplatform</code> folder houses a MonoGame project with the cross-platform desktop build target (Desktop using OpenGL). This project has a reference to the Shared Project in <code>core</code>, plus instructions on how to build an executable for the DesktopGL target.</li>
+<li>If other platforms aside from DesktopGL are being targeted, there will be an additional folder for each, e.g. <code>android</code>, <code>uwp</code>, <code>ios</code>, et al. These projects would all reference the <code>core</code> shared project, plus include any code specific to their targeted platforms.</li>
+</ul>
+<p>A sample project with this folder format is available for download <a href="/ladybug/files/ladybug-sample.zip">here</a>, but the following steps will illustrate how to build this yourself.</p>
+<h3 id="creating-the-structure">Creating the Structure</h3>
+<p>In order to create this project structure yourself, you'll need to install the MonoGame project templates. This can be done with the command <code>dotnet new -i MonoGame.Templates.CSharp</code>. Once you've run this command, you can see all the project templates available to you with <code>dotnet new</code>:</p>
+<pre><code class="lang-bash">Templates                                         Short Name            Language          Tags                                 
+-------------------------------------------------------------------------------------------------------------------------------
+Console Application                               console               [C#], F#, VB      Common/Console                       
+Class library                                     classlib              [C#], F#, VB      Common/Library                       
+MonoGame Android Application                      mgandroid             [C#]              MonoGame                             
+MonoGame iPhone/iPad Application                  mgios                 [C#]              MonoGame                             
+MonoGame Mac Application                          mgmacos               [C#]              MonoGame                             
+MonoGame NetStandard Library                      mgnetstandardlib      [C#]              MonoGame                             
+MonoGame Portable Library                         mgpcllib              [C#]              MonoGame                             
+MonoGame Shared Project                           mgsharedproj          [C#]              MonoGame                             
+MonoGame tvOS Application                         mgtvos                [C#]              MonoGame                             
+MonoGame Windows Universal Application            mguwp                 [C#]              MonoGame                             
+MonoGame Windows Application                      mgwindows             [C#]              MonoGame                             
+MonoGame Pipeline Extension                       mgpipelineext         [C#]              MonoGame                             
+MonoGame Cross Platform Desktop Application       mgdesktopgl           [C#]              MonoGame/Game
+</code></pre>
+<p>Now that you have the MonoGame templates, you can create your project folder and then within that folder, create the core Shared Project and one or more &quot;Platform Target&quot; Projects:</p>
+<pre><code class="lang-bash">mkdir game &amp;&amp; cd game
+dotnet new mgsharedproj -n core
+dotnet new mgdesktopgl -n xplatform
+</code></pre>
+<p>Once you have the Shared Project and your platform target folder(s), you can create the <code>lib</code> folder and put your chosen Ladybug libraries into it. Other folders can of course be created to suit your needs, but this guide will only assume that you have a Shared Project folder, at least one Platform Target Project folder, and a library folder.</p>
+<h3 id="hooking-it-all-together">Hooking it all Together</h3>
+<p>At this point you should have a Shared Project (we'll use <code>core</code> to refer to this), one or more Platform Target Projects (we'll use <code>xplatform</code> as our example), and at least one Ladybug library you'd like to use available in your library folder (we'll use Ladybug Core -- <code>ladybug.dll</code> as our example). While all of these are present in your project, they don't have any instructions on how to all work together to create a game.</p>
+<h4 id="exporting-the-shared-project-files">Exporting the Shared Project Files</h4>
+<p>First, we'll go into the Shared Project, where we're going to tell it which of its files it'll be providing to the Platform Target Projects that will be using it. To do so, open the <code>core</code> folder (or whatever you may have titled it) and find the <code>.projitems</code> file. This file includes a lot of information on the dependencies of the MonoGame shared project, but what we're interested in is the section towards the middle that reads:</p>
+<pre><code class="lang-XML">&lt;ItemGroup&gt;
+	&lt;Compile Include=&quot;$(MSBuildThisFileDirectory)Game1.cs&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<p><strong>Note</strong>: If your .projitems file doesn't have this exact line, don't worry. Find any line starting with <code>&lt;Compile Include=</code> and that'll work just fine. If it doesn't exist at all, feel free to add a <code>&lt;Compile Include=&gt;</code> element surrounded by <code>&lt;ItemGroup&gt;</code> tags at the bottom of the document.</p>
+<p>This section of the document lists the files that are being &quot;shared&quot; with Platform Target projects. If you're using Visual Studio, it will automatically generate one line like this for <em>every file in the project</em>. Luckily, that isn't necessary, as wildcards are accepted.</p>
+<p>We like to export every C# file in the Shared Project, so we usually replace this line with the following:</p>
+<pre><code class="lang-XML">&lt;ItemGroup&gt;
+	&lt;Compile Include=&quot;$(MSBuildThisFileDirectory)**\*.cs&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h4 id="referencing-the-shared-project-in-the-platform-target-project">Referencing the Shared Project in the Platform Target Project</h4>
+<p>Now that the Shared Project is sharing its files, we need to show the Platform Target Project where to find the Shared Project. To do this, we need to go into the <code>xplatform</code> folder and find the <code>.csproj</code> file.</p>
+<p>Towards the bottom of the file -- after the last closing <code>&lt;/ItemGroup&gt;</code> tag but before the final <code>&lt;/Project&gt;</code> tag, add <code>&lt;Import Project=&quot;..\core\core.projitems&quot; /&gt;</code>.</p>
+<p>You will have to repeat this step for each Platform Target Project you have.</p>
+<h4 id="referencing-ladybug-in-the-platform-target-project">Referencing Ladybug in the Platform Target Project</h4>
+<p>While we're working on the <code>.csproj</code> file, we can also add the reference to the Ladybug library. Find the <code>&lt;ItemGroup&gt;</code> section with the <code>&lt;PackageReference&gt;</code> elements referencing MonoGame (if you can't find this, feel free to create a new ItemGroup section by creating a new set of <code>&lt;ItemGroup&gt; &lt;/ItemGroup&gt;</code> tags), and add a new line: <code>&lt;Reference Include=&quot;..\lib\ladybug.dll&quot;&gt;</code>. If you're using multiple Ladybug modules, add one of these lines for each .dll file you have in <code>lib</code>.</p>
+<p>You will have to repeat this step for each Platform Target Project you have.</p>
+<h3 id="wrapping-up">Wrapping Up</h3>
+<p>With that, you should be all set to get started with Ladybug and MonoGame. In the <a href="/ladybug/articles/scene_management.html">next section</a>, we'll go over setting up game scenes using Ladybug's Scene Management Module!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/welcometomonday/ladybug/blob/doc-updates/docs-src/articles/installation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

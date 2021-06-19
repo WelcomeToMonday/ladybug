@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SpriteComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SpriteComponent
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../images/icon48.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Ladybug.ECS.Components.SpriteComponent">
+  
+  
+  <h1 id="Ladybug_ECS_Components_SpriteComponent" data-uid="Ladybug.ECS.Components.SpriteComponent" class="text-break">Class SpriteComponent
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Ladybug.ECS.Component.html">Component</a></div>
+    <div class="level2"><span class="xref">SpriteComponent</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Ladybug.ECS.IDrawableComponent.html">IDrawableComponent</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Entity">Component.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_System">Component.System</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_ResourceCatalog">Component.ResourceCatalog</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Name">Component.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Active">Component.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_SetName_System_String_">Component.SetName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_SetActive_System_Boolean_">Component.SetActive(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_PreUpdate_GameTime_">Component.PreUpdate(GameTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_PostUpdate_GameTime_">Component.PostUpdate(GameTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_ToString">Component.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.ECS.Components.html">Ladybug.ECS.Components</a></h6>
+  <h6><strong>Assembly</strong>: ladybug.dll</h6>
+  <h5 id="Ladybug_ECS_Components_SpriteComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SpriteComponent : Component, IDrawableComponent</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Color_" data-uid="Ladybug.ECS.Components.SpriteComponent.Color*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Color" data-uid="Ladybug.ECS.Components.SpriteComponent.Color">Color</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color Color { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_DrawPriority_" data-uid="Ladybug.ECS.Components.SpriteComponent.DrawPriority*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_DrawPriority" data-uid="Ladybug.ECS.Components.SpriteComponent.DrawPriority">DrawPriority</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DrawPriority { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Sprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.Sprite*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Sprite" data-uid="Ladybug.ECS.Components.SpriteComponent.Sprite">Sprite</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimatedSprite Sprite { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Visible_" data-uid="Ladybug.ECS.Components.SpriteComponent.Visible*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Visible" data-uid="Ladybug.ECS.Components.SpriteComponent.Visible">Visible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Visible { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_AddAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.AddAnimation*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_" data-uid="Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Texture2D,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean)">AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable&lt;Int32&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAnimation(string animationName, Texture2D sourceTexture, int rows, int columns, int animationSpeed, int startFrame, int? endFrame = null, bool setDefault = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">animationName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Texture2D</span></td>
+        <td><span class="parametername">sourceTexture</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rows</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">columns</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">animationSpeed</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startFrame</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">endFrame</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">setDefault</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Draw_" data-uid="Ladybug.ECS.Components.SpriteComponent.Draw*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Draw_GameTime_SpriteBatch_" data-uid="Ladybug.ECS.Components.SpriteComponent.Draw(GameTime,SpriteBatch)">Draw(GameTime, SpriteBatch)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(GameTime gameTime, SpriteBatch spriteBatch)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">SpriteBatch</span></td>
+        <td><span class="parametername">spriteBatch</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_GetAnimation" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation">GetAnimation()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationSequence GetAnimation()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Graphics.AnimationSequence.html">AnimationSequence</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_System_String_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation(System.String)">GetAnimation(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationSequence GetAnimation(string animationName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">animationName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Graphics.AnimationSequence.html">AnimationSequence</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Initialize_" data-uid="Ladybug.ECS.Components.SpriteComponent.Initialize*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Initialize" data-uid="Ladybug.ECS.Components.SpriteComponent.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Initialize">Component.Initialize()</a></div>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_SetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetAnimation*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_SetAnimation_System_String_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetAnimation(System.String)">SetAnimation(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAnimation(string animationName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">animationName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_SetDrawPriority_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetDrawPriority*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_SetDrawPriority_System_Int32_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetDrawPriority(System.Int32)">SetDrawPriority(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDrawPriority(int priority)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">priority</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_SetSprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetSprite*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_SetSprite_Ladybug_Graphics_AnimatedSprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetSprite(Ladybug.Graphics.AnimatedSprite)">SetSprite(AnimatedSprite)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSprite(AnimatedSprite s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a></td>
+        <td><span class="parametername">s</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ladybug_ECS_Components_SpriteComponent_Update_" data-uid="Ladybug.ECS.Components.SpriteComponent.Update*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_Update_GameTime_" data-uid="Ladybug.ECS.Components.SpriteComponent.Update(GameTime)">Update(GameTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update(GameTime gameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Update_GameTime_">Component.Update(GameTime)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Ladybug.ECS.IDrawableComponent.html">IDrawableComponent</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
