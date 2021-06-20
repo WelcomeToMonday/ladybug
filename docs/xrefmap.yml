@@ -617,13 +617,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.QuadTree.Nodes
   nameWithType: QuadTree.Nodes
-- uid: Ladybug.Collision.QuadTree.Retrieve(List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
+- uid: Ladybug.Collision.QuadTree.Retrieve(System.Collections.Generic.List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
   name: Retrieve(ref List<ICollision>, ICollision)
-  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_Retrieve_List_Ladybug_Collision_ICollision___Ladybug_Collision_ICollision_
-  commentId: M:Ladybug.Collision.QuadTree.Retrieve(List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
+  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_Retrieve_System_Collections_Generic_List_Ladybug_Collision_ICollision___Ladybug_Collision_ICollision_
+  commentId: M:Ladybug.Collision.QuadTree.Retrieve(System.Collections.Generic.List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
   name.vb: Retrieve(ByRef List(Of ICollision), ICollision)
-  fullName: Ladybug.Collision.QuadTree.Retrieve(ref List<Ladybug.Collision.ICollision>, Ladybug.Collision.ICollision)
-  fullName.vb: Ladybug.Collision.QuadTree.Retrieve(ByRef List(Of Ladybug.Collision.ICollision), Ladybug.Collision.ICollision)
+  fullName: Ladybug.Collision.QuadTree.Retrieve(ref System.Collections.Generic.List<Ladybug.Collision.ICollision>, Ladybug.Collision.ICollision)
+  fullName.vb: Ladybug.Collision.QuadTree.Retrieve(ByRef System.Collections.Generic.List(Of Ladybug.Collision.ICollision), Ladybug.Collision.ICollision)
   nameWithType: QuadTree.Retrieve(ref List<ICollision>, ICollision)
   nameWithType.vb: QuadTree.Retrieve(ByRef List(Of ICollision), ICollision)
 - uid: Ladybug.Collision.QuadTree.Retrieve*
@@ -640,13 +640,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.QuadTree.RetrieveByType
   nameWithType: QuadTree.RetrieveByType
-- uid: Ladybug.Collision.QuadTree.RetrieveByType``1(List{``0}@,Ladybug.Collision.ICollision)
+- uid: Ladybug.Collision.QuadTree.RetrieveByType``1(System.Collections.Generic.List{``0}@,Ladybug.Collision.ICollision)
   name: RetrieveByType<T>(ref List<T>, ICollision)
-  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_RetrieveByType__1_List___0___Ladybug_Collision_ICollision_
-  commentId: M:Ladybug.Collision.QuadTree.RetrieveByType``1(List{``0}@,Ladybug.Collision.ICollision)
+  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_RetrieveByType__1_System_Collections_Generic_List___0___Ladybug_Collision_ICollision_
+  commentId: M:Ladybug.Collision.QuadTree.RetrieveByType``1(System.Collections.Generic.List{``0}@,Ladybug.Collision.ICollision)
   name.vb: RetrieveByType(Of T)(ByRef List(Of T), ICollision)
-  fullName: Ladybug.Collision.QuadTree.RetrieveByType<T>(ref List<T>, Ladybug.Collision.ICollision)
-  fullName.vb: Ladybug.Collision.QuadTree.RetrieveByType(Of T)(ByRef List(Of T), Ladybug.Collision.ICollision)
+  fullName: Ladybug.Collision.QuadTree.RetrieveByType<T>(ref System.Collections.Generic.List<T>, Ladybug.Collision.ICollision)
+  fullName.vb: Ladybug.Collision.QuadTree.RetrieveByType(Of T)(ByRef System.Collections.Generic.List(Of T), Ladybug.Collision.ICollision)
   nameWithType: QuadTree.RetrieveByType<T>(ref List<T>, ICollision)
   nameWithType.vb: QuadTree.RetrieveByType(Of T)(ByRef List(Of T), ICollision)
 - uid: Ladybug.ECS
@@ -1803,20 +1803,20 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.GetFeed
   nameWithType: Extensions.GetFeed
-- uid: Ladybug.Extensions.GetFeed``1(List{``0},System.Int32,System.Int32)
+- uid: Ladybug.Extensions.GetFeed``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
   name: GetFeed<T>(List<T>, Int32, Int32)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetFeed__1_List___0__System_Int32_System_Int32_
-  commentId: M:Ladybug.Extensions.GetFeed``1(List{``0},System.Int32,System.Int32)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetFeed__1_System_Collections_Generic_List___0__System_Int32_System_Int32_
+  commentId: M:Ladybug.Extensions.GetFeed``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
   name.vb: GetFeed(Of T)(List(Of T), Int32, Int32)
-  fullName: Ladybug.Extensions.GetFeed<T>(List<T>, System.Int32, System.Int32)
-  fullName.vb: Ladybug.Extensions.GetFeed(Of T)(List(Of T), System.Int32, System.Int32)
+  fullName: Ladybug.Extensions.GetFeed<T>(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  fullName.vb: Ladybug.Extensions.GetFeed(Of T)(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
   nameWithType: Extensions.GetFeed<T>(List<T>, Int32, Int32)
   nameWithType.vb: Extensions.GetFeed(Of T)(List(Of T), Int32, Int32)
-- uid: Ladybug.Extensions.GetReader(XmlDocument)
+- uid: Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
   name: GetReader(XmlDocument)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetReader_XmlDocument_
-  commentId: M:Ladybug.Extensions.GetReader(XmlDocument)
-  fullName: Ladybug.Extensions.GetReader(XmlDocument)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetReader_System_Xml_XmlDocument_
+  commentId: M:Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
+  fullName: Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
   nameWithType: Extensions.GetReader(XmlDocument)
 - uid: Ladybug.Extensions.GetReader*
   name: GetReader
@@ -1873,13 +1873,13 @@ references:
   fullName.vb: Ladybug.Feed(Of T)
   nameWithType: Feed<T>
   nameWithType.vb: Feed(Of T)
-- uid: Ladybug.Feed`1.#ctor(List{`0},System.Int32,System.Int32)
+- uid: Ladybug.Feed`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)
   name: Feed(List<T>, Int32, Int32)
-  href: api/Ladybug.Feed-1.html#Ladybug_Feed_1__ctor_List__0__System_Int32_System_Int32_
-  commentId: M:Ladybug.Feed`1.#ctor(List{`0},System.Int32,System.Int32)
+  href: api/Ladybug.Feed-1.html#Ladybug_Feed_1__ctor_System_Collections_Generic_List__0__System_Int32_System_Int32_
+  commentId: M:Ladybug.Feed`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)
   name.vb: Feed(List(Of T), Int32, Int32)
-  fullName: Ladybug.Feed<T>.Feed(List<T>, System.Int32, System.Int32)
-  fullName.vb: Ladybug.Feed(Of T).Feed(List(Of T), System.Int32, System.Int32)
+  fullName: Ladybug.Feed<T>.Feed(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  fullName.vb: Ladybug.Feed(Of T).Feed(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
   nameWithType: Feed<T>.Feed(List<T>, Int32, Int32)
   nameWithType.vb: Feed(Of T).Feed(List(Of T), Int32, Int32)
 - uid: Ladybug.Feed`1.#ctor(System.Int32)
@@ -2171,11 +2171,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.FSM.State.Exit
   nameWithType: State.Exit
-- uid: Ladybug.FSM.State.OnEnter(Action)
+- uid: Ladybug.FSM.State.OnEnter(System.Action)
   name: OnEnter(Action)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnEnter_Action_
-  commentId: M:Ladybug.FSM.State.OnEnter(Action)
-  fullName: Ladybug.FSM.State.OnEnter(Action)
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnEnter_System_Action_
+  commentId: M:Ladybug.FSM.State.OnEnter(System.Action)
+  fullName: Ladybug.FSM.State.OnEnter(System.Action)
   nameWithType: State.OnEnter(Action)
 - uid: Ladybug.FSM.State.OnEnter*
   name: OnEnter
@@ -2184,11 +2184,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.FSM.State.OnEnter
   nameWithType: State.OnEnter
-- uid: Ladybug.FSM.State.OnExit(Action)
+- uid: Ladybug.FSM.State.OnExit(System.Action)
   name: OnExit(Action)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnExit_Action_
-  commentId: M:Ladybug.FSM.State.OnExit(Action)
-  fullName: Ladybug.FSM.State.OnExit(Action)
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnExit_System_Action_
+  commentId: M:Ladybug.FSM.State.OnExit(System.Action)
+  fullName: Ladybug.FSM.State.OnExit(System.Action)
   nameWithType: State.OnExit(Action)
 - uid: Ladybug.FSM.State.OnExit*
   name: OnExit
@@ -2197,13 +2197,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.FSM.State.OnExit
   nameWithType: State.OnExit
-- uid: Ladybug.FSM.State.OnUpdate(Action{GameTime})
+- uid: Ladybug.FSM.State.OnUpdate(System.Action{GameTime})
   name: OnUpdate(Action<GameTime>)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnUpdate_Action_GameTime__
-  commentId: M:Ladybug.FSM.State.OnUpdate(Action{GameTime})
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnUpdate_System_Action_GameTime__
+  commentId: M:Ladybug.FSM.State.OnUpdate(System.Action{GameTime})
   name.vb: OnUpdate(Action(Of GameTime))
-  fullName: Ladybug.FSM.State.OnUpdate(Action<GameTime>)
-  fullName.vb: Ladybug.FSM.State.OnUpdate(Action(Of GameTime))
+  fullName: Ladybug.FSM.State.OnUpdate(System.Action<GameTime>)
+  fullName.vb: Ladybug.FSM.State.OnUpdate(System.Action(Of GameTime))
   nameWithType: State.OnUpdate(Action<GameTime>)
   nameWithType.vb: State.OnUpdate(Action(Of GameTime))
 - uid: Ladybug.FSM.State.OnUpdate*
@@ -2535,13 +2535,13 @@ references:
   commentId: M:Ladybug.Graphics.ColorExtensions.ParseColor(System.String)
   fullName: Ladybug.Graphics.ColorExtensions.ParseColor(System.String)
   nameWithType: ColorExtensions.ParseColor(String)
-- uid: Ladybug.Graphics.ColorExtensions.ParseColor(System.String,Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.ColorExtensions.ParseColor(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
   name: ParseColor(String, Dictionary<String, String>)
-  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_ParseColor_System_String_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.ColorExtensions.ParseColor(System.String,Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_ParseColor_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.ColorExtensions.ParseColor(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: ParseColor(String, Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.ColorExtensions.ParseColor(System.String, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.ColorExtensions.ParseColor(System.String, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.ColorExtensions.ParseColor(System.String, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.ColorExtensions.ParseColor(System.String, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: ColorExtensions.ParseColor(String, Dictionary<String, String>)
   nameWithType.vb: ColorExtensions.ParseColor(String, Dictionary(Of String, String))
 - uid: Ladybug.Graphics.ColorExtensions.ParseColor*
@@ -2782,13 +2782,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.FormattedString.SetFont
   nameWithType: FormattedString.SetFont
-- uid: Ladybug.Graphics.FormattedString.SetPalette(Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name: SetPalette(Dictionary<String, String>)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetPalette_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.FormattedString.SetPalette(Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetPalette_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: SetPalette(Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.FormattedString.SetPalette(Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.FormattedString.SetPalette(Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: FormattedString.SetPalette(Dictionary<String, String>)
   nameWithType.vb: FormattedString.SetPalette(Dictionary(Of String, String))
 - uid: Ladybug.Graphics.FormattedString.SetPalette*
@@ -3016,13 +3016,13 @@ references:
   commentId: T:Ladybug.Graphics.TextSprite
   fullName: Ladybug.Graphics.TextSprite
   nameWithType: TextSprite
-- uid: Ladybug.Graphics.TextSprite.#ctor(List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
+- uid: Ladybug.Graphics.TextSprite.#ctor(System.Collections.Generic.List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
   name: TextSprite(List<FormattedString>, SpriteFont, Rectangle)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_List_Ladybug_Graphics_FormattedString__SpriteFont_Rectangle_
-  commentId: M:Ladybug.Graphics.TextSprite.#ctor(List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_System_Collections_Generic_List_Ladybug_Graphics_FormattedString__SpriteFont_Rectangle_
+  commentId: M:Ladybug.Graphics.TextSprite.#ctor(System.Collections.Generic.List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
   name.vb: TextSprite(List(Of FormattedString), SpriteFont, Rectangle)
-  fullName: Ladybug.Graphics.TextSprite.TextSprite(List<Ladybug.Graphics.FormattedString>, SpriteFont, Rectangle)
-  fullName.vb: Ladybug.Graphics.TextSprite.TextSprite(List(Of Ladybug.Graphics.FormattedString), SpriteFont, Rectangle)
+  fullName: Ladybug.Graphics.TextSprite.TextSprite(System.Collections.Generic.List<Ladybug.Graphics.FormattedString>, SpriteFont, Rectangle)
+  fullName.vb: Ladybug.Graphics.TextSprite.TextSprite(System.Collections.Generic.List(Of Ladybug.Graphics.FormattedString), SpriteFont, Rectangle)
   nameWithType: TextSprite.TextSprite(List<FormattedString>, SpriteFont, Rectangle)
   nameWithType.vb: TextSprite.TextSprite(List(Of FormattedString), SpriteFont, Rectangle)
 - uid: Ladybug.Graphics.TextSprite.#ctor(System.String,SpriteFont,Rectangle)
@@ -3194,13 +3194,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.SetFont
   nameWithType: TextSprite.SetFont
-- uid: Ladybug.Graphics.TextSprite.SetPalette(Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name: SetPalette(Dictionary<String, String>)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetPalette_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.TextSprite.SetPalette(Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetPalette_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: SetPalette(Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.TextSprite.SetPalette(Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.TextSprite.SetPalette(Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: TextSprite.SetPalette(Dictionary<String, String>)
   nameWithType.vb: TextSprite.SetPalette(Dictionary(Of String, String))
 - uid: Ladybug.Graphics.TextSprite.SetPalette*
@@ -3808,13 +3808,13 @@ references:
   fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(Ladybug.Pathfinding.IPathable())
   nameWithType: NodeMap.AddNodes(IPathable[])
   nameWithType.vb: NodeMap.AddNodes(IPathable())
-- uid: Ladybug.Pathfinding.NodeMap.AddNodes(List{Ladybug.Pathfinding.IPathable})
+- uid: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List{Ladybug.Pathfinding.IPathable})
   name: AddNodes(List<IPathable>)
-  href: api/Ladybug.Pathfinding.NodeMap.html#Ladybug_Pathfinding_NodeMap_AddNodes_List_Ladybug_Pathfinding_IPathable__
-  commentId: M:Ladybug.Pathfinding.NodeMap.AddNodes(List{Ladybug.Pathfinding.IPathable})
+  href: api/Ladybug.Pathfinding.NodeMap.html#Ladybug_Pathfinding_NodeMap_AddNodes_System_Collections_Generic_List_Ladybug_Pathfinding_IPathable__
+  commentId: M:Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List{Ladybug.Pathfinding.IPathable})
   name.vb: AddNodes(List(Of IPathable))
-  fullName: Ladybug.Pathfinding.NodeMap.AddNodes(List<Ladybug.Pathfinding.IPathable>)
-  fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(List(Of Ladybug.Pathfinding.IPathable))
+  fullName: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List<Ladybug.Pathfinding.IPathable>)
+  fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List(Of Ladybug.Pathfinding.IPathable))
   nameWithType: NodeMap.AddNodes(List<IPathable>)
   nameWithType.vb: NodeMap.AddNodes(List(Of IPathable))
 - uid: Ladybug.Pathfinding.NodeMap.AddNodes*
@@ -3875,13 +3875,13 @@ references:
   commentId: M:Ladybug.Pathfinding.NodePath.#ctor
   fullName: Ladybug.Pathfinding.NodePath.NodePath()
   nameWithType: NodePath.NodePath()
-- uid: Ladybug.Pathfinding.NodePath.#ctor(List{Ladybug.Pathfinding.Node})
+- uid: Ladybug.Pathfinding.NodePath.#ctor(System.Collections.Generic.List{Ladybug.Pathfinding.Node})
   name: NodePath(List<Node>)
-  href: api/Ladybug.Pathfinding.NodePath.html#Ladybug_Pathfinding_NodePath__ctor_List_Ladybug_Pathfinding_Node__
-  commentId: M:Ladybug.Pathfinding.NodePath.#ctor(List{Ladybug.Pathfinding.Node})
+  href: api/Ladybug.Pathfinding.NodePath.html#Ladybug_Pathfinding_NodePath__ctor_System_Collections_Generic_List_Ladybug_Pathfinding_Node__
+  commentId: M:Ladybug.Pathfinding.NodePath.#ctor(System.Collections.Generic.List{Ladybug.Pathfinding.Node})
   name.vb: NodePath(List(Of Node))
-  fullName: Ladybug.Pathfinding.NodePath.NodePath(List<Ladybug.Pathfinding.Node>)
-  fullName.vb: Ladybug.Pathfinding.NodePath.NodePath(List(Of Ladybug.Pathfinding.Node))
+  fullName: Ladybug.Pathfinding.NodePath.NodePath(System.Collections.Generic.List<Ladybug.Pathfinding.Node>)
+  fullName.vb: Ladybug.Pathfinding.NodePath.NodePath(System.Collections.Generic.List(Of Ladybug.Pathfinding.Node))
   nameWithType: NodePath.NodePath(List<Node>)
   nameWithType.vb: NodePath.NodePath(List(Of Node))
 - uid: Ladybug.Pathfinding.NodePath.#ctor*
@@ -4997,11 +4997,11 @@ references:
   fullName: Ladybug.StringExtensions
   nameWithType: StringExtensions
 - uid: Ladybug.StringExtensions.ToBool(System.String,System.Boolean)
-  name: ToBool(System.String, Boolean)
+  name: ToBool(String, Boolean)
   href: api/Ladybug.StringExtensions.html#Ladybug_StringExtensions_ToBool_System_String_System_Boolean_
   commentId: M:Ladybug.StringExtensions.ToBool(System.String,System.Boolean)
   fullName: Ladybug.StringExtensions.ToBool(System.String, System.Boolean)
-  nameWithType: StringExtensions.ToBool(System.String, Boolean)
+  nameWithType: StringExtensions.ToBool(String, Boolean)
 - uid: Ladybug.StringExtensions.ToBool*
   name: ToBool
   href: api/Ladybug.StringExtensions.html#Ladybug_StringExtensions_ToBool_
@@ -5028,11 +5028,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.ThreadManager.ExecuteActions
   nameWithType: ThreadManager.ExecuteActions
-- uid: Ladybug.ThreadManager.QueueAction(Action)
+- uid: Ladybug.ThreadManager.QueueAction(System.Action)
   name: QueueAction(Action)
-  href: api/Ladybug.ThreadManager.html#Ladybug_ThreadManager_QueueAction_Action_
-  commentId: M:Ladybug.ThreadManager.QueueAction(Action)
-  fullName: Ladybug.ThreadManager.QueueAction(Action)
+  href: api/Ladybug.ThreadManager.html#Ladybug_ThreadManager_QueueAction_System_Action_
+  commentId: M:Ladybug.ThreadManager.QueueAction(System.Action)
+  fullName: Ladybug.ThreadManager.QueueAction(System.Action)
   nameWithType: ThreadManager.QueueAction(Action)
 - uid: Ladybug.ThreadManager.QueueAction*
   name: QueueAction
@@ -5169,13 +5169,13 @@ references:
   commentId: T:Ladybug.TileMap.MapObject
   fullName: Ladybug.TileMap.MapObject
   nameWithType: MapObject
-- uid: Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+- uid: Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name: MapObject(String, String, Rectangle, Dictionary<String, String>)
-  href: api/Ladybug.TileMap.MapObject.html#Ladybug_TileMap_MapObject__ctor_System_String_System_String_Rectangle_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+  href: api/Ladybug.TileMap.MapObject.html#Ladybug_TileMap_MapObject__ctor_System_String_System_String_Rectangle_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: MapObject(String, String, Rectangle, Dictionary(Of String, String))
-  fullName: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: MapObject.MapObject(String, String, Rectangle, Dictionary<String, String>)
   nameWithType.vb: MapObject.MapObject(String, String, Rectangle, Dictionary(Of String, String))
 - uid: Ladybug.TileMap.MapObject.#ctor*
@@ -5333,13 +5333,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.TileMap
   nameWithType: TileMap.TileMap
-- uid: Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+- uid: Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name: BuildMapObject(String, String, Rectangle, Dictionary<String, String>)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_BuildMapObject_System_String_System_String_Rectangle_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_BuildMapObject_System_String_System_String_Rectangle_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: BuildMapObject(String, String, Rectangle, Dictionary(Of String, String))
-  fullName: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: TileMap.BuildMapObject(String, String, Rectangle, Dictionary<String, String>)
   nameWithType.vb: TileMap.BuildMapObject(String, String, Rectangle, Dictionary(Of String, String))
 - uid: Ladybug.TileMap.TileMap.BuildMapObject*
@@ -5507,11 +5507,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.Orientation
   nameWithType: TileMap.Orientation
-- uid: Ladybug.TileMap.TileMap.ReadXml(XmlReader)
+- uid: Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
   name: ReadXml(XmlReader)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_ReadXml_XmlReader_
-  commentId: M:Ladybug.TileMap.TileMap.ReadXml(XmlReader)
-  fullName: Ladybug.TileMap.TileMap.ReadXml(XmlReader)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_ReadXml_System_Xml_XmlReader_
+  commentId: M:Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
+  fullName: Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
   nameWithType: TileMap.ReadXml(XmlReader)
 - uid: Ladybug.TileMap.TileMap.ReadXml*
   name: ReadXml
@@ -5577,11 +5577,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.Width
   nameWithType: TileMap.Width
-- uid: Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
+- uid: Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
   name: WriteXml(XmlWriter)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_WriteXml_XmlWriter_
-  commentId: M:Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
-  fullName: Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_WriteXml_System_Xml_XmlWriter_
+  commentId: M:Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
+  fullName: Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
   nameWithType: TileMap.WriteXml(XmlWriter)
 - uid: Ladybug.TileMap.TileMap.WriteXml*
   name: WriteXml
@@ -5651,11 +5651,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.Item
   nameWithType: TileSet.Item
-- uid: Ladybug.TileMap.TileSet.ReadXml(XmlReader)
+- uid: Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
   name: ReadXml(XmlReader)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_ReadXml_XmlReader_
-  commentId: M:Ladybug.TileMap.TileSet.ReadXml(XmlReader)
-  fullName: Ladybug.TileMap.TileSet.ReadXml(XmlReader)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_ReadXml_System_Xml_XmlReader_
+  commentId: M:Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
+  fullName: Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
   nameWithType: TileSet.ReadXml(XmlReader)
 - uid: Ladybug.TileMap.TileSet.ReadXml*
   name: ReadXml
@@ -5716,11 +5716,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.TileWidth
   nameWithType: TileSet.TileWidth
-- uid: Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
+- uid: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
   name: WriteXml(XmlWriter)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_XmlWriter_
-  commentId: M:Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
-  fullName: Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_System_Xml_XmlWriter_
+  commentId: M:Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
+  fullName: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
   nameWithType: TileSet.WriteXml(XmlWriter)
 - uid: Ladybug.TileMap.TileSet.WriteXml*
   name: WriteXml
@@ -5815,11 +5815,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.Label
   nameWithType: Button.Label
-- uid: Ladybug.UI.Button.OnClick(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnClick(System.Object,System.EventArgs)
   name: OnClick(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClick_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnClick(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnClick(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClick_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnClick(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnClick(System.Object, System.EventArgs)
   nameWithType: Button.OnClick(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnClick*
   name: OnClick
@@ -5828,11 +5828,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.OnClick
   nameWithType: Button.OnClick
-- uid: Ladybug.UI.Button.OnClickOut(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnClickOut(System.Object,System.EventArgs)
   name: OnClickOut(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClickOut_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnClickOut(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnClickOut(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClickOut_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnClickOut(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnClickOut(System.Object, System.EventArgs)
   nameWithType: Button.OnClickOut(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnClickOut*
   name: OnClickOut
@@ -5841,11 +5841,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.OnClickOut
   nameWithType: Button.OnClickOut
-- uid: Ladybug.UI.Button.OnPositionChanged(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnPositionChanged(System.Object,System.EventArgs)
   name: OnPositionChanged(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnPositionChanged_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnPositionChanged(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnPositionChanged(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnPositionChanged_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnPositionChanged(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnPositionChanged(System.Object, System.EventArgs)
   nameWithType: Button.OnPositionChanged(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnPositionChanged*
   name: OnPositionChanged
@@ -6862,11 +6862,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.MaxCharacters
   nameWithType: TextBox.MaxCharacters
-- uid: Ladybug.UI.TextBox.OnClick(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnClick(System.Object,System.EventArgs)
   name: OnClick(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClick_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnClick(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnClick(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClick_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnClick(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnClick(System.Object, System.EventArgs)
   nameWithType: TextBox.OnClick(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnClick*
   name: OnClick
@@ -6875,11 +6875,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnClick
   nameWithType: TextBox.OnClick
-- uid: Ladybug.UI.TextBox.OnClickOut(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnClickOut(System.Object,System.EventArgs)
   name: OnClickOut(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClickOut_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnClickOut(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnClickOut(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClickOut_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnClickOut(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnClickOut(System.Object, System.EventArgs)
   nameWithType: TextBox.OnClickOut(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnClickOut*
   name: OnClickOut
@@ -6888,11 +6888,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnClickOut
   nameWithType: TextBox.OnClickOut
-- uid: Ladybug.UI.TextBox.OnFocus(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnFocus(System.Object,System.EventArgs)
   name: OnFocus(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnFocus_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnFocus(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnFocus(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnFocus_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnFocus(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnFocus(System.Object, System.EventArgs)
   nameWithType: TextBox.OnFocus(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnFocus*
   name: OnFocus
@@ -6901,11 +6901,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnFocus
   nameWithType: TextBox.OnFocus
-- uid: Ladybug.UI.TextBox.OnUnFocus(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnUnFocus(System.Object,System.EventArgs)
   name: OnUnFocus(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnUnFocus_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnUnFocus(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnUnFocus(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnUnFocus_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnUnFocus(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnUnFocus(System.Object, System.EventArgs)
   nameWithType: TextBox.OnUnFocus(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnUnFocus*
   name: OnUnFocus
