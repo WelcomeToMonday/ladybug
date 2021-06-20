@@ -1,22 +1,20 @@
 # Installation and Setup
-In this section, we'll be showing you where to get the Ladybug libraries and how to include them in your project files in VSCode.
+In this section, we'll be showing you where to get the Ladybug libraries and how to include them in your project.
 
 ## Prerequisites
 
-To get started, you'll need to install MonoGame and its dependencies. This guide is also assuming you will be using Visual Studio Code as your IDE -- steps will vary with any other IDE.
+To get started, you'll need to install MonoGame and its dependencies.
 
-* [.NET Core Runtime and SDK](https://dotnet.microsoft.com/download)
+* [.NET Core SDK](https://dotnet.microsoft.com/download)
 * [Mono Runtime](https://www.mono-project.com/download/stable/)
 * [MonoGame](http://monogame.net/downloads)
-* [One or more Ladybug Modules, or Ladybug Core](/ladybug)
-* [Visual Studio Code](https://code.visualstudio.com)
 
 ## Setting up the Project
-Once you have MonoGame and its dependencies installed and have chosen one or more Ladybug libraries, you're ready to set up your project. A sample project is also available for download [here](/ladybug/files/ladybug-sample.zip), free for you to use directly or as a reference -- either way, feel free to modify it to suit your needs.
+Once you have MonoGame and its dependencies installed, you are ready to begin setting up your project.
 
 ### Project Structure
 
-MonoGame projects can be set up in various ways, but we will proceed to show you the way Welcome to Monday sets up their game projects. The resulting project structure is typically as follows:
+MonoGame projects can be set up in various ways, but we will proceed to show you the way we set up our game projects. The resulting project structure is typically as follows:
 ```
 game_name/
 | - core/
@@ -26,13 +24,10 @@ game_name/
 ```
 
 * The `core` folder contains the Shared Project which contins the bulk of the game logic. A Shared Project contains code and resource files, but no instruction on how to build these files into an executable. It is used to house all *platform-independent* code in a central location.
-* The `lib` folder is used to house any extra libraries used by the project. We keep our Ladybug libraries in this folder.
-    * It is also possible to keep a single installation of Ladybug somewhere else on your computer and to reference it from there, but we like to include it directly in the game files so that the game will always have access to the exact copy (and version) of Ladybug it was built with.
-* The `ref` folder is used to house asset source files for the game, including audio projects, psd files, and other "editor-friendly" files that can't be directly consumed by the game. We like this approach because we can keep the files together with the game in the same folder, so it makes version control via git much easier.
+* The `lib` folder is used to house any extra libraries used by the project. For example, we keep our Ladybug Pipeline extension library in this folder.
+* The `ref` folder is used to house asset source files for the game, including audio projects, psd files, and other "editor-friendly" files that can't be directly consumed by the game. We like this approach because we can keep the files together with the game in the same folder, so it makes source/version control much easier.
 * The `xplatform` folder houses a MonoGame project with the cross-platform desktop build target (Desktop using OpenGL). This project has a reference to the Shared Project in `core`, plus instructions on how to build an executable for the DesktopGL target.
 * If other platforms aside from DesktopGL are being targeted, there will be an additional folder for each, e.g. `android`, `uwp`, `ios`, et al. These projects would all reference the `core` shared project, plus include any code specific to their targeted platforms.
-
-A sample project with this folder format is available for download [here](/ladybug/files/ladybug-sample.zip), but the following steps will illustrate how to build this yourself.
 
 ### Creating the Structure
 
@@ -62,11 +57,24 @@ dotnet new mgsharedproj -n core
 dotnet new mgdesktopgl -n xplatform
 ```
 
-Once you have the Shared Project and your platform target folder(s), you can create the `lib` folder and put your chosen Ladybug libraries into it. Other folders can of course be created to suit your needs, but this guide will only assume that you have a Shared Project folder, at least one Platform Target Project folder, and a library folder.
+Once you have the Shared Project and your platform target folder(s), you can create the `lib` folder and populate it with any external library files you'll need. Other folders can of course be created to suit your needs, but this guide will only assume that you have a Shared Project folder, at least one Platform Target Project folder, and a library folder.
+
+### Bringing In Ladybug
+Now that you have your `xplatform` Platform Target Project, we can add Ladybug to its references. There are two ways to do this.
+
+#### Importing the NuGet Package
+The easiest way to include Ladybug is to add it through a package. This can be done from the command line as follows:
+```bash
+dotnet add package WelcomeToMonday.Ladybug
+```
+This will add a `<PackageReference>` item to `xplatform.csproj` for Ladybug, which will include it when building your project automatically.
+
+#### Using a local Ladybug library file
+Just like with the `ladybug-pipeline.dll` file, ladybug can be included explicitly as a dll file if you've built Ladybug from source yourself.
 
 ### Hooking it all Together
 
-At this point you should have a Shared Project (we'll use `core` to refer to this), one or more Platform Target Projects (we'll use `xplatform` as our example), and at least one Ladybug library you'd like to use available in your library folder (we'll use Ladybug Core -- `ladybug.dll` as our example). While all of these are present in your project, they don't have any instructions on how to all work together to create a game.
+At this point you should have a Shared Project (we'll use `core` to refer to this), one or more Platform Target Projects (we'll use `xplatform` as our example), and we'll assume for sample purposes that you'll be including `ladybug-pipeline.dll` in your library folder. While all of these are present in your project, they don't have any instructions on how to all work together to create a game.
 
 #### Exporting the Shared Project Files
 
@@ -100,10 +108,10 @@ You will have to repeat this step for each Platform Target Project you have.
 
 #### Referencing Ladybug in the Platform Target Project
 
-While we're working on the `.csproj` file, we can also add the reference to the Ladybug library. Find the `<ItemGroup>` section with the `<PackageReference>` elements referencing MonoGame (if you can't find this, feel free to create a new ItemGroup section by creating a new set of `<ItemGroup> </ItemGroup>` tags), and add a new line: `<Reference Include="..\lib\ladybug.dll">`. If you're using multiple Ladybug modules, add one of these lines for each .dll file you have in `lib`.
+While we're working on the `.csproj` file, we can also add the reference to the Ladybug Pipeline extension library. Find the `<ItemGroup>` section with the `<PackageReference>` elements referencing MonoGame (if you can't find this, feel free to create a new ItemGroup section by creating a new set of `<ItemGroup> </ItemGroup>` tags), and add a new line: `<Reference Include="..\lib\ladybug-pipeline.dll">`. If you're using multiple external libraries, add one of these lines for each .dll file you have in `lib`.
 
 You will have to repeat this step for each Platform Target Project you have.
 
 ### Wrapping Up
 
-With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/ladybug/articles/scene_management.html), we'll go over setting up game scenes using Ladybug's Scene Management Module!
+With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/ladybug/articles/scene_management.html), we'll go over setting up your first Ladybug Scene!

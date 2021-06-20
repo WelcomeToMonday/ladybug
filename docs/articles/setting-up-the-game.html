@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting Up the Game </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting Up the Game ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../images/icon48.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="setting-up-the-game">Setting Up the Game</h1>
+
+<p>In this section, we'll be going over Ladybug's <code>Game</code> and <code>Scene</code> classes, and how you will use them to get your game up and running.</p>
+<h2 id="ladybugs-game-class">Ladybug's Game Class</h2>
+<p>Ladybug is built upon Monogame/XNA, and at its most basic level runs on the same underlying <code>Game</code> class.</p>
+<p>Where Ladybug's <code>Game</code> class differs is with the concept of <code>Scenes</code> -- independent game loops that can run concurrently with one another.</p>
+<h2 id="what-is-a-scene">What is a Scene?</h2>
+<p>A Scene is an independent game loop that handles frame-by-frame updates to logic and drawing. In essence, it is a logical re-implmentation of MonoGame/XNA's <code>Game</code> class that provides extra functionality and support for running multiple game loops concurrently.</p>
+<p>Having multiple active scenes allows you to have simpler, more focused Update and Draw loops, each concerned with one self-contained part of the game.</p>
+<p>Furthermore, scenes can be paused, resumed, and switched between on the fly. They can share common resources, and transfer state through the root <code>Game</code> object which maintains them.</p>
+<p>Check out the API Documentation for <a href="/ladybug/api/Ladybug.Scene.html">Scenes</a> and <a href="/ladybug/api/Ladybug.Game">Ladybug's Game class</a> for more information.</p>
+<h3 id="components-of-a-scene">Components of a Scene</h3>
+<p>A Scene has four main overridable Methods:</p>
+<ul>
+<li><code>LoadContent()</code>, where assets are loaded in for use in the Scene</li>
+<li><code>Initalize()</code>, where variables and properties are set to their initial values</li>
+<li><code>Update()</code>, in which game objects are updated every frame *</li>
+<li><code>Draw()</code>, in which all drawing logic is handled *</li>
+</ul>
+<p>* <em>It is technically possible to update game objects in <code>Draw()</code> and use drawing logic in <code>Update()</code>, but it is considered bad practice to do so.</em></p>
+<h3 id="loading-unloading-and-switching-scenes">Loading, Unloading, and Switching Scenes</h3>
+<p>You can load a Scene into a Game by calling <code>LoadScene()</code> and passing it a new Scene object. Once loaded, a Scene is immediately initialized and set to the <code>ACTIVE</code> state, where it will have its <code>Update()</code> and <code>Draw()</code> methods called every frame.</p>
+<p>Similarly, you can unload a Scene by calling <code>UnloadScene()</code> on the Game and passing it the Scene you wish to Unload. Once Unloaded, a Scene is effectively destroyed, and would have to be Loaded again to be reactivated.</p>
+<h3 id="managing-a-scenes-state">Managing a Scene's State</h3>
+<p>Scenes have a range of states they can be in at any one time (determined by the <code>Scene.State</code> enum)</p>
+<ul>
+<li><code>ACTIVE</code>: Both <code>Update()</code> and <code>Draw()</code> are called every frame.</li>
+<li><code>PAUSED</code>: <code>Draw()</code> is called every frame, but <code>Update()</code> is not.</li>
+<li><code>SUSPENDED</code>: Neither <code>Update()</code> nor <code>Draw()</code> is called.</li>
+</ul>
+<p>A scene's state can be changed through the <code>Game</code> via methods like <code>PauseScene()</code>. It can also be changed by directly altering the <code>Scene.State</code> variable from within the Scene, but this is generally not the recommended way to accomplish it.</p>
+<p>Scenes have overridable methods that are called when their state is changed through the <code>Game</code>, which assist with transitioning between scene states. For example, to make background music stop when your main scene is paused, you can stop the music in the <code>Pause()</code> method, and resume it in the <code>Unpause()</code> method.</p>
+<h3 id="making-a-scene">Making a Scene</h3>
+<p>To create a Scene, simply create a new <code>.cs</code> file containing a class derived from <code>Ladybug.Scene</code>. At bare minimum, you will want to override the <code>LoadContent()</code>, <code>Initialize()</code>, <code>Update()</code>, and <code>Draw()</code> methods. You will also have to define the Scene's constructor, though in most cases you will leave the constructor's body empty:</p>
+<pre><code class="lang-csharp">using Ladybug;
+
+public class MainScene : Scene
+{
+	public MainScene(Game game) : base(game)
+	{
+		// Leave empty, unless you need custom constructor logic (rare)
+	}
+
+	public override void LoadContent()
+	{
+		// Load your content here
+	}
+
+	public override void Initialize()
+	{
+		// Initialize your variables here
+	}
+
+	public override void Update(GameTime gameTime)
+	{
+		// Add game loop update logic here
+	}
+
+	public override void Draw(GameTime gameTime)
+	{
+		// Add drawing logic here
+	}
+}
+</code></pre>
+<p>If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project (usually in a Scene folder, but anywhere in the Shared Project could work), unless the scene contains platform-specific code. See <a href="/ladybug/articles/installation.html">Installation and Setup</a> for a project structure example.</p>
+<h3 id="using-the-game-class-to-manage-scenes">Using the Game class to Manage Scenes</h3>
+<p>In order for your Scenes to run, you will need to load them into a <code>Game</code> instance -- and in order to load them into a <code>Game</code> instance, you will need to instantiate one.
+A new <code>Game</code> instance is usually created in the <code>Program.cs</code> file (found in your Platform Target Project folder(s)), in the <code>Main</code> method. Instantiating a <code>Game</code>, loading a Scene into it, then calling <code>Run()</code> is usually the entry point into a Ladybug Scene-managed game.</p>
+<p>Here is a sample <code>Program.cs</code> file using Ladybug Scene Management:</p>
+<pre><code class="lang-csharp">using System;
+
+using Ladybug;
+
+public static class Program
+{
+	[STAThread]
+	static void Main()
+	{
+		using (var game = new Game())
+		{
+			game.LoadScene(new MainScene(game));
+			game.Run()
+		}
+	}
+}
+</code></pre>
+<p>You should now see your scene running -- assuming you've added assets and drawing logic to your scene!</p>
+<h3 id="wrapping-up">Wrapping Up</h3>
+<p>Now that you have a basic grasp of Ladybug Scene Management, you're ready to create some games!</p>
+<p>Here's where you can go from here:</p>
+<ul>
+<li>Check out <a href="#wrapping-up">our next article</a> (coming soon) for a quick tutorial on making a simple snake game from start to finish, using more of Ladybug's features.</li>
+<li>Look through the excellent MonoGame/XNA Tutorials on <a href="http://rbwhitaker.wikidot.com/monogame-tutorials">R.B. Whitaker's Wiki</a></li>
+<li>Take a look at the <a href="http://www.monogame.net/documentation/?page=main">MonoGame Documentation</a> for more tutorials.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/documentation/docs-src/articles/setting-up-the-game.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

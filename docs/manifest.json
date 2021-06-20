@@ -993,10 +993,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/installation.html",
-          "hash": "rPeaR1LPVxE2oGteMHBErpCUIPmUkVzt6CBOIjMi7O4="
+          "hash": "jXk5dyPgVu80H5uwrG3TpOLok+CjjY0B5dFs/1AuWFI="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1005,22 +1005,22 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "Gbry0WoMYGOZBQyKiNH2DFoMztTVw2lgrDO/lWd7BCY="
+          "hash": "N0lckBgOxCH+/12mwGrAq1NZTEItyZihhOXMr99bpEg="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/scene_management.md",
+      "source_relative_path": "articles/setting-up-the-game.md",
       "output": {
         ".html": {
-          "relative_path": "articles/scene_management.html",
-          "hash": "PEwNUJtpG0gyLslnaZPFbfEtDT0+2mqrMViyjlVchjo="
+          "relative_path": "articles/setting-up-the-game.html",
+          "hash": "kUzNXT+6azxJmknM/RrT8KO2vV8LkYjwPlHOq6pP4iY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1029,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "AWYHGekM1fkcZyiCMob3yK8cElXhcvYxyAtlk88ypiQ="
+          "hash": "7xBjWqaj3x98vmDcwh9+uBxjmwTsAJNk5/HOGXgmI2g="
         }
       },
       "is_incremental": false,

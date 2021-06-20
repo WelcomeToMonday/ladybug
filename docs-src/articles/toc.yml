@@ -4,5 +4,5 @@
   items:
   - name: "Installation and Setup"
     href: installation.md
-  - name: "Creating and Managing Scenes"
-    href: scene_management.md
+  - name: "Setting Up the Game"
+    href: setting-up-the-game.md
