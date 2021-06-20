@@ -14,7 +14,7 @@
   </PropertyGroup>
 	
 	<ItemGroup>
-		<None Include="Readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\Readme.md" Pack="true" PackagePath="\" />
 		<PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
   </ItemGroup>
 </Project>
