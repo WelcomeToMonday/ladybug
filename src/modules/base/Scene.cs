@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace Ladybug.Scene
+namespace Ladybug
 {
 	public enum SceneState
 	{
@@ -60,10 +60,10 @@ namespace Ladybug.Scene
 		private bool _firstUpdateComplete = false;
 		private bool _firstDrawComplete = false;
 
-		public Scene(SceneManager sceneManager) // Is there any way to make this not have to consume a sceneManager to work?
+		public Scene(Game game)
 		{
-			SceneManager = sceneManager;
-			Content = new ContentManager(sceneManager.Content.ServiceProvider);
+			Game = game;
+			Content = new ContentManager(Game.Content.ServiceProvider);
 			Content.RootDirectory = "Content";
 		}
 
@@ -77,9 +77,9 @@ namespace Ladybug.Scene
 		public ContentManager Content { get; private set; }
 
 		/// <summary>
-		/// Reference to the SceneManager that is handling this scene
+		/// Reference to the Game instance that is handling this scene
 		/// </summary>
-		public SceneManager SceneManager { get; protected set; }
+		public Game Game { get; protected set; }
 
 		public SceneState State { get; set; } = SceneState.ACTIVE;
 

@@ -3,7 +3,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Ladybug.Scene
+namespace Ladybug
 {
 	public class Camera
 	{

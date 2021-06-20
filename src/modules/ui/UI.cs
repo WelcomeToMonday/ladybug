@@ -4,9 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
+using Ladybug;
 using Ladybug.Input;
 using Ladybug.ECS;
-using Ladybug.Scene;
+
 
 public enum UIState 
 	{
@@ -46,7 +47,7 @@ namespace Ladybug.UI
 			RootPanel.SetBounds(config.Bounds);
 			RootPanel.SetFont(config.DefaultFont);
 			Inputs = config.Inputs;
-			SceneManager = config.SceneManager;
+			Game = config.Game;
 			Catalog = config.Catalog;
 
 			if (config.DefaultBackground != null)
@@ -71,7 +72,7 @@ namespace Ladybug.UI
 
 		public Control FocusedControl { get; private set; }
 
-		public SceneManager SceneManager { get; set; }
+		public Game Game { get; set; }
 
 		public Panel RootPanel
 		{

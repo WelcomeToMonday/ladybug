@@ -73,7 +73,7 @@ namespace Ladybug.UI
 
 		public virtual void OnFocus(object sender, EventArgs e)
 		{
-			UI.SceneManager.Window.TextInput += HandleTextInput;
+			UI.Game.Window.TextInput += HandleTextInput;
 		}
 
 		public virtual void OnClickOut(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace Ladybug.UI
 
 		public virtual void OnUnFocus(object sender, EventArgs e)
 		{
-			UI.SceneManager.Window.TextInput -= HandleTextInput;
+			UI.Game.Window.TextInput -= HandleTextInput;
 		}
 
 		public virtual void HandleTextInput(object sender, TextInputEventArgs e)

@@ -3,7 +3,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using Ladybug.Scene;
+using Ladybug;
 using Ladybug.ECS;
 
 namespace Ladybug.UI
@@ -17,15 +17,15 @@ namespace Ladybug.UI
 	}
 	public class UIConfig
 	{
-		public UIConfig(SceneManager sceneManager, SpriteFont defaultFont)
+		public UIConfig(Game game, SpriteFont defaultFont)
 		{
 			DefaultFont = defaultFont;
-			SceneManager = sceneManager;
+			Game = game;
 		}
 
 		public Input Inputs { get; set; } = Input.Mouse | Input.Keyboard;
 
-		public SceneManager SceneManager { get; set; }
+		public Game Game { get; set; }
 
 		public SpriteFont DefaultFont { get; set; }
 

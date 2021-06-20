@@ -1,17 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 
-namespace Ladybug.Scene
+namespace Ladybug
 {
-	/// <summary>
-	/// SceneManager extends MonoGame's Game class, adding tools for
-	/// switching between scenes, each containing their own separate
-	/// update and rendering logic.
-	/// </summary>
-	public class SceneManager : Game
+	public class Game : Microsoft.Xna.Framework.Game
 	{
 		/// <summary>
 		/// The list of Scenes being managed by this SceneManager
@@ -27,7 +24,7 @@ namespace Ladybug.Scene
 		/// </summary>
 		public GraphicsDeviceManager graphics;
 
-		public SceneManager() : base()
+		public Game() : base()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
