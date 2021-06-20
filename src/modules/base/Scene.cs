@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
+using Ladybug.ECS;
+
 namespace Ladybug
 {
 	public enum SceneState
@@ -19,7 +21,6 @@ namespace Ladybug
 	/// <summary>
 	/// A Scene represents a single game Update/Render loop.
 	/// </summary>
-
 	public class Scene
 	{
 
@@ -49,13 +50,10 @@ namespace Ladybug
 		/// </summary>
 		public event EventHandler Resumed;
 
-		protected SpriteBatch spriteBatch;
-
-		public bool InitializedAsync { get; private set; } = false;
-		public bool ContentLoadedAsync { get; private set; } = false;
-
-		public bool Initialized { get; private set; } = false;
-		public bool ContentLoaded { get; private set; } = false;
+		/// <summary>
+		/// The Scene's default SpriteBatch
+		/// </summary>
+		protected SpriteBatch SpriteBatch;
 
 		private bool _firstUpdateComplete = false;
 		private bool _firstDrawComplete = false;
@@ -65,7 +63,23 @@ namespace Ladybug
 			Game = game;
 			Content = new ContentManager(Game.Content.ServiceProvider);
 			Content.RootDirectory = "Content";
+			ResourceCatalog = new ResourceCatalog(Content);
+			SpriteBatch = new SpriteBatch(game.GraphicsDevice);
 		}
+
+		public bool InitializedAsync { get; private set; } = false;
+		public bool ContentLoadedAsync { get; private set; } = false;
+
+		public bool Initialized { get; private set; } = false;
+		public bool ContentLoaded { get; private set; } = false;
+
+		public EntitySystem EntitySystem {get; private set;}
+
+		/// <summary>
+		/// Scene-local ResourceCatalog
+		/// </summary>
+		/// <value></value>
+		public ResourceCatalog ResourceCatalog {get; private set;}
 
 		/// <summary>
 		/// Reference to the Scene's ContentManager
@@ -74,6 +88,10 @@ namespace Ladybug
 		/// individually loaded and unloaded along with the Scene
 		/// </summary>
 		/// <value></value>
+		/// <remarks>
+		/// This ContentManager is intended to be accessed primarily through the Scene's 
+		/// ResourceCatalog.
+		/// </remarks>
 		public ContentManager Content { get; private set; }
 
 		/// <summary>
@@ -116,6 +134,12 @@ namespace Ladybug
 				FirstUpdate();
 				_firstUpdateComplete = true;
 			}
+			if (EntitySystem != null)
+			{
+				EntitySystem.PreUpdate(gameTime);
+				EntitySystem.Update(gameTime);
+				EntitySystem.PostUpdate(gameTime);
+			}
 		}
 
 		public virtual void Draw(GameTime gameTime)
@@ -124,6 +148,10 @@ namespace Ladybug
 			{
 				FirstDraw();
 				_firstDrawComplete = true;
+			}
+			if (EntitySystem != null)
+			{
+				EntitySystem.Draw(gameTime, SpriteBatch);
 			}
 		}
 
@@ -145,37 +173,119 @@ namespace Ladybug
 
 		}
 
-		public virtual void Unload()
+		/// <summary>
+		/// Unloads the Scene
+		/// </summary>
+		public void Unload()
 		{
 			Unloaded?.Invoke(this, new EventArgs());
+			OnUnload();
 		}
 
-		public virtual void Pause()
+		/// <summary>
+		/// Called when the Scene has been unloaded
+		/// </summary>
+		public virtual void OnUnload() { }
+
+		/// <summary>
+		/// Pauses the Scene
+		/// </summary>
+		/// <remarks>
+		/// A paused Scene will not execute Update(),
+		/// but will still execute Draw()
+		/// </remarks>
+		public void Pause()
 		{
 			State = SceneState.PAUSED;
 			Paused?.Invoke(this, new EventArgs());
+			OnPause();
 			Stopped?.Invoke(this, new EventArgs());
+			OnStop();
 		}
 
-		public virtual void Unpause()
+		/// <summary>
+		/// Called when the Scene has been paused
+		/// </summary>
+		public virtual void OnPause() { }
+
+		/// <summary>
+		/// Unpauses the Scene
+		/// </summary>
+		/// <remarks>
+		/// Returns the Scene to ACTIVE state,
+		/// only if state was previously PAUSED
+		/// </remarks>
+		public void Unpause()
 		{
-			if (State == SceneState.PAUSED) State = SceneState.ACTIVE;
-			Unpaused?.Invoke(this, new EventArgs());
-			Resumed?.Invoke(this, new EventArgs());
+			if (State == SceneState.PAUSED) 
+			{
+				State = SceneState.ACTIVE;
+				Unpaused?.Invoke(this, new EventArgs());
+				OnUnpause();
+				Resumed?.Invoke(this, new EventArgs());
+				OnResume();
+			}
 		}
 
-		public virtual void Suspend()
+		/// <summary>
+		/// Called when the Scene is Unpaused
+		/// </summary>
+		public virtual void OnUnpause() {}
+
+		/// <summary>
+		/// Suspends the Scene
+		/// </summary>
+		/// <remarks>
+		/// A suspended Scene will not execute
+		/// Update() or Draw()
+		/// </remarks>
+		public void Suspend()
 		{
 			State = SceneState.SUSPENDED;
 			Suspended?.Invoke(this, new EventArgs());
+			OnSuspend();
 			Stopped?.Invoke(this, new EventArgs());
+			OnStop();
 		}
 
-		public virtual void Unsuspend()
+		/// <summary>
+		/// Called when the Scene is suspended
+		/// </summary>
+		public virtual void OnSuspend() {}
+
+		/// <summary>
+		/// Unsuspends the Scene
+		/// </summary>
+		/// <remarks>
+		/// Returns the Scene to ACTIVE state,
+		/// only if state was previously SUSPENDED
+		/// </remarks>
+		public void Unsuspend()
 		{
-			if (State == SceneState.SUSPENDED) State = SceneState.ACTIVE;
-			Unsuspended?.Invoke(this, new EventArgs());
-			Resumed?.Invoke(this, new EventArgs());
+			if (State == SceneState.SUSPENDED) 
+			{
+				State = SceneState.ACTIVE;
+				Unsuspended?.Invoke(this, new EventArgs());
+				OnUnsuspend();
+				Resumed?.Invoke(this, new EventArgs());
+				OnResume();
+			}
 		}
+
+		/// <summary>
+		/// Called when the Scene is Unsuspended
+		/// </summary>
+		public virtual void OnUnsuspend() {}
+
+		/// <summary>
+		/// Called when the Scene is Paused or Suspended
+		/// </summary>
+		public virtual void OnStop() {}
+
+		/// <summary>
+		/// Called when the Scene is Unpaused or Unsuspended
+		/// </summary>
+		public virtual void OnResume() {}
+
 	}
 }

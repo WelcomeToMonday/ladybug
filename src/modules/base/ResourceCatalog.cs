@@ -1,54 +1,63 @@
 using System;
 using System.Collections.Generic;
 
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug
 {
 	public class ResourceCatalog
 	{
-		public Dictionary<Type, Dictionary<string, object>> Catalog { get; private set; } = new Dictionary<Type, Dictionary<string, object>>();
-
-		private ContentManager Content;
+		private Dictionary<Type, Dictionary<string, object>> _catalog = new Dictionary<Type, Dictionary<string, object>>();
 
 		public ResourceCatalog(ContentManager contentManager)
 		{
-			Content = contentManager;
+			ContentManager = contentManager;
 		}
 
-		public ContentManager ContentManager {get => Content;}
+		public ContentManager ContentManager { get; private set; }
 
+		/// <summary>
+		/// Checks to see if resource exists
+		/// </summary>
+		/// <param name="identifier">Name of resource</param>
+		/// <typeparam name="T">Type of resource</typeparam>
+		/// <returns>True if resource exists, False if resource not found.</returns>
 		public bool ResourceExists<T>(string identifier)
 		{
 			bool res = true;
-			
-			if (!Catalog.ContainsKey(typeof(T)))
+
+			if (!_catalog.ContainsKey(typeof(T)))
 			{
 				res = false;
 			}
 			else
 			{
-				res = Catalog[typeof(T)].ContainsKey(identifier);
+				res = _catalog[typeof(T)].ContainsKey(identifier);
 			}
 
 			return res;
 		}
 
+		/// <summary>
+		/// Loads a resource into the ResourceCatalog
+		/// </summary>
+		/// <param name="identifier">Name of new resource</param>
+		/// <param name="source">Path to resource</param>
+		/// <typeparam name="T">Type of resource</typeparam>
+		/// <returns>Resource loaded from given path</returns>
 		public T LoadResource<T>(string identifier, string source)
 		{
 			var res = default(T);
-			if (!Catalog.ContainsKey(typeof(T)))
+			if (!_catalog.ContainsKey(typeof(T)))
 			{
-				Catalog[typeof(T)] = new Dictionary<string, object>();
+				_catalog[typeof(T)] = new Dictionary<string, object>();
 			}
 
-			if (!Catalog[typeof(T)].ContainsKey(identifier))
+			if (!_catalog[typeof(T)].ContainsKey(identifier))
 			{
-				res = Content.Load<T>(source);
+				res = ContentManager.Load<T>(source);
 
-				Catalog[typeof(T)][identifier] = res as object;
+				_catalog[typeof(T)][identifier] = res as object;
 			}
 			else
 			{
@@ -58,13 +67,19 @@ namespace Ladybug
 			return res;
 		}
 
+		/// <summary>
+		/// Gets the given resource from the ResourceCatalog
+		/// </summary>
+		/// <param name="name">Name of resource</param>
+		/// <typeparam name="T">Type of resource</typeparam>
+		/// <returns>Requested resource</returns>
 		public T GetResource<T>(string name)
 		{
 			T res = default(T);
 
 			try
 			{
-				res = (T)Catalog[typeof(T)][name];
+				res = (T)_catalog[typeof(T)][name];
 			}
 			catch (KeyNotFoundException)
 			{
@@ -74,16 +89,43 @@ namespace Ladybug
 			return res;
 		}
 
-		public void SaveResource<T>(string identifier, T resource)
+		/// <summary>
+		/// Attempts to find the given resource in this ResourceCatalog
+		/// </summary>
+		/// <param name="name">Name of resource</param>
+		/// <param name="resource">Reference to resource, if found</param>
+		/// <typeparam name="T">Type of resource</typeparam>
+		/// <returns>True if resource is found, False otherwise</returns>
+		public bool TryGetResource<T>(string name, out T resource)
 		{
-			if (!Catalog.ContainsKey(typeof(T)))
+			var res = false;
+			resource = default(T);
+			
+			if (ResourceExists<T>(name))
 			{
-				Catalog[typeof(T)] = new Dictionary<string, object>();
+				resource = GetResource<T>(name);
+				res = true;
 			}
 
-			if (!Catalog[typeof(T)].ContainsKey(identifier))
+			return res;
+		}
+
+		/// <summary>
+		/// Saves an already loaded resource to the ResourceCatalog
+		/// </summary>
+		/// <param name="identifier">Name of resource</param>
+		/// <param name="resource">Resource to save</param>
+		/// <typeparam name="T">Type of resource</typeparam>
+		public void SaveResource<T>(string identifier, T resource)
+		{
+			if (!_catalog.ContainsKey(typeof(T)))
 			{
-				Catalog[typeof(T)][identifier] = resource;
+				_catalog[typeof(T)] = new Dictionary<string, object>();
+			}
+
+			if (!_catalog[typeof(T)].ContainsKey(identifier))
+			{
+				_catalog[typeof(T)][identifier] = resource;
 			}
 		}
 	}

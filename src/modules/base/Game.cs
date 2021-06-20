@@ -19,19 +19,25 @@ namespace Ladybug
 		/// </remarks>
 		protected List<Scene> SceneList = new List<Scene>();
 
+		public Game() : base()
+		{
+			GraphicsDeviceManager = new GraphicsDeviceManager(this);
+			Content.RootDirectory = "Content";
+			IsMouseVisible = true;
+			GraphicsDeviceManager.ApplyChanges();
+			ThreadManager = new ThreadManager();
+		}
+
+		/// <summary>
+		/// Game-global Resource Catalog
+		/// </summary>
+		/// <value></value>
+		public ResourceCatalog ResourceCatalog {get; private set;}
+
 		/// <summary>
 		/// The SceneManager's resident GraphicsDeviceManager, used by managed scenes for rendering.
 		/// </summary>
-		public GraphicsDeviceManager graphics;
-
-		public Game() : base()
-		{
-			graphics = new GraphicsDeviceManager(this);
-			Content.RootDirectory = "Content";
-			IsMouseVisible = true;
-			graphics.ApplyChanges(); //Sets the GraphicsDevice
-			ThreadManager = new ThreadManager();
-		}
+		public GraphicsDeviceManager GraphicsDeviceManager {get; private set;}
 
 		public ThreadManager ThreadManager { get; private set; }
 
@@ -39,7 +45,7 @@ namespace Ladybug
 		/// Loads a Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
 		/// adding the scene to the SceneManager via LoadScene
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to be loaded asynchronously</param>
 		/// <remarks>
 		/// Calls LoadScene, meaning the scene's LoadContent and LoadScene methods are called
 		/// after their async counterparts.
@@ -55,7 +61,7 @@ namespace Ladybug
 		/// <summary>
 		/// Loads a scene into the SceneManager, which will update the Scene every game loop.
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to be loaded</param>
 		public virtual void LoadScene(Scene scene)
 		{
 			SceneList.Add(scene);
@@ -67,7 +73,7 @@ namespace Ladybug
 		/// Removes a scene from the SceneManager, unloading its assets and removing it from the
 		/// scene execution loop.
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to be unloaded</param>
 		public virtual void UnloadScene(Scene scene)
 		{
 			if (SceneList.Contains(scene))
@@ -80,37 +86,34 @@ namespace Ladybug
 		/// <summary>
 		/// Pauses a Scene, skipping its <c>Update()</c>, but continuing to run its <c>Draw()</c>
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to pause</param>
 		public virtual void PauseScene(Scene scene)
 		{
 			scene.Pause();
-			//scene.State = SceneState.PAUSED;
 		}
 
 		/// <summary>
 		/// Unpauses a Scene, causing it to resume its <c>Update()</c>
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to unpause</param>
 		public virtual void UnpauseScene(Scene scene)
 		{
 			scene.Unpause();
-			//scene.State = SceneState.ACTIVE;
 		}
 
 		/// <summary>
 		/// Suspends a scene, causing both its <c>Update()</c> and <c>Draw()</c> to be skipped
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to suspend</param>
 		public virtual void SuspendScene(Scene scene)
 		{
 			scene.Suspend();
-			//scene.State = SceneState.SUSPENDED;
 		}
 
 		/// <summary>
 		/// Unsuspends a scene, resuming both its <c>Update()</c> and <c>Draw()</c>.
 		/// </summary>
-		/// <param name="scene"></param>
+		/// <param name="scene">Scene to unsuspend</param>
 		public virtual void UnsuspendScene(Scene scene)
 		{
 			scene.Unsuspend();
@@ -133,7 +136,7 @@ namespace Ladybug
 		/// <summary>
 		/// Updates all Scenes managed by this SceneManager which are neither Paused nor Suspended.
 		/// </summary>
-		/// <param name="gameTime"></param>
+		/// <param name="gameTime">Time passed since previous Update</param>
 		protected override void Update(GameTime gameTime)
 		{
 			ThreadManager.Update();
@@ -149,7 +152,7 @@ namespace Ladybug
 		/// <summary>
 		/// Renders all Scenes managed by this SceneManager which are not Suspended.
 		/// </summary>
-		/// <param name="gameTime"></param>
+		/// <param name="gameTime">Time passed since previous Draw</param>
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.Black);
