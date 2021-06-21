@@ -150,7 +150,7 @@ Although we can create a scene right within the `using` block in `Main()`, we'll
 public Scene CreateMainScene(Game game)
 {
 	var mainScene = new Scene(game)
-		.OnUpdate(() =>
+		.OnUpdate((GameTime gameTime) =>
 		{
 			Console.WriteLine("Hello World");
 			game.Exit();

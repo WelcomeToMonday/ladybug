@@ -50,7 +50,7 @@ namespace Ladybug.Tests.Base
 		[Fact]
 		public void TestSceneLifecycle()
 		{
-			Assert.True(false, "Test not yet implemented");
+			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
 		}
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace Ladybug.Tests.Base
 		[Fact]
 		public void TestInitializeAsync()
 		{
-			Assert.True(false, "Test not yet implemented");
+			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
 		}
 
 		/// <summary>
@@ -68,7 +68,7 @@ namespace Ladybug.Tests.Base
 		[Fact]
 		public void TestLoadContentAsync()
 		{
-			Assert.True(false, "Test not yet implemented");
+			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
 		}
 	}
 }
