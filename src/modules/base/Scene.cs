@@ -76,7 +76,11 @@ namespace Ladybug
 		private Action _onStop = () => { };
 		private Action _onResume = () => { };
 
-		public Scene(Game game)
+		public Scene(Game game) => SetGame(game);
+
+		public Scene() { }
+
+		public void SetGame(Game game)
 		{
 			Game = game;
 			Content = new ContentManager(Game.Content.ServiceProvider);

@@ -11,7 +11,7 @@ namespace Ladybug
 	public class Game : Microsoft.Xna.Framework.Game
 	{
 		/// <summary>
-		/// The list of Scenes being managed by this SceneManager
+		/// The list of Scenes being managed by this Game instance
 		/// </summary>
 		/// <typeparam name="Scene"></typeparam>
 		/// <remarks>
@@ -32,18 +32,30 @@ namespace Ladybug
 		/// Game-global Resource Catalog
 		/// </summary>
 		/// <value></value>
-		public ResourceCatalog ResourceCatalog {get; private set;}
+		public ResourceCatalog ResourceCatalog { get; private set; }
 
 		/// <summary>
-		/// The SceneManager's resident GraphicsDeviceManager, used by managed scenes for rendering.
+		/// The Game instance's resident GraphicsDeviceManager, used by managed scenes for rendering.
 		/// </summary>
-		public GraphicsDeviceManager GraphicsDeviceManager {get; private set;}
+		public GraphicsDeviceManager GraphicsDeviceManager { get; private set; }
 
 		public ThreadManager ThreadManager { get; private set; }
 
 		/// <summary>
+		/// Creates and Loads a new Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
+		/// adding the scene to the Game instance via LoadScene
+		/// </summary>
+		/// <typeparam name="T">Type of Scene to create</typeparam>
+		public async void LoadSceneAsync<T>() where T : Scene, new()
+		{
+			var scene = new T();
+			scene.SetGame(this);
+			await Task.Run(() => LoadSceneAsync(scene));
+		}
+
+		/// <summary>
 		/// Loads a Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
-		/// adding the scene to the SceneManager via LoadScene
+		/// adding the scene to the Game instance via LoadScene
 		/// </summary>
 		/// <param name="scene">Scene to be loaded asynchronously</param>
 		/// <remarks>
@@ -52,24 +64,45 @@ namespace Ladybug
 		/// </remarks>
 		public async void LoadSceneAsync(Scene scene)
 		{
+			if (scene.Game == null)
+			{
+				scene.SetGame(this);
+			}
+			
 			if (!scene.ContentLoadedAsync) await Task.Run(() => scene._LoadContentAsync());
 			if (!scene.InitializedAsync) await Task.Run(() => scene._InitializeAsync());
 			ThreadManager.QueueAction(() => LoadScene(scene));
 		}
 
 		/// <summary>
-		/// Loads a scene into the SceneManager, which will update the Scene every game loop.
+		/// Creates and Loads a new Scene into the Game instance
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		public void LoadScene<T>() where T : Scene, new()
+		{
+			var scene = new T();
+			scene.SetGame(this);
+			LoadScene(scene);
+		}
+
+		/// <summary>
+		/// Loads a scene into the Game instance
 		/// </summary>
 		/// <param name="scene">Scene to be loaded</param>
 		public void LoadScene(Scene scene)
 		{
+			if (scene.Game == null)
+			{
+				scene.SetGame(this);
+			}
+
 			SceneList.Add(scene);
 			if (!scene.ContentLoaded) scene._LoadContent();
 			if (!scene.Initialized) scene._Initialize();
 		}
 
 		/// <summary>
-		/// Removes a scene from the SceneManager, unloading its assets and removing it from the
+		/// Removes a scene from the Game instance, unloading its assets and removing it from the
 		/// scene execution loop.
 		/// </summary>
 		/// <param name="scene">Scene to be unloaded</param>
@@ -95,7 +128,7 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Updates all Scenes managed by this SceneManager which are neither Paused nor Suspended.
+		/// Updates all Scenes managed by this Game instance which are neither Paused nor Suspended.
 		/// </summary>
 		/// <param name="gameTime">Time passed since previous Update</param>
 		protected override void Update(GameTime gameTime)
@@ -111,7 +144,7 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Renders all Scenes managed by this SceneManager which are not Suspended.
+		/// Renders all Scenes managed by this Game instance which are not Suspended.
 		/// </summary>
 		/// <param name="gameTime">Time passed since previous Draw</param>
 		protected override void Draw(GameTime gameTime)
