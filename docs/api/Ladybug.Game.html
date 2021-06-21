@@ -367,7 +367,7 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_Draw_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.Game.Draw(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L156">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L117">View Source</a>
   </span>
   <a id="Ladybug_Game_Draw_" data-uid="Ladybug.Game.Draw*"></a>
   <h4 id="Ladybug_Game_Draw_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.Game.Draw(Microsoft.Xna.Framework.GameTime)">Draw(GameTime)</h4>
@@ -403,7 +403,7 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.Game.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L123">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L84">View Source</a>
   </span>
   <a id="Ladybug_Game_Initialize_" data-uid="Ladybug.Game.Initialize*"></a>
   <h4 id="Ladybug_Game_Initialize" data-uid="Ladybug.Game.Initialize">Initialize()</h4>
@@ -420,7 +420,7 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_LoadContent.md&amp;value=---%0Auid%3A%20Ladybug.Game.LoadContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L128">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L89">View Source</a>
   </span>
   <a id="Ladybug_Game_LoadContent_" data-uid="Ladybug.Game.LoadContent*"></a>
   <h4 id="Ladybug_Game_LoadContent" data-uid="Ladybug.Game.LoadContent">LoadContent()</h4>
@@ -437,7 +437,7 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_LoadScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.LoadScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L65">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L64">View Source</a>
   </span>
   <a id="Ladybug_Game_LoadScene_" data-uid="Ladybug.Game.LoadScene*"></a>
   <h4 id="Ladybug_Game_LoadScene_Ladybug_Scene_" data-uid="Ladybug.Game.LoadScene(Ladybug.Scene)">LoadScene(Scene)</h4>
@@ -446,7 +446,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void LoadScene(Scene scene)</code></pre>
+    <pre><code class="lang-csharp hljs">public void LoadScene(Scene scene)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -481,7 +481,7 @@ adding the scene to the SceneManager via LoadScene</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async void LoadSceneAsync(Scene scene)</code></pre>
+    <pre><code class="lang-csharp hljs">public async void LoadSceneAsync(Scene scene)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -507,181 +507,10 @@ after their async counterparts.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_PauseScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.PauseScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L90">View Source</a>
-  </span>
-  <a id="Ladybug_Game_PauseScene_" data-uid="Ladybug.Game.PauseScene*"></a>
-  <h4 id="Ladybug_Game_PauseScene_Ladybug_Scene_" data-uid="Ladybug.Game.PauseScene(Ladybug.Scene)">PauseScene(Scene)</h4>
-  <div class="markdown level1 summary"><p>Pauses a Scene, skipping its <code>Update()</code>, but continuing to run its <code>Draw()</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void PauseScene(Scene scene)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
-        <td><span class="parametername">scene</span></td>
-        <td><p>Scene to pause</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_SuspendScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.SuspendScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L108">View Source</a>
-  </span>
-  <a id="Ladybug_Game_SuspendScene_" data-uid="Ladybug.Game.SuspendScene*"></a>
-  <h4 id="Ladybug_Game_SuspendScene_Ladybug_Scene_" data-uid="Ladybug.Game.SuspendScene(Ladybug.Scene)">SuspendScene(Scene)</h4>
-  <div class="markdown level1 summary"><p>Suspends a scene, causing both its <code>Update()</code> and <code>Draw()</code> to be skipped</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void SuspendScene(Scene scene)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
-        <td><span class="parametername">scene</span></td>
-        <td><p>Scene to suspend</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_UnloadScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.UnloadScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L77">View Source</a>
-  </span>
-  <a id="Ladybug_Game_UnloadScene_" data-uid="Ladybug.Game.UnloadScene*"></a>
-  <h4 id="Ladybug_Game_UnloadScene_Ladybug_Scene_" data-uid="Ladybug.Game.UnloadScene(Ladybug.Scene)">UnloadScene(Scene)</h4>
-  <div class="markdown level1 summary"><p>Removes a scene from the SceneManager, unloading its assets and removing it from the
-scene execution loop.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void UnloadScene(Scene scene)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
-        <td><span class="parametername">scene</span></td>
-        <td><p>Scene to be unloaded</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_UnpauseScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.UnpauseScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L99">View Source</a>
-  </span>
-  <a id="Ladybug_Game_UnpauseScene_" data-uid="Ladybug.Game.UnpauseScene*"></a>
-  <h4 id="Ladybug_Game_UnpauseScene_Ladybug_Scene_" data-uid="Ladybug.Game.UnpauseScene(Ladybug.Scene)">UnpauseScene(Scene)</h4>
-  <div class="markdown level1 summary"><p>Unpauses a Scene, causing it to resume its <code>Update()</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void UnpauseScene(Scene scene)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
-        <td><span class="parametername">scene</span></td>
-        <td><p>Scene to unpause</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_UnsuspendScene_Ladybug_Scene_.md&amp;value=---%0Auid%3A%20Ladybug.Game.UnsuspendScene(Ladybug.Scene)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L117">View Source</a>
-  </span>
-  <a id="Ladybug_Game_UnsuspendScene_" data-uid="Ladybug.Game.UnsuspendScene*"></a>
-  <h4 id="Ladybug_Game_UnsuspendScene_Ladybug_Scene_" data-uid="Ladybug.Game.UnsuspendScene(Ladybug.Scene)">UnsuspendScene(Scene)</h4>
-  <div class="markdown level1 summary"><p>Unsuspends a scene, resuming both its <code>Update()</code> and <code>Draw()</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void UnsuspendScene(Scene scene)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
-        <td><span class="parametername">scene</span></td>
-        <td><p>Scene to unsuspend</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Game_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L140">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/base/Game.cs/#L101">View Source</a>
   </span>
   <a id="Ladybug_Game_Update_" data-uid="Ladybug.Game.Update*"></a>
   <h4 id="Ladybug_Game_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>

@@ -70,74 +70,16 @@
 <h1 id="setting-up-the-game">Setting Up the Game</h1>
 
 <p>In this section, we'll be going over Ladybug's <code>Game</code> and <code>Scene</code> classes, and how you will use them to get your game up and running.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<p>To follow this article, you will need to have created a new project that references both MonoGame and Ladybug.</p>
+<p>See the <a href="/articles/installation.html">previous article</a> for guidance.</p>
 <h2 id="ladybugs-game-class">Ladybug's Game Class</h2>
 <p>Ladybug is built upon Monogame/XNA, and at its most basic level runs on the same underlying <code>Game</code> class.</p>
-<p>Where Ladybug's <code>Game</code> class differs is with the concept of <code>Scenes</code> -- independent game loops that can run concurrently with one another.</p>
-<h2 id="what-is-a-scene">What is a Scene?</h2>
-<p>A Scene is an independent game loop that handles frame-by-frame updates to logic and drawing. In essence, it is a logical re-implmentation of MonoGame/XNA's <code>Game</code> class that provides extra functionality and support for running multiple game loops concurrently.</p>
-<p>Having multiple active scenes allows you to have simpler, more focused Update and Draw loops, each concerned with one self-contained part of the game.</p>
-<p>Furthermore, scenes can be paused, resumed, and switched between on the fly. They can share common resources, and transfer state through the root <code>Game</code> object which maintains them.</p>
-<p>Check out the API Documentation for <a href="/ladybug/api/Ladybug.Scene.html">Scenes</a> and <a href="/ladybug/api/Ladybug.Game">Ladybug's Game class</a> for more information.</p>
-<h3 id="components-of-a-scene">Components of a Scene</h3>
-<p>A Scene has four main overridable Methods:</p>
-<ul>
-<li><code>LoadContent()</code>, where assets are loaded in for use in the Scene</li>
-<li><code>Initalize()</code>, where variables and properties are set to their initial values</li>
-<li><code>Update()</code>, in which game objects are updated every frame *</li>
-<li><code>Draw()</code>, in which all drawing logic is handled *</li>
-</ul>
-<p>* <em>It is technically possible to update game objects in <code>Draw()</code> and use drawing logic in <code>Update()</code>, but it is considered bad practice to do so.</em></p>
-<h3 id="loading-unloading-and-switching-scenes">Loading, Unloading, and Switching Scenes</h3>
-<p>You can load a Scene into a Game by calling <code>LoadScene()</code> and passing it a new Scene object. Once loaded, a Scene is immediately initialized and set to the <code>ACTIVE</code> state, where it will have its <code>Update()</code> and <code>Draw()</code> methods called every frame.</p>
-<p>Similarly, you can unload a Scene by calling <code>UnloadScene()</code> on the Game and passing it the Scene you wish to Unload. Once Unloaded, a Scene is effectively destroyed, and would have to be Loaded again to be reactivated.</p>
-<h3 id="managing-a-scenes-state">Managing a Scene's State</h3>
-<p>Scenes have a range of states they can be in at any one time (determined by the <code>Scene.State</code> enum)</p>
-<ul>
-<li><code>ACTIVE</code>: Both <code>Update()</code> and <code>Draw()</code> are called every frame.</li>
-<li><code>PAUSED</code>: <code>Draw()</code> is called every frame, but <code>Update()</code> is not.</li>
-<li><code>SUSPENDED</code>: Neither <code>Update()</code> nor <code>Draw()</code> is called.</li>
-</ul>
-<p>A scene's state can be changed through the <code>Game</code> via methods like <code>PauseScene()</code>. It can also be changed by directly altering the <code>Scene.State</code> variable from within the Scene, but this is generally not the recommended way to accomplish it.</p>
-<p>Scenes have overridable methods that are called when their state is changed through the <code>Game</code>, which assist with transitioning between scene states. For example, to make background music stop when your main scene is paused, you can stop the music in the <code>Pause()</code> method, and resume it in the <code>Unpause()</code> method.</p>
-<h3 id="making-a-scene">Making a Scene</h3>
-<p>To create a Scene, simply create a new <code>.cs</code> file containing a class derived from <code>Ladybug.Scene</code>. At bare minimum, you will want to override the <code>LoadContent()</code>, <code>Initialize()</code>, <code>Update()</code>, and <code>Draw()</code> methods. You will also have to define the Scene's constructor, though in most cases you will leave the constructor's body empty:</p>
-<pre><code class="lang-csharp">using Ladybug;
-
-public class MainScene : Scene
-{
-	public MainScene(Game game) : base(game)
-	{
-		// Leave empty, unless you need custom constructor logic (rare)
-	}
-
-	public override void LoadContent()
-	{
-		// Load your content here
-	}
-
-	public override void Initialize()
-	{
-		// Initialize your variables here
-	}
-
-	public override void Update(GameTime gameTime)
-	{
-		// Add game loop update logic here
-	}
-
-	public override void Draw(GameTime gameTime)
-	{
-		// Add drawing logic here
-	}
-}
-</code></pre>
-<p>If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project (usually in a Scene folder, but anywhere in the Shared Project could work), unless the scene contains platform-specific code. See <a href="/ladybug/articles/installation.html">Installation and Setup</a> for a project structure example.</p>
-<h3 id="using-the-game-class-to-manage-scenes">Using the Game class to Manage Scenes</h3>
-<p>In order for your Scenes to run, you will need to load them into a <code>Game</code> instance -- and in order to load them into a <code>Game</code> instance, you will need to instantiate one.
-A new <code>Game</code> instance is usually created in the <code>Program.cs</code> file (found in your Platform Target Project folder(s)), in the <code>Main</code> method. Instantiating a <code>Game</code>, loading a Scene into it, then calling <code>Run()</code> is usually the entry point into a Ladybug Scene-managed game.</p>
-<p>Here is a sample <code>Program.cs</code> file using Ladybug Scene Management:</p>
+<p>Where Ladybug's <code>Game</code> class differs is with the concept of Scenes -- independent game loops that can manage their own resources and lifecycles, and can run concurrently with one another.</p>
+<h3 id="creating-a-new-game-instance">Creating a New Game Instance</h3>
+<p>To get started with Ladybug, the first thing you will need to create is a <code>Game</code> instance. The <code>Game</code> instance has many responsibilities, but its biggest job is handling Scenes, which hold the bulk of your game's logic and behavior.
+To create a <code>Game</code> instance, instantiate one in your program's <code>Main</code> method as follows:</p>
 <pre><code class="lang-csharp">using System;
-
 using Ladybug;
 
 public static class Program
@@ -147,18 +89,143 @@ public static class Program
 	{
 		using (var game = new Game())
 		{
-			game.LoadScene(new MainScene(game));
-			game.Run()
+			game.Run();
 		}
 	}
 }
 </code></pre>
-<p>You should now see your scene running -- assuming you've added assets and drawing logic to your scene!</p>
-<h3 id="wrapping-up">Wrapping Up</h3>
-<p>Now that you have a basic grasp of Ladybug Scene Management, you're ready to create some games!</p>
+<p>The above code will run as-is, but will produce only an empty window. To build a game that is playable, we'll need to begin creating Scenes.</p>
+<h2 id="what-is-a-scene">What is a Scene?</h2>
+<p>A <code>Scene</code> is an independent game loop that handles its own load/run/unload lifecycle, manages its own resources, and manages frame-by-frame updates to logic and drawing. In essence, it is a logical re-implmentation of MonoGame/XNA's <code>Game</code> class that provides extra functionality.</p>
+<p>Having multiple active Scenes allows you to have simpler, more focused Update and Draw loops and more well-defined resource ownership, allowing each Scene to only be concerned with one self-contained part of the game.</p>
+<p>Furthermore, Scenes can be paused, resumed, and switched between on the fly. They can share common resources, and transfer state through the root <code>Game</code> object which maintains them.</p>
+<h3 id="components-of-a-scene">Components of a Scene</h3>
+<p>A <code>Scene</code> contains a wide array of methods that allow you to define its behavior throughout its lifecycle. The four primary methods that should be defined in every Scene are as follows:</p>
+<ul>
+<li><code>OnLoadContent()</code>, where assets are loaded in for use in the <code>Scene</code></li>
+<li><code>OnInitalize()</code>, where variables and properties are set to their initial values</li>
+<li><code>OnUpdate()</code>, in which game objects are updated every frame</li>
+<li><code>OnDraw()</code>, in which all drawing logic is handled</li>
+</ul>
+<p>Other methods exist that allow you to further define behavior at different points in the lifecycle, such as when the Scene's Active/Paused/Suspended state changes, and when it is unloaded and removed from the <code>Game</code> instance that is managing it.
+For a full reference of these methods, check out the <a href="/api/Ladybug.Scene.html">Ladybug.Scene documentation</a>.</p>
+<h3 id="loading-and-unloading-scenes">Loading and Unloading Scenes</h3>
+<p>You can load a <code>Scene</code> into a <code>Game</code> instance by calling its <code>LoadScene()</code> method and passing it a new <code>Scene</code> object. Once loaded, a Scene is immediately initialized and set to the <code>ACTIVE</code> state, where it will have its <code>OnUpdate()</code> and <code>OnDraw()</code> methods called every frame.</p>
+<p>To unload a <code>Scene</code>, you can call <code>Unload()</code> on the Scene instance. Once Unloaded, a <code>Scene</code> is effectively destroyed, and would have to be Loaded again to be reactivated.</p>
+<h3 id="managing-a-scenes-state">Managing a Scene's State</h3>
+<p>Scenes have a range of states they can be in at any one time (determined by the <code>Scene.State</code> enum)</p>
+<ul>
+<li><code>ACTIVE</code>: Both <code>OnUpdate()</code> and <code>OnDraw()</code> are called every frame.</li>
+<li><code>PAUSED</code>: <code>OnDraw()</code> is called every frame, but <code>OnUpdate()</code> is not.</li>
+<li><code>SUSPENDED</code>: Neither <code>OnUpdate()</code> nor <code>OnDraw()</code> is called.</li>
+</ul>
+<p>A Scene's state can be changed through the <code>Pause()</code>, <code>Unpause()</code>, <code>Suspend()</code>, and <code>Unsuspend()</code> methods.</p>
+<p>Further, a Scene's behavior upon changing state can be defined through the <code>Paused</code>, <code>Unpaused</code>, <code>Suspended</code>, <code>Unsuspended</code>, <code>Stopped</code>, and <code>Resumed</code> events, as well as through the <code>OnPause()</code>, <code>OnUnpause()</code>, <code>OnSuspend()</code>, <code>OnUnsuspend()</code>, <code>OnStop()</code>, and <code>OnResume()</code> methods.</p>
+<h3 id="making-a-scene">Making a Scene</h3>
+<p>To create a <code>Scene</code>, simply instantiate a <code>new Scene(Game)</code> object and use its <code>On*()</code> methods to define its behavior. This can be done anywhere in your project, but for sample purposes, we'll show you what this would look like if we were to create it right where we set up our <code>Game</code> instance.</p>
+<pre><code class="lang-csharp">// Instantiate a new Game instance, called game.
+using (var game = new Game())
+{
+	// Instantiate a new Scene instance, called scene.
+	var scene = new Scene(game)
+		.OnLoadContent(() =&gt;
+		{
+			// Content resources are loaded here
+			// -or-
+			// define a LoadContent() method elsewhere
+			// and replace this with OnLoadContent(LoadContent)
+		})
+		.OnInitialize(() =&gt;
+		{
+			// Initialization logic here.
+			// -or-
+			// define an Initialize() method elsewhere
+			// and replace this with OnInitialize(Initialize)
+		})
+		.OnUpdate((GameTime gameTime) =&gt;
+		{
+			// Update logic here
+			// -or-
+			// define an Update(GameTime) method elsewhere
+			// and replace this with OnUpdate(Update)
+		})
+		.OnDraw((GameTime gameTime) =&gt;
+		{
+			// Draw logic here
+			// -or-
+			// define a Draw(GameTime) method elsewhere
+			// and replace this with OnDraw(Draw)
+		});
+
+	// Load the new Scene into the Game instance.
+	// At this point, scene.OnLoadContent() and scene.OnInitialize() are called.
+	game.LoadScene(scene);
+
+	// Begin game loop execution.
+	// At this point, scene.OnUpdate() and scene.OnDraw() are called
+	// every frame, as are the OnUpdate() and OnDraw() methods of any other
+	// Scenes loaded into this Game instance.
+	game.Run();
+}
+
+</code></pre>
+<p><em>If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project, unless the scene contains platform-specific code. See <a href="/articles/installation.html">Installation and Setup</a> for a project structure example.</em></p>
+<h2 id="putting-it-all-together">Putting it All Together</h2>
+<p>Now that we've reviewed instantiating a new <code>Game</code> instance, creating a <code>Scene</code> instance, we'll walk through a quick example of using both together.</p>
+<p>We'll create a simple game that prints <code>Hello World</code> to the console and then closes itself.</p>
+<h3 id="a-review-the-main-method">A Review: The Main Method</h3>
+<p>The Main Method is the entry point to our game application, so we will need to instantiate the <code>Game</code> class there and load in the initial <code>Scene</code>, which we will define in the next step.</p>
+<pre><code class="lang-csharp">static void Main()
+{
+	using (var game = new Game())
+	{
+		// todo: load scene once we've created it
+		// game.LoadScene(mainScene)
+		
+		game.Run();
+	}
+}
+</code></pre>
+<p>As mentioned before, this code will run but won't produce anything interesting.</p>
+<h3 id="creating-the-main-scene">Creating the Main Scene</h3>
+<p>Although we can create a scene right within the <code>using</code> block in <code>Main()</code>, we'll explore creating the <code>Scene</code> in a new method in the <code>Program</code> class for this example. We'll call this method <code>CreateMainScene()</code>.</p>
+<pre><code class="lang-csharp">public Scene CreateMainScene(Game game)
+{
+	var mainScene = new Scene(game)
+		.OnUpdate(() =&gt;
+		{
+			Console.WriteLine(&quot;Hello World&quot;);
+			game.Exit();
+		});
+	return mainScene;
+}
+</code></pre>
+<h3 id="loading-the-main-scene">Loading the Main Scene</h3>
+<p>Now that we've created the method that will be defining our Scene's behavior, we can load it into the <code>Game</code> instance.</p>
+<pre><code class="lang-csharp">static void Main()
+{
+	// Creates the new Game instance
+	using (var game = new Game())
+	{
+		// Creates the new Scene instance
+		var mainScene = CreateMainScene(game);
+		
+		// Loads the Scene instance into the Game instance
+		// OnLoadContent() and OnInitialize() are called here
+		game.LoadScene(mainScene)
+
+		// Begins the main game loop
+		// OnUpdate() and OnDraw() are called here every frame
+		game.Run();
+	}
+}
+</code></pre>
+<p>Running the code should now produce a single <code>Hello World</code> in the output console. With that, you've successfully created a (very) basic game application in Ladybug!</p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>Now that you have a basic grasp of Ladybug's <code>Game</code> and <code>Scene</code> classes, you're ready to create some games!</p>
 <p>Here's where you can go from here:</p>
 <ul>
-<li>Check out <a href="#wrapping-up">our next article</a> (coming soon) for a quick tutorial on making a simple snake game from start to finish, using more of Ladybug's features.</li>
+<li>Stay tuned for more articles including simple game tutorials. We'll update this article when the introductory-level tutorial is available!</li>
 <li>Look through the excellent MonoGame/XNA Tutorials on <a href="http://rbwhitaker.wikidot.com/monogame-tutorials">R.B. Whitaker's Wiki</a></li>
 <li>Take a look at the <a href="http://www.monogame.net/documentation/?page=main">MonoGame Documentation</a> for more tutorials.</li>
 </ul>

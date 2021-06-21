@@ -8,10 +8,16 @@ using Xunit;
 using Ladybug;
 using Microsoft.Xna.Framework;
 
-namespace Ladybug.Test
+namespace Ladybug.Tests.Base
 {
 	public class GameSceneTests
 	{
+		/// <summary>
+		/// Asserts that a Game and Scene can be instantiated successfully,
+		/// A Game can load a Scene,
+		/// and that a Scene's basic Initialization, Content Loading,
+		/// Updating, and Drawing are called by the Game instance.
+		/// </summary>
 		[Fact]
 		public void CreateGameAndAddScene()
 		{
@@ -36,6 +42,33 @@ namespace Ladybug.Test
 			Assert.True(testLoad == 1, $"Scene Initialization failed (Expected 1, got {testLoad})");
 			Assert.True(testUpdate == 1, $"Scene Initialization failed (Expected 1, got {testUpdate})");
 			Assert.True(testDraw == 1, $"Scene Initialization failed (Expected 1, got {testDraw})");
+		}
+
+		/// <summary>
+		/// Asserts that a Scene traverses through all lifecycle methods and events
+		/// </summary>
+		[Fact]
+		public void TestSceneLifecycle()
+		{
+			Assert.True(false, "Test not yet implemented");
+		}
+
+		/// <summary>
+		/// Asserts that a Scene can be initialized asynchronously
+		/// </summary>
+		[Fact]
+		public void TestInitializeAsync()
+		{
+			Assert.True(false, "Test not yet implemented");
+		}
+
+		/// <summary>
+		/// Asserts that a Scene can load content asynchronously
+		/// </summary>
+		[Fact]
+		public void TestLoadContentAsync()
+		{
+			Assert.True(false, "Test not yet implemented");
 		}
 	}
 }

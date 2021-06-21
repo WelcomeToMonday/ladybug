@@ -2619,19 +2619,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.LoadSceneAsync
   nameWithType: Game.LoadSceneAsync
-- uid: Ladybug.Game.PauseScene(Ladybug.Scene)
-  name: PauseScene(Scene)
-  href: api/Ladybug.Game.html#Ladybug_Game_PauseScene_Ladybug_Scene_
-  commentId: M:Ladybug.Game.PauseScene(Ladybug.Scene)
-  fullName: Ladybug.Game.PauseScene(Ladybug.Scene)
-  nameWithType: Game.PauseScene(Scene)
-- uid: Ladybug.Game.PauseScene*
-  name: PauseScene
-  href: api/Ladybug.Game.html#Ladybug_Game_PauseScene_
-  commentId: Overload:Ladybug.Game.PauseScene
-  isSpec: "True"
-  fullName: Ladybug.Game.PauseScene
-  nameWithType: Game.PauseScene
 - uid: Ladybug.Game.ResourceCatalog
   name: ResourceCatalog
   href: api/Ladybug.Game.html#Ladybug_Game_ResourceCatalog
@@ -2651,19 +2638,6 @@ references:
   commentId: F:Ladybug.Game.SceneList
   fullName: Ladybug.Game.SceneList
   nameWithType: Game.SceneList
-- uid: Ladybug.Game.SuspendScene(Ladybug.Scene)
-  name: SuspendScene(Scene)
-  href: api/Ladybug.Game.html#Ladybug_Game_SuspendScene_Ladybug_Scene_
-  commentId: M:Ladybug.Game.SuspendScene(Ladybug.Scene)
-  fullName: Ladybug.Game.SuspendScene(Ladybug.Scene)
-  nameWithType: Game.SuspendScene(Scene)
-- uid: Ladybug.Game.SuspendScene*
-  name: SuspendScene
-  href: api/Ladybug.Game.html#Ladybug_Game_SuspendScene_
-  commentId: Overload:Ladybug.Game.SuspendScene
-  isSpec: "True"
-  fullName: Ladybug.Game.SuspendScene
-  nameWithType: Game.SuspendScene
 - uid: Ladybug.Game.ThreadManager
   name: ThreadManager
   href: api/Ladybug.Game.html#Ladybug_Game_ThreadManager
@@ -2677,45 +2651,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.ThreadManager
   nameWithType: Game.ThreadManager
-- uid: Ladybug.Game.UnloadScene(Ladybug.Scene)
-  name: UnloadScene(Scene)
-  href: api/Ladybug.Game.html#Ladybug_Game_UnloadScene_Ladybug_Scene_
-  commentId: M:Ladybug.Game.UnloadScene(Ladybug.Scene)
-  fullName: Ladybug.Game.UnloadScene(Ladybug.Scene)
-  nameWithType: Game.UnloadScene(Scene)
-- uid: Ladybug.Game.UnloadScene*
-  name: UnloadScene
-  href: api/Ladybug.Game.html#Ladybug_Game_UnloadScene_
-  commentId: Overload:Ladybug.Game.UnloadScene
-  isSpec: "True"
-  fullName: Ladybug.Game.UnloadScene
-  nameWithType: Game.UnloadScene
-- uid: Ladybug.Game.UnpauseScene(Ladybug.Scene)
-  name: UnpauseScene(Scene)
-  href: api/Ladybug.Game.html#Ladybug_Game_UnpauseScene_Ladybug_Scene_
-  commentId: M:Ladybug.Game.UnpauseScene(Ladybug.Scene)
-  fullName: Ladybug.Game.UnpauseScene(Ladybug.Scene)
-  nameWithType: Game.UnpauseScene(Scene)
-- uid: Ladybug.Game.UnpauseScene*
-  name: UnpauseScene
-  href: api/Ladybug.Game.html#Ladybug_Game_UnpauseScene_
-  commentId: Overload:Ladybug.Game.UnpauseScene
-  isSpec: "True"
-  fullName: Ladybug.Game.UnpauseScene
-  nameWithType: Game.UnpauseScene
-- uid: Ladybug.Game.UnsuspendScene(Ladybug.Scene)
-  name: UnsuspendScene(Scene)
-  href: api/Ladybug.Game.html#Ladybug_Game_UnsuspendScene_Ladybug_Scene_
-  commentId: M:Ladybug.Game.UnsuspendScene(Ladybug.Scene)
-  fullName: Ladybug.Game.UnsuspendScene(Ladybug.Scene)
-  nameWithType: Game.UnsuspendScene(Scene)
-- uid: Ladybug.Game.UnsuspendScene*
-  name: UnsuspendScene
-  href: api/Ladybug.Game.html#Ladybug_Game_UnsuspendScene_
-  commentId: Overload:Ladybug.Game.UnsuspendScene
-  isSpec: "True"
-  fullName: Ladybug.Game.UnsuspendScene
-  nameWithType: Game.UnsuspendScene
 - uid: Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)
   name: Update(GameTime)
   href: api/Ladybug.Game.html#Ladybug_Game_Update_Microsoft_Xna_Framework_GameTime_
@@ -4678,19 +4613,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.ContentLoadedAsync
   nameWithType: Scene.ContentLoadedAsync
-- uid: Ladybug.Scene.Draw(Microsoft.Xna.Framework.GameTime)
-  name: Draw(GameTime)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Draw_Microsoft_Xna_Framework_GameTime_
-  commentId: M:Ladybug.Scene.Draw(Microsoft.Xna.Framework.GameTime)
-  fullName: Ladybug.Scene.Draw(Microsoft.Xna.Framework.GameTime)
-  nameWithType: Scene.Draw(GameTime)
-- uid: Ladybug.Scene.Draw*
-  name: Draw
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Draw_
-  commentId: Overload:Ladybug.Scene.Draw
-  isSpec: "True"
-  fullName: Ladybug.Scene.Draw
-  nameWithType: Scene.Draw
 - uid: Ladybug.Scene.EntitySystem
   name: EntitySystem
   href: api/Ladybug.Scene.html#Ladybug_Scene_EntitySystem
@@ -4704,32 +4626,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.EntitySystem
   nameWithType: Scene.EntitySystem
-- uid: Ladybug.Scene.FirstDraw
-  name: FirstDraw()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_FirstDraw
-  commentId: M:Ladybug.Scene.FirstDraw
-  fullName: Ladybug.Scene.FirstDraw()
-  nameWithType: Scene.FirstDraw()
-- uid: Ladybug.Scene.FirstDraw*
-  name: FirstDraw
-  href: api/Ladybug.Scene.html#Ladybug_Scene_FirstDraw_
-  commentId: Overload:Ladybug.Scene.FirstDraw
-  isSpec: "True"
-  fullName: Ladybug.Scene.FirstDraw
-  nameWithType: Scene.FirstDraw
-- uid: Ladybug.Scene.FirstUpdate
-  name: FirstUpdate()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_FirstUpdate
-  commentId: M:Ladybug.Scene.FirstUpdate
-  fullName: Ladybug.Scene.FirstUpdate()
-  nameWithType: Scene.FirstUpdate()
-- uid: Ladybug.Scene.FirstUpdate*
-  name: FirstUpdate
-  href: api/Ladybug.Scene.html#Ladybug_Scene_FirstUpdate_
-  commentId: Overload:Ladybug.Scene.FirstUpdate
-  isSpec: "True"
-  fullName: Ladybug.Scene.FirstUpdate
-  nameWithType: Scene.FirstUpdate
 - uid: Ladybug.Scene.Game
   name: Game
   href: api/Ladybug.Scene.html#Ladybug_Scene_Game
@@ -4743,32 +4639,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.Game
   nameWithType: Scene.Game
-- uid: Ladybug.Scene.Initialize
-  name: Initialize()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Initialize
-  commentId: M:Ladybug.Scene.Initialize
-  fullName: Ladybug.Scene.Initialize()
-  nameWithType: Scene.Initialize()
-- uid: Ladybug.Scene.Initialize*
-  name: Initialize
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Initialize_
-  commentId: Overload:Ladybug.Scene.Initialize
-  isSpec: "True"
-  fullName: Ladybug.Scene.Initialize
-  nameWithType: Scene.Initialize
-- uid: Ladybug.Scene.InitializeAsync
-  name: InitializeAsync()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_InitializeAsync
-  commentId: M:Ladybug.Scene.InitializeAsync
-  fullName: Ladybug.Scene.InitializeAsync()
-  nameWithType: Scene.InitializeAsync()
-- uid: Ladybug.Scene.InitializeAsync*
-  name: InitializeAsync
-  href: api/Ladybug.Scene.html#Ladybug_Scene_InitializeAsync_
-  commentId: Overload:Ladybug.Scene.InitializeAsync
-  isSpec: "True"
-  fullName: Ladybug.Scene.InitializeAsync
-  nameWithType: Scene.InitializeAsync
 - uid: Ladybug.Scene.InitializeAsyncComplete
   name: InitializeAsyncComplete
   href: api/Ladybug.Scene.html#Ladybug_Scene_InitializeAsyncComplete
@@ -4813,32 +4683,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.InitializedAsync
   nameWithType: Scene.InitializedAsync
-- uid: Ladybug.Scene.LoadContent
-  name: LoadContent()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_LoadContent
-  commentId: M:Ladybug.Scene.LoadContent
-  fullName: Ladybug.Scene.LoadContent()
-  nameWithType: Scene.LoadContent()
-- uid: Ladybug.Scene.LoadContent*
-  name: LoadContent
-  href: api/Ladybug.Scene.html#Ladybug_Scene_LoadContent_
-  commentId: Overload:Ladybug.Scene.LoadContent
-  isSpec: "True"
-  fullName: Ladybug.Scene.LoadContent
-  nameWithType: Scene.LoadContent
-- uid: Ladybug.Scene.LoadContentAsync
-  name: LoadContentAsync()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_LoadContentAsync
-  commentId: M:Ladybug.Scene.LoadContentAsync
-  fullName: Ladybug.Scene.LoadContentAsync()
-  nameWithType: Scene.LoadContentAsync()
-- uid: Ladybug.Scene.LoadContentAsync*
-  name: LoadContentAsync
-  href: api/Ladybug.Scene.html#Ladybug_Scene_LoadContentAsync_
-  commentId: Overload:Ladybug.Scene.LoadContentAsync
-  isSpec: "True"
-  fullName: Ladybug.Scene.LoadContentAsync
-  nameWithType: Scene.LoadContentAsync
 - uid: Ladybug.Scene.LoadContentAsyncComplete
   name: LoadContentAsyncComplete
   href: api/Ladybug.Scene.html#Ladybug_Scene_LoadContentAsyncComplete
@@ -4857,12 +4701,86 @@ references:
   commentId: E:Ladybug.Scene.LoadContentComplete
   fullName: Ladybug.Scene.LoadContentComplete
   nameWithType: Scene.LoadContentComplete
-- uid: Ladybug.Scene.OnPause
-  name: OnPause()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause
-  commentId: M:Ladybug.Scene.OnPause
-  fullName: Ladybug.Scene.OnPause()
-  nameWithType: Scene.OnPause()
+- uid: Ladybug.Scene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})
+  name: OnDraw(Action<GameTime>)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnDraw_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.Scene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})
+  name.vb: OnDraw(Action(Of GameTime))
+  fullName: Ladybug.Scene.OnDraw(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.Scene.OnDraw(System.Action(Of Microsoft.Xna.Framework.GameTime))
+  nameWithType: Scene.OnDraw(Action<GameTime>)
+  nameWithType.vb: Scene.OnDraw(Action(Of GameTime))
+- uid: Ladybug.Scene.OnDraw*
+  name: OnDraw
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnDraw_
+  commentId: Overload:Ladybug.Scene.OnDraw
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnDraw
+  nameWithType: Scene.OnDraw
+- uid: Ladybug.Scene.OnInitialize(System.Action)
+  name: OnInitialize(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitialize_System_Action_
+  commentId: M:Ladybug.Scene.OnInitialize(System.Action)
+  fullName: Ladybug.Scene.OnInitialize(System.Action)
+  nameWithType: Scene.OnInitialize(Action)
+- uid: Ladybug.Scene.OnInitialize*
+  name: OnInitialize
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitialize_
+  commentId: Overload:Ladybug.Scene.OnInitialize
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnInitialize
+  nameWithType: Scene.OnInitialize
+- uid: Ladybug.Scene.OnInitializeAsync(System.Func{System.Threading.Tasks.Task})
+  name: OnInitializeAsync(Func<Task>)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitializeAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Ladybug.Scene.OnInitializeAsync(System.Func{System.Threading.Tasks.Task})
+  name.vb: OnInitializeAsync(Func(Of Task))
+  fullName: Ladybug.Scene.OnInitializeAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Ladybug.Scene.OnInitializeAsync(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: Scene.OnInitializeAsync(Func<Task>)
+  nameWithType.vb: Scene.OnInitializeAsync(Func(Of Task))
+- uid: Ladybug.Scene.OnInitializeAsync*
+  name: OnInitializeAsync
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitializeAsync_
+  commentId: Overload:Ladybug.Scene.OnInitializeAsync
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnInitializeAsync
+  nameWithType: Scene.OnInitializeAsync
+- uid: Ladybug.Scene.OnLoadContent(System.Action)
+  name: OnLoadContent(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContent_System_Action_
+  commentId: M:Ladybug.Scene.OnLoadContent(System.Action)
+  fullName: Ladybug.Scene.OnLoadContent(System.Action)
+  nameWithType: Scene.OnLoadContent(Action)
+- uid: Ladybug.Scene.OnLoadContent*
+  name: OnLoadContent
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContent_
+  commentId: Overload:Ladybug.Scene.OnLoadContent
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnLoadContent
+  nameWithType: Scene.OnLoadContent
+- uid: Ladybug.Scene.OnLoadContentAsync(System.Func{System.Threading.Tasks.Task})
+  name: OnLoadContentAsync(Func<Task>)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContentAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Ladybug.Scene.OnLoadContentAsync(System.Func{System.Threading.Tasks.Task})
+  name.vb: OnLoadContentAsync(Func(Of Task))
+  fullName: Ladybug.Scene.OnLoadContentAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Ladybug.Scene.OnLoadContentAsync(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: Scene.OnLoadContentAsync(Func<Task>)
+  nameWithType.vb: Scene.OnLoadContentAsync(Func(Of Task))
+- uid: Ladybug.Scene.OnLoadContentAsync*
+  name: OnLoadContentAsync
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContentAsync_
+  commentId: Overload:Ladybug.Scene.OnLoadContentAsync
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnLoadContentAsync
+  nameWithType: Scene.OnLoadContentAsync
+- uid: Ladybug.Scene.OnPause(System.Action)
+  name: OnPause(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause_System_Action_
+  commentId: M:Ladybug.Scene.OnPause(System.Action)
+  fullName: Ladybug.Scene.OnPause(System.Action)
+  nameWithType: Scene.OnPause(Action)
 - uid: Ladybug.Scene.OnPause*
   name: OnPause
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause_
@@ -4870,12 +4788,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnPause
   nameWithType: Scene.OnPause
-- uid: Ladybug.Scene.OnResume
-  name: OnResume()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume
-  commentId: M:Ladybug.Scene.OnResume
-  fullName: Ladybug.Scene.OnResume()
-  nameWithType: Scene.OnResume()
+- uid: Ladybug.Scene.OnResume(System.Action)
+  name: OnResume(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume_System_Action_
+  commentId: M:Ladybug.Scene.OnResume(System.Action)
+  fullName: Ladybug.Scene.OnResume(System.Action)
+  nameWithType: Scene.OnResume(Action)
 - uid: Ladybug.Scene.OnResume*
   name: OnResume
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume_
@@ -4883,12 +4801,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnResume
   nameWithType: Scene.OnResume
-- uid: Ladybug.Scene.OnStop
-  name: OnStop()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop
-  commentId: M:Ladybug.Scene.OnStop
-  fullName: Ladybug.Scene.OnStop()
-  nameWithType: Scene.OnStop()
+- uid: Ladybug.Scene.OnStop(System.Action)
+  name: OnStop(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop_System_Action_
+  commentId: M:Ladybug.Scene.OnStop(System.Action)
+  fullName: Ladybug.Scene.OnStop(System.Action)
+  nameWithType: Scene.OnStop(Action)
 - uid: Ladybug.Scene.OnStop*
   name: OnStop
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop_
@@ -4896,12 +4814,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnStop
   nameWithType: Scene.OnStop
-- uid: Ladybug.Scene.OnSuspend
-  name: OnSuspend()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend
-  commentId: M:Ladybug.Scene.OnSuspend
-  fullName: Ladybug.Scene.OnSuspend()
-  nameWithType: Scene.OnSuspend()
+- uid: Ladybug.Scene.OnSuspend(System.Action)
+  name: OnSuspend(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend_System_Action_
+  commentId: M:Ladybug.Scene.OnSuspend(System.Action)
+  fullName: Ladybug.Scene.OnSuspend(System.Action)
+  nameWithType: Scene.OnSuspend(Action)
 - uid: Ladybug.Scene.OnSuspend*
   name: OnSuspend
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend_
@@ -4909,12 +4827,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnSuspend
   nameWithType: Scene.OnSuspend
-- uid: Ladybug.Scene.OnUnload
-  name: OnUnload()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload
-  commentId: M:Ladybug.Scene.OnUnload
-  fullName: Ladybug.Scene.OnUnload()
-  nameWithType: Scene.OnUnload()
+- uid: Ladybug.Scene.OnUnload(System.Action)
+  name: OnUnload(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload_System_Action_
+  commentId: M:Ladybug.Scene.OnUnload(System.Action)
+  fullName: Ladybug.Scene.OnUnload(System.Action)
+  nameWithType: Scene.OnUnload(Action)
 - uid: Ladybug.Scene.OnUnload*
   name: OnUnload
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload_
@@ -4922,12 +4840,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnload
   nameWithType: Scene.OnUnload
-- uid: Ladybug.Scene.OnUnpause
-  name: OnUnpause()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause
-  commentId: M:Ladybug.Scene.OnUnpause
-  fullName: Ladybug.Scene.OnUnpause()
-  nameWithType: Scene.OnUnpause()
+- uid: Ladybug.Scene.OnUnpause(System.Action)
+  name: OnUnpause(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause_System_Action_
+  commentId: M:Ladybug.Scene.OnUnpause(System.Action)
+  fullName: Ladybug.Scene.OnUnpause(System.Action)
+  nameWithType: Scene.OnUnpause(Action)
 - uid: Ladybug.Scene.OnUnpause*
   name: OnUnpause
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause_
@@ -4935,12 +4853,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnpause
   nameWithType: Scene.OnUnpause
-- uid: Ladybug.Scene.OnUnsuspend
-  name: OnUnsuspend()
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend
-  commentId: M:Ladybug.Scene.OnUnsuspend
-  fullName: Ladybug.Scene.OnUnsuspend()
-  nameWithType: Scene.OnUnsuspend()
+- uid: Ladybug.Scene.OnUnsuspend(System.Action)
+  name: OnUnsuspend(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend_System_Action_
+  commentId: M:Ladybug.Scene.OnUnsuspend(System.Action)
+  fullName: Ladybug.Scene.OnUnsuspend(System.Action)
+  nameWithType: Scene.OnUnsuspend(Action)
 - uid: Ladybug.Scene.OnUnsuspend*
   name: OnUnsuspend
   href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend_
@@ -4948,6 +4866,22 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnsuspend
   nameWithType: Scene.OnUnsuspend
+- uid: Ladybug.Scene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
+  name: OnUpdate(Action<GameTime>)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.Scene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
+  name.vb: OnUpdate(Action(Of GameTime))
+  fullName: Ladybug.Scene.OnUpdate(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.Scene.OnUpdate(System.Action(Of Microsoft.Xna.Framework.GameTime))
+  nameWithType: Scene.OnUpdate(Action<GameTime>)
+  nameWithType.vb: Scene.OnUpdate(Action(Of GameTime))
+- uid: Ladybug.Scene.OnUpdate*
+  name: OnUpdate
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUpdate_
+  commentId: Overload:Ladybug.Scene.OnUpdate
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnUpdate
+  nameWithType: Scene.OnUpdate
 - uid: Ladybug.Scene.Pause
   name: Pause()
   href: api/Ladybug.Scene.html#Ladybug_Scene_Pause
@@ -5087,19 +5021,6 @@ references:
   commentId: E:Ladybug.Scene.Unsuspended
   fullName: Ladybug.Scene.Unsuspended
   nameWithType: Scene.Unsuspended
-- uid: Ladybug.Scene.Update(Microsoft.Xna.Framework.GameTime)
-  name: Update(GameTime)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Update_Microsoft_Xna_Framework_GameTime_
-  commentId: M:Ladybug.Scene.Update(Microsoft.Xna.Framework.GameTime)
-  fullName: Ladybug.Scene.Update(Microsoft.Xna.Framework.GameTime)
-  nameWithType: Scene.Update(GameTime)
-- uid: Ladybug.Scene.Update*
-  name: Update
-  href: api/Ladybug.Scene.html#Ladybug_Scene_Update_
-  commentId: Overload:Ladybug.Scene.Update
-  isSpec: "True"
-  fullName: Ladybug.Scene.Update
-  nameWithType: Scene.Update
 - uid: Ladybug.SceneState
   name: SceneState
   href: api/Ladybug.SceneState.html

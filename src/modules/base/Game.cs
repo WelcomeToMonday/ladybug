@@ -52,8 +52,8 @@ namespace Ladybug
 		/// </remarks>
 		public async void LoadSceneAsync(Scene scene)
 		{
-			if (!scene.ContentLoadedAsync) await Task.Run(() => scene.LoadContentAsync());
-			if (!scene.InitializedAsync) await Task.Run(() => scene.InitializeAsync());
+			if (!scene.ContentLoadedAsync) await Task.Run(() => scene._LoadContentAsync());
+			if (!scene.InitializedAsync) await Task.Run(() => scene._InitializeAsync());
 			ThreadManager.QueueAction(() => LoadScene(scene));
 		}
 
@@ -64,8 +64,8 @@ namespace Ladybug
 		public void LoadScene(Scene scene)
 		{
 			SceneList.Add(scene);
-			if (!scene.ContentLoaded) scene.LoadContent();
-			if (!scene.Initialized) scene.Initialize();
+			if (!scene.ContentLoaded) scene._LoadContent();
+			if (!scene.Initialized) scene._Initialize();
 		}
 
 		/// <summary>
@@ -90,7 +90,7 @@ namespace Ladybug
 		{
 			foreach (var scene in SceneList)
 			{
-				if (!scene.ContentLoaded) scene.LoadContent();
+				if (!scene.ContentLoaded) scene._LoadContent();
 			}
 		}
 
@@ -105,7 +105,7 @@ namespace Ladybug
 			{
 				if (SceneList[i].State == SceneState.ACTIVE)
 				{
-					SceneList[i].Update(gameTime);
+					SceneList[i]._Update(gameTime);
 				}
 			}
 		}
@@ -121,7 +121,7 @@ namespace Ladybug
 			{
 				if (scene.State != SceneState.SUSPENDED)
 				{
-					scene.Draw(gameTime);
+					scene._Draw(gameTime);
 				}
 			}
 			base.Draw(gameTime);

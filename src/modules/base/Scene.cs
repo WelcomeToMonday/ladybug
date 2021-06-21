@@ -134,13 +134,13 @@ namespace Ladybug
 			return this;
 		}
 
-		internal async void LoadContentAsync()
+		internal async void _LoadContentAsync()
 		{
 			ContentLoadedAsync = true;
 			LoadContentAsyncStart?.Invoke(this, new EventArgs());
 			await _onLoadContentAsync();
 			LoadContentAsyncComplete?.Invoke(this, new EventArgs());
-			ThreadManager.QueueAction(() => LoadContent());
+			ThreadManager.QueueAction(() => _LoadContent());
 		}
 
 		/// <summary>
@@ -155,13 +155,13 @@ namespace Ladybug
 			return this;
 		}
 
-		internal async void InitializeAsync()
+		internal async void _InitializeAsync()
 		{
 			InitializedAsync = true;
 			InitializeAsyncStart?.Invoke(this, new EventArgs());
 			await _onInitializeAsync();
 			InitializeAsyncComplete?.Invoke(this, new EventArgs());
-			ThreadManager.QueueAction(() => Initialize());
+			ThreadManager.QueueAction(() => _Initialize());
 		}
 
 		/// <summary>
@@ -176,7 +176,7 @@ namespace Ladybug
 			return this;
 		}
 
-		internal void LoadContent()
+		internal void _LoadContent()
 		{
 			ContentLoaded = true;
 			_onLoadContent();
@@ -194,7 +194,7 @@ namespace Ladybug
 			return this;
 		}
 
-		internal void Initialize()
+		internal void _Initialize()
 		{
 			Initialized = true;
 			_onInitialize();
@@ -213,7 +213,7 @@ namespace Ladybug
 			return this;
 		}
 
-		internal void Update(GameTime gameTime)
+		internal void _Update(GameTime gameTime)
 		{
 			if (EntitySystem != null)
 			{
@@ -236,7 +236,7 @@ namespace Ladybug
 			return this;
 		}
 
-		internal void Draw(GameTime gameTime)
+		internal void _Draw(GameTime gameTime)
 		{
 			if (EntitySystem != null)
 			{

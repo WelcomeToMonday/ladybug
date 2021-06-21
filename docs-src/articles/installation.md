@@ -1,7 +1,7 @@
 # Installation and Setup
 In this section, we'll be showing you where to get the Ladybug libraries and how to include them in your project.
 
-## Prerequisites
+#### Prerequisites
 
 To get started, you'll need to install MonoGame and its dependencies.
 
@@ -114,4 +114,4 @@ You will have to repeat this step for each Platform Target Project you have.
 
 ### Wrapping Up
 
-With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/ladybug/articles/scene_management.html), we'll go over setting up your first Ladybug Scene!
+With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/articles/setting-up-the-game.html), we'll go over setting up your first Ladybug Scene!
