@@ -10,8 +10,10 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug.Tests.Base
 {
+	[Collection("Unique: Game Instantiation")]
 	public class GameSceneTests
 	{
+		
 		/// <summary>
 		/// Asserts that a Game and Scene can be instantiated successfully,
 		/// A Game can load a Scene,
