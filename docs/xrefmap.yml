@@ -2554,12 +2554,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.Draw
   nameWithType: Game.Draw
-- uid: Ladybug.Game.graphics
-  name: graphics
-  href: api/Ladybug.Game.html#Ladybug_Game_graphics
-  commentId: F:Ladybug.Game.graphics
-  fullName: Ladybug.Game.graphics
-  nameWithType: Game.graphics
+- uid: Ladybug.Game.GraphicsDeviceManager
+  name: GraphicsDeviceManager
+  href: api/Ladybug.Game.html#Ladybug_Game_GraphicsDeviceManager
+  commentId: P:Ladybug.Game.GraphicsDeviceManager
+  fullName: Ladybug.Game.GraphicsDeviceManager
+  nameWithType: Game.GraphicsDeviceManager
+- uid: Ladybug.Game.GraphicsDeviceManager*
+  name: GraphicsDeviceManager
+  href: api/Ladybug.Game.html#Ladybug_Game_GraphicsDeviceManager_
+  commentId: Overload:Ladybug.Game.GraphicsDeviceManager
+  isSpec: "True"
+  fullName: Ladybug.Game.GraphicsDeviceManager
+  nameWithType: Game.GraphicsDeviceManager
 - uid: Ladybug.Game.Initialize
   name: Initialize()
   href: api/Ladybug.Game.html#Ladybug_Game_Initialize
@@ -2625,6 +2632,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.PauseScene
   nameWithType: Game.PauseScene
+- uid: Ladybug.Game.ResourceCatalog
+  name: ResourceCatalog
+  href: api/Ladybug.Game.html#Ladybug_Game_ResourceCatalog
+  commentId: P:Ladybug.Game.ResourceCatalog
+  fullName: Ladybug.Game.ResourceCatalog
+  nameWithType: Game.ResourceCatalog
+- uid: Ladybug.Game.ResourceCatalog*
+  name: ResourceCatalog
+  href: api/Ladybug.Game.html#Ladybug_Game_ResourceCatalog_
+  commentId: Overload:Ladybug.Game.ResourceCatalog
+  isSpec: "True"
+  fullName: Ladybug.Game.ResourceCatalog
+  nameWithType: Game.ResourceCatalog
 - uid: Ladybug.Game.SceneList
   name: SceneList
   href: api/Ladybug.Game.html#Ladybug_Game_SceneList
@@ -4507,19 +4527,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.ResourceCatalog.ResourceCatalog
   nameWithType: ResourceCatalog.ResourceCatalog
-- uid: Ladybug.ResourceCatalog.Catalog
-  name: Catalog
-  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog_Catalog
-  commentId: P:Ladybug.ResourceCatalog.Catalog
-  fullName: Ladybug.ResourceCatalog.Catalog
-  nameWithType: ResourceCatalog.Catalog
-- uid: Ladybug.ResourceCatalog.Catalog*
-  name: Catalog
-  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog_Catalog_
-  commentId: Overload:Ladybug.ResourceCatalog.Catalog
-  isSpec: "True"
-  fullName: Ladybug.ResourceCatalog.Catalog
-  nameWithType: ResourceCatalog.Catalog
 - uid: Ladybug.ResourceCatalog.ContentManager
   name: ContentManager
   href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog_ContentManager
@@ -4597,6 +4604,22 @@ references:
   fullName.vb: Ladybug.ResourceCatalog.SaveResource(Of T)(System.String, T)
   nameWithType: ResourceCatalog.SaveResource<T>(String, T)
   nameWithType.vb: ResourceCatalog.SaveResource(Of T)(String, T)
+- uid: Ladybug.ResourceCatalog.TryGetResource*
+  name: TryGetResource
+  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog_TryGetResource_
+  commentId: Overload:Ladybug.ResourceCatalog.TryGetResource
+  isSpec: "True"
+  fullName: Ladybug.ResourceCatalog.TryGetResource
+  nameWithType: ResourceCatalog.TryGetResource
+- uid: Ladybug.ResourceCatalog.TryGetResource``1(System.String,``0@)
+  name: TryGetResource<T>(String, out T)
+  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog_TryGetResource__1_System_String___0__
+  commentId: M:Ladybug.ResourceCatalog.TryGetResource``1(System.String,``0@)
+  name.vb: TryGetResource(Of T)(String, ByRef T)
+  fullName: Ladybug.ResourceCatalog.TryGetResource<T>(System.String, out T)
+  fullName.vb: Ladybug.ResourceCatalog.TryGetResource(Of T)(System.String, ByRef T)
+  nameWithType: ResourceCatalog.TryGetResource<T>(String, out T)
+  nameWithType.vb: ResourceCatalog.TryGetResource(Of T)(String, ByRef T)
 - uid: Ladybug.Scene
   name: Scene
   href: api/Ladybug.Scene.html
@@ -4668,6 +4691,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.Draw
   nameWithType: Scene.Draw
+- uid: Ladybug.Scene.EntitySystem
+  name: EntitySystem
+  href: api/Ladybug.Scene.html#Ladybug_Scene_EntitySystem
+  commentId: P:Ladybug.Scene.EntitySystem
+  fullName: Ladybug.Scene.EntitySystem
+  nameWithType: Scene.EntitySystem
+- uid: Ladybug.Scene.EntitySystem*
+  name: EntitySystem
+  href: api/Ladybug.Scene.html#Ladybug_Scene_EntitySystem_
+  commentId: Overload:Ladybug.Scene.EntitySystem
+  isSpec: "True"
+  fullName: Ladybug.Scene.EntitySystem
+  nameWithType: Scene.EntitySystem
 - uid: Ladybug.Scene.FirstDraw
   name: FirstDraw()
   href: api/Ladybug.Scene.html#Ladybug_Scene_FirstDraw
@@ -4821,6 +4857,97 @@ references:
   commentId: E:Ladybug.Scene.LoadContentComplete
   fullName: Ladybug.Scene.LoadContentComplete
   nameWithType: Scene.LoadContentComplete
+- uid: Ladybug.Scene.OnPause
+  name: OnPause()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause
+  commentId: M:Ladybug.Scene.OnPause
+  fullName: Ladybug.Scene.OnPause()
+  nameWithType: Scene.OnPause()
+- uid: Ladybug.Scene.OnPause*
+  name: OnPause
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause_
+  commentId: Overload:Ladybug.Scene.OnPause
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnPause
+  nameWithType: Scene.OnPause
+- uid: Ladybug.Scene.OnResume
+  name: OnResume()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume
+  commentId: M:Ladybug.Scene.OnResume
+  fullName: Ladybug.Scene.OnResume()
+  nameWithType: Scene.OnResume()
+- uid: Ladybug.Scene.OnResume*
+  name: OnResume
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume_
+  commentId: Overload:Ladybug.Scene.OnResume
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnResume
+  nameWithType: Scene.OnResume
+- uid: Ladybug.Scene.OnStop
+  name: OnStop()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop
+  commentId: M:Ladybug.Scene.OnStop
+  fullName: Ladybug.Scene.OnStop()
+  nameWithType: Scene.OnStop()
+- uid: Ladybug.Scene.OnStop*
+  name: OnStop
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop_
+  commentId: Overload:Ladybug.Scene.OnStop
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnStop
+  nameWithType: Scene.OnStop
+- uid: Ladybug.Scene.OnSuspend
+  name: OnSuspend()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend
+  commentId: M:Ladybug.Scene.OnSuspend
+  fullName: Ladybug.Scene.OnSuspend()
+  nameWithType: Scene.OnSuspend()
+- uid: Ladybug.Scene.OnSuspend*
+  name: OnSuspend
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend_
+  commentId: Overload:Ladybug.Scene.OnSuspend
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnSuspend
+  nameWithType: Scene.OnSuspend
+- uid: Ladybug.Scene.OnUnload
+  name: OnUnload()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload
+  commentId: M:Ladybug.Scene.OnUnload
+  fullName: Ladybug.Scene.OnUnload()
+  nameWithType: Scene.OnUnload()
+- uid: Ladybug.Scene.OnUnload*
+  name: OnUnload
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload_
+  commentId: Overload:Ladybug.Scene.OnUnload
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnUnload
+  nameWithType: Scene.OnUnload
+- uid: Ladybug.Scene.OnUnpause
+  name: OnUnpause()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause
+  commentId: M:Ladybug.Scene.OnUnpause
+  fullName: Ladybug.Scene.OnUnpause()
+  nameWithType: Scene.OnUnpause()
+- uid: Ladybug.Scene.OnUnpause*
+  name: OnUnpause
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause_
+  commentId: Overload:Ladybug.Scene.OnUnpause
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnUnpause
+  nameWithType: Scene.OnUnpause
+- uid: Ladybug.Scene.OnUnsuspend
+  name: OnUnsuspend()
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend
+  commentId: M:Ladybug.Scene.OnUnsuspend
+  fullName: Ladybug.Scene.OnUnsuspend()
+  nameWithType: Scene.OnUnsuspend()
+- uid: Ladybug.Scene.OnUnsuspend*
+  name: OnUnsuspend
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend_
+  commentId: Overload:Ladybug.Scene.OnUnsuspend
+  isSpec: "True"
+  fullName: Ladybug.Scene.OnUnsuspend
+  nameWithType: Scene.OnUnsuspend
 - uid: Ladybug.Scene.Pause
   name: Pause()
   href: api/Ladybug.Scene.html#Ladybug_Scene_Pause
@@ -4840,18 +4967,31 @@ references:
   commentId: E:Ladybug.Scene.Paused
   fullName: Ladybug.Scene.Paused
   nameWithType: Scene.Paused
+- uid: Ladybug.Scene.ResourceCatalog
+  name: ResourceCatalog
+  href: api/Ladybug.Scene.html#Ladybug_Scene_ResourceCatalog
+  commentId: P:Ladybug.Scene.ResourceCatalog
+  fullName: Ladybug.Scene.ResourceCatalog
+  nameWithType: Scene.ResourceCatalog
+- uid: Ladybug.Scene.ResourceCatalog*
+  name: ResourceCatalog
+  href: api/Ladybug.Scene.html#Ladybug_Scene_ResourceCatalog_
+  commentId: Overload:Ladybug.Scene.ResourceCatalog
+  isSpec: "True"
+  fullName: Ladybug.Scene.ResourceCatalog
+  nameWithType: Scene.ResourceCatalog
 - uid: Ladybug.Scene.Resumed
   name: Resumed
   href: api/Ladybug.Scene.html#Ladybug_Scene_Resumed
   commentId: E:Ladybug.Scene.Resumed
   fullName: Ladybug.Scene.Resumed
   nameWithType: Scene.Resumed
-- uid: Ladybug.Scene.spriteBatch
-  name: spriteBatch
-  href: api/Ladybug.Scene.html#Ladybug_Scene_spriteBatch
-  commentId: F:Ladybug.Scene.spriteBatch
-  fullName: Ladybug.Scene.spriteBatch
-  nameWithType: Scene.spriteBatch
+- uid: Ladybug.Scene.SpriteBatch
+  name: SpriteBatch
+  href: api/Ladybug.Scene.html#Ladybug_Scene_SpriteBatch
+  commentId: F:Ladybug.Scene.SpriteBatch
+  fullName: Ladybug.Scene.SpriteBatch
+  nameWithType: Scene.SpriteBatch
 - uid: Ladybug.Scene.State
   name: State
   href: api/Ladybug.Scene.html#Ladybug_Scene_State
