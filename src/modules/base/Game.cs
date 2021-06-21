@@ -50,7 +50,7 @@ namespace Ladybug
 		/// Calls LoadScene, meaning the scene's LoadContent and LoadScene methods are called
 		/// after their async counterparts.
 		/// </remarks>
-		public async virtual void LoadSceneAsync(Scene scene)
+		public async void LoadSceneAsync(Scene scene)
 		{
 			if (!scene.ContentLoadedAsync) await Task.Run(() => scene.LoadContentAsync());
 			if (!scene.InitializedAsync) await Task.Run(() => scene.InitializeAsync());
@@ -61,7 +61,7 @@ namespace Ladybug
 		/// Loads a scene into the SceneManager, which will update the Scene every game loop.
 		/// </summary>
 		/// <param name="scene">Scene to be loaded</param>
-		public virtual void LoadScene(Scene scene)
+		public void LoadScene(Scene scene)
 		{
 			SceneList.Add(scene);
 			if (!scene.ContentLoaded) scene.LoadContent();
@@ -73,11 +73,10 @@ namespace Ladybug
 		/// scene execution loop.
 		/// </summary>
 		/// <param name="scene">Scene to be unloaded</param>
-		public virtual void UnloadScene(Scene scene)
+		internal void UnloadScene(Scene scene)
 		{
 			if (SceneList.Contains(scene))
 			{
-				scene.Unload();
 				SceneList.Remove(scene);
 			}
 		}

@@ -257,13 +257,11 @@ namespace Ladybug
 			return this;
 		}
 
-		/// <summary>
-		/// Unloads the Scene
-		/// </summary>
 		public void Unload()
 		{
-			Unloaded?.Invoke(this, new EventArgs());
 			_onUnload();
+			Game.UnloadScene(this);
+			Unloaded?.Invoke(this, new EventArgs());
 		}
 
 		/// <summary>
