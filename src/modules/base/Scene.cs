@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -55,8 +56,25 @@ namespace Ladybug
 		/// </summary>
 		protected SpriteBatch SpriteBatch;
 
-		private bool _firstUpdateComplete = false;
-		private bool _firstDrawComplete = false;
+		private Func<Task> _onLoadContentAsync = new Func<Task>(() => Task.CompletedTask);
+		private Func<Task> _onInitializeAsync = new Func<Task>(() => Task.CompletedTask);
+
+		private Action _onLoadContent = () => { };
+		private Action _onInitialize = () => { };
+
+		private Action<GameTime> _onUpdate = (GameTime gameTime) => { };
+		private Action<GameTime> _onDraw = (GameTime gameTime) => { };
+
+		private Action _onUnload = () => { };
+
+		private Action _onPause = () => { };
+		private Action _onUnpause = () => { };
+		
+		private Action _onSuspend = () => { };
+		private Action _onUnsuspend = () => { };
+
+		private Action _onStop = () => { };
+		private Action _onResume = () => { };
 
 		public Scene(Game game)
 		{
@@ -73,13 +91,13 @@ namespace Ladybug
 		public bool Initialized { get; private set; } = false;
 		public bool ContentLoaded { get; private set; } = false;
 
-		public EntitySystem EntitySystem {get; private set;}
+		public EntitySystem EntitySystem { get; protected set; }
 
 		/// <summary>
 		/// Scene-local ResourceCatalog
 		/// </summary>
 		/// <value></value>
-		public ResourceCatalog ResourceCatalog {get; private set;}
+		public ResourceCatalog ResourceCatalog { get; protected set; }
 
 		/// <summary>
 		/// Reference to the Scene's ContentManager
@@ -99,41 +117,48 @@ namespace Ladybug
 		/// </summary>
 		public Game Game { get; protected set; }
 
-		public SceneState State { get; set; } = SceneState.ACTIVE;
+		public SceneState State { get; private set; } = SceneState.ACTIVE;
 
-		public async virtual void LoadContentAsync()
+		public void OnLoadContentAsync(Func<Task> func) => _onLoadContentAsync = func;
+
+		internal async void LoadContentAsync()
 		{
 			ContentLoadedAsync = true;
+			await _onLoadContentAsync();
 			LoadContentAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => LoadContent());
 		}
 
-		public async virtual void InitializeAsync()
+		public void OnInitializeAsync(Func<Task> func) => _onInitializeAsync = func;
+
+		internal async void InitializeAsync()
 		{
 			InitializedAsync = true;
+			await _onInitializeAsync();
 			InitializeAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => Initialize());
 		}
 
-		public virtual void LoadContent()
+		public void OnLoadContent(Action action) => _onLoadContent = action;
+
+		internal void LoadContent()
 		{
 			ContentLoaded = true;
 			LoadContentComplete?.Invoke(this, new EventArgs());
 		}
 
-		public virtual void Initialize()
+		public void OnInitialize(Action action) => _onInitialize = action;
+
+		internal void Initialize()
 		{
 			Initialized = true;
 			InitializeComplete?.Invoke(this, new EventArgs());
 		}
 
-		public virtual void Update(GameTime gameTime)
+		public void OnUpdate(Action<GameTime> action) => _onUpdate = action;
+
+		internal void Update(GameTime gameTime)
 		{
-			if (!_firstUpdateComplete)
-			{
-				FirstUpdate();
-				_firstUpdateComplete = true;
-			}
 			if (EntitySystem != null)
 			{
 				EntitySystem.PreUpdate(gameTime);
@@ -142,36 +167,17 @@ namespace Ladybug
 			}
 		}
 
-		public virtual void Draw(GameTime gameTime)
+		public void OnDraw(Action<GameTime> action) => _onDraw = action;
+
+		internal void Draw(GameTime gameTime)
 		{
-			if (!_firstDrawComplete)
-			{
-				FirstDraw();
-				_firstDrawComplete = true;
-			}
 			if (EntitySystem != null)
 			{
 				EntitySystem.Draw(gameTime, SpriteBatch);
 			}
 		}
 
-		/// <summary>
-		/// Called before this scene's first Update.
-		/// Useful for last-second initialization.
-		/// </summary>
-		public virtual void FirstUpdate()
-		{
-
-		}
-
-		/// <summary>
-		/// Called before this scene's first Draw.
-		/// Useful for last-second initialization
-		/// </summary>
-		public virtual void FirstDraw()
-		{
-
-		}
+		public void OnUnload(Action action) => _onUnload = action;
 
 		/// <summary>
 		/// Unloads the Scene
@@ -179,13 +185,10 @@ namespace Ladybug
 		public void Unload()
 		{
 			Unloaded?.Invoke(this, new EventArgs());
-			OnUnload();
+			_onUnload();
 		}
 
-		/// <summary>
-		/// Called when the Scene has been unloaded
-		/// </summary>
-		public virtual void OnUnload() { }
+		public void OnPause(Action action) => _onPause = action;
 
 		/// <summary>
 		/// Pauses the Scene
@@ -198,15 +201,12 @@ namespace Ladybug
 		{
 			State = SceneState.PAUSED;
 			Paused?.Invoke(this, new EventArgs());
-			OnPause();
+			_onPause();
 			Stopped?.Invoke(this, new EventArgs());
-			OnStop();
+			_onStop();
 		}
 
-		/// <summary>
-		/// Called when the Scene has been paused
-		/// </summary>
-		public virtual void OnPause() { }
+		public void OnUnpause(Action action) => _onUnpause = action;
 
 		/// <summary>
 		/// Unpauses the Scene
@@ -217,20 +217,17 @@ namespace Ladybug
 		/// </remarks>
 		public void Unpause()
 		{
-			if (State == SceneState.PAUSED) 
+			if (State == SceneState.PAUSED)
 			{
 				State = SceneState.ACTIVE;
 				Unpaused?.Invoke(this, new EventArgs());
-				OnUnpause();
+				_onUnpause();
 				Resumed?.Invoke(this, new EventArgs());
-				OnResume();
+				_onResume();
 			}
 		}
 
-		/// <summary>
-		/// Called when the Scene is Unpaused
-		/// </summary>
-		public virtual void OnUnpause() {}
+		public void OnSuspend(Action action) => _onSuspend = action;
 
 		/// <summary>
 		/// Suspends the Scene
@@ -243,15 +240,12 @@ namespace Ladybug
 		{
 			State = SceneState.SUSPENDED;
 			Suspended?.Invoke(this, new EventArgs());
-			OnSuspend();
+			_onSuspend();
 			Stopped?.Invoke(this, new EventArgs());
-			OnStop();
+			_onStop();
 		}
 
-		/// <summary>
-		/// Called when the Scene is suspended
-		/// </summary>
-		public virtual void OnSuspend() {}
+		public void OnUnsuspend(Action action) => _onUnsuspend = action;
 
 		/// <summary>
 		/// Unsuspends the Scene
@@ -262,30 +256,18 @@ namespace Ladybug
 		/// </remarks>
 		public void Unsuspend()
 		{
-			if (State == SceneState.SUSPENDED) 
+			if (State == SceneState.SUSPENDED)
 			{
 				State = SceneState.ACTIVE;
 				Unsuspended?.Invoke(this, new EventArgs());
-				OnUnsuspend();
+				_onUnsuspend();
 				Resumed?.Invoke(this, new EventArgs());
-				OnResume();
+				_onResume();
 			}
 		}
 
-		/// <summary>
-		/// Called when the Scene is Unsuspended
-		/// </summary>
-		public virtual void OnUnsuspend() {}
+		public void OnStop(Action action) => _onStop = action;
 
-		/// <summary>
-		/// Called when the Scene is Paused or Suspended
-		/// </summary>
-		public virtual void OnStop() {}
-
-		/// <summary>
-		/// Called when the Scene is Unpaused or Unsuspended
-		/// </summary>
-		public virtual void OnResume() {}
-
+		public void OnResume(Action action) => _onResume = action;
 	}
 }
