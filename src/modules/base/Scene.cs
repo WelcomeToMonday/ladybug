@@ -91,6 +91,9 @@ namespace Ladybug
 		public bool Initialized { get; private set; } = false;
 		public bool ContentLoaded { get; private set; } = false;
 
+		/// <summary>
+		/// The Scene's default EntitySystem
+		/// </summary>
 		public EntitySystem EntitySystem { get; protected set; }
 
 		/// <summary>
@@ -119,43 +122,96 @@ namespace Ladybug
 
 		public SceneState State { get; private set; } = SceneState.ACTIVE;
 
-		public void OnLoadContentAsync(Func<Task> func) => _onLoadContentAsync = func;
+		/// <summary>
+		/// Sets the task that is run asynchronously when the Scene's
+		/// content is loaded
+		/// </summary>
+		/// <param name="func">Asynchronous task run upon loading the Scene's content</param>
+		/// <returns>Scene</returns>
+		public Scene OnLoadContentAsync(Func<Task> func)
+		{
+			_onLoadContentAsync = func;
+			return this;
+		}
 
 		internal async void LoadContentAsync()
 		{
 			ContentLoadedAsync = true;
+			LoadContentAsyncStart?.Invoke(this, new EventArgs());
 			await _onLoadContentAsync();
 			LoadContentAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => LoadContent());
 		}
 
-		public void OnInitializeAsync(Func<Task> func) => _onInitializeAsync = func;
+		/// <summary>
+		/// Sets the task that is run when the Scene is initialized
+		/// asynchronously
+		/// </summary>
+		/// <param name="func">Asycronous task run upon initializing the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnInitializeAsync(Func<Task> func)
+		{
+			_onInitializeAsync = func;
+			return this;
+		}
 
 		internal async void InitializeAsync()
 		{
 			InitializedAsync = true;
+			InitializeAsyncStart?.Invoke(this, new EventArgs());
 			await _onInitializeAsync();
 			InitializeAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => Initialize());
 		}
 
-		public void OnLoadContent(Action action) => _onLoadContent = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene's content is
+		/// loaded.
+		/// </summary>
+		/// <param name="action">Action run upon loading the Scene's content</param>
+		/// <returns>Scene</returns>
+		public Scene OnLoadContent(Action action)
+		{
+			_onLoadContent = action;
+			return this;
+		}
 
 		internal void LoadContent()
 		{
 			ContentLoaded = true;
+			_onLoadContent();
 			LoadContentComplete?.Invoke(this, new EventArgs());
 		}
 
-		public void OnInitialize(Action action) => _onInitialize = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene is initialized
+		/// </summary>
+		/// <param name="action">Action run upon initializing the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnInitialize(Action action)
+		{
+			_onInitialize = action;
+			return this;
+		}
 
 		internal void Initialize()
 		{
 			Initialized = true;
+			_onInitialize();
 			InitializeComplete?.Invoke(this, new EventArgs());
 		}
 
-		public void OnUpdate(Action<GameTime> action) => _onUpdate = action;
+		/// <summary>
+		/// Sets the action that is run every frame when the Scene
+		/// is updated
+		/// </summary>
+		/// <param name="action">Action run upon updating the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnUpdate(Action<GameTime> action)
+		{
+			_onUpdate = action;
+			return this;
+		}
 
 		internal void Update(GameTime gameTime)
 		{
@@ -165,9 +221,20 @@ namespace Ladybug
 				EntitySystem.Update(gameTime);
 				EntitySystem.PostUpdate(gameTime);
 			}
+			_onUpdate(gameTime);
 		}
 
-		public void OnDraw(Action<GameTime> action) => _onDraw = action;
+		/// <summary>
+		/// Sets the action that is run every frame when
+		/// the Scene Draws to the screen
+		/// </summary>
+		/// <param name="action">Action run upon drawing the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnDraw(Action<GameTime> action)
+		{
+			_onDraw = action;
+			return this;
+		}
 
 		internal void Draw(GameTime gameTime)
 		{
@@ -175,9 +242,20 @@ namespace Ladybug
 			{
 				EntitySystem.Draw(gameTime, SpriteBatch);
 			}
+			_onDraw(gameTime);
 		}
 
-		public void OnUnload(Action action) => _onUnload = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene
+		/// is unloaded
+		/// </summary>
+		/// <param name="action">Action run upon unloading the Scenen</param>
+		/// <returns>Scene</returns>
+		public Scene OnUnload(Action action)
+		{
+			_onUnload = action;
+			return this;
+		}
 
 		/// <summary>
 		/// Unloads the Scene
@@ -188,7 +266,16 @@ namespace Ladybug
 			_onUnload();
 		}
 
-		public void OnPause(Action action) => _onPause = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene is paused
+		/// </summary>
+		/// <param name="action">Action run upon pausing the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnPause(Action action)
+		{
+			_onPause = action;
+			return this;
+		}
 
 		/// <summary>
 		/// Pauses the Scene
@@ -206,7 +293,16 @@ namespace Ladybug
 			_onStop();
 		}
 
-		public void OnUnpause(Action action) => _onUnpause = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene is unpaused
+		/// </summary>
+		/// <param name="action">Action run upon unpausing the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnUnpause(Action action)
+		{
+			_onUnpause = action;
+			return this;
+		}
 
 		/// <summary>
 		/// Unpauses the Scene
@@ -227,7 +323,16 @@ namespace Ladybug
 			}
 		}
 
-		public void OnSuspend(Action action) => _onSuspend = action;
+		/// <summary>
+		/// Sets the action that is run when the scene is suspended
+		/// </summary>
+		/// <param name="action">Action run upon suspending the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnSuspend(Action action)
+		{
+			_onSuspend = action;
+			return this;
+		}
 
 		/// <summary>
 		/// Suspends the Scene
@@ -245,7 +350,17 @@ namespace Ladybug
 			_onStop();
 		}
 
-		public void OnUnsuspend(Action action) => _onUnsuspend = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene is
+		/// unsuspended
+		/// </summary>
+		/// <param name="action">Action run upon unsuspending the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnUnsuspend(Action action)
+		{
+			_onUnsuspend = action;
+			return this;
+		}
 
 		/// <summary>
 		/// Unsuspends the Scene
@@ -266,8 +381,28 @@ namespace Ladybug
 			}
 		}
 
-		public void OnStop(Action action) => _onStop = action;
+		/// <summary>
+		/// Sets the action that run when the Scene is
+		/// paused or suspended
+		/// </summary>
+		/// <param name="action">Action run upon pausing or suspending the Scene</param>
+		/// <returns>Scene</returns>
+		public Scene OnStop(Action action)
+		{
+			_onStop = action;
+			return this;
+		}
 
-		public void OnResume(Action action) => _onResume = action;
+		/// <summary>
+		/// Sets the action that is run when the Scene is
+		/// unpaused or unsuspended
+		/// </summary>
+		/// <param name="action"></param>
+		/// <returns>Scene</returns>
+		public Scene OnResume(Action action)
+		{
+			_onResume = action;
+			return this;
+		}
 	}
 }

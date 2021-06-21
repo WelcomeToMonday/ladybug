@@ -55,7 +55,6 @@ namespace Ladybug
 			if (!scene.ContentLoadedAsync) await Task.Run(() => scene.LoadContentAsync());
 			if (!scene.InitializedAsync) await Task.Run(() => scene.InitializeAsync());
 			ThreadManager.QueueAction(() => LoadScene(scene));
-			//LoadScene(scene);
 		}
 
 		/// <summary>
@@ -81,43 +80,6 @@ namespace Ladybug
 				scene.Unload();
 				SceneList.Remove(scene);
 			}
-		}
-
-		/// <summary>
-		/// Pauses a Scene, skipping its <c>Update()</c>, but continuing to run its <c>Draw()</c>
-		/// </summary>
-		/// <param name="scene">Scene to pause</param>
-		public virtual void PauseScene(Scene scene)
-		{
-			scene.Pause();
-		}
-
-		/// <summary>
-		/// Unpauses a Scene, causing it to resume its <c>Update()</c>
-		/// </summary>
-		/// <param name="scene">Scene to unpause</param>
-		public virtual void UnpauseScene(Scene scene)
-		{
-			scene.Unpause();
-		}
-
-		/// <summary>
-		/// Suspends a scene, causing both its <c>Update()</c> and <c>Draw()</c> to be skipped
-		/// </summary>
-		/// <param name="scene">Scene to suspend</param>
-		public virtual void SuspendScene(Scene scene)
-		{
-			scene.Suspend();
-		}
-
-		/// <summary>
-		/// Unsuspends a scene, resuming both its <c>Update()</c> and <c>Draw()</c>.
-		/// </summary>
-		/// <param name="scene">Scene to unsuspend</param>
-		public virtual void UnsuspendScene(Scene scene)
-		{
-			scene.Unsuspend();
-			//scene.State = SceneState.ACTIVE;
 		}
 
 		protected override void Initialize()
