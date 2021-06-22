@@ -1,7 +1,9 @@
+using System;
 using Microsoft.Xna.Framework;
 
 namespace Ladybug.ECS
 {
+	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public abstract class Component
 	{	
 		public Component(Entity entity = null, string Name = null)

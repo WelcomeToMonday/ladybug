@@ -54,7 +54,7 @@ namespace Ladybug.Tests.Documentation
 
 				game.LoadScene(mainScene);
 
-				game.Run();
+				game.RunOneFrame();
 			}
 			Assert.Equal(_testInt, 1);
 		}
@@ -65,7 +65,6 @@ namespace Ladybug.Tests.Documentation
 				.OnUpdate((GameTime gameTime) =>
 				{
 					_testInt++;
-					game.Exit();
 				});
 			return mainScene;
 		}

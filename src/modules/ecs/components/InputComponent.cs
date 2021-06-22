@@ -1,3 +1,5 @@
+using System;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -5,6 +7,7 @@ using Ladybug.Input;
 
 namespace Ladybug.ECS.Components
 {
+	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public class InputComponent : Component
 	{
 		private int _gamepadIndex = 0;

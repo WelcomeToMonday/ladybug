@@ -1,7 +1,10 @@
+using System;
+
 using Microsoft.Xna.Framework;
 
 namespace Ladybug.ECS.Components
 {
+	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public class TransformComponent : Component
 	{
 		public enum TransformHandle {TopRight, TopLeft, BottomRight, BottomLeft, Center}

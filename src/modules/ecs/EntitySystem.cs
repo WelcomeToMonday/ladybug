@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug.ECS
 {
+	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public class EntitySystem
 	{
 		public ResourceCatalog ResourceCatalog { get; set; }

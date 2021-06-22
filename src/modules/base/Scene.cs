@@ -5,8 +5,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-using Ladybug.ECS;
-
 namespace Ladybug
 {
 	public enum SceneState
@@ -94,11 +92,6 @@ namespace Ladybug
 
 		public bool Initialized { get; private set; } = false;
 		public bool ContentLoaded { get; private set; } = false;
-
-		/// <summary>
-		/// The Scene's default EntitySystem
-		/// </summary>
-		public EntitySystem EntitySystem { get; protected set; }
 
 		/// <summary>
 		/// Scene-local ResourceCatalog
@@ -219,12 +212,6 @@ namespace Ladybug
 
 		internal void _Update(GameTime gameTime)
 		{
-			if (EntitySystem != null)
-			{
-				EntitySystem.PreUpdate(gameTime);
-				EntitySystem.Update(gameTime);
-				EntitySystem.PostUpdate(gameTime);
-			}
 			_onUpdate(gameTime);
 		}
 
@@ -242,10 +229,6 @@ namespace Ladybug
 
 		internal void _Draw(GameTime gameTime)
 		{
-			if (EntitySystem != null)
-			{
-				EntitySystem.Draw(gameTime, SpriteBatch);
-			}
 			_onDraw(gameTime);
 		}
 

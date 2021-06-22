@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Ladybug.ECS
 {
+	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public sealed class Entity
 	{
 		public static Dictionary<int, string> Tags;
