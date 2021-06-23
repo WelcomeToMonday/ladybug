@@ -17,6 +17,7 @@ namespace Ladybug.ECS
 		public ECS(Scene scene)
 		{
 			RegisterComponentSystem<InputComponent, InputComponentSystem>();
+			RegisterComponentSystem<SpriteComponent, SpriteComponentSystem>();
 			Scene = scene;
 		}
 
