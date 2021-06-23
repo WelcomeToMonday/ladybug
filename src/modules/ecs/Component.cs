@@ -1,49 +1,71 @@
 using System;
+using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug.ECS
 {
-	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
 	public abstract class Component
-	{	
-		public Component(Entity entity = null, string Name = null)
+	{
+		private int _drawPriority = 100;
+
+		private Action _onInitialize = () => { };
+
+		internal Dictionary<string, Action<GameTime>> _UpdateSteps { get; private set; } = new Dictionary<string, Action<GameTime>>();
+		internal Dictionary<string, Action<GameTime, SpriteBatch>> _DrawSteps { get; private set; } = new Dictionary<string, Action<GameTime, SpriteBatch>>();
+
+		public string Name { get; set; }
+
+		public Entity Entity { get; internal set; }
+		public ECS ECS { get => Entity.ECS; }
+		public Scene Scene { get => ECS.Scene; }
+		public Game Game { get => Scene.Game; }
+
+		public bool Active { get; set; } = true;
+		public bool Visible { get; set; } = true;
+		public int DrawPriority
 		{
-			SetEntity(entity);
+			get => _drawPriority;
+			set
+			{
+				if (_drawPriority != value)
+				{
+					_drawPriority = value;
+					ECS.RequestDrawSort(this);
+				}
+			}
 		}
 
-		public Entity Entity { get; private set; }
-
-		public EntitySystem System { get => Entity.System; }
-
-		public ResourceCatalog ResourceCatalog { get => System.ResourceCatalog; }
-
-		public string Name { get; protected set; }
-
-		public bool Active { get; protected set; } = true;
-
-		public void SetName(string name)
+		internal void _Initialize()
 		{
-			Name = name;
+			_onInitialize();
 		}
 
-		public void SetActive(bool active)
+		public virtual bool CheckRunUpdate() => Entity.Active && Active;
+
+		public virtual bool CheckRunDraw() => Entity.Visible && Visible;
+
+		public Component OnInitialize(Action action)
 		{
-			Active = active;
+			_onInitialize = action;
+			return this;
 		}
 
-		public virtual void Initialize(){}
-		
-		public virtual void PreUpdate(GameTime gameTime){}
+		public Component OnUpdate(Action<GameTime> action) => OnUpdate("Update", action);
 
-		public virtual void Update(GameTime gameTime){}
-		
-		public virtual void PostUpdate(GameTime gameTime){}
-
-		public override string ToString() => $"{GetType()}";
-
-		internal void SetEntity(Entity entity)
+		public Component OnUpdate(string step, Action<GameTime> action)
 		{
-			Entity = entity;
+			_UpdateSteps[step] = action;
+			return this;
+		}
+
+		public Component OnDraw(Action<GameTime, SpriteBatch> action) => OnDraw("Draw", action);
+
+		public Component OnDraw(string step, Action<GameTime, SpriteBatch> action)
+		{
+			_DrawSteps[step] = action;
+			return this;
 		}
 	}
 }

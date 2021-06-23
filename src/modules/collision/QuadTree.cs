@@ -151,7 +151,7 @@ namespace Ladybug.Collision
 		{
 			var indicies = new List<int>();
 
-			Vector2 midPoint = _bounds.GetHandlePosition(BoxHandle.CENTER);
+			Vector2 midPoint = _bounds.GetHandlePosition(BoxHandle.Center);
 
 			Rectangle tL = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width / 2, Bounds.Height / 2);
 			Rectangle tR = tL.CopyAtOffset(tL.Width,0);

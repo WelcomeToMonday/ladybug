@@ -1,5 +1,3 @@
-using System;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -7,28 +5,22 @@ using Ladybug.Graphics;
 
 namespace Ladybug.ECS.Components
 {
-	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
-	public class SpriteComponent : Component, IDrawableComponent
-	{
-		private TransformComponent _entityTransform;
+	public class SpriteComponentSystem : ComponentSystem<SpriteComponent> {}
 
-		private int _drawPriority;
+	public class SpriteComponent : Component
+	{
+		public SpriteComponent()
+		{
+			OnInitialize(Initialize);
+			OnUpdate(Update);
+			OnDraw(Draw);
+		}
 
 		public AnimatedSprite Sprite{get; private set;}
-
-		public int DrawPriority {get => _drawPriority;}
-
-		public bool Visible {get => Active && Entity.Active;}
 
 		public Color Color {get; set;} = Color.White;
 		
 		public void SetSprite(AnimatedSprite s) => Sprite = s;
-
-		public void SetDrawPriority(int priority)
-		{
-			_drawPriority = priority;
-			System.SortDrawableComponents();
-		}
 
 		public void AddAnimation(
 			string animationName, 
@@ -56,25 +48,24 @@ namespace Ladybug.ECS.Components
 			Sprite.SetAnimation(animationName);
 		}
 		
-		public override void Initialize()
+		private void Initialize()
 		{
-			_entityTransform = Entity.GetComponent<TransformComponent>();
 			if (Sprite == null) SetSprite(new AnimatedSprite());
 		}
 		
-		public override void Update(GameTime gameTime)
+		private void Update(GameTime gameTime)
 		{
 			Sprite?.CurrentAnimation.Play();
 		}
 		
-		public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+		private void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
 			if (Sprite != null && Visible)
 			{
 				var frame = Sprite.GetCurrentFrame;
 				spriteBatch.Draw(
 					frame.Texture,
-					_entityTransform.Bounds,
+					Entity.Transform.Bounds,
 					frame.Frame,
 					Color
 				);

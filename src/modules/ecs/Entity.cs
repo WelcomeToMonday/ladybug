@@ -1,108 +1,74 @@
-using System; //temp
-
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ladybug.ECS
 {
-	[Obsolete("Ladybug.ECS is being deprecated upon 2.0 release. Use Ladybug.Entities instead.", false)]
-	public sealed class Entity
+	public class Entity
 	{
-		public static Dictionary<int, string> Tags;
-
-		private List<Component> m_components;
-
-		public Entity(EntitySystem entitySystem, string name = null)
+		internal Entity(ECS ecs)
 		{
-			System = entitySystem;
-			ID = System.RegisterEntity(this);
-			if (name != null)
-			{
-				Name = name;
-			}
+			ECS = ecs;
 		}
 
-		public EntitySystem System { get; private set; }
+		public bool Initialized { get; private set; } = false;
 
-		public string Name { get; private set; }
+		public Transform Transform {get; set;} = new Transform();
 
-		public ulong? ID { get; private set; } = null;
+		public ECS ECS { get; private set; }
 
+		public List<string> Tags { get; set; } = new List<string>();
+		public string Name { get; set; }
+		public ulong ID { get; internal set; }
 		public bool Active { get; set; } = true;
+		public bool Visible { get; set; } = true;
 
-		public List<Component> Components
+		public List<Component> Components = new List<Component>();
+
+		public void Initialize()
 		{
-			get
+			if (Initialized)
 			{
-				if (m_components == null)
-				{
-					m_components = new List<Component>();
-				}
-				return m_components;
+				return;
 			}
-			private set => m_components = value;
-		}
 
-		public void SetName(string name)
-		{
-			Name = name;
-		}
-
-		public T AddComponent<T>(string name = null) where T : Component, new()
-		{
-			var comp = new T();
-			comp.SetEntity(this);
-			if (name != null)
+			foreach (var c in Components)
 			{
-				comp.SetName(name);
+				c._Initialize();
 			}
-			Components.Add(comp);
-			System.RegisterComponent(comp);
-			return comp;
+
+			Initialized = true;
 		}
 
-		public Component AddComponent(Component c, string name = null)
+		public Entity AddComponent<T>() where T : Component, new()
+		=> AddComponent<T>(out T component);
+
+		public Entity AddComponent<T>(out T component) where T : Component, new()
 		{
-			c.SetEntity(this);
-			Components.Add(c);
-			if (name != null)
+			component = new T()
 			{
-				c.SetName(name);
-			}
-			System.RegisterComponent(c);
-			return c;
+				Entity = this
+			};
+			Components.Add(component);
+			ECS.RegisterComponent(component);
+			return this;
 		}
 
-		public void RemoveComponent(Component c)
+		public bool TryGetComponent<T>(out T component) where T : Component
 		{
-			System.DeregisterComponent(c);
-			Components.Remove(c);
+			component = GetComponent<T>();
+			return component != default(T);
+		}
+
+		public bool TryGetComponent<T>(string name, out T component) where T : Component
+		{
+			component = GetComponent<T>(name);
+			return component != default(T);
 		}
 
 		public T GetComponent<T>() where T : Component
-		=> Components.OfType<T>().Where(item => item.GetType() == typeof(T)).FirstOrDefault();
+		=> Components.OfType<T>().Where(c => c.GetType() == typeof(T)).FirstOrDefault();
 
 		public T GetComponent<T>(string name) where T : Component
-		=> Components.OfType<T>().Where(item => (item.GetType() == typeof(T) && item.Name == name)).FirstOrDefault();
-
-		public void InitializeComponents()
-		{
-			if (Components != null && Components.Count > 0)
-			{
-				foreach(var c in Components)
-				{
-					c.Initialize();
-				}
-			}
-		}
-
-		public void Remove()
-		{
-			foreach (var component in Components)
-			{
-				System.DeregisterComponent(component);
-			}
-			System.DeregisterEntity(this);
-		}
+		=> Components.OfType<T>().Where(c => c.GetType() == typeof(T) && c.Name == name).FirstOrDefault();
 	}
 }

@@ -62,7 +62,7 @@ namespace Ladybug.UI
 		{
 			_textSprite?.SetBoundsToText();
 			_textSprite?.SetBounds(
-				_textSprite.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.CENTER), BoxHandle.CENTER)
+				_textSprite.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.Center), BoxHandle.Center)
 				);
 		}
 

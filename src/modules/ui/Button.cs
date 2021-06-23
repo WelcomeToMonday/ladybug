@@ -41,8 +41,8 @@ namespace Ladybug.UI
 
 			Label.SetBounds(
 				Label.Bounds.CopyAtPosition(
-					Panel.Bounds.GetHandlePosition(BoxHandle.CENTER), 
-					BoxHandle.CENTER)
+					Panel.Bounds.GetHandlePosition(BoxHandle.Center), 
+					BoxHandle.Center)
 			);
 		}
 
@@ -70,8 +70,8 @@ namespace Ladybug.UI
 			Label.SetText(labelText);
 			Label.SetBounds(
 				Label.Bounds.CopyAtPosition(
-					Panel.Bounds.GetHandlePosition(BoxHandle.CENTER), 
-					BoxHandle.CENTER)
+					Panel.Bounds.GetHandlePosition(BoxHandle.Center), 
+					BoxHandle.Center)
 			);
 		}
 

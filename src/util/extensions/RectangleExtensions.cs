@@ -2,11 +2,11 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug
 {	
-	public enum BoxHandle {TOPLEFT, TOPRIGHT, BOTTOMLEFT, BOTTOMRIGHT, CENTER}
+	public enum BoxHandle {TopLeft, TopRight, BottomLeft, BottomRight, Center}
 	
 	public static class RectangleExtensions
 	{
-		public static Rectangle CopyAtPosition(this Rectangle r, Vector2 position, BoxHandle handle = BoxHandle.TOPLEFT)
+		public static Rectangle CopyAtPosition(this Rectangle r, Vector2 position, BoxHandle handle = BoxHandle.TopLeft)
 		{
 			int x = 0;
 			int y = 0;
@@ -14,23 +14,23 @@ namespace Ladybug
 			switch (handle)
 			{
 				default:
-				case BoxHandle.TOPLEFT:
+				case BoxHandle.TopLeft:
 					x = (int)position.X;
 					y = (int)position.Y;
 					break;
-				case BoxHandle.TOPRIGHT:
+				case BoxHandle.TopRight:
 					x = (int)(position.X - r.Width);
 					y = (int)position.Y;
 					break;
-				case BoxHandle.BOTTOMLEFT:
+				case BoxHandle.BottomLeft:
 					x = (int)(position.X);
 					y = (int)(position.Y - r.Height);
 					break;
-				case BoxHandle.BOTTOMRIGHT:
+				case BoxHandle.BottomRight:
 					x = (int)(position.X - r.Width);
 					y = (int)(position.Y - r.Height);
 					break;
-				case BoxHandle.CENTER:
+				case BoxHandle.Center:
 					x = (int)(position.X) - (r.Width / 2);
 					y = (int)(position.Y) - (r.Height / 2);
 					break;
@@ -40,7 +40,7 @@ namespace Ladybug
 			return r;
 		}
 
-		public static Rectangle CopyAtPosition(this Rectangle r, int x, int y, BoxHandle handle = BoxHandle.TOPLEFT) => r.CopyAtPosition(new Vector2(x,y),handle);
+		public static Rectangle CopyAtPosition(this Rectangle r, int x, int y, BoxHandle handle = BoxHandle.TopLeft) => r.CopyAtPosition(new Vector2(x,y),handle);
 
 		public static Rectangle CopyAtOffset(this Rectangle r, Vector2 newPosition)
 		{
@@ -71,31 +71,31 @@ namespace Ladybug
 			switch (handle)
 			{
 				default:
-				case BoxHandle.TOPLEFT:
+				case BoxHandle.TopLeft:
 					res = new Vector2(
 						(int)r.X,
 						(int)r.Y
 						);
 					break;
-				case BoxHandle.TOPRIGHT:
+				case BoxHandle.TopRight:
 					res = new Vector2(
 						(int)r.X + r.Width,
 						(int)r.Y
 					);
 					break;
-				case BoxHandle.BOTTOMLEFT:
+				case BoxHandle.BottomLeft:
 					res = new Vector2(
 						(int)r.X,
 						(int)r.Y + r.Height
 					);
 					break;
-				case BoxHandle.BOTTOMRIGHT:
+				case BoxHandle.BottomRight:
 					res = new Vector2(
 						(int)r.X + r.Width,
 						(int)r.Y + r.Height
 					);
 					break;
-				case BoxHandle.CENTER:
+				case BoxHandle.Center:
 					res = new Vector2(
 						(int)(r.X + (r.Width / 2)),
 						(int)(r.Y + (r.Height / 2))

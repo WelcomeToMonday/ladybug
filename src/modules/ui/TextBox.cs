@@ -61,7 +61,7 @@ namespace Ladybug.UI
 			Label.SetBounds(Label.Bounds.CopyAtPosition
 				(
 					labelPosition,
-					BoxHandle.TOPLEFT
+					BoxHandle.TopLeft
 				)
 			);
 		}
@@ -125,20 +125,6 @@ namespace Ladybug.UI
 		{
 			base.SetFont(font);
 			Label.SetFont(font);
-		}
-
-		public override void Update()
-		{
-			if (HasFocus)
-			{
-				//capture keyboard input
-			}
-			else
-			{
-
-			}
-
-			base.Update();
 		}
 
 		public override void Draw(SpriteBatch spriteBatch)
