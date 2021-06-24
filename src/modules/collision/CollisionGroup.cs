@@ -87,7 +87,6 @@ namespace Ladybug.Collision
 		
 		public CollisionResult<T> CheckCollisionByPoints<T>(Vector4 offset) where T : ICollision
 		{
-			var z = new Vector4();
 			if (typeof(T) == _targetCollider.GetType() && _otherColliders.Contains((T)_targetCollider)) _otherColliders.Remove((T)_targetCollider);
 
 			Vector2 topPoint = new Vector2(_targetCollider.CollisionBounds.Center.X, _targetCollider.CollisionBounds.Top - offset.Z);

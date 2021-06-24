@@ -10,30 +10,74 @@ using Ladybug.ECS.Components;
 
 namespace Ladybug.ECS
 {
+	/// <summary>
+	/// Ladybug Entity-Component-System
+	/// </summary>
 	public class ECS
 	{
 		private ulong _nextEntityID = 0;
 
+		/// <summary>
+		/// Creates a new ECS instance
+		/// </summary>
+		/// <param name="scene">Scene object containing this ECS</param>
 		public ECS(Scene scene)
 		{
 			RegisterComponentSystem<InputComponent, InputComponentSystem>();
 			RegisterComponentSystem<SpriteComponent, SpriteComponentSystem>();
 			Scene = scene;
+			ResourceCatalog = scene.ResourceCatalog;
 		}
 
+		/// <summary>
+		/// This ECS's resident ResourceCatalog
+		/// </summary>
+		/// <remarks>
+		/// Default: Parent Scene's ResourceCatalog
+		/// </remarks>
 		public ResourceCatalog ResourceCatalog { get; set; }
+
+		/// <summary>
+		/// This ECS' parent Scene object
+		/// </summary>
 		public Scene Scene { get; set; }
 
+		/// <summary>
+		/// List of Entities managed by this ECS
+		/// </summary>
 		public List<Entity> Entities { get; private set; } = new List<Entity>();
 
+		/// <summary>
+		/// Dictionary tracking which ComponentSystems are responsible for processing
+		/// which Components
+		/// </summary>
 		private Dictionary<Type, Type> _componentsToSystems = new Dictionary<Type, Type>();
 
+		/// <summary>
+		/// Dictionary of Update methods called when this ECS is Updated
+		/// </summary>
 		private Dictionary<Type, Action<string, GameTime>> _updateMethods = new Dictionary<Type, Action<string, GameTime>>();
+		
+		/// <summary>
+		/// Dictionary of Draw methods called when this ECS is Drawn
+		/// </summary>
 		private Dictionary<Type, Action<string, GameTime, SpriteBatch>> _drawMethods = new Dictionary<Type, Action<string, GameTime, SpriteBatch>>();
 
+		/// <summary>
+		/// List of individual steps that are executed, in given order, during Update
+		/// </summary>
 		private List<string> _updateSteps = new List<string> { "PreUpdate", "Update", "PostUpdate" };
+
+		/// <summary>
+		/// List of individual steps that are executed, in given order, during Draw
+		/// </summary>
 		private List<string> _drawSteps = new List<string> { "PreDraw", "Draw", "PostDraw" };
 
+		/// <summary>
+		/// Registers a Component type and the ComponentSystem type that will be processing it.
+		/// </summary>
+		/// <typeparam name="C">Component type to be registered</typeparam>
+		/// <typeparam name="S">ComponentSystem type that will be processing the given Component type</typeparam>
 		public void RegisterComponentSystem<C, S>() where C : Component where S : ComponentSystem<C>
 		{
 			var component = typeof(C);
@@ -61,6 +105,10 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Registers a Component with this ECS
+		/// </summary>
+		/// <param name="component">Component to be registered with the ECS</param>
 		public void RegisterComponent(Component component)
 		{
 			if (TryGetComponentSystem(component, out Type system))
@@ -74,7 +122,14 @@ namespace Ladybug.ECS
 				throw new InvalidOperationException("Error registering component. No ComponentSystem is registered for this component type!");
 			}
 		}
-
+		
+		/// <summary>
+		/// Attempts to retrieve a reference to the ComponentSystem type responsible
+		/// for processing the given Component
+		/// </summary>
+		/// <param name="component">Component to attempt to find ComponentSystem for</param>
+		/// <param name="system">Reference to the found ComponentSystem</param>
+		/// <returns>True if matching ComponentSystem is found, otherwise False</returns>
 		public bool TryGetComponentSystem(Component component, out Type system)
 		{
 			system = default(Type);
@@ -87,6 +142,10 @@ namespace Ladybug.ECS
 			return system != default(Type);
 		}
 
+		/// <summary>
+		/// Creates a new Entity to be managed by this ECS
+		/// </summary>
+		/// <returns>Reference to the new Entity</returns>
 		public Entity CreateEntity()
 		{
 			var newID = GetEntityID();
@@ -99,6 +158,10 @@ namespace Ladybug.ECS
 			return res;
 		}
 
+		/// <summary>
+		/// Removes the given Entity from this ECS
+		/// </summary>
+		/// <param name="e">Entity to be removed from the ECS</param>
 		public void RemoveEntity(Entity e)
 		{
 			if (!Entities.Contains(e))
@@ -117,9 +180,43 @@ namespace Ladybug.ECS
 			Entities.Remove(e);
 		}
 
-		public Entity FindEntity(string name)
-		=> Entities.Where((e => e.Name == name)).FirstOrDefault();
+		/// <summary>
+		/// Attempts to find an Entity
+		/// </summary>
+		/// <param name="name">Name of Entity to find</param>
+		/// <param name="entity">Reference to found Entity</param>
+		/// <returns>True if matching Entity is found, otherwise False</returns>
+		/// <remarks>
+		/// This method will find only the first matching Entity.
+		/// Results may be unexpected if multiple Entities exist with
+		/// the same name (use id overload instead if this is the case).
+		/// </remarks>
+		public bool TryFindEntity(string name, out Entity entity)
+		{
+			entity = Entities.Where((e => e.Name == name)).FirstOrDefault();
+			return entity != null;
+		}
 
+		/// <summary>
+		/// Attempts to find an Entity
+		/// </summary>
+		/// <param name="id">ID of the Entity to find</param>
+		/// <param name="entity">Reference to the found Entity</param>
+		/// <returns>True if matching Entity is found, otherwise False</returns>
+		public bool TryFindEntity(ulong id, out Entity entity)
+		{
+			entity = Entities.Where((e => e.ID == id)).FirstOrDefault();
+			return entity != null;
+		}
+
+		/// <summary>
+		/// Initializes all Entities managed by the ECS
+		/// </summary>
+		/// <remarks>
+		/// Call this after all Entities have been added to the ECS.
+		/// Entities added to the ECS during runtime will have to have
+		/// Entity.Initialize() called on them individually
+		/// </remarks>
 		public void Initialize()
 		{
 			foreach (var entity in Entities)
@@ -128,6 +225,11 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Finds all Components of type T managed by this ECS
+		/// </summary>
+		/// <typeparam name="T">Type of component to find</typeparam>
+		/// <returns>List of all found Components</returns>
 		public List<T> FindAllComponents<T>() where T : Component
 		{
 			List<T> res = null;
@@ -143,6 +245,14 @@ namespace Ladybug.ECS
 			return res;
 		}
 
+		/// <summary>
+		/// Adds a step to this ECS's Update process
+		/// </summary>
+		/// <param name="step">Name of step to be added</param>
+		/// <param name="index">
+		/// Position of step in Update process. Appends the step to 
+		/// the end of the process if set to -1 or not specified
+		/// </param>
 		public void AddUpdateStep(string step, int index = -1)
 		{
 			if (_updateSteps.Contains(step))
@@ -160,9 +270,26 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Defines the Update steps used by this ECS
+		/// </summary>
+		/// <param name="steps">List of Update steps to be used by this ECS</param>
 		public void SetUpdateSteps(List<string> steps) => _updateSteps = steps;
+		
+		/// <summary>
+		/// Defines the Update steps used by this ECS
+		/// </summary>
+		/// <param name="steps">List of steps to be used by this ECS</param>
 		public void SetUpdateSteps(params string[] steps) => SetUpdateSteps(steps.ToList());
 
+		/// <summary>
+		/// Adds a step to this ECS's Draw process
+		/// </summary>
+		/// <param name="step">Name of step to be added</param>
+		/// <param name="index">
+		/// Position of step in Draw process. Appends the step to 
+		/// the end of the process if set to -1 or not specified
+		/// </param>
 		public void AddDrawStep(string step, int index = -1)
 		{
 			if (_drawSteps.Contains(step))
@@ -180,9 +307,23 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Defines the Draw Steps used by this ECS
+		/// </summary>
+		/// <param name="steps">List of Steps to be used by this ECS</param>
 		public void SetDrawSteps(List<string> steps) => _drawSteps = steps;
+
+		/// <summary>
+		/// Defines the Draw Steps used by this ECS
+		/// </summary>
+		/// <param name="steps">List of Steps to be used by this ECS</param>
 		public void SetDrawSteps(params string[] steps) => SetDrawSteps(steps.ToList());
 
+		/// <summary>
+		/// Runs the Update process for the current frame for all
+		/// components managed by this ECS
+		/// </summary>
+		/// <param name="gameTime"></param>
 		public void Update(GameTime gameTime)
 		{
 			foreach (var step in _updateSteps)
@@ -194,6 +335,12 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Runs the Draw process for the current frame for all
+		/// components managed by this ECS
+		/// </summary>
+		/// <param name="gameTime"></param>
+		/// <param name="spriteBatch"></param>
 		public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
 			foreach (var step in _drawSteps)
@@ -205,6 +352,15 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Requests that the ComponentSystem responsible for managing
+		/// the given component resort the draw priority of its components.
+		/// </summary>
+		/// <param name="component"></param>
+		/// <remarks>
+		/// This is automatically called whenever a Component's DrawPriority
+		/// property is modified
+		/// </remarks>
 		public void RequestDrawSort(Component component)
 		{
 			if (TryGetComponentSystem(component, out Type system))

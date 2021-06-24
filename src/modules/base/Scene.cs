@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug
 {
+	/// <summary>
+	/// Lists possible states a Scene can be in, which determine its Update and Draw behavior
+	/// </summary>
 	public enum SceneState
 	{
 		/// <summary>Active Scenes will have both <c>Update()</c> and <c>Draw</c> called each frame.</summary>
@@ -22,30 +25,68 @@ namespace Ladybug
 	/// </summary>
 	public class Scene
 	{
-
+		/// <summary>
+		/// Asynchronous content loading has started
+		/// </summary>
 		public event EventHandler LoadContentAsyncStart;
+
+		/// <summary>
+		/// Asynchronous content loading has completed
+		/// </summary>
 		public event EventHandler LoadContentAsyncComplete;
 
+		/// <summary>
+		/// Asynchronous initialization has started
+		/// </summary>
 		public event EventHandler InitializeAsyncStart;
+
+		/// <summary>
+		/// Asynchronous initialization has completed
+		/// </summary>
 		public event EventHandler InitializeAsyncComplete;
 
+		/// <summary>
+		/// Content loading has completed
+		/// </summary>
 		public event EventHandler LoadContentComplete;
+
+		/// <summary>
+		/// Initialization has completed
+		/// </summary>
 		public event EventHandler InitializeComplete;
 
+		/// <summary>
+		/// Scene has been paused
+		/// </summary>
 		public event EventHandler Paused;
+
+		/// <summary>
+		/// Scene has been unpaused
+		/// </summary>
 		public event EventHandler Unpaused;
 
+		/// <summary>
+		/// Scene has been suspended
+		/// </summary>
 		public event EventHandler Suspended;
+
+		/// <summary>
+		/// Scene has been unsuspended
+		/// </summary>
 		public event EventHandler Unsuspended;
 
+		/// <summary>
+		/// Scene has been unloaded
+		/// </summary>
 		public event EventHandler Unloaded;
 
 		/// <summary>
-		/// The Scene has been Paused or Suspended
+		/// The Scene has been paused or suspended
 		/// </summary>
 		public event EventHandler Stopped;
+		
 		/// <summary>
-		/// The Scene has been Unpaused or Unsuspended
+		/// The Scene has been unpaused or unsuspended
 		/// </summary>
 		public event EventHandler Resumed;
 
@@ -74,10 +115,22 @@ namespace Ladybug
 		private Action _onStop = () => { };
 		private Action _onResume = () => { };
 
+		/// <summary>
+		/// Creates a new Scene
+		/// </summary>
+		/// <param name="game"><see cref="Ladybug.Game"/> instance that will be managing this Scene</param>
+		/// <returns></returns>
 		public Scene(Game game) => SetGame(game);
 
+		/// <summary>
+		/// Creates a new Scene
+		/// </summary>
 		public Scene() { }
 
+		/// <summary>
+		/// Sets the <see cref="Ladybug.Game"/> object that will be managing this Scene
+		/// </summary>
+		/// <param name="game">Game object that will be managing this Scene</param>
 		public void SetGame(Game game)
 		{
 			Game = game;
@@ -87,23 +140,32 @@ namespace Ladybug
 			SpriteBatch = new SpriteBatch(game.GraphicsDevice);
 		}
 
+		/// <summary>
+		/// Whether this Scene has completed asynchronous initialization
+		/// </summary>
 		public bool InitializedAsync { get; private set; } = false;
+		/// <summary>
+		/// Whether this Scene has completed asynchronous content loading
+		/// </summary>
 		public bool ContentLoadedAsync { get; private set; } = false;
 
+		/// <summary>
+		/// Whether this Scene has completed initialization
+		/// </summary>
 		public bool Initialized { get; private set; } = false;
+		/// <summary>
+		/// Whether this Scene has completed content loading
+		/// </summary>
 		public bool ContentLoaded { get; private set; } = false;
 
 		/// <summary>
-		/// Scene-local ResourceCatalog
+		/// This Scene's resident <see cref="Ladybug.ResourceCatalog"/>
 		/// </summary>
 		/// <value></value>
 		public ResourceCatalog ResourceCatalog { get; protected set; }
 
 		/// <summary>
 		/// Reference to the Scene's ContentManager
-		/// 
-		/// Each Scene contains its own separate ContentManager so its assets can be
-		/// individually loaded and unloaded along with the Scene
 		/// </summary>
 		/// <value></value>
 		/// <remarks>
@@ -113,10 +175,13 @@ namespace Ladybug
 		public ContentManager Content { get; private set; }
 
 		/// <summary>
-		/// Reference to the Game instance that is handling this scene
+		/// Reference to the <see cref="Ladybug.Game"/> instance that is handling this scene
 		/// </summary>
 		public Game Game { get; protected set; }
 
+		/// <summary>
+		/// Current <see cref="Ladybug.SceneState"/> of the Scene
+		/// </summary>
 		public SceneState State { get; private set; } = SceneState.ACTIVE;
 
 		/// <summary>
@@ -236,7 +301,7 @@ namespace Ladybug
 		/// Sets the action that is run when the Scene
 		/// is unloaded
 		/// </summary>
-		/// <param name="action">Action run upon unloading the Scenen</param>
+		/// <param name="action">Action run upon unloading the Scene</param>
 		/// <returns>Scene</returns>
 		public Scene OnUnload(Action action)
 		{
@@ -244,6 +309,9 @@ namespace Ladybug
 			return this;
 		}
 
+		/// <summary>
+		/// Unloads the Scene, removing it from the <see cref="Ladybug.Game"/> instance that is managing it
+		/// </summary>
 		public void Unload()
 		{
 			_onUnload();
@@ -266,8 +334,8 @@ namespace Ladybug
 		/// Pauses the Scene
 		/// </summary>
 		/// <remarks>
-		/// A paused Scene will not execute Update(),
-		/// but will still execute Draw()
+		/// A paused Scene will not execute Update actions,
+		/// but will still execute Draw actions
 		/// </remarks>
 		public void Pause()
 		{
@@ -324,7 +392,7 @@ namespace Ladybug
 		/// </summary>
 		/// <remarks>
 		/// A suspended Scene will not execute
-		/// Update() or Draw()
+		/// Update or Draw actions
 		/// </remarks>
 		public void Suspend()
 		{

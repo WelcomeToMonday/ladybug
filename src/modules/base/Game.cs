@@ -1,24 +1,28 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug
 {
+	/// <summary>
+	/// Ladybug Game instance
+	/// </summary>
 	public class Game : Microsoft.Xna.Framework.Game
 	{
 		/// <summary>
 		/// The list of Scenes being managed by this Game instance
 		/// </summary>
-		/// <typeparam name="Scene"></typeparam>
 		/// <remarks>
-		/// Use <c>LoadScene()</c> and <c>UnloadScene()</c> to add and remove Scenes from the list
+		/// Use <see cref="Game.LoadScene()"/> and <see cref="Game.UnloadScene(Scene)"/> to add and remove Scenes from the list
 		/// </remarks>
 		protected List<Scene> SceneList = new List<Scene>();
 
+		/// <summary>
+		/// Creates a new Ladybug Game instance
+		/// </summary>
+		/// <returns></returns>
 		public Game() : base()
 		{
 			GraphicsDeviceManager = new GraphicsDeviceManager(this);
@@ -39,13 +43,16 @@ namespace Ladybug
 		/// </summary>
 		public GraphicsDeviceManager GraphicsDeviceManager { get; private set; }
 
+		/// <summary>
+		/// This Game instance's resident <see cref="Ladybug.ThreadManager"/>
+		/// </summary>
+		/// <value></value>
 		public ThreadManager ThreadManager { get; private set; }
 
 		/// <summary>
-		/// Creates and Loads a new Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
-		/// adding the scene to the Game instance via LoadScene
+		/// Creates and Loads a new <see cref="Ladybug.Scene"/> asynchronously
 		/// </summary>
-		/// <typeparam name="T">Type of Scene to create</typeparam>
+		/// <typeparam name="T">Type of <see cref="Ladybug.Scene"/> to create</typeparam>
 		public async void LoadSceneAsync<T>() where T : Scene, new()
 		{
 			var scene = new T();
@@ -54,14 +61,9 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Loads a Scene asynchronously, calling its LoadContentAsync and InitializeAsync before
-		/// adding the scene to the Game instance via LoadScene
+		/// Loads a Scene asynchronously
 		/// </summary>
-		/// <param name="scene">Scene to be loaded asynchronously</param>
-		/// <remarks>
-		/// Calls LoadScene, meaning the scene's LoadContent and LoadScene methods are called
-		/// after their async counterparts.
-		/// </remarks>
+		/// <param name="scene"><see cref="Ladybug.Scene"/> to be loaded asynchronously</param>
 		public async void LoadSceneAsync(Scene scene)
 		{
 			if (scene.Game == null)
@@ -75,7 +77,7 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Creates and Loads a new Scene into the Game instance
+		/// Creates and Loads a new <see cref="Ladybug.Scene"/> into the Game instance
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		public void LoadScene<T>() where T : Scene, new()
@@ -86,7 +88,7 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Loads a scene into the Game instance
+		/// Loads a <see cref="Ladybug.Scene"/> into the Game instance
 		/// </summary>
 		/// <param name="scene">Scene to be loaded</param>
 		public void LoadScene(Scene scene)
@@ -102,7 +104,7 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Removes a scene from the Game instance, unloading its assets and removing it from the
+		/// Removes a <see cref="Ladybug.Scene"/> from the Game instance, unloading its assets and removing it from the
 		/// scene execution loop.
 		/// </summary>
 		/// <param name="scene">Scene to be unloaded</param>
@@ -114,11 +116,20 @@ namespace Ladybug
 			}
 		}
 
+		/*
+		/// <summary>
+		/// Initializes the Game instance
+		/// </summary>
 		protected override void Initialize()
 		{
 			base.Initialize();
 		}
+		*/
 
+		/*
+		/// <summary>
+		/// Loads resources for managed Scenes
+		/// </summary>
 		protected override void LoadContent()
 		{
 			foreach (var scene in SceneList)
@@ -126,6 +137,7 @@ namespace Ladybug
 				if (!scene.ContentLoaded) scene._LoadContent();
 			}
 		}
+		*/
 
 		/// <summary>
 		/// Updates all Scenes managed by this Game instance which are neither Paused nor Suspended.

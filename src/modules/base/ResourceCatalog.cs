@@ -5,15 +5,26 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug
 {
+	/// <summary>
+	/// Ladybug ResourceCatalog instance
+	/// </summary>
 	public class ResourceCatalog
 	{
 		private Dictionary<Type, Dictionary<string, object>> _catalog = new Dictionary<Type, Dictionary<string, object>>();
 
+		/// <summary>
+		/// Creates a new RsourceCatalog instance
+		/// </summary>
+		/// <param name="contentManager">ContentManager to be used by the ResourceCatalog when loading content resources</param>
 		public ResourceCatalog(ContentManager contentManager)
 		{
 			ContentManager = contentManager;
 		}
 
+		/// <summary>
+		/// ResourceCatalog's resident ContentManager
+		/// </summary>
+		/// <value></value>
 		public ContentManager ContentManager { get; private set; }
 
 		/// <summary>
