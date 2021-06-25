@@ -73,7 +73,9 @@
   
   <h1 id="Ladybug_ECS_Component" data-uid="Ladybug.ECS.Component" class="text-break">Class Component
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A Component that can be registered and managed
+by an <a class="xref" href="Ladybug.ECS.ECS.html">ECS</a> instance</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -81,91 +83,30 @@
     <div class="level1"><span class="xref">Component</span></div>
       <div class="level2"><a class="xref" href="Ladybug.ECS.Components.InputComponent.html">InputComponent</a></div>
       <div class="level2"><a class="xref" href="Ladybug.ECS.Components.SpriteComponent.html">SpriteComponent</a></div>
-      <div class="level2"><a class="xref" href="Ladybug.ECS.Components.TransformComponent.html">TransformComponent</a></div>
-      <div class="level2"><a class="xref" href="Ladybug.ECS.DrawableComponent.html">DrawableComponent</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.ECS.html">Ladybug.ECS</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_ECS_Component_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Component</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Component : object</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component__ctor_Ladybug_ECS_Entity_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.%23ctor(Ladybug.ECS.Entity%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L7">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component__ctor_" data-uid="Ladybug.ECS.Component.#ctor*"></a>
-  <h4 id="Ladybug_ECS_Component__ctor_Ladybug_ECS_Entity_System_String_" data-uid="Ladybug.ECS.Component.#ctor(Ladybug.ECS.Entity,System.String)">Component(Entity, String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Component(Entity entity = null, string Name = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a></td>
-        <td><span class="parametername">entity</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Active.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Active%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Active.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Active%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L20">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L65">View Source</a>
   </span>
   <a id="Ladybug_ECS_Component_Active_" data-uid="Ladybug.ECS.Component.Active*"></a>
   <h4 id="Ladybug_ECS_Component_Active" data-uid="Ladybug.ECS.Component.Active">Active</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Whether the Component is active</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Active { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Active { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -182,16 +123,89 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Ladybug_ECS_Component_Active_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, Active is used to
+determine whether to update this
+Component. This behavior can be changed
+by overriding <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_CheckRunUpdate">CheckRunUpdate()</a></p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Entity.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Entity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_DrawPriority.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.DrawPriority%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L12">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L87">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_DrawPriority_" data-uid="Ladybug.ECS.Component.DrawPriority*"></a>
+  <h4 id="Ladybug_ECS_Component_DrawPriority" data-uid="Ladybug.ECS.Component.DrawPriority">DrawPriority</h4>
+  <div class="markdown level1 summary"><p>The Draw Priority of this Component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DrawPriority { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_ECS_Component_DrawPriority_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Components with a smaller value in DrawPriority
+are drawn earlier than those with a larger value</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_ECS.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.ECS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L38">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_ECS_" data-uid="Ladybug.ECS.Component.ECS*"></a>
+  <h4 id="Ladybug_ECS_Component_ECS" data-uid="Ladybug.ECS.Component.ECS">ECS</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a> that is managing this Component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ECS ECS { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Entity.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Entity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L32">View Source</a>
   </span>
   <a id="Ladybug_ECS_Component_Entity_" data-uid="Ladybug.ECS.Component.Entity*"></a>
   <h4 id="Ladybug_ECS_Component_Entity" data-uid="Ladybug.ECS.Component.Entity">Entity</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a> that contains this Component</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -214,18 +228,52 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Name.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Game.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Game%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L18">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L53">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Component_Name_" data-uid="Ladybug.ECS.Component.Name*"></a>
-  <h4 id="Ladybug_ECS_Component_Name" data-uid="Ladybug.ECS.Component.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Component_Game_" data-uid="Ladybug.ECS.Component.Game*"></a>
+  <h4 id="Ladybug_ECS_Component_Game" data-uid="Ladybug.ECS.Component.Game">Game</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="Ladybug.Game.html">Game</a> instance that is managing the
+<a class="xref" href="Ladybug.Scene.html">Scene</a> that contains the
+<a class="xref" href="Ladybug.ECS.Entity.html">Entity</a> managing this Component</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Game Game { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Game.html">Game</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Name.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L26">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_Name_" data-uid="Ladybug.ECS.Component.Name*"></a>
+  <h4 id="Ladybug_ECS_Component_Name" data-uid="Ladybug.ECS.Component.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Name of the Component instance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -244,18 +292,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_ResourceCatalog.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.ResourceCatalog%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Scene.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Scene%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L16">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L45">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Component_ResourceCatalog_" data-uid="Ladybug.ECS.Component.ResourceCatalog*"></a>
-  <h4 id="Ladybug_ECS_Component_ResourceCatalog" data-uid="Ladybug.ECS.Component.ResourceCatalog">ResourceCatalog</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Component_Scene_" data-uid="Ladybug.ECS.Component.Scene*"></a>
+  <h4 id="Ladybug_ECS_Component_Scene" data-uid="Ladybug.ECS.Component.Scene">Scene</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="Ladybug.Scene.html">Scene</a> that contains the <a class="xref" href="Ladybug.ECS.ECS.html">ECS</a> that
+manages this Component</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ResourceCatalog ResourceCatalog { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Scene Scene { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -267,200 +317,65 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.ResourceCatalog.html">ResourceCatalog</a></td>
+        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_System.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.System%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Visible.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L14">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L77">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Component_System_" data-uid="Ladybug.ECS.Component.System*"></a>
-  <h4 id="Ladybug_ECS_Component_System" data-uid="Ladybug.ECS.Component.System">System</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Component_Visible_" data-uid="Ladybug.ECS.Component.Visible*"></a>
+  <h4 id="Ladybug_ECS_Component_Visible" data-uid="Ladybug.ECS.Component.Visible">Visible</h4>
+  <div class="markdown level1 summary"><p>Whether the Component is visible</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EntitySystem System { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Visible { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.ECS.EntitySystem.html">EntitySystem</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L32">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component_Initialize_" data-uid="Ladybug.ECS.Component.Initialize*"></a>
-  <h4 id="Ladybug_ECS_Component_Initialize" data-uid="Ladybug.ECS.Component.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Initialize()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_PostUpdate_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.PostUpdate(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L38">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component_PostUpdate_" data-uid="Ladybug.ECS.Component.PostUpdate*"></a>
-  <h4 id="Ladybug_ECS_Component_PostUpdate_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ECS.Component.PostUpdate(Microsoft.Xna.Framework.GameTime)">PostUpdate(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void PostUpdate(GameTime gameTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_PreUpdate_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.PreUpdate(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L34">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component_PreUpdate_" data-uid="Ladybug.ECS.Component.PreUpdate*"></a>
-  <h4 id="Ladybug_ECS_Component_PreUpdate_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ECS.Component.PreUpdate(Microsoft.Xna.Framework.GameTime)">PreUpdate(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void PreUpdate(GameTime gameTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_SetActive_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.SetActive(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L27">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component_SetActive_" data-uid="Ladybug.ECS.Component.SetActive*"></a>
-  <h4 id="Ladybug_ECS_Component_SetActive_System_Boolean_" data-uid="Ladybug.ECS.Component.SetActive(System.Boolean)">SetActive(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetActive(bool active)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">active</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Ladybug_ECS_Component_Visible_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, Visible is used to
+determine whether to draw this
+Component. This behavior can be changed
+by overriding <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_CheckRunDraw">CheckRunDraw()</a></p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_SetName_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.SetName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_CheckRunDraw.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.CheckRunDraw%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L22">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L121">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Component_SetName_" data-uid="Ladybug.ECS.Component.SetName*"></a>
-  <h4 id="Ladybug_ECS_Component_SetName_System_String_" data-uid="Ladybug.ECS.Component.SetName(System.String)">SetName(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Component_CheckRunDraw_" data-uid="Ladybug.ECS.Component.CheckRunDraw*"></a>
+  <h4 id="Ladybug_ECS_Component_CheckRunDraw" data-uid="Ladybug.ECS.Component.CheckRunDraw">CheckRunDraw()</h4>
+  <div class="markdown level1 summary"><p>Determines whether to Draw this component each frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetName(string name)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_ToString.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L40">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Component_ToString_" data-uid="Ladybug.ECS.Component.ToString*"></a>
-  <h4 id="Ladybug_ECS_Component_ToString" data-uid="Ladybug.ECS.Component.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool CheckRunDraw()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -472,27 +387,63 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.ToString()</span></div>
+  <h5 id="Ladybug_ECS_Component_CheckRunDraw_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, checks that <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Visible">Visible</a> and <a class="xref" href="Ladybug.ECS.Entity.html#Ladybug_ECS_Entity_Visible">Visible</a> are true</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_CheckRunUpdate.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.CheckRunUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L36">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L112">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Component_Update_" data-uid="Ladybug.ECS.Component.Update*"></a>
-  <h4 id="Ladybug_ECS_Component_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ECS.Component.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Component_CheckRunUpdate_" data-uid="Ladybug.ECS.Component.CheckRunUpdate*"></a>
+  <h4 id="Ladybug_ECS_Component_CheckRunUpdate" data-uid="Ladybug.ECS.Component.CheckRunUpdate">CheckRunUpdate()</h4>
+  <div class="markdown level1 summary"><p>Determines whether to Update this component each frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Update(GameTime gameTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool CheckRunUpdate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_ECS_Component_CheckRunUpdate_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, checks that Active and Entity.Active are true</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_OnDraw_Action_GameTime_SpriteBatch__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.OnDraw(Action%7BGameTime%2CSpriteBatch%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L164">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_OnDraw_" data-uid="Ladybug.ECS.Component.OnDraw*"></a>
+  <h4 id="Ladybug_ECS_Component_OnDraw_Action_GameTime_SpriteBatch__" data-uid="Ladybug.ECS.Component.OnDraw(Action{GameTime,SpriteBatch})">OnDraw(Action&lt;GameTime, SpriteBatch&gt;)</h4>
+  <div class="markdown level1 summary"><p>Defines this Component's behavior upon being drawn</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component OnDraw(Action&lt;GameTime, SpriteBatch&gt; action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -505,8 +456,238 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
+        <td><span class="xref">Action</span>&lt;<span class="xref">GameTime</span>, <span class="xref">SpriteBatch</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be performed by this Component upon each draw call</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_ECS_Component_OnDraw_Action_GameTime_SpriteBatch___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This overload sets the action taken upon the &quot;Draw&quot; Draw step</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_OnDraw_System_String_Action_GameTime_SpriteBatch__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.OnDraw(System.String%2CAction%7BGameTime%2CSpriteBatch%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L172">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_OnDraw_" data-uid="Ladybug.ECS.Component.OnDraw*"></a>
+  <h4 id="Ladybug_ECS_Component_OnDraw_System_String_Action_GameTime_SpriteBatch__" data-uid="Ladybug.ECS.Component.OnDraw(System.String,Action{GameTime,SpriteBatch})">OnDraw(String, Action&lt;GameTime, SpriteBatch&gt;)</h4>
+  <div class="markdown level1 summary"><p>Defines this Component's behavior upon the given draw step</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component OnDraw(string step, Action&lt;GameTime, SpriteBatch&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">step</span></td>
+        <td><p>Draw step on which the given action will be performed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">GameTime</span>, <span class="xref">SpriteBatch</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to perform on the given Draw step</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_OnInitialize_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.OnInitialize(Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L128">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_OnInitialize_" data-uid="Ladybug.ECS.Component.OnInitialize*"></a>
+  <h4 id="Ladybug_ECS_Component_OnInitialize_Action_" data-uid="Ladybug.ECS.Component.OnInitialize(Action)">OnInitialize(Action)</h4>
+  <div class="markdown level1 summary"><p>Defines this Component's behavior upon initialization</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component OnInitialize(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be performed by this Component upon initialization</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_OnUpdate_Action_GameTime__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.OnUpdate(Action%7BGameTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L142">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_OnUpdate_" data-uid="Ladybug.ECS.Component.OnUpdate*"></a>
+  <h4 id="Ladybug_ECS_Component_OnUpdate_Action_GameTime__" data-uid="Ladybug.ECS.Component.OnUpdate(Action{GameTime})">OnUpdate(Action&lt;GameTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Defines this Component's behavior upon updating</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component OnUpdate(Action&lt;GameTime&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">GameTime</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be performed by this Component upon each update</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Ladybug_ECS_Component_OnUpdate_Action_GameTime___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This overload sets the action taken during the &quot;Update&quot; Update step</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component_OnUpdate_System_String_Action_GameTime__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component.OnUpdate(System.String%2CAction%7BGameTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L150">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Component_OnUpdate_" data-uid="Ladybug.ECS.Component.OnUpdate*"></a>
+  <h4 id="Ladybug_ECS_Component_OnUpdate_System_String_Action_GameTime__" data-uid="Ladybug.ECS.Component.OnUpdate(System.String,Action{GameTime})">OnUpdate(String, Action&lt;GameTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Defines this Component's behavior upon the given update step</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component OnUpdate(string step, Action&lt;GameTime&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">step</span></td>
+        <td><p>Update step on which the given action will be performed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<span class="xref">GameTime</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to perform on the given Update step</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -519,10 +700,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Component.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Component%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Component.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Component.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

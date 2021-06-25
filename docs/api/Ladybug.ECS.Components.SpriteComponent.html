@@ -73,7 +73,8 @@
   
   <h1 id="Ladybug_ECS_Components_SpriteComponent" data-uid="Ladybug.ECS.Components.SpriteComponent" class="text-break">Class SpriteComponent
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Ladybug standard component for sprites</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -81,79 +82,91 @@
     <div class="level1"><a class="xref" href="Ladybug.ECS.Component.html">Component</a></div>
     <div class="level2"><span class="xref">SpriteComponent</span></div>
   </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Ladybug.ECS.IDrawableComponent.html">IDrawableComponent</a></div>
-  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Name">Component.Name</a>
+    </div>
     <div>
       <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Entity">Component.Entity</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_System">Component.System</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_ECS">Component.ECS</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_ResourceCatalog">Component.ResourceCatalog</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Scene">Component.Scene</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Name">Component.Name</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Game">Component.Game</a>
     </div>
     <div>
       <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Active">Component.Active</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_SetName_System_String_">Component.SetName(String)</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Visible">Component.Visible</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_SetActive_System_Boolean_">Component.SetActive(Boolean)</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_DrawPriority">Component.DrawPriority</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_PreUpdate_Microsoft_Xna_Framework_GameTime_">Component.PreUpdate(GameTime)</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_CheckRunUpdate">Component.CheckRunUpdate()</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_PostUpdate_Microsoft_Xna_Framework_GameTime_">Component.PostUpdate(GameTime)</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_CheckRunDraw">Component.CheckRunDraw()</a>
     </div>
     <div>
-      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_ToString">Component.ToString()</a>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnInitialize_Action_">Component.OnInitialize(Action)</a>
     </div>
     <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_Action_GameTime__">Component.OnUpdate(Action&lt;GameTime&gt;)</a>
     </div>
     <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_System_String_Action_GameTime__">Component.OnUpdate(String, Action&lt;GameTime&gt;)</a>
     </div>
     <div>
-      <span class="xref">System.Object.GetHashCode()</span>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_Action_GameTime_SpriteBatch__">Component.OnDraw(Action&lt;GameTime, SpriteBatch&gt;)</a>
     </div>
     <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+      <a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_System_String_Action_GameTime_SpriteBatch__">Component.OnDraw(String, Action&lt;GameTime, SpriteBatch&gt;)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.ECS.Components.html">Ladybug.ECS.Components</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_ECS_Components_SpriteComponent_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SpriteComponent : Component, IDrawableComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpriteComponent : Component</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent__ctor.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L21">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Components_SpriteComponent__ctor_" data-uid="Ladybug.ECS.Components.SpriteComponent.#ctor*"></a>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent__ctor" data-uid="Ladybug.ECS.Components.SpriteComponent.#ctor">SpriteComponent()</h4>
+  <div class="markdown level1 summary"><p>Creates a new SpriteComponent instance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteComponent()</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Color.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Color%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Color.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Color%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L20">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L39">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_Color_" data-uid="Ladybug.ECS.Components.SpriteComponent.Color*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_Color" data-uid="Ladybug.ECS.Components.SpriteComponent.Color">Color</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Color filter applied to this SpriteComponent</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -169,51 +182,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Color</span></td>
+        <td><span class="xref">Color</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_DrawPriority.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.DrawPriority%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Sprite.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Sprite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L16">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_DrawPriority_" data-uid="Ladybug.ECS.Components.SpriteComponent.DrawPriority*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_DrawPriority" data-uid="Ladybug.ECS.Components.SpriteComponent.DrawPriority">DrawPriority</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int DrawPriority { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Sprite.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Sprite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L14">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L33">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_Sprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.Sprite*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_Sprite" data-uid="Ladybug.ECS.Components.SpriteComponent.Sprite">Sprite</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p><a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a> instance used
+by this SpriteComponent</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -234,52 +219,23 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Visible.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L18">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_Visible_" data-uid="Ladybug.ECS.Components.SpriteComponent.Visible*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_Visible" data-uid="Ladybug.ECS.Components.SpriteComponent.Visible">Visible</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Visible { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String%2CMicrosoft.Xna.Framework.Graphics.Texture2D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String%2CTexture2D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L30">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L61">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_AddAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.AddAnimation*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_" data-uid="Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean)">AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable&lt;Int32&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_" data-uid="Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Texture2D,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean)">AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable&lt;Int32&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds a new Animation to this SpriteComponent</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddAnimation(string animationName, Texture2D sourceTexture, int rows, int columns, int animationSpeed, int startFrame, int? endFrame = default(int? ), bool setDefault = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddAnimation(string animationName, Texture2D sourceTexture, int rows, int columns, int animationSpeed, int startFrame, int? endFrame = null, bool setDefault = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,92 +250,66 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">animationName</span></td>
-        <td></td>
+        <td><p>Name of the new Animation</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Graphics.Texture2D</span></td>
+        <td><span class="xref">Texture2D</span></td>
         <td><span class="parametername">sourceTexture</span></td>
-        <td></td>
+        <td><p>Source texture</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">rows</span></td>
-        <td></td>
+        <td><p>Rows in the source texture</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">columns</span></td>
-        <td></td>
+        <td><p>Columns in the source texture</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">animationSpeed</span></td>
-        <td></td>
+        <td><p>Speed of the animation</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">startFrame</span></td>
-        <td></td>
+        <td><p>First frame of the animation</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">endFrame</span></td>
-        <td></td>
+        <td><p>Last frame of the animation</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">setDefault</span></td>
-        <td></td>
+        <td><p>Whether to set this animation as the SpriteComponent's default
+animation</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Draw_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Draw(Microsoft.Xna.Framework.GameTime%2CMicrosoft.Xna.Framework.Graphics.SpriteBatch)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_GetAnimation.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.GetAnimation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L67">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_Draw_" data-uid="Ladybug.ECS.Components.SpriteComponent.Draw*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_Draw_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_" data-uid="Ladybug.ECS.Components.SpriteComponent.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">Draw(GameTime, SpriteBatch)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Draw(GameTime gameTime, SpriteBatch spriteBatch)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Graphics.SpriteBatch</span></td>
-        <td><span class="parametername">spriteBatch</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_GetAnimation.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.GetAnimation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L49">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L91">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_GetAnimation" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation">GetAnimation()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets this the current <a class="xref" href="Ladybug.Graphics.AnimationSequence.html">AnimationSequence</a>
+of this SpriteComponent's <a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -402,14 +332,16 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_GetAnimation_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.GetAnimation(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_GetAnimation_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.GetAnimation(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L47">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L84">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_GetAnimation_System_String_" data-uid="Ladybug.ECS.Components.SpriteComponent.GetAnimation(System.String)">GetAnimation(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Ladybug.Graphics.AnimationSequence.html">AnimationSequence</a> from
+this SpriteComponent's <a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -428,7 +360,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">animationName</span></td>
-        <td></td>
+        <td><p>Name of the animation to retrieve</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -449,31 +382,16 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_SetAnimation_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.SetAnimation(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L56">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_Initialize_" data-uid="Ladybug.ECS.Components.SpriteComponent.Initialize*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_Initialize" data-uid="Ladybug.ECS.Components.SpriteComponent.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Initialize">Component.Initialize()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_SetAnimation_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.SetAnimation(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L51">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L98">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_SetAnimation_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetAnimation*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_SetAnimation_System_String_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetAnimation(System.String)">SetAnimation(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the SpriteComponent's current
+<a class="xref" href="Ladybug.Graphics.AnimationSequence.html">AnimationSequence</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -498,50 +416,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_SetDrawPriority_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.SetDrawPriority(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_SetSprite_Ladybug_Graphics_AnimatedSprite_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.SetSprite(Ladybug.Graphics.AnimatedSprite)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L24">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_SetDrawPriority_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetDrawPriority*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_SetDrawPriority_System_Int32_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetDrawPriority(System.Int32)">SetDrawPriority(Int32)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetDrawPriority(int priority)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">priority</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_SetSprite_Ladybug_Graphics_AnimatedSprite_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.SetSprite(Ladybug.Graphics.AnimatedSprite)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L22">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L45">View Source</a>
   </span>
   <a id="Ladybug_ECS_Components_SpriteComponent_SetSprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetSprite*"></a>
   <h4 id="Ladybug_ECS_Components_SpriteComponent_SetSprite_Ladybug_Graphics_AnimatedSprite_" data-uid="Ladybug.ECS.Components.SpriteComponent.SetSprite(Ladybug.Graphics.AnimatedSprite)">SetSprite(AnimatedSprite)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the component's animated sprite</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetSprite(AnimatedSprite s)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetSprite(AnimatedSprite sprite)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -555,49 +442,11 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Ladybug.Graphics.AnimatedSprite.html">AnimatedSprite</a></td>
-        <td><span class="parametername">s</span></td>
+        <td><span class="parametername">sprite</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L62">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Components_SpriteComponent_Update_" data-uid="Ladybug.ECS.Components.SpriteComponent.Update*"></a>
-  <h4 id="Ladybug_ECS_Components_SpriteComponent_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ECS.Components.SpriteComponent.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Update(GameTime gameTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Ladybug.ECS.Component.html#Ladybug_ECS_Component_Update_Microsoft_Xna_Framework_GameTime_">Component.Update(GameTime)</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Ladybug.ECS.IDrawableComponent.html">IDrawableComponent</a>
-  </div>
 </article>
           </div>
           
@@ -606,10 +455,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Components_SpriteComponent.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Components.SpriteComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/components/SpriteComponent.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/components/SpriteComponent.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

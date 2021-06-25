@@ -6,7 +6,7 @@ In this section, we'll be going over Ladybug's `Game` and `Scene` classes, and h
 #### Prerequisites
 To follow this article, you will need to have created a new project that references both MonoGame and Ladybug.
 
-See the [previous article](/articles/installation.html) for guidance.
+See the [previous article](/articles/getting-started/installation.html) for guidance on setting up a new Ladybug project.
 
 ## Ladybug's Game Class
 Ladybug is built upon Monogame/XNA, and at its most basic level runs on the same underlying `Game` class.
@@ -187,6 +187,6 @@ Now that you have a basic grasp of Ladybug's `Game` and `Scene` classes, you're 
 
 Here's where you can go from here:
 
-* Stay tuned for more articles including simple game tutorials. We'll update this article when the introductory-level tutorial is available!
+* Check out the [Learning Ladybug with Snake](/articles/tutorials/1/intro.html) tutorial and walk through re-creating the classic game of Snake with Ladybug
 * Look through the excellent MonoGame/XNA Tutorials on [R.B. Whitaker's Wiki](http://rbwhitaker.wikidot.com/monogame-tutorials)
-* Take a look at the [MonoGame Documentation](http://www.monogame.net/documentation/?page=main) for more tutorials.
+* Take a look at the [MonoGame Documentation](http://www.monogame.net/documentation/?page=main) for more tutorials

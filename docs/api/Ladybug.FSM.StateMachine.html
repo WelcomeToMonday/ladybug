@@ -73,74 +73,43 @@
   
   <h1 id="Ladybug_FSM_StateMachine" data-uid="Ladybug.FSM.StateMachine" class="text-break">Class StateMachine
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Ladybug Finite State Machine</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">StateMachine</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.FSM.html">Ladybug.FSM</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_FSM_StateMachine_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StateMachine</code></pre>
+    <pre><code class="lang-csharp hljs">public class StateMachine : object</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine__ctor.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L12">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_StateMachine__ctor_" data-uid="Ladybug.FSM.StateMachine.#ctor*"></a>
   <h4 id="Ladybug_FSM_StateMachine__ctor" data-uid="Ladybug.FSM.StateMachine.#ctor">StateMachine()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new StateMachine instance</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public StateMachine()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine__ctor_Ladybug_FSM_IState_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine.%23ctor(Ladybug.FSM.IState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L17">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_StateMachine__ctor_" data-uid="Ladybug.FSM.StateMachine.#ctor*"></a>
-  <h4 id="Ladybug_FSM_StateMachine__ctor_Ladybug_FSM_IState_" data-uid="Ladybug.FSM.StateMachine.#ctor(Ladybug.FSM.IState)">StateMachine(IState)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_StateMachine__ctor_Ladybug_FSM_State_" data-uid="Ladybug.FSM.StateMachine.#ctor(Ladybug.FSM.State)">StateMachine(State)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Statemachine Instance</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StateMachine(IState initialState)</code></pre>
+    <pre><code class="lang-csharp hljs">public StateMachine(State initialState)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -153,28 +122,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.FSM.IState.html">IState</a></td>
+        <td><a class="xref" href="Ladybug.FSM.State.html">State</a></td>
         <td><span class="parametername">initialState</span></td>
-        <td></td>
+        <td><p>Initial <a class="xref" href="Ladybug.FSM.State.html">State</a></p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine_ChangeState_Ladybug_FSM_IState_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine.ChangeState(Ladybug.FSM.IState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L22">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_StateMachine_ChangeState_" data-uid="Ladybug.FSM.StateMachine.ChangeState*"></a>
-  <h4 id="Ladybug_FSM_StateMachine_ChangeState_Ladybug_FSM_IState_" data-uid="Ladybug.FSM.StateMachine.ChangeState(Ladybug.FSM.IState)">ChangeState(IState)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_StateMachine_ChangeState_Ladybug_FSM_State_" data-uid="Ladybug.FSM.StateMachine.ChangeState(Ladybug.FSM.State)">ChangeState(State)</h4>
+  <div class="markdown level1 summary"><p>Changes the active <a class="xref" href="Ladybug.FSM.State.html">State</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ChangeState(IState newState)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ChangeState(State newState)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -187,22 +153,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.FSM.IState.html">IState</a></td>
+        <td><a class="xref" href="Ladybug.FSM.State.html">State</a></td>
         <td><span class="parametername">newState</span></td>
-        <td></td>
+        <td><p>New <a class="xref" href="Ladybug.FSM.State.html">State</a></p>
+</td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L34">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_StateMachine_Update_" data-uid="Ladybug.FSM.StateMachine.Update*"></a>
-  <h4 id="Ladybug_FSM_StateMachine_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.FSM.StateMachine.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_StateMachine_Update_GameTime_" data-uid="Ladybug.FSM.StateMachine.Update(GameTime)">Update(GameTime)</h4>
+  <div class="markdown level1 summary"><p>Updates the StateMachine</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -219,7 +182,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
+        <td><span class="xref">GameTime</span></td>
         <td><span class="parametername">gameTime</span></td>
         <td></td>
       </tr>
@@ -227,15 +190,11 @@
   </table>
   <h3 id="events">Events
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine_StateChanged.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine.StateChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L8">View Source</a>
-  </span>
+  
+  
   <h4 id="Ladybug_FSM_StateMachine_StateChanged" data-uid="Ladybug.FSM.StateMachine.StateChanged">StateChanged</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The current <a class="xref" href="Ladybug.FSM.State.html">State</a> has changed</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -251,7 +210,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.EventHandler</span></td>
+        <td><span class="xref">EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -263,12 +222,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_StateMachine.md&amp;value=---%0Auid%3A%20Ladybug.FSM.StateMachine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/StateMachine.cs/#L6" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

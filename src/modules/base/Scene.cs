@@ -12,7 +12,7 @@ namespace Ladybug
 	/// </summary>
 	public enum SceneState
 	{
-		/// <summary>Active Scenes will have both <c>Update()</c> and <c>Draw</c> called each frame.</summary>
+		/// <summary>Active Scenes will have both <c>Update()</c> and <c>Draw()</c> called each frame.</summary>
 		ACTIVE,
 		/// <summary>Paused Scenes will only have <c>Draw()</c> called each frame</summary>
 		PAUSED,

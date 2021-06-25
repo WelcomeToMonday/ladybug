@@ -3,6 +3,14 @@
 - name: Getting Started
   items:
   - name: "Installation and Setup"
-    href: installation.md
+    href: getting-started/installation.md
   - name: "Setting Up the Game"
-    href: setting-up-the-game.md
+    href: getting-started/setting-up-the-game.md
+- name: Tutorials
+  items:
+  - name: Learning Ladybug with Snake
+    items:
+    - name: Project Introduction
+      href: tutorials/1/intro.md
+    - name: "Part 1: The Main Scene"
+      href: tutorials/1/1.md

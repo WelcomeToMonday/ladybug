@@ -72,23 +72,31 @@
   
   <h1 id="Ladybug_ECS" data-uid="Ladybug.ECS" class="text-break">Namespace Ladybug.ECS
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><h1 id="ladybug-entity-component-system">Ladybug Entity Component System</h1>
+<p>The <strong>Ladybug.ECS</strong> namespace contains the components for Ladybug's Entity Component System.</p>
+<h2 id="what-is-the-ladybug-entity-component-system">What is the Ladybug Entity Component System?</h2>
+<p>Ladybug's ECS makes it easy to create game entities by composing them from different components that each define a particular part of their behavior. In addition to making it easier to logically compose game entities, the ECS also organizes component logic in a way that makes it easy for a CPU to process large batches of components, improving performance.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>To learn more about using Ladybug's ECS functionality, take a look at the <a href="/articles/ecs-intro.html">Introduction to Ladybug.ECS</a> article.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Ladybug.ECS.Component.html">Component</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Ladybug.ECS.DrawableComponent.html">DrawableComponent</a></h4>
-      <section></section>
+      <section><p>A Component that can be registered and managed
+by an <a class="xref" href="Ladybug.ECS.ECS.html">ECS</a> instance</p>
+</section>
+      <h4><a class="xref" href="Ladybug.ECS.ComponentSystem-1.html">ComponentSystem&lt;T&gt;</a></h4>
+      <section><p>A System responsible for processing <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+update and draw behavior</p>
+</section>
+      <h4><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a></h4>
+      <section><p>Ladybug Entity-Component-System</p>
+</section>
       <h4><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Ladybug.ECS.EntitySystem.html">EntitySystem</a></h4>
-      <section></section>
-    <h3 id="interfaces">Interfaces
-  </h3>
-      <h4><a class="xref" href="Ladybug.ECS.IDrawableComponent.html">IDrawableComponent</a></h4>
-      <section></section>
+      <section><p>Ladybug ECS Entity</p>
+</section>
 </article>
           </div>
           
@@ -96,6 +104,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/welcometomonday/ladybug/blob/documentation/docs-src/apidoc/EntitySystem.md/#L2" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

@@ -12,7 +12,7 @@ namespace Ladybug.ECS
 	/// </summary>
 	public abstract class Component
 	{
-		private int _drawPriority = 100;
+		private int _drawPriority = 0;
 
 		private Action _onInitialize = () => { };
 

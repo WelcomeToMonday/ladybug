@@ -147,46 +147,11 @@ namespace Ladybug.Graphics
 			{
 				if (prop.Key == "color")
 				{
-					Color = ColorExtensions.ParseColor(prop.Value, Pallete);
-					/*
-					var cType = ColorType.NAME;
-					var res = Color.White;
-
-					if (prop.Value.Contains("#"))
+					//Color = ColorExtensions.ParseColor(prop.Value, Pallete);
+					if (ColorExtensions.TryParseColor(prop.Value, out Color color, Pallete))
 					{
-						cType = ColorType.HEX;
+						Color = color;
 					}
-					else if (prop.Value.Contains(","))
-					{
-						cType = ColorType.RGB;
-					}
-
-					switch (cType)
-					{
-						default:
-						case ColorType.NAME:
-							object s = null;
-							s = Color.GetType().GetProperty(prop.Value).GetValue(s, null);
-							res = (Color)s;
-							break;
-
-						case ColorType.HEX:
-							res = ColorExtensions.GetColorFromHex(prop.Value);
-							break;
-
-						case ColorType.RGB:
-							var values = prop.Value.Split(',');
-							
-							var rgbr = int.Parse(values[0]);
-							var rgbg = int.Parse(values[1]);
-							var rgbb = int.Parse(values[2]);
-
-							res = new Color(rgbr, rgbg, rgbb);
-							break;
-					}
-
-					Color = res;
-					*/
 				}
 			}
 		}

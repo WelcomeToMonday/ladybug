@@ -73,97 +73,37 @@
   
   <h1 id="Ladybug_ECS_Entity" data-uid="Ladybug.ECS.Entity" class="text-break">Class Entity
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Ladybug ECS Entity</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Entity</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.ECS.html">Ladybug.ECS</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_ECS_Entity_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Entity</code></pre>
+    <pre><code class="lang-csharp hljs">public class Entity : object</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity__ctor_Ladybug_ECS_EntitySystem_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.%23ctor(Ladybug.ECS.EntitySystem%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L14">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Entity__ctor_" data-uid="Ladybug.ECS.Entity.#ctor*"></a>
-  <h4 id="Ladybug_ECS_Entity__ctor_Ladybug_ECS_EntitySystem_System_String_" data-uid="Ladybug.ECS.Entity.#ctor(Ladybug.ECS.EntitySystem,System.String)">Entity(EntitySystem, String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Entity(EntitySystem entitySystem, string name = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.ECS.EntitySystem.html">EntitySystem</a></td>
-        <td><span class="parametername">entitySystem</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Tags.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Tags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Components.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Components%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L10">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L64">View Source</a>
   </span>
-  <h4 id="Ladybug_ECS_Entity_Tags" data-uid="Ladybug.ECS.Entity.Tags">Tags</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_ECS_Entity_Components" data-uid="Ladybug.ECS.Entity.Components">Components</h4>
+  <div class="markdown level1 summary"><p>List of <a class="xref" href="Ladybug.ECS.Component.html">Component</a> instances
+contained in this Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Dictionary&lt;int, string&gt; Tags</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Component&gt; Components</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -175,7 +115,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Int32</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="Ladybug.ECS.Component.html">Component</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -184,14 +124,15 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Active.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Active%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Active.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Active%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L30">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L52">View Source</a>
   </span>
   <a id="Ladybug_ECS_Entity_Active_" data-uid="Ladybug.ECS.Entity.Active*"></a>
   <h4 id="Ladybug_ECS_Entity_Active" data-uid="Ladybug.ECS.Entity.Active">Active</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Whether the Entity is active</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -214,18 +155,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Components.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Components%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_ECS.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.ECS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L32">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L32">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_Components_" data-uid="Ladybug.ECS.Entity.Components*"></a>
-  <h4 id="Ladybug_ECS_Entity_Components" data-uid="Ladybug.ECS.Entity.Components">Components</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_ECS_" data-uid="Ladybug.ECS.Entity.ECS*"></a>
+  <h4 id="Ladybug_ECS_Entity_ECS" data-uid="Ladybug.ECS.Entity.ECS">ECS</h4>
+  <div class="markdown level1 summary"><p>The <seee cref="T:Ladybug.ECS.ECS"></seee> managing this Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Component&gt; Components { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ECS ECS { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -237,25 +179,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Ladybug.ECS.Component.html">Component</a>&gt;</td>
+        <td><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_ID.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.ID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_ID.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.ID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L28">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L47">View Source</a>
   </span>
   <a id="Ladybug_ECS_Entity_ID_" data-uid="Ladybug.ECS.Entity.ID*"></a>
   <h4 id="Ladybug_ECS_Entity_ID" data-uid="Ladybug.ECS.Entity.ID">ID</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Unique ID of the Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ulong? ID { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ulong ID { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -267,25 +210,57 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="xref">System.UInt64</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Name.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Initialized.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Initialized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L26">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L20">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_Name_" data-uid="Ladybug.ECS.Entity.Name*"></a>
-  <h4 id="Ladybug_ECS_Entity_Name" data-uid="Ladybug.ECS.Entity.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_Initialized_" data-uid="Ladybug.ECS.Entity.Initialized*"></a>
+  <h4 id="Ladybug_ECS_Entity_Initialized" data-uid="Ladybug.ECS.Entity.Initialized">Initialized</h4>
+  <div class="markdown level1 summary"><p>Whether the Entity has been initialized</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Initialized { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Name.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L42">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Entity_Name_" data-uid="Ladybug.ECS.Entity.Name*"></a>
+  <h4 id="Ladybug_ECS_Entity_Name" data-uid="Ladybug.ECS.Entity.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Name of the Entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -304,18 +279,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_System.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.System%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Tags.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Tags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L24">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L37">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_System_" data-uid="Ladybug.ECS.Entity.System*"></a>
-  <h4 id="Ladybug_ECS_Entity_System" data-uid="Ladybug.ECS.Entity.System">System</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_Tags_" data-uid="Ladybug.ECS.Entity.Tags*"></a>
+  <h4 id="Ladybug_ECS_Entity_Tags" data-uid="Ladybug.ECS.Entity.Tags">Tags</h4>
+  <div class="markdown level1 summary"><p>List of Tags associated with this Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EntitySystem System { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Tags { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -327,7 +303,69 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.ECS.EntitySystem.html">EntitySystem</a></td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Transform.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Transform%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L26">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Entity_Transform_" data-uid="Ladybug.ECS.Entity.Transform*"></a>
+  <h4 id="Ladybug_ECS_Entity_Transform" data-uid="Ladybug.ECS.Entity.Transform">Transform</h4>
+  <div class="markdown level1 summary"><p>The Entity's <a class="xref" href="Ladybug.Transform.html">Transform</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Transform { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Transform.html">Transform</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Visible.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L58">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Entity_Visible_" data-uid="Ladybug.ECS.Entity.Visible*"></a>
+  <h4 id="Ladybug_ECS_Entity_Visible" data-uid="Ladybug.ECS.Entity.Visible">Visible</h4>
+  <div class="markdown level1 summary"><p>Whether the Entity is visible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Visible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -336,89 +374,21 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_AddComponent_Ladybug_ECS_Component_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.AddComponent(Ladybug.ECS.Component%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_AddComponent__1.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.AddComponent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L63">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L92">View Source</a>
   </span>
   <a id="Ladybug_ECS_Entity_AddComponent_" data-uid="Ladybug.ECS.Entity.AddComponent*"></a>
-  <h4 id="Ladybug_ECS_Entity_AddComponent_Ladybug_ECS_Component_System_String_" data-uid="Ladybug.ECS.Entity.AddComponent(Ladybug.ECS.Component,System.String)">AddComponent(Component, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_ECS_Entity_AddComponent__1" data-uid="Ladybug.ECS.Entity.AddComponent``1">AddComponent&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Adds a new <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to this Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Component AddComponent(Component c, string name = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
-        <td><span class="parametername">c</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_AddComponent__1_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.AddComponent%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L50">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Entity_AddComponent_" data-uid="Ladybug.ECS.Entity.AddComponent*"></a>
-  <h4 id="Ladybug_ECS_Entity_AddComponent__1_System_String_" data-uid="Ladybug.ECS.Entity.AddComponent``1(System.String)">AddComponent&lt;T&gt;(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T AddComponent&lt;T&gt;(string name = null)
+    <pre><code class="lang-csharp hljs">public Entity AddComponent&lt;T&gt;()
     where T : Component, new()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -429,8 +399,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
+        <td><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a></td>
+        <td><p>Entity</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -445,20 +416,93 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Type of <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+to add to this Entity</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_GetComponent__1.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.GetComponent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_AddComponent__1___0__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.AddComponent%60%601(%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L81">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L107">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_Entity_AddComponent_" data-uid="Ladybug.ECS.Entity.AddComponent*"></a>
+  <h4 id="Ladybug_ECS_Entity_AddComponent__1___0__" data-uid="Ladybug.ECS.Entity.AddComponent``1(``0@)">AddComponent&lt;T&gt;(out T)</h4>
+  <div class="markdown level1 summary"><p>Adds a new <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to this Entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity AddComponent&lt;T&gt;(out T component)
+    where T : Component, new()</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>Reference to the new <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+added to the Entity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a></td>
+        <td><p>Entity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Type of <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+to add to this Entity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_GetComponent__1.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.GetComponent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L151">View Source</a>
   </span>
   <a id="Ladybug_ECS_Entity_GetComponent_" data-uid="Ladybug.ECS.Entity.GetComponent*"></a>
   <h4 id="Ladybug_ECS_Entity_GetComponent__1" data-uid="Ladybug.ECS.Entity.GetComponent``1">GetComponent&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves a <a class="xref" href="Ladybug.ECS.Component.html">Component</a> contained
+in the entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -476,7 +520,8 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td></td>
+        <td><p>Matching <a class="xref" href="Ladybug.ECS.Component.html">Component</a> if found, otherwise null</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -491,20 +536,23 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Type of <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to retrieve</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_GetComponent__1_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.GetComponent%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_GetComponent__1_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.GetComponent%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L84">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L161">View Source</a>
   </span>
   <a id="Ladybug_ECS_Entity_GetComponent_" data-uid="Ladybug.ECS.Entity.GetComponent*"></a>
   <h4 id="Ladybug_ECS_Entity_GetComponent__1_System_String_" data-uid="Ladybug.ECS.Entity.GetComponent``1(System.String)">GetComponent&lt;T&gt;(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves a <a class="xref" href="Ladybug.ECS.Component.html">Component</a> contained
+in the entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -524,7 +572,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Name of <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to retrieve</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -539,7 +588,8 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td></td>
+        <td><p>Matching <a class="xref" href="Ladybug.ECS.Component.html">Component</a> if found, otherwise null</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -554,54 +604,44 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Type of <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to retrieve</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_InitializeComponents.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.InitializeComponents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L87">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L69">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_InitializeComponents_" data-uid="Ladybug.ECS.Entity.InitializeComponents*"></a>
-  <h4 id="Ladybug_ECS_Entity_InitializeComponents" data-uid="Ladybug.ECS.Entity.InitializeComponents">InitializeComponents()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_Initialize_" data-uid="Ladybug.ECS.Entity.Initialize*"></a>
+  <h4 id="Ladybug_ECS_Entity_Initialize" data-uid="Ladybug.ECS.Entity.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>Initializes the Entity's Components</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitializeComponents()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_Remove.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.Remove%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_TryGetComponent__1___0__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.TryGetComponent%60%601(%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L98">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L125">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_Remove_" data-uid="Ladybug.ECS.Entity.Remove*"></a>
-  <h4 id="Ladybug_ECS_Entity_Remove" data-uid="Ladybug.ECS.Entity.Remove">Remove()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_TryGetComponent_" data-uid="Ladybug.ECS.Entity.TryGetComponent*"></a>
+  <h4 id="Ladybug_ECS_Entity_TryGetComponent__1___0__" data-uid="Ladybug.ECS.Entity.TryGetComponent``1(``0@)">TryGetComponent&lt;T&gt;(out T)</h4>
+  <div class="markdown level1 summary"><p>Attempts to retrieve a <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+contained in the Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Remove()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_RemoveComponent_Ladybug_ECS_Component_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.RemoveComponent(Ladybug.ECS.Component)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L75">View Source</a>
-  </span>
-  <a id="Ladybug_ECS_Entity_RemoveComponent_" data-uid="Ladybug.ECS.Entity.RemoveComponent*"></a>
-  <h4 id="Ladybug_ECS_Entity_RemoveComponent_Ladybug_ECS_Component_" data-uid="Ladybug.ECS.Entity.RemoveComponent(Ladybug.ECS.Component)">RemoveComponent(Component)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveComponent(Component c)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGetComponent&lt;T&gt;(out T component)
+    where T : Component</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -614,26 +654,62 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.ECS.Component.html">Component</a></td>
-        <td><span class="parametername">c</span></td>
-        <td></td>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>Matching <a class="xref" href="Ladybug.ECS.Component.html">Component</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if <a class="xref" href="Ladybug.ECS.Component.html">Component</a> found, otherwise False</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p><a class="xref" href="Ladybug.ECS.Component.html">Component</a>  type to find</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_SetName_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.SetName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity_TryGetComponent__1_System_String___0__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity.TryGetComponent%60%601(System.String%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L45">View Source</a>
+    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L139">View Source</a>
   </span>
-  <a id="Ladybug_ECS_Entity_SetName_" data-uid="Ladybug.ECS.Entity.SetName*"></a>
-  <h4 id="Ladybug_ECS_Entity_SetName_System_String_" data-uid="Ladybug.ECS.Entity.SetName(System.String)">SetName(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_ECS_Entity_TryGetComponent_" data-uid="Ladybug.ECS.Entity.TryGetComponent*"></a>
+  <h4 id="Ladybug_ECS_Entity_TryGetComponent__1_System_String___0__" data-uid="Ladybug.ECS.Entity.TryGetComponent``1(System.String,``0@)">TryGetComponent&lt;T&gt;(String, out T)</h4>
+  <div class="markdown level1 summary"><p>Attempts to retrieve a <a class="xref" href="Ladybug.ECS.Component.html">Component</a>
+contained in the Entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetName(string name)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGetComponent&lt;T&gt;(string name, out T component)
+    where T : Component</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -648,7 +724,46 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Name of <a class="xref" href="Ladybug.ECS.Component.html">Component</a> to find</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>Matching <a class="xref" href="Ladybug.ECS.Component.html">Component</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if <a class="xref" href="Ladybug.ECS.Component.html">Component</a> found, otherwise False</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p><a class="xref" href="Ladybug.ECS.Component.html">Component</a>  type to find</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -660,10 +775,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/welcometomonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_Entity.md&amp;value=---%0Auid%3A%20Ladybug.ECS.Entity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/ecs/Entity.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/welcometomonday/ladybug/blob/dev-alpha/src/modules/ecs/Entity.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

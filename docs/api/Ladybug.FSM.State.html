@@ -73,74 +73,42 @@
   
   <h1 id="Ladybug_FSM_State" data-uid="Ladybug.FSM.State" class="text-break">Class State
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A State that can be processed by a
+<a class="xref" href="Ladybug.FSM.StateMachine.html">StateMachine</a></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">State</span></div>
   </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Ladybug.FSM.IState.html">IState</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.FSM.html">Ladybug.FSM</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_FSM_State_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class State : IState</code></pre>
+    <pre><code class="lang-csharp hljs">public class State : object</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State__ctor.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L16">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_State__ctor_" data-uid="Ladybug.FSM.State.#ctor*"></a>
   <h4 id="Ladybug_FSM_State__ctor" data-uid="Ladybug.FSM.State.#ctor">State()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new State</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public State()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State__ctor_Ladybug_FSM_State_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.%23ctor(Ladybug.FSM.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L21">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_State__ctor_" data-uid="Ladybug.FSM.State.#ctor*"></a>
   <h4 id="Ladybug_FSM_State__ctor_Ladybug_FSM_State_" data-uid="Ladybug.FSM.State.#ctor(Ladybug.FSM.State)">State(State)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Crates a new State,
+copying the behavior of the provided
+state</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -159,52 +127,21 @@
       <tr>
         <td><a class="xref" href="Ladybug.FSM.State.html">State</a></td>
         <td><span class="parametername">template</span></td>
-        <td></td>
+        <td><p>Template State</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_Enter.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.Enter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L28">View Source</a>
-  </span>
-  <a id="Ladybug_FSM_State_Enter_" data-uid="Ladybug.FSM.State.Enter*"></a>
-  <h4 id="Ladybug_FSM_State_Enter" data-uid="Ladybug.FSM.State.Enter">Enter()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Enter()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_Exit.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.Exit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L36">View Source</a>
-  </span>
-  <a id="Ladybug_FSM_State_Exit_" data-uid="Ladybug.FSM.State.Exit*"></a>
-  <h4 id="Ladybug_FSM_State_Exit" data-uid="Ladybug.FSM.State.Exit">Exit()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Exit()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_OnEnter_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.OnEnter(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L42">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_State_OnEnter_" data-uid="Ladybug.FSM.State.OnEnter*"></a>
-  <h4 id="Ladybug_FSM_State_OnEnter_System_Action_" data-uid="Ladybug.FSM.State.OnEnter(System.Action)">OnEnter(Action)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_State_OnEnter_Action_" data-uid="Ladybug.FSM.State.OnEnter(Action)">OnEnter(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the behavior of this State when
+this becomes the active
+state of a <a class="xref" href="Ladybug.FSM.StateMachine.html">StateMachine</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -221,9 +158,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span></td>
+        <td><span class="xref">Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Action defining OnEnter behavior</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -242,16 +180,14 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_OnExit_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.OnExit(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L54">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_State_OnExit_" data-uid="Ladybug.FSM.State.OnExit*"></a>
-  <h4 id="Ladybug_FSM_State_OnExit_System_Action_" data-uid="Ladybug.FSM.State.OnExit(System.Action)">OnExit(Action)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_State_OnExit_Action_" data-uid="Ladybug.FSM.State.OnExit(Action)">OnExit(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the behavior of this State when
+a <a class="xref" href="Ladybug.FSM.StateMachine.html">StateMachine</a> replaces this State with
+another State</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -268,9 +204,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span></td>
+        <td><span class="xref">Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Action defining OnExit behavior</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -289,16 +226,13 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.OnUpdate(System.Action%7BMicrosoft.Xna.Framework.GameTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L48">View Source</a>
-  </span>
+  
+  
   <a id="Ladybug_FSM_State_OnUpdate_" data-uid="Ladybug.FSM.State.OnUpdate*"></a>
-  <h4 id="Ladybug_FSM_State_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__" data-uid="Ladybug.FSM.State.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">OnUpdate(Action&lt;GameTime&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_FSM_State_OnUpdate_Action_GameTime__" data-uid="Ladybug.FSM.State.OnUpdate(Action{GameTime})">OnUpdate(Action&lt;GameTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the behavior of this State when
+its <a class="xref" href="Ladybug.FSM.StateMachine.html">StateMachine</a> is updated</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -315,9 +249,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<span class="xref">Microsoft.Xna.Framework.GameTime</span>&gt;</td>
+        <td><span class="xref">Action</span>&lt;<span class="xref">GameTime</span>&gt;</td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Action defining OnUpdate behavior</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -336,53 +271,18 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L34">View Source</a>
-  </span>
-  <a id="Ladybug_FSM_State_Update_" data-uid="Ladybug.FSM.State.Update*"></a>
-  <h4 id="Ladybug_FSM_State_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.FSM.State.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update(GameTime gameTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
-        <td><span class="parametername">gameTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="events">Events
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_StateEntered.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.StateEntered%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L9">View Source</a>
-  </span>
-  <h4 id="Ladybug_FSM_State_StateEntered" data-uid="Ladybug.FSM.State.StateEntered">StateEntered</h4>
-  <div class="markdown level1 summary"></div>
+  
+  
+  <h4 id="Ladybug_FSM_State_Entered" data-uid="Ladybug.FSM.State.Entered">Entered</h4>
+  <div class="markdown level1 summary"><p>State has become the StateMachine's
+active state</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler StateEntered</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler Entered</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -394,24 +294,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.EventHandler</span></td>
+        <td><span class="xref">EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State_StateExited.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State.StateExited%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L10">View Source</a>
-  </span>
-  <h4 id="Ladybug_FSM_State_StateExited" data-uid="Ladybug.FSM.State.StateExited">StateExited</h4>
-  <div class="markdown level1 summary"></div>
+  
+  
+  <h4 id="Ladybug_FSM_State_Exited" data-uid="Ladybug.FSM.State.Exited">Exited</h4>
+  <div class="markdown level1 summary"><p>State is no longer the StateMachine's
+active state</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler StateExited</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler Exited</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -423,15 +320,11 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.EventHandler</span></td>
+        <td><span class="xref">EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Ladybug.FSM.IState.html">IState</a>
-  </div>
 </article>
           </div>
           
@@ -439,12 +332,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_FSM_State.md&amp;value=---%0Auid%3A%20Ladybug.FSM.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/2.0/src/modules/fsm/State.cs/#L7" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

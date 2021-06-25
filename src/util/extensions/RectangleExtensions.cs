@@ -1,11 +1,46 @@
 using Microsoft.Xna.Framework;
 
 namespace Ladybug
-{	
-	public enum BoxHandle {TopLeft, TopRight, BottomLeft, BottomRight, Center}
-	
+{
+	/// <summary>
+	/// Enum representing handle positions of a Rectangle
+	/// </summary>
+	public enum BoxHandle
+	{
+		/// <summary>
+		/// Top-left corner
+		/// </summary>
+		TopLeft,
+		/// <summary>
+		/// Top-right corner
+		/// </summary>
+		TopRight,
+		/// <summary>
+		/// Bottom-left corner
+		/// </summary>
+		BottomLeft,
+		/// <summary>
+		/// Bottom-right corner
+		/// </summary> 
+		BottomRight,
+		/// <summary>
+		/// Center
+		/// </summary>
+		Center
+	}
+
+	/// <summary>
+	/// Static class containing Rectangle static helper and extension methods
+	/// </summary>
 	public static class RectangleExtensions
 	{
+		/// <summary>
+		/// Get a new copy of Rectangle at given position
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="position"></param>
+		/// <param name="handle"></param>
+		/// <returns>New Rectangle of same dimensions at given position</returns>
 		public static Rectangle CopyAtPosition(this Rectangle r, Vector2 position, BoxHandle handle = BoxHandle.TopLeft)
 		{
 			int x = 0;
@@ -35,13 +70,27 @@ namespace Ladybug
 					y = (int)(position.Y) - (r.Height / 2);
 					break;
 			}
-			
+
 			r = new Rectangle(x, y, r.Width, r.Height);
 			return r;
 		}
 
-		public static Rectangle CopyAtPosition(this Rectangle r, int x, int y, BoxHandle handle = BoxHandle.TopLeft) => r.CopyAtPosition(new Vector2(x,y),handle);
+		/// <summary>
+		/// Get a new copy of Rectangle at given position
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="handle"></param>
+		/// <returns>New Rectangle of same dimensions at given position</returns>
+		public static Rectangle CopyAtPosition(this Rectangle r, int x, int y, BoxHandle handle = BoxHandle.TopLeft) => r.CopyAtPosition(new Vector2(x, y), handle);
 
+		/// <summary>
+		/// Get a new copy of Rectangle at given offset
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="newPosition"></param>
+		/// <returns></returns>
 		public static Rectangle CopyAtOffset(this Rectangle r, Vector2 newPosition)
 		{
 			var res = r.CopyAtPosition(new Vector2(
@@ -52,8 +101,21 @@ namespace Ladybug
 			return res;
 		}
 
-		public static Rectangle CopyAtOffset(this Rectangle r, int x, int y) => r.CopyAtOffset(new Vector2(x,y));
+		/// <summary>
+		/// Get a new copy of Rectangle at given offset
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <returns></returns>
+		public static Rectangle CopyAtOffset(this Rectangle r, int x, int y) => r.CopyAtOffset(new Vector2(x, y));
 
+		/// <summary>
+		/// Whether a given Point is within the bounds of this Rectangle
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="position"></param>
+		/// <returns></returns>
 		public static bool PointInBounds(this Rectangle r, Vector2 position)
 		{
 			return (
@@ -64,6 +126,12 @@ namespace Ladybug
 				);
 		}
 
+		/// <summary>
+		/// Gets the Vector2 position of one of this Rectangle's handles
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="handle"></param>
+		/// <returns></returns>
 		public static Vector2 GetHandlePosition(this Rectangle r, BoxHandle handle)
 		{
 			Vector2 res = Vector2.Zero;

@@ -3,12 +3,19 @@ using System.Collections.Generic;
 
 namespace Ladybug
 {
+	/// <summary>
+	/// Handles queuing and processing tasks
+	/// on the main thread.
+	/// </summary>
 	public class ThreadManager
 	{
 		private static readonly List<Action> executeOnMainThread = new List<Action>();
 		private static readonly List<Action> executeCopiedOnMainThread = new List<Action>();
 		private static bool actionToExecuteOnMainThread = false;
 
+		/// <summary>
+		/// Process tasks in the ThreadManager's queue
+		/// </summary>
 		public void Update()
 		{
 			ExecuteActions();
@@ -20,7 +27,6 @@ namespace Ladybug
 		{
 			if (_action == null)
 			{
-				//Debug.Log("No action to execute on main thread!");
 				return;
 			}
 
@@ -32,7 +38,7 @@ namespace Ladybug
 		}
 
 		/// <summary>Executes all code meant to run on the main thread. NOTE: Call this ONLY from the main thread.</summary>
-		public static void ExecuteActions()
+		private static void ExecuteActions()
 		{
 			if (actionToExecuteOnMainThread)
 			{

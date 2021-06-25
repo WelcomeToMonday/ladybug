@@ -7,27 +7,64 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug
 {
+	/// <summary>
+	/// Static class containing common Ladybug static helper and extension methods
+	/// </summary>
 	public static class Extensions
 	{
+		/// <summary>
+		/// Returns an XmlReader for the given XmlDocument
+		/// </summary>
+		/// <param name="document"></param>
+		/// <returns></returns>
 		public static XmlReader GetReader(this XmlDocument document) => new XmlNodeReader(document);
 
+		/// <summary>
+		/// Creates a new <see cref="Ladybug.Feed{T}"/> from a List
+		/// </summary>
+		/// <param name="list">Source List for <see cref="Ladybug.Feed{T}"/> </param>
+		/// <param name="MaxLines">Maximum number of lines in <see cref="Ladybug.Feed{T}"/></param>
+		/// <param name="startOffset">Start line offset for <see cref="Ladybug.Feed{T}"/></param>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
 		public static Feed<T> GetFeed<T>(this List<T> list, int MaxLines, int startOffset = 0) => new Feed<T>(list, MaxLines, startOffset);
 
+		/// <summary>
+		/// Gets an angle representation of a Vector2
+		/// </summary>
+		/// <param name="vector"></param>
+		/// <returns></returns>
 		public static float ToAngle(this Vector2 vector)
 		{
 			return (float)Math.Atan2(vector.Y, vector.X);
 		}
 
-		public static Vector2 ToVector(this float angle)
+		/// <summary>
+		/// Gets a Vector2 representation of an angle
+		/// </summary>
+		/// <param name="angle"></param>
+		/// <returns></returns>
+		public static Vector2 ToVector2(this float angle)
 		{
 			return new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
 		}
 
+		/// <summary>
+		/// Gets a Point representation of a Vector2
+		/// </summary>
+		/// <param name="vector"></param>
+		/// <returns></returns>
 		public static Point ToPoint(this Vector2 vector)
 		{
 			return new Point((int)vector.X, (int)vector.Y);
 		}
 
+		/// <summary>
+		/// Gets the angle between two Vector2s
+		/// </summary>
+		/// <param name="p1"></param>
+		/// <param name="p2"></param>
+		/// <returns></returns>
 		public static float AngleTo(this Vector2 p1, Vector2 p2)
 		{
 			float xdiff = p2.X - p1.X;
@@ -35,9 +72,27 @@ namespace Ladybug
 			return (float)Math.Atan2(ydiff, xdiff);
 		}
 
+		/// <summary>
+		/// Gets the distance between two Vector2s
+		/// </summary>
+		/// <param name="p1"></param>
+		/// <param name="p2"></param>
+		/// <returns></returns>
 		public static float DistanceTo(this Vector2 p1, Vector2 p2)
 		{
 			return (float)Math.Sqrt((Math.Pow((p2.X - p1.X), 2) + Math.Pow((p2.Y - p1.Y), 2)));
+		}
+
+		/// <summary>
+		/// Linear Interpolation
+		/// </summary>
+		/// <param name="p1"></param>
+		/// <param name="p2"></param>
+		/// <param name="by"></param>
+		/// <returns></returns>
+		public static float Lerp(float p1, float p2, float by)
+		{
+			return p1 + (p2 - p1) * by;
 		}
 	}
 }
