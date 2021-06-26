@@ -11,6 +11,12 @@ namespace Ladybug
 	public class Transform
 	{
 		/// <summary>
+		/// Default scale value
+		/// </summary>
+		/// <returns></returns>
+		public static Vector2 DefaultScale { get; } = new Vector2(1.0f, 1.0f);
+
+		/// <summary>
 		/// The outer bounds of the Transform
 		/// </summary>
 		public Rectangle Bounds { get; private set; } = new Rectangle();
@@ -23,7 +29,31 @@ namespace Ladybug
 		/// <summary>
 		/// The scale of the Transform
 		/// </summary>
-		public float Scale { get; private set; } = 1.0f;
+		public Vector2 Scale { get; private set; } = new Vector2(1, 1);
+
+		/// <summary>
+		/// Read-only location value of the Transform
+		/// </summary>
+		/// <remarks>
+		/// To move the Transform, use <see cref="Move(int, int)"/>,
+		/// <see cref="SetPosition(int, int, BoxHandle)"/>, or their
+		/// overloads.
+		/// </remarks>
+		public Vector2 Location
+		{
+			get
+			{
+				if (m_LocationP != Bounds.Location)
+				{
+					m_LocationP = Bounds.Location;
+					m_LocationV = Bounds.Location.ToVector2();
+				}
+				return m_LocationV;
+			}
+		}
+
+		private Vector2 m_LocationV = Vector2.Zero;
+		private Point m_LocationP = Point.Zero;
 
 		/// <summary>
 		/// Moves the Transform, updating its position
@@ -52,6 +82,14 @@ namespace Ladybug
 		{
 			Bounds = rectangle;
 		}
+
+		/// <summary>
+		/// Sets the position of the Transform
+		/// </summary>
+		/// <param name="x">New x coordinate of the Transform</param>
+		/// <param name="y">New y coordinate of the Transform</param>
+		/// <param name="handle">The handle of the Transform's Bounds used to place it in its new Position</param>
+		public void SetPosition(int x, int y, BoxHandle handle = BoxHandle.TopLeft) => SetPosition(new Vector2(x, y), handle);
 
 		/// <summary>
 		/// Sets the position of the Transform
@@ -118,7 +156,17 @@ namespace Ladybug
 		/// This method scales the Transform relative to its current scale.
 		/// To set the Transform's scale to an absolute value, use <see cref="Transform.SetScale(float)"/>
 		/// </remarks>
-		public void ScaleBy(float newScale)
+		public void ScaleBy(float newScale) => ScaleBy(new Vector2(newScale, newScale));
+
+		/// <summary>
+		/// Scales the Transform
+		/// </summary>
+		/// <param name="newScale">Value to scale the transform by</param>
+		/// <remarks>
+		/// This method scales the Transform relative to its current scale.
+		/// To set the Transform's scale to an absolute value, use <see cref="Transform.SetScale(float)"/>
+		/// </remarks>
+		public void ScaleBy(Vector2 newScale)
 		{
 			Scale += newScale;
 		}
@@ -127,9 +175,12 @@ namespace Ladybug
 		/// Sets the Transform's Scale
 		/// </summary>
 		/// <param name="newScale">Transform's new scale value</param>
-		public void SetScale(float newScale)
-		{
-			Scale = newScale;
-		}
+		public void SetScale(float newScale) => SetScale(new Vector2(newScale, newScale));
+
+		/// <summary>
+		/// Sets the Transform's Scale
+		/// </summary>
+		/// <param name="newScale">Transform's new scale value</param>
+		public void SetScale(Vector2 newScale) => Scale = newScale;
 	}
 }
