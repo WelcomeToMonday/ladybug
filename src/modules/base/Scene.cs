@@ -84,7 +84,7 @@ namespace Ladybug
 		/// The Scene has been paused or suspended
 		/// </summary>
 		public event EventHandler Stopped;
-		
+
 		/// <summary>
 		/// The Scene has been unpaused or unsuspended
 		/// </summary>
@@ -93,7 +93,7 @@ namespace Ladybug
 		/// <summary>
 		/// The Scene's default SpriteBatch
 		/// </summary>
-		protected SpriteBatch SpriteBatch;
+		public SpriteBatch SpriteBatch { get; private set; }
 
 		private Func<Task> _onLoadContentAsync = new Func<Task>(() => Task.CompletedTask);
 		private Func<Task> _onInitializeAsync = new Func<Task>(() => Task.CompletedTask);
@@ -108,7 +108,7 @@ namespace Ladybug
 
 		private Action _onPause = () => { };
 		private Action _onUnpause = () => { };
-		
+
 		private Action _onSuspend = () => { };
 		private Action _onUnsuspend = () => { };
 

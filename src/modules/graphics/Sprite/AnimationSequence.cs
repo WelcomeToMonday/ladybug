@@ -1,31 +1,52 @@
 using System;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug.Graphics
 {
+	/// <summary>
+	/// Ladybug AnimationSequence
+	/// </summary>
 	public class AnimationSequence
 	{
 		private int m_currentFrameIndex;
 		private int m_speed;
 		private int _delayTimer;
-
-		private Texture2D _sourceTexture;		
+		
 		private Sprite[] _frames;
 
-		public AnimationSequence(Texture2D sourceTexture, int rows, int columns, int start = 0, int? end = null)
-		{
-			_sourceTexture = sourceTexture;
-			if (end == null) end = rows * columns;
-			BuildFrames(rows, columns, start,(int)end);
-		}
+		/// <summary>
+		/// Creates a new AnimationSequence
+		/// </summary>
+		/// <param name="sourceAtlas"></param>
+		/// <param name="startFrame"></param>
+		/// <param name="endFrame"></param>
+		/// <returns></returns>
+		public AnimationSequence(SpriteAtlas sourceAtlas, int startFrame, int endFrame) => BuildFrames(sourceAtlas, startFrame, endFrame);
 
+		/// <summary>
+		/// Creates a new AnimationSequence
+		/// </summary>
+		/// <param name="sprites"></param>
+		/// <returns></returns>
+		public AnimationSequence(params Sprite[] sprites) => BuildFrames(sprites);
+
+		/// <summary>
+		/// Length of the animation in frames
+		/// </summary>
+		/// <value></value>
 		public int Length
 		{
 			get => _frames.Length;
 		}
 
+		/// <summary>
+		/// Speed of the animation, measured by the delay between frames
+		/// </summary>
+		/// <value></value>
+		/// <remarks>A lower value results in a faster animation</remarks>
 		public int Speed
 		{
 			get => m_speed;
@@ -39,6 +60,10 @@ namespace Ladybug.Graphics
 			}
 		}
 
+		/// <summary>
+		/// Index of the current frame
+		/// </summary>
+		/// <value></value>
 		public int CurrentFrameIndex
 		{
 			get => m_currentFrameIndex;
@@ -48,8 +73,15 @@ namespace Ladybug.Graphics
 			}
 		}
 
+		/// <summary>
+		/// Gets the Sprite for the current animation frame
+		/// </summary>
+		/// <returns></returns>
 		public Sprite GetCurrentFrame() => _frames[CurrentFrameIndex];
 
+		/// <summary>
+		/// Plays the AnimationSequence
+		/// </summary>
 		public void Play()
 		{
 			if (_delayTimer <= 0)
@@ -66,24 +98,15 @@ namespace Ladybug.Graphics
 			CurrentFrameIndex++;
 		}
 		
-		private void BuildFrames(int rows, int columns, int startFrame, int endFrame)
+		private void BuildFrames(SpriteAtlas sourceAtlas, int startFrame, int endFrame)
 		{
-			int frameCount = Math.Abs(endFrame - startFrame) + 1;
-			int width = (int)(_sourceTexture.Width / columns);
-			int height = (int)(_sourceTexture.Height / rows);
-			_frames = new Sprite[frameCount];
-			for (var i = 0; i < frameCount; i++)
+			_frames = new Sprite[endFrame - startFrame];
+			for (var i = 0; i < endFrame - startFrame; i++)
 			{
-				int row = (int)(startFrame + i) / columns;
-				int column = (startFrame + i) % columns;
-				Rectangle frame = new Rectangle(
-					(int)(width * column), 
-					(int)(height * row), 
-					(int)(width), 
-					(int)(height)
-					);
-				_frames[i] = new Sprite(_sourceTexture,frame);
+				_frames[i] = sourceAtlas[startFrame + i];
 			}
 		}
+
+		private void BuildFrames(Sprite[] sprites) => _frames = sprites;
 	}
 }

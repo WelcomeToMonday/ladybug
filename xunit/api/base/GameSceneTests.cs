@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using Xunit;
-using Ladybug;
 using Microsoft.Xna.Framework;
 
 namespace Ladybug.Tests.Base
@@ -13,7 +8,7 @@ namespace Ladybug.Tests.Base
 	[Collection("Unique: Game Instantiation")]
 	public class GameSceneTests
 	{
-		
+
 		/// <summary>
 		/// Asserts that a Game and Scene can be instantiated successfully,
 		/// A Game can load a Scene,
@@ -47,21 +42,31 @@ namespace Ladybug.Tests.Base
 		}
 
 		/// <summary>
-		/// Asserts that a Scene traverses through all lifecycle methods and events
-		/// </summary>
-		[Fact]
-		public void TestSceneLifecycle()
-		{
-			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
-		}
-
-		/// <summary>
 		/// Asserts that a Scene can be initialized asynchronously
 		/// </summary>
 		[Fact]
 		public void TestInitializeAsync()
 		{
-			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
+			var initStart = false;
+			var initComplete = false;
+
+			var scene = new Scene()
+				.OnInitializeAsync(() =>
+					Task.Run(() =>
+					{
+						initStart = true;
+						Task.Delay(5000);
+						initComplete = true;
+					}));
+
+			using (var game = new Game())
+			{
+				game.LoadSceneAsync(scene);
+				game.RunOneFrame();
+			}
+
+			Assert.True(initStart, "Async init did not start");
+			Assert.True(initComplete, "Async init did not complete");
 		}
 
 		/// <summary>
@@ -70,7 +75,26 @@ namespace Ladybug.Tests.Base
 		[Fact]
 		public void TestLoadContentAsync()
 		{
-			Assert.False(TestConfig.FAIL_NYI, "Test not yet implemented");
+			var loadStart = false;
+			var loadComplete = false;
+
+			var scene = new Scene()
+				.OnLoadContentAsync(() =>
+					Task.Run(() =>
+					{
+						loadStart = true;
+						Task.Delay(5000);
+						loadComplete = true;
+					}));
+
+			using (var game = new Game())
+			{
+				game.LoadSceneAsync(scene);
+				game.RunOneFrame();
+			}
+
+			Assert.True(loadStart, "Async init did not start");
+			Assert.True(loadComplete, "Async init did not complete");
 		}
 	}
 }

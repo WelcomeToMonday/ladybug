@@ -48,7 +48,7 @@ namespace Ladybug.ECS.Components
 		/// Adds a new Animation to this SpriteComponent
 		/// </summary>
 		/// <param name="animationName">Name of the new Animation</param>
-		/// <param name="sourceTexture">Source texture</param>
+		/// <param name="sourceAtlas">Source <see cref="Ladybug.Graphics.SpriteAtlas"/></param>
 		/// <param name="rows">Rows in the source texture</param>
 		/// <param name="columns">Columns in the source texture</param>
 		/// <param name="animationSpeed">Speed of the animation</param>
@@ -60,16 +60,16 @@ namespace Ladybug.ECS.Components
 		/// </param>
 		public void AddAnimation(
 			string animationName, 
-			Texture2D sourceTexture,
+			SpriteAtlas sourceAtlas,
 			int rows,
 			int columns,
 			int animationSpeed,
 			int startFrame,
-			int? endFrame = null,
+			int endFrame,
 			bool setDefault = false
 			)
 		{
-			var sequence = new AnimationSequence(sourceTexture,rows,columns,startFrame,endFrame);
+			var sequence = new AnimationSequence(sourceAtlas,startFrame,endFrame);
 			sequence.Speed = animationSpeed;
 			if (Sprite == null) Sprite = new AnimatedSprite();
 			Sprite.AddAnimation(animationName,sequence,setDefault);

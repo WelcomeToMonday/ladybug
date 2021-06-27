@@ -4,7 +4,7 @@ using Xunit;
 
 using Microsoft.Xna.Framework;
 
-namespace Ladybug.Tests.Documentation
+namespace Ladybug.Tests.Documentation.Articles
 {
 	// /articles/setting-up-the-game.html
 	[Collection("Unique: Game Instantiation")]
