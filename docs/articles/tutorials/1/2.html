@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Snake Tutorial Part 2: Sprites and Player Input </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Snake Tutorial Part 2: Sprites and Player Input ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../../images/icon48.png">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="snake-tutorial-part-2-sprites-and-player-input">Snake Tutorial Part 2: Sprites and Player Input</h1>
+
+<p>In this chapter, we'll go over creating a Sprite and polling player input to control its position.</p>
+<p>In exploring sprites and input, we'll also be covering MonoGame's Content Pipeline and MGCB tool, and Ladybug's <code>KeyboardMonitor</code> and <code>ResourceCatalog</code> classes.</p>
+<p>At the end of this chapter, your game application will produce a sprite that can be moved across the screen with the arrow keys.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To complete the steps outlined in this chapter, you will need to have completed the steps in the <a href="/articles/tutorials/1/1.html">previous chapter</a></p>
+<p>In addition, this chapter will be introducing the MonoGame Content Builder, which requires the MGCB Tool. For information on installing the MGCB tool, see the <a href="/articles/getting-started/installation.html">Installation</a> article.</p>
+<p>For information on using the MGCB editor, <a href="https://docs.monogame.net/articles/content/using_mgcb_editor.html">click here</a></p>
+<h2 id="preface-what-is-content">Preface: What is Content?</h2>
+<p>Up until now, our <code>Game</code> instance has not had to render anything to the screen; all output so far has been to the console.</p>
+<p>Now, as we start to work with graphical assets, we'll need to review Ladybug's concept of &quot;Content&quot;.</p>
+<p>In summary, Content is any external resource loaded into a game and used as an asset. These resources are usually image or audio resources, but can also involve data resources like JSON and XML.</p>
+<h3 id="the-mgcb-editor">The MGCB Editor</h3>
+<p>MonoGame/XNA, which is the underlying framework for Ladybug, handles Content through a <code>ContentManager</code> class within the game code, and through the MGCB editor outside the code. If you don't have experience using the MGCB editor, it is recommended you <a href="https://docs.monogame.net/articles/content/using_mgcb_editor.html">review this article</a> which details its basic usage.</p>
+<p>Usage of the MGCB editor is essentially identical with Ladybug. The only addition to the process Ladybug adds is the <code>ResourceCatalog</code> class, which is a wrapper over a <code>ContentManager</code> that adds extra convenience.</p>
+<h2 id="step-1-getting-a-texture-for-our-sprite">Step 1: Getting a Texture for our Sprite</h2>
+<p>To draw a Sprite to the screen, we'll need to have an image file to load its texture from.</p>
+<p>We'll be needing a texture for the snake's body segments, ideally something symmetrical and uniform. Some sample assets will be provided for this tutorial, but feel free to create your own if you wish.</p>
+<p>You can download the sample assets for this tutorial <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/assets">here</a>.</p>
+<h3 id="adding-the-texture-to-the-game">Adding the Texture to the Game</h3>
+<p>Once you have a texture created or downloaded, copy the file into <code>core/Content/image/snake-body.png</code>. Although the file is now in the Content folder within our game's structure, it is not quite yet accessible to our game code. To make <code>snake-body.png</code> available in our game, we'll need to add it using the MGCB Editor.</p>
+<h3 id="using-the-mgcb-editor">Using the MGCB Editor</h3>
+<p>Take a look at <a href="https://docs.monogame.net/articles/content/using_mgcb_editor.html">this article</a> that describes the process for using the MGCB Editor. You will use this editor to open <code>core/Content/Content.mgcb</code> and add the <code>core/Content/image/snake-body.png</code> file using its interface.</p>
+<p>Once you've added the <code>snake-body.png</code> file in the tool, save it and close the MGCB Editor -- this is the only time we'll need to use it this chapter.</p>
+<h3 id="clarification-textures-vs-sprites">Clarification: Textures vs. Sprites</h3>
+<p>In casual conversation, the words texture and sprite are sometimes used interchangeably. However, in Ladybug they are quite different, and the distinction is important:</p>
+<ul>
+<li><strong>Texture</strong>: An image file that is loaded into a <code>Scene</code> as a resource.</li>
+<li><strong>Sprite</strong>: An in-game visual representation of a texture, rendered at a particular location, size, scale, and rotation. Contains a reference to a texture, plus transform information about how/where/what portion that texture will be rendered.</li>
+</ul>
+<p>It is possible (and sometimes appropriate) to work directly with textures in Ladybug, but for this project we're definitely interested in the added convenience of a <code>Sprite</code>.</p>
+<h2 id="step-2-creating-and-drawing-our-sprite">Step 2: Creating and Drawing our Sprite</h2>
+<p>Now that we have a texture we want to use for the body segments of our snake and we've successfully processed it through the MGCB editor, let's work on creating a Sprite with it and drawing it to the screen.</p>
+<p>We're going to have to add some new items to <code>MainScene.cs</code> to facilitate drawing our Sprite. For now, edit your <code>MainScene.cs</code> file and add the new items from the following sample:</p>
+<pre><code class="lang-csharp">// core/scene/MainScene.cs
+
+using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics; // &lt;-- 1: New using directive
+using Ladybug;
+using Ladybug.Graphics; // &lt;-- 2: New using directive
+
+public class MainScene : Scene
+{
+	private Sprite _snakeSprite; // &lt;-- 3: New member variable
+
+	public MainScene()
+	{
+		OnInitialize(Initialize);
+		OnLoadContent(LoadContent); // &lt;-- 4: New method call
+		OnUpdate(Update);
+		OnDraw(Draw);
+	}
+
+	private void Initialize()
+	{
+		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	}
+
+	// 5: New method
+	private void LoadContent()
+	{
+		Texture2D snakeTexture = ResourceCatalog.LoadResource&lt;Texture2D&gt;(&quot;snake&quot;, &quot;image/snake-body&quot;);
+		_snakeSprite = new Sprite(snakeTexture);
+	}
+
+	private void Update(GameTime gameTime)
+	{
+		// Our update code will go here
+	}
+
+	private void Draw(GameTime gameTime)
+	{
+		// 6: New draw logic
+		SpriteBatch.Begin();
+		_snakeSprite.Draw(SpriteBatch);
+		SpriteBatch.End();
+	}
+}
+</code></pre>
+<h3 id="mainscenecs-new-updates-summary--drawing">MainScene.cs New Updates Summary : Drawing</h3>
+<p>We added quite a few new items to our MainScene.cs file in the above sample. Let's go over the additions one at a time.</p>
+<h4 id="1-2-new-using-directives">1-2: New Using Directives</h4>
+<p>We added <code>MonoGame.Xna.Framework</code> and <code>Ladybug.Graphics</code> to our <code>using</code> directives. This is so that we can use <code>Texture2D</code> and <code>Sprite</code>, respectively.</p>
+<h4 id="3-new-member-variable">3: New Member Variable</h4>
+<p>We created a new <code>_snakeSprite</code> variable of type <code>Sprite</code>. This will be the sprite that we draw to the screen.</p>
+<h4 id="4-5-new-method-calls-and-definitions">4-5: New Method Calls and Definitions</h4>
+<p>We added another &quot;On*()&quot; method to our constructor, <code>OnLoadContent()</code>. Just like our other methods in the constructor, this will be used to tell our Scene what to do at a certain point in its lifecycle -- in this case, when it loads in content.</p>
+<p>Also just like the other methods in the constructor, we create a matching method for <code>OnLoadContent()</code>, this time called <code>LoadContent()</code>. In this new method, we load our <code>snake-body.png</code> file into a <code>ResourceCatalog</code> and assign the resulting resource to a local variable <code>snakeTexture</code>. <code>ResourceCatalog</code>'s first argument contains a simple name we can use to reference the <code>snake-body.png</code> texture later, while the second argument contains the file path to <code>snake-body.png</code> relative to the <code>core/Content</code> folder, without the file extension.</p>
+<p>Now that we have <code>snake-body.png</code> loaded into the texture <code>snakeTexture</code>, we use that to create a Sprite and assign it to <code>_snakeSprite</code>.</p>
+<h4 id="6-new-draw-logic">6: New Draw Logic</h4>
+<p>Now that we have something to draw, we can do something with our <code>Draw()</code> method.</p>
+<p>First, we have to start the draw process for the current frame by calling <code>SpriteBatch.Begin()</code>. Similarly, we'll need to tell the <code>SpriteBatch</code> when we're done drawing, so we call <code>SpriteBatch.End()</code> at the end of the <code>Draw()</code> method.</p>
+<p>Between <code>SpriteBatch.Begin()</code> and <code>SpriteBatch.End()</code>, we actually draw our Sprite by calling <code>_snakeSprite.Draw()</code>.</p>
+<h3 id="success---our-first-sprite">Success - Our First Sprite!</h3>
+<p>With the above adjustments to <code>MainScene.cs</code>, running the game should result in our <code>snake-body.png</code> texture being drawn to the screen. The size and position may not be what we expected, but it's there and that's a great starting point. We will adjust its size and position easily in future steps.</p>
+<h2 id="step-3-bringing-in-user-input">Step 3: Bringing In User Input</h2>
+<p>Drawing to the screen is a big step -- a vital part of creating a game. However, allowing a user to control what is drawn to the screen is equally important, if not more so.</p>
+<p>To get the user's input, we'll be using Ladybug's <code>KeyboardMonitor</code>, which as its name implies, monitors the keyboard for input.</p>
+<p>To do so, we'll need to make a few more adjustments to our <code>MainScene.cs</code> file:</p>
+<pre><code class="lang-csharp">// core/scene/MainScene.cs
+
+using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input; // &lt;-- 1: New using directive
+using Ladybug;
+using Ladybug.Graphics; 
+using Ladybug.Input; // &lt;-- 2: New using directive
+
+public class MainScene : Scene
+{
+	private Sprite _snakeSprite; 
+	private KeyboardMonitor _keyboard; // &lt;-- 3: New member variable 
+
+	public MainScene()
+	{
+		OnInitialize(Initialize);
+		OnLoadContent(LoadContent);
+		OnUpdate(Update);
+		OnDraw(Draw);
+	}
+
+	private void Initialize()
+	{
+		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+		_keyboard = new KeyboardMonitor(); // &lt;-- 4: New initialization item
+	}
+
+	private void LoadContent()
+	{
+		Texture2D snakeTexture = ResourceCatalog.LoadResource&lt;Texture2D&gt;(&quot;snake&quot;, &quot;image/snake-body&quot;);
+		_snakeSprite = new Sprite(snakeTexture);
+	}
+
+	private void Update(GameTime gameTime)
+	{
+		// 5: New update logic
+		_keyboard.BeginUpdate(Keyboard.GetState());
+
+		if (_keyboard.CheckButton(Keys.Space, InputState.Released))
+		{
+			Console.WriteLine(&quot;Space Pressed!&quot;);
+		}
+
+		_keyboard.EndUpdate();
+	}
+
+	private void Draw(GameTime gameTime)
+	{
+		SpriteBatch.Begin();
+		_snakeSprite.Draw(SpriteBatch);
+		SpriteBatch.End();
+	}
+}
+</code></pre>
+<h3 id="mainscenecs-new-updates-summary--user-input">MainScene.cs New Updates Summary : User Input</h3>
+<p>We've added yet another series of new items and updates to <code>MainScene.cs</code>. Let's go over each change now:</p>
+<h4 id="1-2-new-using-directives-1">1-2: New Using Directives</h4>
+<p>We've added two new <code>using</code> directives: <code>Microsoft.Xna.Framework.Input</code> and <code>Ladybug.Input</code>. These allow us to use <code>Keyboard.GetState()</code> and <code>KeyboardMonitor</code>, respectively.</p>
+<h4 id="3-4-new-member-variable-and-initialization">3-4: New Member Variable and Initialization</h4>
+<p>We've added a new private member variable to store our KeyboardMonitor: <code>_keyboard</code>. We then set this variable to its initial value in <code>Initialize()</code>.</p>
+<h4 id="5-new-update-logic">5: New Update Logic</h4>
+<p>Now that we have our <code>KeyboardMonitor</code> initialized, we can poll for user input. Since this is something we'll need to do every frame, <code>Update()</code> is the perfect place for this.</p>
+<p>Similar to how <code>SpriteBatch</code> works, we need to tell our <code>KeyboardMonitor</code> when we want to start checking for input, and when we've finished checking for input. This is handled by <code>_keyboard.BeginUpdate()</code> and <code>_keyboardMonitor.EndUpdate()</code>.</p>
+<p>Finally, to show that our game can see the user's input, we've added an input check on the spacebar that will print &quot;Space Pressed!&quot; to the console every time the spacebar is pressed, then released.</p>
+<p>At this point, if you run the game, you will still see the sprite we set up in the previous step, and now if you press and release the spacebar, you should see &quot;Space Pressed&quot; in the console.</p>
+<p>It may not look like it quite yet, but we're very close to getting a handle on the most vital parts of making a game!</p>
+<h2 id="step-4-putting-it-together">Step 4: Putting it Together</h2>
+<p>Now that we've handled drawing to the screen and gathering input, let's combine them!</p>
+<p>Lucky for us, this is very easy. Replace the contents of <code>MainScene.cs</code>'s <code>Update()</code> method with the following:</p>
+<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+{
+	_keyboard.BeginUpdate(Keyboard.GetState());
+
+	if (_keyboard.CheckButton(Keys.Up, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(0, -10);
+	}
+
+	if (_keyboard.CheckButton(Keys.Left, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(-10, 0);
+	}
+
+	if (_keyboard.CheckButton(Keys.Right, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(10, 0);
+	}
+
+	if (_keyboard.CheckButton(Keys.Down, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(0, 10);
+	}
+
+	_keyboard.EndUpdate();
+}
+</code></pre>
+<p>Now, when you press the arrow keys, the sprite will move ten pixels per frame in the direction pressed. <code>InputState.Down</code> means &quot;every frame the button is down&quot;, so holding the arrow keys will keep the Sprite moving.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this chapter, we reviewed the concept of content, how Ladybug and MonoGame handle importing and processing content, and how to load and use content in our game. In addition, we covered basic user input, and illustrated how to use input to affect what is drawn to the screen.</p>
+<p>With our <code>MainScene</code> now drawing and updating objects within our game, we've got the foundations settled for our snake game.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that we've got a basic game foundation including sprite drawing and user input, it's time to make the snake that the player will be controlling!</p>
+<p>When you're ready for the next step, head on over to <a href="/articles/tutorials/1/3.html">the next chapter</a> where we'll set up our <code>Snake</code> class and get a controllable snake working.</p>
+<p>Complete code for this chapter can be found <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/chapter2">here</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/documentation/docs-src/articles/tutorials/1/2.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

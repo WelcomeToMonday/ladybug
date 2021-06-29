@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Snake Tutorial, Part 1: The Main Scene </title>
+    <title>Snake Tutorial Part 1: The Main Scene </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Snake Tutorial, Part 1: The Main Scene ">
+    <meta name="title" content="Snake Tutorial Part 1: The Main Scene ">
     <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../../../images/icon48.png">
@@ -67,8 +67,140 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="snake-tutorial-part-1-the-main-scene">Snake Tutorial, Part 1: The Main Scene</h1>
+<h1 id="snake-tutorial-part-1-the-main-scene">Snake Tutorial Part 1: The Main Scene</h1>
 
+<p>In this chapter we will be creating the Main Scene for our Snake game. This Scene will handle the main game loop which will update and draw our Snake and the apples he'll be trying to reach.</p>
+<p>At the end of this chapter, your game project will load and run a custom <code>Scene</code> instance, with customized initialization, update, and draw behaviors.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To complete this part, you will need to be familiar with the process and requirements of setting up a new Ladybug project.</p>
+<p>For more information on Ladybug's usage requirements, check out the <a href="/articles/getting-started/installation.html">Installation</a> article</p>
+<p>For more information on setting up a new Ladybug project, check out the
+<a href="/articles/getting-started/setting-up-the-game.html">Setting Up the Game</a> article</p>
+<h2 id="step-0-review---setting-up-the-ladybug-project">Step 0: Review - Setting up the Ladybug Project</h2>
+<p>To get started we'll need to set up a new game project. We'll run through the steps here quickly, but if you need more information on these steps, check out the articles in the Getting Started section.</p>
+<p>If you're comfortable with setting up a Ladybug project, feel free to skip ahead to the next step.</p>
+<h3 id="creating-the-project-structure">Creating the Project Structure</h3>
+<p>First we'll create the project folder and the subfolders we'll be using to organize our source code and assets.</p>
+<pre><code class="lang-bash"># Create the root project folder and enter it
+mkdir snake &amp;&amp; cd ./snake
+# Create the Shared Project folder
+dotnet new mgshared -n core
+# Create the Desktop using OpenGL Platform Folder
+dotnet new mgdesktopgl -n xplatform
+</code></pre>
+<h3 id="review---shared-project-and-platform-target-folders">Review - Shared Project and Platform Target folders</h3>
+<p>The <code>core</code> folder contains the Shared Project that will be housing the bulk of our game source code. This allows us to store all platform-independent code in one place.</p>
+<p>The <code>xplatform</code> folder contains the Platform Target project, which is what we will actually be building our game executable from. It will reference the Shared Project in <code>core</code> and pulling in the game code from there.</p>
+<p>If you need a refresher on referencing the Shared Project from the Platform Target project, review the steps listed in <a href="/articles/getting-started/installation.html">Getting Started: Installation</a>, in the &quot;Hooking it All Together&quot; section.</p>
+<h3 id="getting-ladybug-up-and-running">Getting Ladybug Up and Running</h3>
+<p>Once the project folders are in place, we'll need to decide how we're involving Ladybug in our project. The easiest way is to add it through the <code>dotnet</code> command:</p>
+<pre><code class="lang-bash">dotnet add package WelcomeToMonday.Ladybug
+</code></pre>
+<p>The other option is to build it yourself and manually add a reference to <code>ladybug.dll</code> in <code>xplatform.csproj</code>.</p>
+<p>These options are also covered in the Installation article linked above.</p>
+<p>Once Ladybug has been added to your project, edit <code>xplatform/Program.cs</code> and get it set up with a <code>Ladybug.Game</code> instance. Open the file in your editor of choice and and replace its contents with the following:</p>
+<pre><code class="lang-csharp">using System;
+using Ladybug;
+
+namespace xplatform
+{
+	public static class Program
+	{
+		[STAThread]
+		static void Main()
+		{
+			using (var game = new Game())
+			{
+				game.Run();
+			}
+		}
+	}
+}
+</code></pre>
+<p>At the moment, the <code>Game</code> does not have any <code>Scene</code>s to run, so the application will only produce an empty window. We'll be setting the <code>Game</code> instance up with a <code>Scene</code> in the next step.</p>
+<h3 id="other-cs-files">Other .cs Files</h3>
+<p>The <code>dotnet new</code> command creates a number of files automatically when run. Among these files may be a <code>Game1.cs</code> in the <code>xplatform</code> and/or <code>core</code> folder.</p>
+<p>These files are MonoGame/XNA template files that are useful when starting a new MonoGame project, but are not useful to us when using Ladybug. We will not be using them, so it is recommended to delete these files.</p>
+<h2 id="step-1-creating-mainscenecs">Step 1: Creating MainScene.cs</h2>
+<p>The first file we'll be creating in our new project is <code>MainScene.cs</code> -- the source file for the main scene that will be processing the bulk of our game's update and drawing logic.</p>
+<p>While it is possible to create a Scene on the fly without creating our own derived <code>Scene</code> subclass, deriving a new class and defining our logic there will make for cleaner code and better organization in the long run -- especially for games that contain many scenes.</p>
+<p>Create <code>MainScene.cs</code> at <code>core/scene/MainScene.cs</code> with the following content:</p>
+<pre><code class="lang-csharp">// core/scene/MainScene.cs
+using System;
+using Microsoft.Xna.Framework;
+using Ladybug;
+
+public class MainScene : Scene
+{
+	public MainScene()
+	{
+		OnInitialize(Initialize);
+	}
+
+	private void Initialize()
+	{
+		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	}
+}
+</code></pre>
+<p>In the above code, we define a new class derived from <code>Ladybug.Scene</code> called <code>MainScene</code>. We define its constructor as well as a private <code>Initialize()</code> method, which will write &quot;Main Scene Initialized&quot; to the console when invoked.</p>
+<p>Additionally, we call <code>OnInitialize(Initialize)</code> in the constructor. This is tells Ladybug that we want to run our <code>Initialize()</code> method when our scene class is initialized, which will happen when it is loaded into a <code>Game</code> instance.</p>
+<p>Speaking of which, now that we have our <code>MainScene</code> class defined, we can load it into our <code>Game</code> instance in <code>Program.cs</code> so that it is run when the game starts</p>
+<pre><code class="lang-csharp">// xplatform/Program.cs
+// ...
+static void Main()
+{
+	using (var game = new Game())
+	{
+		game.LoadScene&lt;MainScene&gt;();
+		game.Run();
+	}
+}
+// ...
+</code></pre>
+<p>Now, when the application is built and run, you should see <code>Main Scene Initialized!</code> printed to the console.</p>
+<h2 id="step-2-adding-update-and-draw">Step 2: Adding Update and Draw</h2>
+<p>Our <code>MainScene</code> class has a working <code>Initialize()</code> method that is appropriately being called as soon as it is loaded into the <code>Game</code> instance. This is a great start, but our game is still nothing but an empty window.</p>
+<p>To fix this, we'll need to define <code>MainScene</code>'s <code>OnUpdate</code> and <code>OnDraw</code> behavior. We'll leave most of the details to the next chapter, but for now let's get our basic <code>Update()</code> and <code>Draw()</code> methods set up.</p>
+<pre><code class="lang-csharp">// core/scene/MainScene.cs
+using System;
+using Microsoft.Xna.Framework;
+using Ladybug;
+
+public class MainScene : Scene
+{
+	public MainScene()
+	{
+		OnInitialize(Initialize);
+		// Just like OnInitialize(), we'll hook up Update()
+		// and Draw() to OnUpdate and OnDraw here
+		OnUpdate(Update);
+		OnDraw(Draw);
+	}
+
+	private void Initialize()
+	{
+		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	}
+
+	private void Update(GameTime gameTime)
+	{
+		// Our update code will go here
+	}
+
+	private void Draw(GameTime gameTime)
+	{
+		// Our draw code will go here
+	}
+}
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this section, we reviewed setting up a Ladybug project and covered creating a custom <code>MainScene</code> class derived from <code>Ladybug.Scene</code>.</p>
+<p>We added some basic initialization behavior to <code>MainScene</code>, loaded our <code>MainScene</code> into our <code>Game</code> instance, and saw that our <code>Initialize()</code> method was invoked when our game was built and run.</p>
+<p>We also created some empty <code>Update()</code> and <code>Draw()</code> methods that we'll be using in the next chapter to extend <code>MainScene</code>'s functionality and take another step closer to creating our Snake game.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>With our <code>MainScene</code> in hand, it's time to head to the next chapter, <a href="/articles/tutorials/1/2.html">Sprites and Player Input</a>.</p>
+<p>Complete code for this chapter can be found <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/chapter1">here</a>.</p>
 </article>
           </div>
           
@@ -77,7 +209,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/welcometomonday/ladybug/blob/documentation/docs-src/articles/tutorials/1/1.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/documentation/docs-src/articles/tutorials/1/1.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -49,11 +49,11 @@ references:
   commentId: T:Ladybug.Camera
   fullName: Ladybug.Camera
   nameWithType: Camera
-- uid: Ladybug.Camera.#ctor(Viewport)
+- uid: Ladybug.Camera.#ctor(Microsoft.Xna.Framework.Graphics.Viewport)
   name: Camera(Viewport)
-  href: api/Ladybug.Camera.html#Ladybug_Camera__ctor_Viewport_
-  commentId: M:Ladybug.Camera.#ctor(Viewport)
-  fullName: Ladybug.Camera.Camera(Viewport)
+  href: api/Ladybug.Camera.html#Ladybug_Camera__ctor_Microsoft_Xna_Framework_Graphics_Viewport_
+  commentId: M:Ladybug.Camera.#ctor(Microsoft.Xna.Framework.Graphics.Viewport)
+  fullName: Ladybug.Camera.Camera(Microsoft.Xna.Framework.Graphics.Viewport)
   nameWithType: Camera.Camera(Viewport)
 - uid: Ladybug.Camera.#ctor*
   name: Camera
@@ -101,11 +101,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.ClearAllowedArea
   nameWithType: Camera.ClearAllowedArea
-- uid: Ladybug.Camera.LerpTo(Vector2,System.Single)
+- uid: Ladybug.Camera.LerpTo(Microsoft.Xna.Framework.Vector2,System.Single)
   name: LerpTo(Vector2, Single)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_LerpTo_Vector2_System_Single_
-  commentId: M:Ladybug.Camera.LerpTo(Vector2,System.Single)
-  fullName: Ladybug.Camera.LerpTo(Vector2, System.Single)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_LerpTo_Microsoft_Xna_Framework_Vector2_System_Single_
+  commentId: M:Ladybug.Camera.LerpTo(Microsoft.Xna.Framework.Vector2,System.Single)
+  fullName: Ladybug.Camera.LerpTo(Microsoft.Xna.Framework.Vector2, System.Single)
   nameWithType: Camera.LerpTo(Vector2, Single)
 - uid: Ladybug.Camera.LerpTo*
   name: LerpTo
@@ -114,11 +114,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.LerpTo
   nameWithType: Camera.LerpTo
-- uid: Ladybug.Camera.Move(Vector2)
+- uid: Ladybug.Camera.Move(Microsoft.Xna.Framework.Vector2)
   name: Move(Vector2)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_Move_Vector2_
-  commentId: M:Ladybug.Camera.Move(Vector2)
-  fullName: Ladybug.Camera.Move(Vector2)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_Move_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Camera.Move(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Camera.Move(Microsoft.Xna.Framework.Vector2)
   nameWithType: Camera.Move(Vector2)
 - uid: Ladybug.Camera.Move*
   name: Move
@@ -140,11 +140,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.Position
   nameWithType: Camera.Position
-- uid: Ladybug.Camera.ScreenToWorldSpace(Vector2)
+- uid: Ladybug.Camera.ScreenToWorldSpace(Microsoft.Xna.Framework.Vector2)
   name: ScreenToWorldSpace(Vector2)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_ScreenToWorldSpace_Vector2_
-  commentId: M:Ladybug.Camera.ScreenToWorldSpace(Vector2)
-  fullName: Ladybug.Camera.ScreenToWorldSpace(Vector2)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_ScreenToWorldSpace_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Camera.ScreenToWorldSpace(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Camera.ScreenToWorldSpace(Microsoft.Xna.Framework.Vector2)
   nameWithType: Camera.ScreenToWorldSpace(Vector2)
 - uid: Ladybug.Camera.ScreenToWorldSpace*
   name: ScreenToWorldSpace
@@ -153,11 +153,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.ScreenToWorldSpace
   nameWithType: Camera.ScreenToWorldSpace
-- uid: Ladybug.Camera.SetAllowedArea(Rectangle)
+- uid: Ladybug.Camera.SetAllowedArea(Microsoft.Xna.Framework.Rectangle)
   name: SetAllowedArea(Rectangle)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_SetAllowedArea_Rectangle_
-  commentId: M:Ladybug.Camera.SetAllowedArea(Rectangle)
-  fullName: Ladybug.Camera.SetAllowedArea(Rectangle)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_SetAllowedArea_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Camera.SetAllowedArea(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Camera.SetAllowedArea(Microsoft.Xna.Framework.Rectangle)
   nameWithType: Camera.SetAllowedArea(Rectangle)
 - uid: Ladybug.Camera.SetAllowedArea*
   name: SetAllowedArea
@@ -166,11 +166,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.SetAllowedArea
   nameWithType: Camera.SetAllowedArea
-- uid: Ladybug.Camera.SetPosition(Vector2)
+- uid: Ladybug.Camera.SetPosition(Microsoft.Xna.Framework.Vector2)
   name: SetPosition(Vector2)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_SetPosition_Vector2_
-  commentId: M:Ladybug.Camera.SetPosition(Vector2)
-  fullName: Ladybug.Camera.SetPosition(Vector2)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_SetPosition_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Camera.SetPosition(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Camera.SetPosition(Microsoft.Xna.Framework.Vector2)
   nameWithType: Camera.SetPosition(Vector2)
 - uid: Ladybug.Camera.SetPosition*
   name: SetPosition
@@ -205,11 +205,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.Transform
   nameWithType: Camera.Transform
-- uid: Ladybug.Camera.Update(Viewport)
+- uid: Ladybug.Camera.Update(Microsoft.Xna.Framework.Graphics.Viewport)
   name: Update(Viewport)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_Update_Viewport_
-  commentId: M:Ladybug.Camera.Update(Viewport)
-  fullName: Ladybug.Camera.Update(Viewport)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_Update_Microsoft_Xna_Framework_Graphics_Viewport_
+  commentId: M:Ladybug.Camera.Update(Microsoft.Xna.Framework.Graphics.Viewport)
+  fullName: Ladybug.Camera.Update(Microsoft.Xna.Framework.Graphics.Viewport)
   nameWithType: Camera.Update(Viewport)
 - uid: Ladybug.Camera.Update*
   name: Update
@@ -231,11 +231,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Camera.View
   nameWithType: Camera.View
-- uid: Ladybug.Camera.WorldToScreenSpace(Vector2)
+- uid: Ladybug.Camera.WorldToScreenSpace(Microsoft.Xna.Framework.Vector2)
   name: WorldToScreenSpace(Vector2)
-  href: api/Ladybug.Camera.html#Ladybug_Camera_WorldToScreenSpace_Vector2_
-  commentId: M:Ladybug.Camera.WorldToScreenSpace(Vector2)
-  fullName: Ladybug.Camera.WorldToScreenSpace(Vector2)
+  href: api/Ladybug.Camera.html#Ladybug_Camera_WorldToScreenSpace_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Camera.WorldToScreenSpace(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Camera.WorldToScreenSpace(Microsoft.Xna.Framework.Vector2)
   nameWithType: Camera.WorldToScreenSpace(Vector2)
 - uid: Ladybug.Camera.WorldToScreenSpace*
   name: WorldToScreenSpace
@@ -434,24 +434,24 @@ references:
   fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByBounds(Of T)(System.Int32)
   nameWithType: CollisionGroup.CheckCollisionByBounds<T>(Int32)
   nameWithType.vb: CollisionGroup.CheckCollisionByBounds(Of T)(Int32)
+- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector2)
+  name: CheckCollisionByPoints(Vector2)
+  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector2)
+  nameWithType: CollisionGroup.CheckCollisionByPoints(Vector2)
+- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector4)
+  name: CheckCollisionByPoints(Vector4)
+  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_Microsoft_Xna_Framework_Vector4_
+  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector4)
+  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Microsoft.Xna.Framework.Vector4)
+  nameWithType: CollisionGroup.CheckCollisionByPoints(Vector4)
 - uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(System.Int32)
   name: CheckCollisionByPoints(Int32)
   href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_System_Int32_
   commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(System.Int32)
   fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(System.Int32)
   nameWithType: CollisionGroup.CheckCollisionByPoints(Int32)
-- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector2)
-  name: CheckCollisionByPoints(Vector2)
-  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_Vector2_
-  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector2)
-  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector2)
-  nameWithType: CollisionGroup.CheckCollisionByPoints(Vector2)
-- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector4)
-  name: CheckCollisionByPoints(Vector4)
-  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_Vector4_
-  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector4)
-  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Vector4)
-  nameWithType: CollisionGroup.CheckCollisionByPoints(Vector4)
 - uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints*
   name: CheckCollisionByPoints
   href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints_
@@ -459,6 +459,24 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints
   nameWithType: CollisionGroup.CheckCollisionByPoints
+- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Microsoft.Xna.Framework.Vector2)
+  name: CheckCollisionByPoints<T>(Vector2)
+  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints__1_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Microsoft.Xna.Framework.Vector2)
+  name.vb: CheckCollisionByPoints(Of T)(Vector2)
+  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints<T>(Microsoft.Xna.Framework.Vector2)
+  fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Of T)(Microsoft.Xna.Framework.Vector2)
+  nameWithType: CollisionGroup.CheckCollisionByPoints<T>(Vector2)
+  nameWithType.vb: CollisionGroup.CheckCollisionByPoints(Of T)(Vector2)
+- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Microsoft.Xna.Framework.Vector4)
+  name: CheckCollisionByPoints<T>(Vector4)
+  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints__1_Microsoft_Xna_Framework_Vector4_
+  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Microsoft.Xna.Framework.Vector4)
+  name.vb: CheckCollisionByPoints(Of T)(Vector4)
+  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints<T>(Microsoft.Xna.Framework.Vector4)
+  fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Of T)(Microsoft.Xna.Framework.Vector4)
+  nameWithType: CollisionGroup.CheckCollisionByPoints<T>(Vector4)
+  nameWithType.vb: CollisionGroup.CheckCollisionByPoints(Of T)(Vector4)
 - uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(System.Int32)
   name: CheckCollisionByPoints<T>(Int32)
   href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints__1_System_Int32_
@@ -468,24 +486,6 @@ references:
   fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Of T)(System.Int32)
   nameWithType: CollisionGroup.CheckCollisionByPoints<T>(Int32)
   nameWithType.vb: CollisionGroup.CheckCollisionByPoints(Of T)(Int32)
-- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Vector2)
-  name: CheckCollisionByPoints<T>(Vector2)
-  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints__1_Vector2_
-  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Vector2)
-  name.vb: CheckCollisionByPoints(Of T)(Vector2)
-  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints<T>(Vector2)
-  fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Of T)(Vector2)
-  nameWithType: CollisionGroup.CheckCollisionByPoints<T>(Vector2)
-  nameWithType.vb: CollisionGroup.CheckCollisionByPoints(Of T)(Vector2)
-- uid: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Vector4)
-  name: CheckCollisionByPoints<T>(Vector4)
-  href: api/Ladybug.Collision.CollisionGroup.html#Ladybug_Collision_CollisionGroup_CheckCollisionByPoints__1_Vector4_
-  commentId: M:Ladybug.Collision.CollisionGroup.CheckCollisionByPoints``1(Vector4)
-  name.vb: CheckCollisionByPoints(Of T)(Vector4)
-  fullName: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints<T>(Vector4)
-  fullName.vb: Ladybug.Collision.CollisionGroup.CheckCollisionByPoints(Of T)(Vector4)
-  nameWithType: CollisionGroup.CheckCollisionByPoints<T>(Vector4)
-  nameWithType.vb: CollisionGroup.CheckCollisionByPoints(Of T)(Vector4)
 - uid: Ladybug.Collision.CollisionResult`1
   name: CollisionResult<T>
   href: api/Ladybug.Collision.CollisionResult-1.html
@@ -706,13 +706,13 @@ references:
   commentId: T:Ladybug.Collision.Polygon
   fullName: Ladybug.Collision.Polygon
   nameWithType: Polygon
-- uid: Ladybug.Collision.Polygon.#ctor(Vector2[])
+- uid: Ladybug.Collision.Polygon.#ctor(Microsoft.Xna.Framework.Vector2[])
   name: Polygon(Vector2[])
-  href: api/Ladybug.Collision.Polygon.html#Ladybug_Collision_Polygon__ctor_Vector2___
-  commentId: M:Ladybug.Collision.Polygon.#ctor(Vector2[])
+  href: api/Ladybug.Collision.Polygon.html#Ladybug_Collision_Polygon__ctor_Microsoft_Xna_Framework_Vector2___
+  commentId: M:Ladybug.Collision.Polygon.#ctor(Microsoft.Xna.Framework.Vector2[])
   name.vb: Polygon(Vector2())
-  fullName: Ladybug.Collision.Polygon.Polygon(Vector2[])
-  fullName.vb: Ladybug.Collision.Polygon.Polygon(Vector2())
+  fullName: Ladybug.Collision.Polygon.Polygon(Microsoft.Xna.Framework.Vector2[])
+  fullName.vb: Ladybug.Collision.Polygon.Polygon(Microsoft.Xna.Framework.Vector2())
   nameWithType: Polygon.Polygon(Vector2[])
   nameWithType.vb: Polygon.Polygon(Vector2())
 - uid: Ladybug.Collision.Polygon.#ctor*
@@ -722,11 +722,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.Polygon.Polygon
   nameWithType: Polygon.Polygon
-- uid: Ladybug.Collision.Polygon.ContainsVector(Vector2)
+- uid: Ladybug.Collision.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
   name: ContainsVector(Vector2)
-  href: api/Ladybug.Collision.Polygon.html#Ladybug_Collision_Polygon_ContainsVector_Vector2_
-  commentId: M:Ladybug.Collision.Polygon.ContainsVector(Vector2)
-  fullName: Ladybug.Collision.Polygon.ContainsVector(Vector2)
+  href: api/Ladybug.Collision.Polygon.html#Ladybug_Collision_Polygon_ContainsVector_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Collision.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Collision.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
   nameWithType: Polygon.ContainsVector(Vector2)
 - uid: Ladybug.Collision.Polygon.ContainsVector*
   name: ContainsVector
@@ -779,11 +779,11 @@ references:
   commentId: T:Ladybug.Collision.QuadTree
   fullName: Ladybug.Collision.QuadTree
   nameWithType: QuadTree
-- uid: Ladybug.Collision.QuadTree.#ctor(System.Int32,Rectangle)
+- uid: Ladybug.Collision.QuadTree.#ctor(System.Int32,Microsoft.Xna.Framework.Rectangle)
   name: QuadTree(Int32, Rectangle)
-  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree__ctor_System_Int32_Rectangle_
-  commentId: M:Ladybug.Collision.QuadTree.#ctor(System.Int32,Rectangle)
-  fullName: Ladybug.Collision.QuadTree.QuadTree(System.Int32, Rectangle)
+  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree__ctor_System_Int32_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Collision.QuadTree.#ctor(System.Int32,Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Collision.QuadTree.QuadTree(System.Int32, Microsoft.Xna.Framework.Rectangle)
   nameWithType: QuadTree.QuadTree(Int32, Rectangle)
 - uid: Ladybug.Collision.QuadTree.#ctor*
   name: QuadTree
@@ -844,13 +844,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.QuadTree.Nodes
   nameWithType: QuadTree.Nodes
-- uid: Ladybug.Collision.QuadTree.Retrieve(List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
+- uid: Ladybug.Collision.QuadTree.Retrieve(System.Collections.Generic.List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
   name: Retrieve(ref List<ICollision>, ICollision)
-  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_Retrieve_List_Ladybug_Collision_ICollision___Ladybug_Collision_ICollision_
-  commentId: M:Ladybug.Collision.QuadTree.Retrieve(List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
+  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_Retrieve_System_Collections_Generic_List_Ladybug_Collision_ICollision___Ladybug_Collision_ICollision_
+  commentId: M:Ladybug.Collision.QuadTree.Retrieve(System.Collections.Generic.List{Ladybug.Collision.ICollision}@,Ladybug.Collision.ICollision)
   name.vb: Retrieve(ByRef List(Of ICollision), ICollision)
-  fullName: Ladybug.Collision.QuadTree.Retrieve(ref List<Ladybug.Collision.ICollision>, Ladybug.Collision.ICollision)
-  fullName.vb: Ladybug.Collision.QuadTree.Retrieve(ByRef List(Of Ladybug.Collision.ICollision), Ladybug.Collision.ICollision)
+  fullName: Ladybug.Collision.QuadTree.Retrieve(ref System.Collections.Generic.List<Ladybug.Collision.ICollision>, Ladybug.Collision.ICollision)
+  fullName.vb: Ladybug.Collision.QuadTree.Retrieve(ByRef System.Collections.Generic.List(Of Ladybug.Collision.ICollision), Ladybug.Collision.ICollision)
   nameWithType: QuadTree.Retrieve(ref List<ICollision>, ICollision)
   nameWithType.vb: QuadTree.Retrieve(ByRef List(Of ICollision), ICollision)
 - uid: Ladybug.Collision.QuadTree.Retrieve*
@@ -867,13 +867,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Collision.QuadTree.RetrieveByType
   nameWithType: QuadTree.RetrieveByType
-- uid: Ladybug.Collision.QuadTree.RetrieveByType``1(List{``0}@,Ladybug.Collision.ICollision)
+- uid: Ladybug.Collision.QuadTree.RetrieveByType``1(System.Collections.Generic.List{``0}@,Ladybug.Collision.ICollision)
   name: RetrieveByType<T>(ref List<T>, ICollision)
-  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_RetrieveByType__1_List___0___Ladybug_Collision_ICollision_
-  commentId: M:Ladybug.Collision.QuadTree.RetrieveByType``1(List{``0}@,Ladybug.Collision.ICollision)
+  href: api/Ladybug.Collision.QuadTree.html#Ladybug_Collision_QuadTree_RetrieveByType__1_System_Collections_Generic_List___0___Ladybug_Collision_ICollision_
+  commentId: M:Ladybug.Collision.QuadTree.RetrieveByType``1(System.Collections.Generic.List{``0}@,Ladybug.Collision.ICollision)
   name.vb: RetrieveByType(Of T)(ByRef List(Of T), ICollision)
-  fullName: Ladybug.Collision.QuadTree.RetrieveByType<T>(ref List<T>, Ladybug.Collision.ICollision)
-  fullName.vb: Ladybug.Collision.QuadTree.RetrieveByType(Of T)(ByRef List(Of T), Ladybug.Collision.ICollision)
+  fullName: Ladybug.Collision.QuadTree.RetrieveByType<T>(ref System.Collections.Generic.List<T>, Ladybug.Collision.ICollision)
+  fullName.vb: Ladybug.Collision.QuadTree.RetrieveByType(Of T)(ByRef System.Collections.Generic.List(Of T), Ladybug.Collision.ICollision)
   nameWithType: QuadTree.RetrieveByType<T>(ref List<T>, ICollision)
   nameWithType.vb: QuadTree.RetrieveByType(Of T)(ByRef List(Of T), ICollision)
 - uid: Ladybug.ECS
@@ -992,22 +992,22 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.Component.Name
   nameWithType: Component.Name
-- uid: Ladybug.ECS.Component.OnDraw(Action{GameTime,SpriteBatch})
+- uid: Ladybug.ECS.Component.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})
   name: OnDraw(Action<GameTime, SpriteBatch>)
-  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_Action_GameTime_SpriteBatch__
-  commentId: M:Ladybug.ECS.Component.OnDraw(Action{GameTime,SpriteBatch})
+  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_System_Action_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch__
+  commentId: M:Ladybug.ECS.Component.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})
   name.vb: OnDraw(Action(Of GameTime, SpriteBatch))
-  fullName: Ladybug.ECS.Component.OnDraw(Action<GameTime, SpriteBatch>)
-  fullName.vb: Ladybug.ECS.Component.OnDraw(Action(Of GameTime, SpriteBatch))
+  fullName: Ladybug.ECS.Component.OnDraw(System.Action<Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch>)
+  fullName.vb: Ladybug.ECS.Component.OnDraw(System.Action(Of Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch))
   nameWithType: Component.OnDraw(Action<GameTime, SpriteBatch>)
   nameWithType.vb: Component.OnDraw(Action(Of GameTime, SpriteBatch))
-- uid: Ladybug.ECS.Component.OnDraw(System.String,Action{GameTime,SpriteBatch})
+- uid: Ladybug.ECS.Component.OnDraw(System.String,System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})
   name: OnDraw(String, Action<GameTime, SpriteBatch>)
-  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_System_String_Action_GameTime_SpriteBatch__
-  commentId: M:Ladybug.ECS.Component.OnDraw(System.String,Action{GameTime,SpriteBatch})
+  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnDraw_System_String_System_Action_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch__
+  commentId: M:Ladybug.ECS.Component.OnDraw(System.String,System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})
   name.vb: OnDraw(String, Action(Of GameTime, SpriteBatch))
-  fullName: Ladybug.ECS.Component.OnDraw(System.String, Action<GameTime, SpriteBatch>)
-  fullName.vb: Ladybug.ECS.Component.OnDraw(System.String, Action(Of GameTime, SpriteBatch))
+  fullName: Ladybug.ECS.Component.OnDraw(System.String, System.Action<Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch>)
+  fullName.vb: Ladybug.ECS.Component.OnDraw(System.String, System.Action(Of Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch))
   nameWithType: Component.OnDraw(String, Action<GameTime, SpriteBatch>)
   nameWithType.vb: Component.OnDraw(String, Action(Of GameTime, SpriteBatch))
 - uid: Ladybug.ECS.Component.OnDraw*
@@ -1017,11 +1017,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.Component.OnDraw
   nameWithType: Component.OnDraw
-- uid: Ladybug.ECS.Component.OnInitialize(Action)
+- uid: Ladybug.ECS.Component.OnInitialize(System.Action)
   name: OnInitialize(Action)
-  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnInitialize_Action_
-  commentId: M:Ladybug.ECS.Component.OnInitialize(Action)
-  fullName: Ladybug.ECS.Component.OnInitialize(Action)
+  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnInitialize_System_Action_
+  commentId: M:Ladybug.ECS.Component.OnInitialize(System.Action)
+  fullName: Ladybug.ECS.Component.OnInitialize(System.Action)
   nameWithType: Component.OnInitialize(Action)
 - uid: Ladybug.ECS.Component.OnInitialize*
   name: OnInitialize
@@ -1030,22 +1030,22 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.Component.OnInitialize
   nameWithType: Component.OnInitialize
-- uid: Ladybug.ECS.Component.OnUpdate(Action{GameTime})
+- uid: Ladybug.ECS.Component.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name: OnUpdate(Action<GameTime>)
-  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_Action_GameTime__
-  commentId: M:Ladybug.ECS.Component.OnUpdate(Action{GameTime})
+  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.ECS.Component.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name.vb: OnUpdate(Action(Of GameTime))
-  fullName: Ladybug.ECS.Component.OnUpdate(Action<GameTime>)
-  fullName.vb: Ladybug.ECS.Component.OnUpdate(Action(Of GameTime))
+  fullName: Ladybug.ECS.Component.OnUpdate(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.ECS.Component.OnUpdate(System.Action(Of Microsoft.Xna.Framework.GameTime))
   nameWithType: Component.OnUpdate(Action<GameTime>)
   nameWithType.vb: Component.OnUpdate(Action(Of GameTime))
-- uid: Ladybug.ECS.Component.OnUpdate(System.String,Action{GameTime})
+- uid: Ladybug.ECS.Component.OnUpdate(System.String,System.Action{Microsoft.Xna.Framework.GameTime})
   name: OnUpdate(String, Action<GameTime>)
-  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_System_String_Action_GameTime__
-  commentId: M:Ladybug.ECS.Component.OnUpdate(System.String,Action{GameTime})
+  href: api/Ladybug.ECS.Component.html#Ladybug_ECS_Component_OnUpdate_System_String_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.ECS.Component.OnUpdate(System.String,System.Action{Microsoft.Xna.Framework.GameTime})
   name.vb: OnUpdate(String, Action(Of GameTime))
-  fullName: Ladybug.ECS.Component.OnUpdate(System.String, Action<GameTime>)
-  fullName.vb: Ladybug.ECS.Component.OnUpdate(System.String, Action(Of GameTime))
+  fullName: Ladybug.ECS.Component.OnUpdate(System.String, System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.ECS.Component.OnUpdate(System.String, System.Action(Of Microsoft.Xna.Framework.GameTime))
   nameWithType: Component.OnUpdate(String, Action<GameTime>)
   nameWithType.vb: Component.OnUpdate(String, Action(Of GameTime))
 - uid: Ladybug.ECS.Component.OnUpdate*
@@ -1222,15 +1222,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.Components.SpriteComponent.SpriteComponent
   nameWithType: SpriteComponent.SpriteComponent
-- uid: Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Texture2D,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean)
-  name: AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable<Int32>, Boolean)
-  href: api/Ladybug.ECS.Components.SpriteComponent.html#Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Boolean_
-  commentId: M:Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Texture2D,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean)
-  name.vb: AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable(Of Int32), Boolean)
-  fullName: Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String, Texture2D, System.Int32, System.Int32, System.Int32, System.Int32, System.Nullable<System.Int32>, System.Boolean)
-  fullName.vb: Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String, Texture2D, System.Int32, System.Int32, System.Int32, System.Int32, System.Nullable(Of System.Int32), System.Boolean)
-  nameWithType: SpriteComponent.AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable<Int32>, Boolean)
-  nameWithType.vb: SpriteComponent.AddAnimation(String, Texture2D, Int32, Int32, Int32, Int32, Nullable(Of Int32), Boolean)
+- uid: Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: AddAnimation(String, SpriteAtlas, Int32, Int32, Int32, Int32, Int32, Boolean)
+  href: api/Ladybug.ECS.Components.SpriteComponent.html#Ladybug_ECS_Components_SpriteComponent_AddAnimation_System_String_Ladybug_Graphics_SpriteAtlas_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  fullName: Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String, Ladybug.Graphics.SpriteAtlas, System.Int32, System.Int32, System.Int32, System.Int32, System.Int32, System.Boolean)
+  nameWithType: SpriteComponent.AddAnimation(String, SpriteAtlas, Int32, Int32, Int32, Int32, Int32, Boolean)
 - uid: Ladybug.ECS.Components.SpriteComponent.AddAnimation*
   name: AddAnimation
   href: api/Ladybug.ECS.Components.SpriteComponent.html#Ladybug_ECS_Components_SpriteComponent_AddAnimation_
@@ -1341,12 +1338,12 @@ references:
   fullName.vb: Ladybug.ECS.ComponentSystem(Of T).DeregisterComponent
   nameWithType: ComponentSystem<T>.DeregisterComponent
   nameWithType.vb: ComponentSystem(Of T).DeregisterComponent
-- uid: Ladybug.ECS.ComponentSystem`1.Draw(System.String,GameTime,SpriteBatch)
+- uid: Ladybug.ECS.ComponentSystem`1.Draw(System.String,Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(String, GameTime, SpriteBatch)
-  href: api/Ladybug.ECS.ComponentSystem-1.html#Ladybug_ECS_ComponentSystem_1_Draw_System_String_GameTime_SpriteBatch_
-  commentId: M:Ladybug.ECS.ComponentSystem`1.Draw(System.String,GameTime,SpriteBatch)
-  fullName: Ladybug.ECS.ComponentSystem<T>.Draw(System.String, GameTime, SpriteBatch)
-  fullName.vb: Ladybug.ECS.ComponentSystem(Of T).Draw(System.String, GameTime, SpriteBatch)
+  href: api/Ladybug.ECS.ComponentSystem-1.html#Ladybug_ECS_ComponentSystem_1_Draw_System_String_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.ECS.ComponentSystem`1.Draw(System.String,Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.ECS.ComponentSystem<T>.Draw(System.String, Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName.vb: Ladybug.ECS.ComponentSystem(Of T).Draw(System.String, Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: ComponentSystem<T>.Draw(String, GameTime, SpriteBatch)
   nameWithType.vb: ComponentSystem(Of T).Draw(String, GameTime, SpriteBatch)
 - uid: Ladybug.ECS.ComponentSystem`1.Draw*
@@ -1392,12 +1389,12 @@ references:
   fullName.vb: Ladybug.ECS.ComponentSystem(Of T).RequestDrawSort
   nameWithType: ComponentSystem<T>.RequestDrawSort
   nameWithType.vb: ComponentSystem(Of T).RequestDrawSort
-- uid: Ladybug.ECS.ComponentSystem`1.Update(System.String,GameTime)
+- uid: Ladybug.ECS.ComponentSystem`1.Update(System.String,Microsoft.Xna.Framework.GameTime)
   name: Update(String, GameTime)
-  href: api/Ladybug.ECS.ComponentSystem-1.html#Ladybug_ECS_ComponentSystem_1_Update_System_String_GameTime_
-  commentId: M:Ladybug.ECS.ComponentSystem`1.Update(System.String,GameTime)
-  fullName: Ladybug.ECS.ComponentSystem<T>.Update(System.String, GameTime)
-  fullName.vb: Ladybug.ECS.ComponentSystem(Of T).Update(System.String, GameTime)
+  href: api/Ladybug.ECS.ComponentSystem-1.html#Ladybug_ECS_ComponentSystem_1_Update_System_String_Microsoft_Xna_Framework_GameTime_
+  commentId: M:Ladybug.ECS.ComponentSystem`1.Update(System.String,Microsoft.Xna.Framework.GameTime)
+  fullName: Ladybug.ECS.ComponentSystem<T>.Update(System.String, Microsoft.Xna.Framework.GameTime)
+  fullName.vb: Ladybug.ECS.ComponentSystem(Of T).Update(System.String, Microsoft.Xna.Framework.GameTime)
   nameWithType: ComponentSystem<T>.Update(String, GameTime)
   nameWithType.vb: ComponentSystem(Of T).Update(String, GameTime)
 - uid: Ladybug.ECS.ComponentSystem`1.Update*
@@ -1467,11 +1464,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.ECS.CreateEntity
   nameWithType: ECS.CreateEntity
-- uid: Ladybug.ECS.ECS.Draw(GameTime,SpriteBatch)
+- uid: Ladybug.ECS.ECS.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(GameTime, SpriteBatch)
-  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_Draw_GameTime_SpriteBatch_
-  commentId: M:Ladybug.ECS.ECS.Draw(GameTime,SpriteBatch)
-  fullName: Ladybug.ECS.ECS.Draw(GameTime, SpriteBatch)
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_Draw_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.ECS.ECS.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.ECS.ECS.Draw(Microsoft.Xna.Framework.GameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: ECS.Draw(GameTime, SpriteBatch)
 - uid: Ladybug.ECS.ECS.Draw*
   name: Draw
@@ -1603,13 +1600,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.ECS.Scene
   nameWithType: ECS.Scene
-- uid: Ladybug.ECS.ECS.SetDrawSteps(List{System.String})
+- uid: Ladybug.ECS.ECS.SetDrawSteps(System.Collections.Generic.List{System.String})
   name: SetDrawSteps(List<String>)
-  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_SetDrawSteps_List_System_String__
-  commentId: M:Ladybug.ECS.ECS.SetDrawSteps(List{System.String})
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_SetDrawSteps_System_Collections_Generic_List_System_String__
+  commentId: M:Ladybug.ECS.ECS.SetDrawSteps(System.Collections.Generic.List{System.String})
   name.vb: SetDrawSteps(List(Of String))
-  fullName: Ladybug.ECS.ECS.SetDrawSteps(List<System.String>)
-  fullName.vb: Ladybug.ECS.ECS.SetDrawSteps(List(Of System.String))
+  fullName: Ladybug.ECS.ECS.SetDrawSteps(System.Collections.Generic.List<System.String>)
+  fullName.vb: Ladybug.ECS.ECS.SetDrawSteps(System.Collections.Generic.List(Of System.String))
   nameWithType: ECS.SetDrawSteps(List<String>)
   nameWithType.vb: ECS.SetDrawSteps(List(Of String))
 - uid: Ladybug.ECS.ECS.SetDrawSteps(System.String[])
@@ -1628,13 +1625,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.ECS.SetDrawSteps
   nameWithType: ECS.SetDrawSteps
-- uid: Ladybug.ECS.ECS.SetUpdateSteps(List{System.String})
+- uid: Ladybug.ECS.ECS.SetUpdateSteps(System.Collections.Generic.List{System.String})
   name: SetUpdateSteps(List<String>)
-  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_SetUpdateSteps_List_System_String__
-  commentId: M:Ladybug.ECS.ECS.SetUpdateSteps(List{System.String})
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_SetUpdateSteps_System_Collections_Generic_List_System_String__
+  commentId: M:Ladybug.ECS.ECS.SetUpdateSteps(System.Collections.Generic.List{System.String})
   name.vb: SetUpdateSteps(List(Of String))
-  fullName: Ladybug.ECS.ECS.SetUpdateSteps(List<System.String>)
-  fullName.vb: Ladybug.ECS.ECS.SetUpdateSteps(List(Of System.String))
+  fullName: Ladybug.ECS.ECS.SetUpdateSteps(System.Collections.Generic.List<System.String>)
+  fullName.vb: Ladybug.ECS.ECS.SetUpdateSteps(System.Collections.Generic.List(Of System.String))
   nameWithType: ECS.SetUpdateSteps(List<String>)
   nameWithType.vb: ECS.SetUpdateSteps(List(Of String))
 - uid: Ladybug.ECS.ECS.SetUpdateSteps(System.String[])
@@ -1678,13 +1675,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.ECS.TryFindEntity
   nameWithType: ECS.TryFindEntity
-- uid: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component,Type@)
+- uid: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component,System.Type@)
   name: TryGetComponentSystem(Component, out Type)
-  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_TryGetComponentSystem_Ladybug_ECS_Component_Type__
-  commentId: M:Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component,Type@)
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_TryGetComponentSystem_Ladybug_ECS_Component_System_Type__
+  commentId: M:Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component,System.Type@)
   name.vb: TryGetComponentSystem(Component, ByRef Type)
-  fullName: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component, out Type)
-  fullName.vb: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component, ByRef Type)
+  fullName: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component, out System.Type)
+  fullName.vb: Ladybug.ECS.ECS.TryGetComponentSystem(Ladybug.ECS.Component, ByRef System.Type)
   nameWithType: ECS.TryGetComponentSystem(Component, out Type)
   nameWithType.vb: ECS.TryGetComponentSystem(Component, ByRef Type)
 - uid: Ladybug.ECS.ECS.TryGetComponentSystem*
@@ -1694,11 +1691,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.ECS.ECS.TryGetComponentSystem
   nameWithType: ECS.TryGetComponentSystem
-- uid: Ladybug.ECS.ECS.Update(GameTime)
+- uid: Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)
   name: Update(GameTime)
-  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_Update_GameTime_
-  commentId: M:Ladybug.ECS.ECS.Update(GameTime)
-  fullName: Ladybug.ECS.ECS.Update(GameTime)
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_Update_Microsoft_Xna_Framework_GameTime_
+  commentId: M:Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)
+  fullName: Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)
   nameWithType: ECS.Update(GameTime)
 - uid: Ladybug.ECS.ECS.Update*
   name: Update
@@ -1917,11 +1914,11 @@ references:
   commentId: T:Ladybug.Extensions
   fullName: Ladybug.Extensions
   nameWithType: Extensions
-- uid: Ladybug.Extensions.AngleTo(Vector2,Vector2)
+- uid: Ladybug.Extensions.AngleTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   name: AngleTo(Vector2, Vector2)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_AngleTo_Vector2_Vector2_
-  commentId: M:Ladybug.Extensions.AngleTo(Vector2,Vector2)
-  fullName: Ladybug.Extensions.AngleTo(Vector2, Vector2)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_AngleTo_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Extensions.AngleTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Extensions.AngleTo(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
   nameWithType: Extensions.AngleTo(Vector2, Vector2)
 - uid: Ladybug.Extensions.AngleTo*
   name: AngleTo
@@ -1930,11 +1927,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.AngleTo
   nameWithType: Extensions.AngleTo
-- uid: Ladybug.Extensions.DistanceTo(Vector2,Vector2)
+- uid: Ladybug.Extensions.DistanceTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   name: DistanceTo(Vector2, Vector2)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_DistanceTo_Vector2_Vector2_
-  commentId: M:Ladybug.Extensions.DistanceTo(Vector2,Vector2)
-  fullName: Ladybug.Extensions.DistanceTo(Vector2, Vector2)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_DistanceTo_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Extensions.DistanceTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Extensions.DistanceTo(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
   nameWithType: Extensions.DistanceTo(Vector2, Vector2)
 - uid: Ladybug.Extensions.DistanceTo*
   name: DistanceTo
@@ -1950,20 +1947,20 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.GetFeed
   nameWithType: Extensions.GetFeed
-- uid: Ladybug.Extensions.GetFeed``1(List{``0},System.Int32,System.Int32)
+- uid: Ladybug.Extensions.GetFeed``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
   name: GetFeed<T>(List<T>, Int32, Int32)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetFeed__1_List___0__System_Int32_System_Int32_
-  commentId: M:Ladybug.Extensions.GetFeed``1(List{``0},System.Int32,System.Int32)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetFeed__1_System_Collections_Generic_List___0__System_Int32_System_Int32_
+  commentId: M:Ladybug.Extensions.GetFeed``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
   name.vb: GetFeed(Of T)(List(Of T), Int32, Int32)
-  fullName: Ladybug.Extensions.GetFeed<T>(List<T>, System.Int32, System.Int32)
-  fullName.vb: Ladybug.Extensions.GetFeed(Of T)(List(Of T), System.Int32, System.Int32)
+  fullName: Ladybug.Extensions.GetFeed<T>(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  fullName.vb: Ladybug.Extensions.GetFeed(Of T)(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
   nameWithType: Extensions.GetFeed<T>(List<T>, Int32, Int32)
   nameWithType.vb: Extensions.GetFeed(Of T)(List(Of T), Int32, Int32)
-- uid: Ladybug.Extensions.GetReader(XmlDocument)
+- uid: Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
   name: GetReader(XmlDocument)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetReader_XmlDocument_
-  commentId: M:Ladybug.Extensions.GetReader(XmlDocument)
-  fullName: Ladybug.Extensions.GetReader(XmlDocument)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_GetReader_System_Xml_XmlDocument_
+  commentId: M:Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
+  fullName: Ladybug.Extensions.GetReader(System.Xml.XmlDocument)
   nameWithType: Extensions.GetReader(XmlDocument)
 - uid: Ladybug.Extensions.GetReader*
   name: GetReader
@@ -1985,11 +1982,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.Lerp
   nameWithType: Extensions.Lerp
-- uid: Ladybug.Extensions.ToAngle(Vector2)
+- uid: Ladybug.Extensions.ToAngle(Microsoft.Xna.Framework.Vector2)
   name: ToAngle(Vector2)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_ToAngle_Vector2_
-  commentId: M:Ladybug.Extensions.ToAngle(Vector2)
-  fullName: Ladybug.Extensions.ToAngle(Vector2)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_ToAngle_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Extensions.ToAngle(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Extensions.ToAngle(Microsoft.Xna.Framework.Vector2)
   nameWithType: Extensions.ToAngle(Vector2)
 - uid: Ladybug.Extensions.ToAngle*
   name: ToAngle
@@ -1998,11 +1995,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.ToAngle
   nameWithType: Extensions.ToAngle
-- uid: Ladybug.Extensions.ToPoint(Vector2)
+- uid: Ladybug.Extensions.ToPoint(Microsoft.Xna.Framework.Vector2)
   name: ToPoint(Vector2)
-  href: api/Ladybug.Extensions.html#Ladybug_Extensions_ToPoint_Vector2_
-  commentId: M:Ladybug.Extensions.ToPoint(Vector2)
-  fullName: Ladybug.Extensions.ToPoint(Vector2)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_ToPoint_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Extensions.ToPoint(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Extensions.ToPoint(Microsoft.Xna.Framework.Vector2)
   nameWithType: Extensions.ToPoint(Vector2)
 - uid: Ladybug.Extensions.ToPoint*
   name: ToPoint
@@ -2033,13 +2030,13 @@ references:
   fullName.vb: Ladybug.Feed(Of T)
   nameWithType: Feed<T>
   nameWithType.vb: Feed(Of T)
-- uid: Ladybug.Feed`1.#ctor(List{`0},System.Int32,System.Int32)
+- uid: Ladybug.Feed`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)
   name: Feed(List<T>, Int32, Int32)
-  href: api/Ladybug.Feed-1.html#Ladybug_Feed_1__ctor_List__0__System_Int32_System_Int32_
-  commentId: M:Ladybug.Feed`1.#ctor(List{`0},System.Int32,System.Int32)
+  href: api/Ladybug.Feed-1.html#Ladybug_Feed_1__ctor_System_Collections_Generic_List__0__System_Int32_System_Int32_
+  commentId: M:Ladybug.Feed`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)
   name.vb: Feed(List(Of T), Int32, Int32)
-  fullName: Ladybug.Feed<T>.Feed(List<T>, System.Int32, System.Int32)
-  fullName.vb: Ladybug.Feed(Of T).Feed(List(Of T), System.Int32, System.Int32)
+  fullName: Ladybug.Feed<T>.Feed(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  fullName.vb: Ladybug.Feed(Of T).Feed(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
   nameWithType: Feed<T>.Feed(List<T>, Int32, Int32)
   nameWithType.vb: Feed(Of T).Feed(List(Of T), Int32, Int32)
 - uid: Ladybug.Feed`1.#ctor(System.Int32)
@@ -2272,11 +2269,11 @@ references:
   commentId: E:Ladybug.FSM.State.Exited
   fullName: Ladybug.FSM.State.Exited
   nameWithType: State.Exited
-- uid: Ladybug.FSM.State.OnEnter(Action)
+- uid: Ladybug.FSM.State.OnEnter(System.Action)
   name: OnEnter(Action)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnEnter_Action_
-  commentId: M:Ladybug.FSM.State.OnEnter(Action)
-  fullName: Ladybug.FSM.State.OnEnter(Action)
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnEnter_System_Action_
+  commentId: M:Ladybug.FSM.State.OnEnter(System.Action)
+  fullName: Ladybug.FSM.State.OnEnter(System.Action)
   nameWithType: State.OnEnter(Action)
 - uid: Ladybug.FSM.State.OnEnter*
   name: OnEnter
@@ -2285,11 +2282,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.FSM.State.OnEnter
   nameWithType: State.OnEnter
-- uid: Ladybug.FSM.State.OnExit(Action)
+- uid: Ladybug.FSM.State.OnExit(System.Action)
   name: OnExit(Action)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnExit_Action_
-  commentId: M:Ladybug.FSM.State.OnExit(Action)
-  fullName: Ladybug.FSM.State.OnExit(Action)
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnExit_System_Action_
+  commentId: M:Ladybug.FSM.State.OnExit(System.Action)
+  fullName: Ladybug.FSM.State.OnExit(System.Action)
   nameWithType: State.OnExit(Action)
 - uid: Ladybug.FSM.State.OnExit*
   name: OnExit
@@ -2298,13 +2295,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.FSM.State.OnExit
   nameWithType: State.OnExit
-- uid: Ladybug.FSM.State.OnUpdate(Action{GameTime})
+- uid: Ladybug.FSM.State.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name: OnUpdate(Action<GameTime>)
-  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnUpdate_Action_GameTime__
-  commentId: M:Ladybug.FSM.State.OnUpdate(Action{GameTime})
+  href: api/Ladybug.FSM.State.html#Ladybug_FSM_State_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.FSM.State.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name.vb: OnUpdate(Action(Of GameTime))
-  fullName: Ladybug.FSM.State.OnUpdate(Action<GameTime>)
-  fullName.vb: Ladybug.FSM.State.OnUpdate(Action(Of GameTime))
+  fullName: Ladybug.FSM.State.OnUpdate(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.FSM.State.OnUpdate(System.Action(Of Microsoft.Xna.Framework.GameTime))
   nameWithType: State.OnUpdate(Action<GameTime>)
   nameWithType.vb: State.OnUpdate(Action(Of GameTime))
 - uid: Ladybug.FSM.State.OnUpdate*
@@ -2358,11 +2355,11 @@ references:
   commentId: E:Ladybug.FSM.StateMachine.StateChanged
   fullName: Ladybug.FSM.StateMachine.StateChanged
   nameWithType: StateMachine.StateChanged
-- uid: Ladybug.FSM.StateMachine.Update(GameTime)
+- uid: Ladybug.FSM.StateMachine.Update(Microsoft.Xna.Framework.GameTime)
   name: Update(GameTime)
-  href: api/Ladybug.FSM.StateMachine.html#Ladybug_FSM_StateMachine_Update_GameTime_
-  commentId: M:Ladybug.FSM.StateMachine.Update(GameTime)
-  fullName: Ladybug.FSM.StateMachine.Update(GameTime)
+  href: api/Ladybug.FSM.StateMachine.html#Ladybug_FSM_StateMachine_Update_Microsoft_Xna_Framework_GameTime_
+  commentId: M:Ladybug.FSM.StateMachine.Update(Microsoft.Xna.Framework.GameTime)
+  fullName: Ladybug.FSM.StateMachine.Update(Microsoft.Xna.Framework.GameTime)
   nameWithType: StateMachine.Update(GameTime)
 - uid: Ladybug.FSM.StateMachine.Update*
   name: Update
@@ -2390,11 +2387,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.Game
   nameWithType: Game.Game
-- uid: Ladybug.Game.Draw(GameTime)
+- uid: Ladybug.Game.Draw(Microsoft.Xna.Framework.GameTime)
   name: Draw(GameTime)
-  href: api/Ladybug.Game.html#Ladybug_Game_Draw_GameTime_
-  commentId: M:Ladybug.Game.Draw(GameTime)
-  fullName: Ladybug.Game.Draw(GameTime)
+  href: api/Ladybug.Game.html#Ladybug_Game_Draw_Microsoft_Xna_Framework_GameTime_
+  commentId: M:Ladybug.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  fullName: Ladybug.Game.Draw(Microsoft.Xna.Framework.GameTime)
   nameWithType: Game.Draw(GameTime)
 - uid: Ladybug.Game.Draw*
   name: Draw
@@ -2492,11 +2489,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Game.ThreadManager
   nameWithType: Game.ThreadManager
-- uid: Ladybug.Game.Update(GameTime)
+- uid: Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)
   name: Update(GameTime)
-  href: api/Ladybug.Game.html#Ladybug_Game_Update_GameTime_
-  commentId: M:Ladybug.Game.Update(GameTime)
-  fullName: Ladybug.Game.Update(GameTime)
+  href: api/Ladybug.Game.html#Ladybug_Game_Update_Microsoft_Xna_Framework_GameTime_
+  commentId: M:Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)
+  fullName: Ladybug.Game.Update(Microsoft.Xna.Framework.GameTime)
   nameWithType: Game.Update(GameTime)
 - uid: Ladybug.Game.Update*
   name: Update
@@ -2613,15 +2610,21 @@ references:
   commentId: T:Ladybug.Graphics.AnimationSequence
   fullName: Ladybug.Graphics.AnimationSequence
   nameWithType: AnimationSequence
-- uid: Ladybug.Graphics.AnimationSequence.#ctor(Texture2D,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32})
-  name: AnimationSequence(Texture2D, Int32, Int32, Int32, Nullable<Int32>)
-  href: api/Ladybug.Graphics.AnimationSequence.html#Ladybug_Graphics_AnimationSequence__ctor_Texture2D_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__
-  commentId: M:Ladybug.Graphics.AnimationSequence.#ctor(Texture2D,System.Int32,System.Int32,System.Int32,System.Nullable{System.Int32})
-  name.vb: AnimationSequence(Texture2D, Int32, Int32, Int32, Nullable(Of Int32))
-  fullName: Ladybug.Graphics.AnimationSequence.AnimationSequence(Texture2D, System.Int32, System.Int32, System.Int32, System.Nullable<System.Int32>)
-  fullName.vb: Ladybug.Graphics.AnimationSequence.AnimationSequence(Texture2D, System.Int32, System.Int32, System.Int32, System.Nullable(Of System.Int32))
-  nameWithType: AnimationSequence.AnimationSequence(Texture2D, Int32, Int32, Int32, Nullable<Int32>)
-  nameWithType.vb: AnimationSequence.AnimationSequence(Texture2D, Int32, Int32, Int32, Nullable(Of Int32))
+- uid: Ladybug.Graphics.AnimationSequence.#ctor(Ladybug.Graphics.Sprite[])
+  name: AnimationSequence(Sprite[])
+  href: api/Ladybug.Graphics.AnimationSequence.html#Ladybug_Graphics_AnimationSequence__ctor_Ladybug_Graphics_Sprite___
+  commentId: M:Ladybug.Graphics.AnimationSequence.#ctor(Ladybug.Graphics.Sprite[])
+  name.vb: AnimationSequence(Sprite())
+  fullName: Ladybug.Graphics.AnimationSequence.AnimationSequence(Ladybug.Graphics.Sprite[])
+  fullName.vb: Ladybug.Graphics.AnimationSequence.AnimationSequence(Ladybug.Graphics.Sprite())
+  nameWithType: AnimationSequence.AnimationSequence(Sprite[])
+  nameWithType.vb: AnimationSequence.AnimationSequence(Sprite())
+- uid: Ladybug.Graphics.AnimationSequence.#ctor(Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32)
+  name: AnimationSequence(SpriteAtlas, Int32, Int32)
+  href: api/Ladybug.Graphics.AnimationSequence.html#Ladybug_Graphics_AnimationSequence__ctor_Ladybug_Graphics_SpriteAtlas_System_Int32_System_Int32_
+  commentId: M:Ladybug.Graphics.AnimationSequence.#ctor(Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32)
+  fullName: Ladybug.Graphics.AnimationSequence.AnimationSequence(Ladybug.Graphics.SpriteAtlas, System.Int32, System.Int32)
+  nameWithType: AnimationSequence.AnimationSequence(SpriteAtlas, Int32, Int32)
 - uid: Ladybug.Graphics.AnimationSequence.#ctor*
   name: AnimationSequence
   href: api/Ladybug.Graphics.AnimationSequence.html#Ladybug_Graphics_AnimationSequence__ctor_
@@ -2713,11 +2716,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.ColorExtensions.GetColorFromHex
   nameWithType: ColorExtensions.GetColorFromHex
-- uid: Ladybug.Graphics.ColorExtensions.GetHexFromColor(Color)
+- uid: Ladybug.Graphics.ColorExtensions.GetHexFromColor(Microsoft.Xna.Framework.Color)
   name: GetHexFromColor(Color)
-  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_GetHexFromColor_Color_
-  commentId: M:Ladybug.Graphics.ColorExtensions.GetHexFromColor(Color)
-  fullName: Ladybug.Graphics.ColorExtensions.GetHexFromColor(Color)
+  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_GetHexFromColor_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.Graphics.ColorExtensions.GetHexFromColor(Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.Graphics.ColorExtensions.GetHexFromColor(Microsoft.Xna.Framework.Color)
   nameWithType: ColorExtensions.GetHexFromColor(Color)
 - uid: Ladybug.Graphics.ColorExtensions.GetHexFromColor*
   name: GetHexFromColor
@@ -2726,11 +2729,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.ColorExtensions.GetHexFromColor
   nameWithType: ColorExtensions.GetHexFromColor
-- uid: Ladybug.Graphics.ColorExtensions.GetHexString(Color)
+- uid: Ladybug.Graphics.ColorExtensions.GetHexString(Microsoft.Xna.Framework.Color)
   name: GetHexString(Color)
-  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_GetHexString_Color_
-  commentId: M:Ladybug.Graphics.ColorExtensions.GetHexString(Color)
-  fullName: Ladybug.Graphics.ColorExtensions.GetHexString(Color)
+  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_GetHexString_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.Graphics.ColorExtensions.GetHexString(Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.Graphics.ColorExtensions.GetHexString(Microsoft.Xna.Framework.Color)
   nameWithType: ColorExtensions.GetHexString(Color)
 - uid: Ladybug.Graphics.ColorExtensions.GetHexString*
   name: GetHexString
@@ -2739,22 +2742,22 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.ColorExtensions.GetHexString
   nameWithType: ColorExtensions.GetHexString
-- uid: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Color@)
+- uid: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Microsoft.Xna.Framework.Color@)
   name: TryParseColor(String, out Color)
-  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_TryParseColor_System_String_Color__
-  commentId: M:Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Color@)
+  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_TryParseColor_System_String_Microsoft_Xna_Framework_Color__
+  commentId: M:Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Microsoft.Xna.Framework.Color@)
   name.vb: TryParseColor(String, ByRef Color)
-  fullName: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, out Color)
-  fullName.vb: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, ByRef Color)
+  fullName: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, out Microsoft.Xna.Framework.Color)
+  fullName.vb: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, ByRef Microsoft.Xna.Framework.Color)
   nameWithType: ColorExtensions.TryParseColor(String, out Color)
   nameWithType.vb: ColorExtensions.TryParseColor(String, ByRef Color)
-- uid: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Color@,Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Microsoft.Xna.Framework.Color@,System.Collections.Generic.Dictionary{System.String,System.String})
   name: TryParseColor(String, out Color, Dictionary<String, String>)
-  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_TryParseColor_System_String_Color__Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Color@,Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.ColorExtensions.html#Ladybug_Graphics_ColorExtensions_TryParseColor_System_String_Microsoft_Xna_Framework_Color__System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.ColorExtensions.TryParseColor(System.String,Microsoft.Xna.Framework.Color@,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: TryParseColor(String, ByRef Color, Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, out Color, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, ByRef Color, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, out Microsoft.Xna.Framework.Color, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.ColorExtensions.TryParseColor(System.String, ByRef Microsoft.Xna.Framework.Color, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: ColorExtensions.TryParseColor(String, out Color, Dictionary<String, String>)
   nameWithType.vb: ColorExtensions.TryParseColor(String, ByRef Color, Dictionary(Of String, String))
 - uid: Ladybug.Graphics.ColorExtensions.TryParseColor*
@@ -2800,11 +2803,11 @@ references:
   commentId: M:Ladybug.Graphics.FormattedString.#ctor
   fullName: Ladybug.Graphics.FormattedString.FormattedString()
   nameWithType: FormattedString.FormattedString()
-- uid: Ladybug.Graphics.FormattedString.#ctor(System.String,SpriteFont)
+- uid: Ladybug.Graphics.FormattedString.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: FormattedString(String, SpriteFont)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString__ctor_System_String_SpriteFont_
-  commentId: M:Ladybug.Graphics.FormattedString.#ctor(System.String,SpriteFont)
-  fullName: Ladybug.Graphics.FormattedString.FormattedString(System.String, SpriteFont)
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.Graphics.FormattedString.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.Graphics.FormattedString.FormattedString(System.String, Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: FormattedString.FormattedString(String, SpriteFont)
 - uid: Ladybug.Graphics.FormattedString.#ctor*
   name: FormattedString
@@ -2878,11 +2881,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.FormattedString.Font
   nameWithType: FormattedString.Font
-- uid: Ladybug.Graphics.FormattedString.Format(System.String,SpriteFont)
+- uid: Ladybug.Graphics.FormattedString.Format(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: Format(String, SpriteFont)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_Format_System_String_SpriteFont_
-  commentId: M:Ladybug.Graphics.FormattedString.Format(System.String,SpriteFont)
-  fullName: Ladybug.Graphics.FormattedString.Format(System.String, SpriteFont)
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_Format_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.Graphics.FormattedString.Format(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.Graphics.FormattedString.Format(System.String, Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: FormattedString.Format(String, SpriteFont)
 - uid: Ladybug.Graphics.FormattedString.Format*
   name: Format
@@ -2969,11 +2972,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.FormattedString.Scale
   nameWithType: FormattedString.Scale
-- uid: Ladybug.Graphics.FormattedString.SetColor(Color)
+- uid: Ladybug.Graphics.FormattedString.SetColor(Microsoft.Xna.Framework.Color)
   name: SetColor(Color)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetColor_Color_
-  commentId: M:Ladybug.Graphics.FormattedString.SetColor(Color)
-  fullName: Ladybug.Graphics.FormattedString.SetColor(Color)
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetColor_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.Graphics.FormattedString.SetColor(Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.Graphics.FormattedString.SetColor(Microsoft.Xna.Framework.Color)
   nameWithType: FormattedString.SetColor(Color)
 - uid: Ladybug.Graphics.FormattedString.SetColor*
   name: SetColor
@@ -2982,11 +2985,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.FormattedString.SetColor
   nameWithType: FormattedString.SetColor
-- uid: Ladybug.Graphics.FormattedString.SetFont(SpriteFont)
+- uid: Ladybug.Graphics.FormattedString.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: SetFont(SpriteFont)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetFont_SpriteFont_
-  commentId: M:Ladybug.Graphics.FormattedString.SetFont(SpriteFont)
-  fullName: Ladybug.Graphics.FormattedString.SetFont(SpriteFont)
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.Graphics.FormattedString.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.Graphics.FormattedString.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: FormattedString.SetFont(SpriteFont)
 - uid: Ladybug.Graphics.FormattedString.SetFont*
   name: SetFont
@@ -2995,13 +2998,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.FormattedString.SetFont
   nameWithType: FormattedString.SetFont
-- uid: Ladybug.Graphics.FormattedString.SetPalette(Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name: SetPalette(Dictionary<String, String>)
-  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetPalette_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.FormattedString.SetPalette(Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.FormattedString.html#Ladybug_Graphics_FormattedString_SetPalette_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: SetPalette(Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.FormattedString.SetPalette(Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.FormattedString.SetPalette(Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.FormattedString.SetPalette(System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: FormattedString.SetPalette(Dictionary<String, String>)
   nameWithType.vb: FormattedString.SetPalette(Dictionary(Of String, String))
 - uid: Ladybug.Graphics.FormattedString.SetPalette*
@@ -3056,17 +3059,17 @@ references:
   commentId: T:Ladybug.Graphics.Sprite
   fullName: Ladybug.Graphics.Sprite
   nameWithType: Sprite
-- uid: Ladybug.Graphics.Sprite.#ctor(Texture2D)
+- uid: Ladybug.Graphics.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D)
   name: Sprite(Texture2D)
-  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite__ctor_Texture2D_
-  commentId: M:Ladybug.Graphics.Sprite.#ctor(Texture2D)
-  fullName: Ladybug.Graphics.Sprite.Sprite(Texture2D)
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_
+  commentId: M:Ladybug.Graphics.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D)
+  fullName: Ladybug.Graphics.Sprite.Sprite(Microsoft.Xna.Framework.Graphics.Texture2D)
   nameWithType: Sprite.Sprite(Texture2D)
-- uid: Ladybug.Graphics.Sprite.#ctor(Texture2D,Rectangle)
+- uid: Ladybug.Graphics.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
   name: Sprite(Texture2D, Rectangle)
-  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite__ctor_Texture2D_Rectangle_
-  commentId: M:Ladybug.Graphics.Sprite.#ctor(Texture2D,Rectangle)
-  fullName: Ladybug.Graphics.Sprite.Sprite(Texture2D, Rectangle)
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Graphics.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Graphics.Sprite.Sprite(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle)
   nameWithType: Sprite.Sprite(Texture2D, Rectangle)
 - uid: Ladybug.Graphics.Sprite.#ctor*
   name: Sprite
@@ -3075,17 +3078,50 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.Sprite.Sprite
   nameWithType: Sprite.Sprite
+- uid: Ladybug.Graphics.Sprite.Color
+  name: Color
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Color
+  commentId: P:Ladybug.Graphics.Sprite.Color
+  fullName: Ladybug.Graphics.Sprite.Color
+  nameWithType: Sprite.Color
+- uid: Ladybug.Graphics.Sprite.Color*
+  name: Color
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Color_
+  commentId: Overload:Ladybug.Graphics.Sprite.Color
+  isSpec: "True"
+  fullName: Ladybug.Graphics.Sprite.Color
+  nameWithType: Sprite.Color
+- uid: Ladybug.Graphics.Sprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  name: Draw(SpriteBatch)
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.Graphics.Sprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.Graphics.Sprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  nameWithType: Sprite.Draw(SpriteBatch)
+- uid: Ladybug.Graphics.Sprite.Draw*
+  name: Draw
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Draw_
+  commentId: Overload:Ladybug.Graphics.Sprite.Draw
+  isSpec: "True"
+  fullName: Ladybug.Graphics.Sprite.Draw
+  nameWithType: Sprite.Draw
 - uid: Ladybug.Graphics.Sprite.Frame
   name: Frame
   href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Frame
-  commentId: F:Ladybug.Graphics.Sprite.Frame
+  commentId: P:Ladybug.Graphics.Sprite.Frame
   fullName: Ladybug.Graphics.Sprite.Frame
   nameWithType: Sprite.Frame
-- uid: Ladybug.Graphics.Sprite.GetTextureFromColor(GraphicsDevice,Color)
+- uid: Ladybug.Graphics.Sprite.Frame*
+  name: Frame
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Frame_
+  commentId: Overload:Ladybug.Graphics.Sprite.Frame
+  isSpec: "True"
+  fullName: Ladybug.Graphics.Sprite.Frame
+  nameWithType: Sprite.Frame
+- uid: Ladybug.Graphics.Sprite.GetTextureFromColor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Color)
   name: GetTextureFromColor(GraphicsDevice, Color)
-  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_GetTextureFromColor_GraphicsDevice_Color_
-  commentId: M:Ladybug.Graphics.Sprite.GetTextureFromColor(GraphicsDevice,Color)
-  fullName: Ladybug.Graphics.Sprite.GetTextureFromColor(GraphicsDevice, Color)
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_GetTextureFromColor_Microsoft_Xna_Framework_Graphics_GraphicsDevice_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.Graphics.Sprite.GetTextureFromColor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.Graphics.Sprite.GetTextureFromColor(Microsoft.Xna.Framework.Graphics.GraphicsDevice, Microsoft.Xna.Framework.Color)
   nameWithType: Sprite.GetTextureFromColor(GraphicsDevice, Color)
 - uid: Ladybug.Graphics.Sprite.GetTextureFromColor*
   name: GetTextureFromColor
@@ -3094,13 +3130,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.Sprite.GetTextureFromColor
   nameWithType: Sprite.GetTextureFromColor
-- uid: Ladybug.Graphics.Sprite.GetTextureFromMap(Texture2D,Vector2,GraphicsDevice,System.Nullable{System.Int32})
+- uid: Ladybug.Graphics.Sprite.GetTextureFromMap(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.Nullable{System.Int32})
   name: GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, Nullable<Int32>)
-  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_GetTextureFromMap_Texture2D_Vector2_GraphicsDevice_System_Nullable_System_Int32__
-  commentId: M:Ladybug.Graphics.Sprite.GetTextureFromMap(Texture2D,Vector2,GraphicsDevice,System.Nullable{System.Int32})
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_GetTextureFromMap_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_GraphicsDevice_System_Nullable_System_Int32__
+  commentId: M:Ladybug.Graphics.Sprite.GetTextureFromMap(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.Nullable{System.Int32})
   name.vb: GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, Nullable(Of Int32))
-  fullName: Ladybug.Graphics.Sprite.GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, System.Nullable<System.Int32>)
-  fullName.vb: Ladybug.Graphics.Sprite.GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, System.Nullable(Of System.Int32))
+  fullName: Ladybug.Graphics.Sprite.GetTextureFromMap(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.GraphicsDevice, System.Nullable<System.Int32>)
+  fullName.vb: Ladybug.Graphics.Sprite.GetTextureFromMap(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.GraphicsDevice, System.Nullable(Of System.Int32))
   nameWithType: Sprite.GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, Nullable<Int32>)
   nameWithType.vb: Sprite.GetTextureFromMap(Texture2D, Vector2, GraphicsDevice, Nullable(Of Int32))
 - uid: Ladybug.Graphics.Sprite.GetTextureFromMap*
@@ -3113,20 +3149,40 @@ references:
 - uid: Ladybug.Graphics.Sprite.Texture
   name: Texture
   href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Texture
-  commentId: F:Ladybug.Graphics.Sprite.Texture
+  commentId: P:Ladybug.Graphics.Sprite.Texture
   fullName: Ladybug.Graphics.Sprite.Texture
   nameWithType: Sprite.Texture
+- uid: Ladybug.Graphics.Sprite.Texture*
+  name: Texture
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Texture_
+  commentId: Overload:Ladybug.Graphics.Sprite.Texture
+  isSpec: "True"
+  fullName: Ladybug.Graphics.Sprite.Texture
+  nameWithType: Sprite.Texture
+- uid: Ladybug.Graphics.Sprite.Transform
+  name: Transform
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Transform
+  commentId: P:Ladybug.Graphics.Sprite.Transform
+  fullName: Ladybug.Graphics.Sprite.Transform
+  nameWithType: Sprite.Transform
+- uid: Ladybug.Graphics.Sprite.Transform*
+  name: Transform
+  href: api/Ladybug.Graphics.Sprite.html#Ladybug_Graphics_Sprite_Transform_
+  commentId: Overload:Ladybug.Graphics.Sprite.Transform
+  isSpec: "True"
+  fullName: Ladybug.Graphics.Sprite.Transform
+  nameWithType: Sprite.Transform
 - uid: Ladybug.Graphics.SpriteAtlas
   name: SpriteAtlas
   href: api/Ladybug.Graphics.SpriteAtlas.html
   commentId: T:Ladybug.Graphics.SpriteAtlas
   fullName: Ladybug.Graphics.SpriteAtlas
   nameWithType: SpriteAtlas
-- uid: Ladybug.Graphics.SpriteAtlas.#ctor(Texture2D,System.Int32,System.Int32)
+- uid: Ladybug.Graphics.SpriteAtlas.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32)
   name: SpriteAtlas(Texture2D, Int32, Int32)
-  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas__ctor_Texture2D_System_Int32_System_Int32_
-  commentId: M:Ladybug.Graphics.SpriteAtlas.#ctor(Texture2D,System.Int32,System.Int32)
-  fullName: Ladybug.Graphics.SpriteAtlas.SpriteAtlas(Texture2D, System.Int32, System.Int32)
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_
+  commentId: M:Ladybug.Graphics.SpriteAtlas.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32)
+  fullName: Ladybug.Graphics.SpriteAtlas.SpriteAtlas(Microsoft.Xna.Framework.Graphics.Texture2D, System.Int32, System.Int32)
   nameWithType: SpriteAtlas.SpriteAtlas(Texture2D, Int32, Int32)
 - uid: Ladybug.Graphics.SpriteAtlas.#ctor*
   name: SpriteAtlas
@@ -3148,6 +3204,15 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.SpriteAtlas.GetSpriteFromTag
   nameWithType: SpriteAtlas.GetSpriteFromTag
+- uid: Ladybug.Graphics.SpriteAtlas.Item(Microsoft.Xna.Framework.Vector2)
+  name: Item[Vector2]
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_Item_Microsoft_Xna_Framework_Vector2_
+  commentId: P:Ladybug.Graphics.SpriteAtlas.Item(Microsoft.Xna.Framework.Vector2)
+  name.vb: Item(Vector2)
+  fullName: Ladybug.Graphics.SpriteAtlas.Item[Microsoft.Xna.Framework.Vector2]
+  fullName.vb: Ladybug.Graphics.SpriteAtlas.Item(Microsoft.Xna.Framework.Vector2)
+  nameWithType: SpriteAtlas.Item[Vector2]
+  nameWithType.vb: SpriteAtlas.Item(Vector2)
 - uid: Ladybug.Graphics.SpriteAtlas.Item(System.Int32)
   name: Item[Int32]
   href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_Item_System_Int32_
@@ -3175,15 +3240,6 @@ references:
   fullName.vb: Ladybug.Graphics.SpriteAtlas.Item(System.String)
   nameWithType: SpriteAtlas.Item[String]
   nameWithType.vb: SpriteAtlas.Item(String)
-- uid: Ladybug.Graphics.SpriteAtlas.Item(Vector2)
-  name: Item[Vector2]
-  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_Item_Vector2_
-  commentId: P:Ladybug.Graphics.SpriteAtlas.Item(Vector2)
-  name.vb: Item(Vector2)
-  fullName: Ladybug.Graphics.SpriteAtlas.Item[Vector2]
-  fullName.vb: Ladybug.Graphics.SpriteAtlas.Item(Vector2)
-  nameWithType: SpriteAtlas.Item[Vector2]
-  nameWithType.vb: SpriteAtlas.Item(Vector2)
 - uid: Ladybug.Graphics.SpriteAtlas.Item*
   name: Item
   href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_Item_
@@ -3191,18 +3247,50 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.SpriteAtlas.Item
   nameWithType: SpriteAtlas.Item
+- uid: Ladybug.Graphics.SpriteAtlas.SpriteHeight
+  name: SpriteHeight
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_SpriteHeight
+  commentId: P:Ladybug.Graphics.SpriteAtlas.SpriteHeight
+  fullName: Ladybug.Graphics.SpriteAtlas.SpriteHeight
+  nameWithType: SpriteAtlas.SpriteHeight
+- uid: Ladybug.Graphics.SpriteAtlas.SpriteHeight*
+  name: SpriteHeight
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_SpriteHeight_
+  commentId: Overload:Ladybug.Graphics.SpriteAtlas.SpriteHeight
+  isSpec: "True"
+  fullName: Ladybug.Graphics.SpriteAtlas.SpriteHeight
+  nameWithType: SpriteAtlas.SpriteHeight
+- uid: Ladybug.Graphics.SpriteAtlas.SpriteWidth
+  name: SpriteWidth
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_SpriteWidth
+  commentId: P:Ladybug.Graphics.SpriteAtlas.SpriteWidth
+  fullName: Ladybug.Graphics.SpriteAtlas.SpriteWidth
+  nameWithType: SpriteAtlas.SpriteWidth
+- uid: Ladybug.Graphics.SpriteAtlas.SpriteWidth*
+  name: SpriteWidth
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_SpriteWidth_
+  commentId: Overload:Ladybug.Graphics.SpriteAtlas.SpriteWidth
+  isSpec: "True"
+  fullName: Ladybug.Graphics.SpriteAtlas.SpriteWidth
+  nameWithType: SpriteAtlas.SpriteWidth
+- uid: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Microsoft.Xna.Framework.Vector2)
+  name: TagSprite(String, Vector2)
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String, Microsoft.Xna.Framework.Vector2)
+  nameWithType: SpriteAtlas.TagSprite(String, Vector2)
+- uid: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32)
+  name: TagSprite(String, Int32)
+  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_
+  commentId: M:Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32)
+  fullName: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String, System.Int32)
+  nameWithType: SpriteAtlas.TagSprite(String, Int32)
 - uid: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32,System.Int32)
   name: TagSprite(String, Int32, Int32)
   href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_System_Int32_
   commentId: M:Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32,System.Int32)
   fullName: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String, System.Int32, System.Int32)
   nameWithType: SpriteAtlas.TagSprite(String, Int32, Int32)
-- uid: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Vector2)
-  name: TagSprite(String, Vector2)
-  href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_Vector2_
-  commentId: M:Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Vector2)
-  fullName: Ladybug.Graphics.SpriteAtlas.TagSprite(System.String, Vector2)
-  nameWithType: SpriteAtlas.TagSprite(String, Vector2)
 - uid: Ladybug.Graphics.SpriteAtlas.TagSprite*
   name: TagSprite
   href: api/Ladybug.Graphics.SpriteAtlas.html#Ladybug_Graphics_SpriteAtlas_TagSprite_
@@ -3229,20 +3317,20 @@ references:
   commentId: T:Ladybug.Graphics.TextSprite
   fullName: Ladybug.Graphics.TextSprite
   nameWithType: TextSprite
-- uid: Ladybug.Graphics.TextSprite.#ctor(List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
+- uid: Ladybug.Graphics.TextSprite.#ctor(System.Collections.Generic.List{Ladybug.Graphics.FormattedString},Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Rectangle)
   name: TextSprite(List<FormattedString>, SpriteFont, Rectangle)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_List_Ladybug_Graphics_FormattedString__SpriteFont_Rectangle_
-  commentId: M:Ladybug.Graphics.TextSprite.#ctor(List{Ladybug.Graphics.FormattedString},SpriteFont,Rectangle)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_System_Collections_Generic_List_Ladybug_Graphics_FormattedString__Microsoft_Xna_Framework_Graphics_SpriteFont_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Graphics.TextSprite.#ctor(System.Collections.Generic.List{Ladybug.Graphics.FormattedString},Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Rectangle)
   name.vb: TextSprite(List(Of FormattedString), SpriteFont, Rectangle)
-  fullName: Ladybug.Graphics.TextSprite.TextSprite(List<Ladybug.Graphics.FormattedString>, SpriteFont, Rectangle)
-  fullName.vb: Ladybug.Graphics.TextSprite.TextSprite(List(Of Ladybug.Graphics.FormattedString), SpriteFont, Rectangle)
+  fullName: Ladybug.Graphics.TextSprite.TextSprite(System.Collections.Generic.List<Ladybug.Graphics.FormattedString>, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Rectangle)
+  fullName.vb: Ladybug.Graphics.TextSprite.TextSprite(System.Collections.Generic.List(Of Ladybug.Graphics.FormattedString), Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Rectangle)
   nameWithType: TextSprite.TextSprite(List<FormattedString>, SpriteFont, Rectangle)
   nameWithType.vb: TextSprite.TextSprite(List(Of FormattedString), SpriteFont, Rectangle)
-- uid: Ladybug.Graphics.TextSprite.#ctor(System.String,SpriteFont,Rectangle)
+- uid: Ladybug.Graphics.TextSprite.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Rectangle)
   name: TextSprite(String, SpriteFont, Rectangle)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_System_String_SpriteFont_Rectangle_
-  commentId: M:Ladybug.Graphics.TextSprite.#ctor(System.String,SpriteFont,Rectangle)
-  fullName: Ladybug.Graphics.TextSprite.TextSprite(System.String, SpriteFont, Rectangle)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Graphics.TextSprite.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Graphics.TextSprite.TextSprite(System.String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Rectangle)
   nameWithType: TextSprite.TextSprite(String, SpriteFont, Rectangle)
 - uid: Ladybug.Graphics.TextSprite.#ctor*
   name: TextSprite
@@ -3316,11 +3404,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.DefaultTextColor
   nameWithType: TextSprite.DefaultTextColor
-- uid: Ladybug.Graphics.TextSprite.Draw(SpriteBatch)
+- uid: Ladybug.Graphics.TextSprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_Draw_SpriteBatch_
-  commentId: M:Ladybug.Graphics.TextSprite.Draw(SpriteBatch)
-  fullName: Ladybug.Graphics.TextSprite.Draw(SpriteBatch)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.Graphics.TextSprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.Graphics.TextSprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: TextSprite.Draw(SpriteBatch)
 - uid: Ladybug.Graphics.TextSprite.Draw*
   name: Draw
@@ -3355,11 +3443,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.Length
   nameWithType: TextSprite.Length
-- uid: Ladybug.Graphics.TextSprite.SetBounds(Rectangle)
+- uid: Ladybug.Graphics.TextSprite.SetBounds(Microsoft.Xna.Framework.Rectangle)
   name: SetBounds(Rectangle)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetBounds_Rectangle_
-  commentId: M:Ladybug.Graphics.TextSprite.SetBounds(Rectangle)
-  fullName: Ladybug.Graphics.TextSprite.SetBounds(Rectangle)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetBounds_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Graphics.TextSprite.SetBounds(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Graphics.TextSprite.SetBounds(Microsoft.Xna.Framework.Rectangle)
   nameWithType: TextSprite.SetBounds(Rectangle)
 - uid: Ladybug.Graphics.TextSprite.SetBounds*
   name: SetBounds
@@ -3381,11 +3469,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.SetBoundsToText
   nameWithType: TextSprite.SetBoundsToText
-- uid: Ladybug.Graphics.TextSprite.SetColor(Color)
+- uid: Ladybug.Graphics.TextSprite.SetColor(Microsoft.Xna.Framework.Color)
   name: SetColor(Color)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetColor_Color_
-  commentId: M:Ladybug.Graphics.TextSprite.SetColor(Color)
-  fullName: Ladybug.Graphics.TextSprite.SetColor(Color)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetColor_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.Graphics.TextSprite.SetColor(Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.Graphics.TextSprite.SetColor(Microsoft.Xna.Framework.Color)
   nameWithType: TextSprite.SetColor(Color)
 - uid: Ladybug.Graphics.TextSprite.SetColor*
   name: SetColor
@@ -3394,11 +3482,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.SetColor
   nameWithType: TextSprite.SetColor
-- uid: Ladybug.Graphics.TextSprite.SetFont(SpriteFont)
+- uid: Ladybug.Graphics.TextSprite.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: SetFont(SpriteFont)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetFont_SpriteFont_
-  commentId: M:Ladybug.Graphics.TextSprite.SetFont(SpriteFont)
-  fullName: Ladybug.Graphics.TextSprite.SetFont(SpriteFont)
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.Graphics.TextSprite.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.Graphics.TextSprite.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: TextSprite.SetFont(SpriteFont)
 - uid: Ladybug.Graphics.TextSprite.SetFont*
   name: SetFont
@@ -3407,13 +3495,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Graphics.TextSprite.SetFont
   nameWithType: TextSprite.SetFont
-- uid: Ladybug.Graphics.TextSprite.SetPalette(Dictionary{System.String,System.String})
+- uid: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name: SetPalette(Dictionary<String, String>)
-  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetPalette_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.Graphics.TextSprite.SetPalette(Dictionary{System.String,System.String})
+  href: api/Ladybug.Graphics.TextSprite.html#Ladybug_Graphics_TextSprite_SetPalette_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: SetPalette(Dictionary(Of String, String))
-  fullName: Ladybug.Graphics.TextSprite.SetPalette(Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.Graphics.TextSprite.SetPalette(Dictionary(Of System.String, System.String))
+  fullName: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.Graphics.TextSprite.SetPalette(System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: TextSprite.SetPalette(Dictionary<String, String>)
   nameWithType.vb: TextSprite.SetPalette(Dictionary(Of String, String))
 - uid: Ladybug.Graphics.TextSprite.SetPalette*
@@ -3461,11 +3549,11 @@ references:
   commentId: T:Ladybug.Input.GamepadMonitor
   fullName: Ladybug.Input.GamepadMonitor
   nameWithType: GamepadMonitor
-- uid: Ladybug.Input.GamepadMonitor.GetInputState(Buttons)
+- uid: Ladybug.Input.GamepadMonitor.GetInputState(Microsoft.Xna.Framework.Input.Buttons)
   name: GetInputState(Buttons)
-  href: api/Ladybug.Input.GamepadMonitor.html#Ladybug_Input_GamepadMonitor_GetInputState_Buttons_
-  commentId: M:Ladybug.Input.GamepadMonitor.GetInputState(Buttons)
-  fullName: Ladybug.Input.GamepadMonitor.GetInputState(Buttons)
+  href: api/Ladybug.Input.GamepadMonitor.html#Ladybug_Input_GamepadMonitor_GetInputState_Microsoft_Xna_Framework_Input_Buttons_
+  commentId: M:Ladybug.Input.GamepadMonitor.GetInputState(Microsoft.Xna.Framework.Input.Buttons)
+  fullName: Ladybug.Input.GamepadMonitor.GetInputState(Microsoft.Xna.Framework.Input.Buttons)
   nameWithType: GamepadMonitor.GetInputState(Buttons)
 - uid: Ladybug.Input.GamepadMonitor.GetInputState*
   name: GetInputState
@@ -3769,11 +3857,11 @@ references:
   commentId: T:Ladybug.Input.KeyboardMonitor
   fullName: Ladybug.Input.KeyboardMonitor
   nameWithType: KeyboardMonitor
-- uid: Ladybug.Input.KeyboardMonitor.GetInputState(Keys)
+- uid: Ladybug.Input.KeyboardMonitor.GetInputState(Microsoft.Xna.Framework.Input.Keys)
   name: GetInputState(Keys)
-  href: api/Ladybug.Input.KeyboardMonitor.html#Ladybug_Input_KeyboardMonitor_GetInputState_Keys_
-  commentId: M:Ladybug.Input.KeyboardMonitor.GetInputState(Keys)
-  fullName: Ladybug.Input.KeyboardMonitor.GetInputState(Keys)
+  href: api/Ladybug.Input.KeyboardMonitor.html#Ladybug_Input_KeyboardMonitor_GetInputState_Microsoft_Xna_Framework_Input_Keys_
+  commentId: M:Ladybug.Input.KeyboardMonitor.GetInputState(Microsoft.Xna.Framework.Input.Keys)
+  fullName: Ladybug.Input.KeyboardMonitor.GetInputState(Microsoft.Xna.Framework.Input.Keys)
   nameWithType: KeyboardMonitor.GetInputState(Keys)
 - uid: Ladybug.Input.KeyboardMonitor.GetInputState*
   name: GetInputState
@@ -3806,11 +3894,11 @@ references:
   commentId: T:Ladybug.Input.MouseMonitor
   fullName: Ladybug.Input.MouseMonitor
   nameWithType: MouseMonitor
-- uid: Ladybug.Input.MouseMonitor.CheckMouseOver(Rectangle)
+- uid: Ladybug.Input.MouseMonitor.CheckMouseOver(Microsoft.Xna.Framework.Rectangle)
   name: CheckMouseOver(Rectangle)
-  href: api/Ladybug.Input.MouseMonitor.html#Ladybug_Input_MouseMonitor_CheckMouseOver_Rectangle_
-  commentId: M:Ladybug.Input.MouseMonitor.CheckMouseOver(Rectangle)
-  fullName: Ladybug.Input.MouseMonitor.CheckMouseOver(Rectangle)
+  href: api/Ladybug.Input.MouseMonitor.html#Ladybug_Input_MouseMonitor_CheckMouseOver_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Input.MouseMonitor.CheckMouseOver(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Input.MouseMonitor.CheckMouseOver(Microsoft.Xna.Framework.Rectangle)
   nameWithType: MouseMonitor.CheckMouseOver(Rectangle)
 - uid: Ladybug.Input.MouseMonitor.CheckMouseOver*
   name: CheckMouseOver
@@ -4021,13 +4109,13 @@ references:
   fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(Ladybug.Pathfinding.IPathable())
   nameWithType: NodeMap.AddNodes(IPathable[])
   nameWithType.vb: NodeMap.AddNodes(IPathable())
-- uid: Ladybug.Pathfinding.NodeMap.AddNodes(List{Ladybug.Pathfinding.IPathable})
+- uid: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List{Ladybug.Pathfinding.IPathable})
   name: AddNodes(List<IPathable>)
-  href: api/Ladybug.Pathfinding.NodeMap.html#Ladybug_Pathfinding_NodeMap_AddNodes_List_Ladybug_Pathfinding_IPathable__
-  commentId: M:Ladybug.Pathfinding.NodeMap.AddNodes(List{Ladybug.Pathfinding.IPathable})
+  href: api/Ladybug.Pathfinding.NodeMap.html#Ladybug_Pathfinding_NodeMap_AddNodes_System_Collections_Generic_List_Ladybug_Pathfinding_IPathable__
+  commentId: M:Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List{Ladybug.Pathfinding.IPathable})
   name.vb: AddNodes(List(Of IPathable))
-  fullName: Ladybug.Pathfinding.NodeMap.AddNodes(List<Ladybug.Pathfinding.IPathable>)
-  fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(List(Of Ladybug.Pathfinding.IPathable))
+  fullName: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List<Ladybug.Pathfinding.IPathable>)
+  fullName.vb: Ladybug.Pathfinding.NodeMap.AddNodes(System.Collections.Generic.List(Of Ladybug.Pathfinding.IPathable))
   nameWithType: NodeMap.AddNodes(List<IPathable>)
   nameWithType.vb: NodeMap.AddNodes(List(Of IPathable))
 - uid: Ladybug.Pathfinding.NodeMap.AddNodes*
@@ -4088,13 +4176,13 @@ references:
   commentId: M:Ladybug.Pathfinding.NodePath.#ctor
   fullName: Ladybug.Pathfinding.NodePath.NodePath()
   nameWithType: NodePath.NodePath()
-- uid: Ladybug.Pathfinding.NodePath.#ctor(List{Ladybug.Pathfinding.Node})
+- uid: Ladybug.Pathfinding.NodePath.#ctor(System.Collections.Generic.List{Ladybug.Pathfinding.Node})
   name: NodePath(List<Node>)
-  href: api/Ladybug.Pathfinding.NodePath.html#Ladybug_Pathfinding_NodePath__ctor_List_Ladybug_Pathfinding_Node__
-  commentId: M:Ladybug.Pathfinding.NodePath.#ctor(List{Ladybug.Pathfinding.Node})
+  href: api/Ladybug.Pathfinding.NodePath.html#Ladybug_Pathfinding_NodePath__ctor_System_Collections_Generic_List_Ladybug_Pathfinding_Node__
+  commentId: M:Ladybug.Pathfinding.NodePath.#ctor(System.Collections.Generic.List{Ladybug.Pathfinding.Node})
   name.vb: NodePath(List(Of Node))
-  fullName: Ladybug.Pathfinding.NodePath.NodePath(List<Ladybug.Pathfinding.Node>)
-  fullName.vb: Ladybug.Pathfinding.NodePath.NodePath(List(Of Ladybug.Pathfinding.Node))
+  fullName: Ladybug.Pathfinding.NodePath.NodePath(System.Collections.Generic.List<Ladybug.Pathfinding.Node>)
+  fullName.vb: Ladybug.Pathfinding.NodePath.NodePath(System.Collections.Generic.List(Of Ladybug.Pathfinding.Node))
   nameWithType: NodePath.NodePath(List<Node>)
   nameWithType.vb: NodePath.NodePath(List(Of Node))
 - uid: Ladybug.Pathfinding.NodePath.#ctor*
@@ -4223,18 +4311,18 @@ references:
   commentId: T:Ladybug.RectangleExtensions
   fullName: Ladybug.RectangleExtensions
   nameWithType: RectangleExtensions
-- uid: Ladybug.RectangleExtensions.CopyAtOffset(Rectangle,System.Int32,System.Int32)
-  name: CopyAtOffset(Rectangle, Int32, Int32)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_Rectangle_System_Int32_System_Int32_
-  commentId: M:Ladybug.RectangleExtensions.CopyAtOffset(Rectangle,System.Int32,System.Int32)
-  fullName: Ladybug.RectangleExtensions.CopyAtOffset(Rectangle, System.Int32, System.Int32)
-  nameWithType: RectangleExtensions.CopyAtOffset(Rectangle, Int32, Int32)
-- uid: Ladybug.RectangleExtensions.CopyAtOffset(Rectangle,Vector2)
+- uid: Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2)
   name: CopyAtOffset(Rectangle, Vector2)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_Rectangle_Vector2_
-  commentId: M:Ladybug.RectangleExtensions.CopyAtOffset(Rectangle,Vector2)
-  fullName: Ladybug.RectangleExtensions.CopyAtOffset(Rectangle, Vector2)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Vector2)
   nameWithType: RectangleExtensions.CopyAtOffset(Rectangle, Vector2)
+- uid: Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32)
+  name: CopyAtOffset(Rectangle, Int32, Int32)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_Microsoft_Xna_Framework_Rectangle_System_Int32_System_Int32_
+  commentId: M:Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32)
+  fullName: Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle, System.Int32, System.Int32)
+  nameWithType: RectangleExtensions.CopyAtOffset(Rectangle, Int32, Int32)
 - uid: Ladybug.RectangleExtensions.CopyAtOffset*
   name: CopyAtOffset
   href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_
@@ -4242,18 +4330,18 @@ references:
   isSpec: "True"
   fullName: Ladybug.RectangleExtensions.CopyAtOffset
   nameWithType: RectangleExtensions.CopyAtOffset
-- uid: Ladybug.RectangleExtensions.CopyAtPosition(Rectangle,System.Int32,System.Int32,Ladybug.BoxHandle)
-  name: CopyAtPosition(Rectangle, Int32, Int32, BoxHandle)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtPosition_Rectangle_System_Int32_System_Int32_Ladybug_BoxHandle_
-  commentId: M:Ladybug.RectangleExtensions.CopyAtPosition(Rectangle,System.Int32,System.Int32,Ladybug.BoxHandle)
-  fullName: Ladybug.RectangleExtensions.CopyAtPosition(Rectangle, System.Int32, System.Int32, Ladybug.BoxHandle)
-  nameWithType: RectangleExtensions.CopyAtPosition(Rectangle, Int32, Int32, BoxHandle)
-- uid: Ladybug.RectangleExtensions.CopyAtPosition(Rectangle,Vector2,Ladybug.BoxHandle)
+- uid: Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2,Ladybug.BoxHandle)
   name: CopyAtPosition(Rectangle, Vector2, BoxHandle)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtPosition_Rectangle_Vector2_Ladybug_BoxHandle_
-  commentId: M:Ladybug.RectangleExtensions.CopyAtPosition(Rectangle,Vector2,Ladybug.BoxHandle)
-  fullName: Ladybug.RectangleExtensions.CopyAtPosition(Rectangle, Vector2, Ladybug.BoxHandle)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtPosition_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Vector2_Ladybug_BoxHandle_
+  commentId: M:Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2,Ladybug.BoxHandle)
+  fullName: Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Vector2, Ladybug.BoxHandle)
   nameWithType: RectangleExtensions.CopyAtPosition(Rectangle, Vector2, BoxHandle)
+- uid: Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32,Ladybug.BoxHandle)
+  name: CopyAtPosition(Rectangle, Int32, Int32, BoxHandle)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtPosition_Microsoft_Xna_Framework_Rectangle_System_Int32_System_Int32_Ladybug_BoxHandle_
+  commentId: M:Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32,Ladybug.BoxHandle)
+  fullName: Ladybug.RectangleExtensions.CopyAtPosition(Microsoft.Xna.Framework.Rectangle, System.Int32, System.Int32, Ladybug.BoxHandle)
+  nameWithType: RectangleExtensions.CopyAtPosition(Rectangle, Int32, Int32, BoxHandle)
 - uid: Ladybug.RectangleExtensions.CopyAtPosition*
   name: CopyAtPosition
   href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtPosition_
@@ -4261,11 +4349,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.RectangleExtensions.CopyAtPosition
   nameWithType: RectangleExtensions.CopyAtPosition
-- uid: Ladybug.RectangleExtensions.GetHandlePosition(Rectangle,Ladybug.BoxHandle)
+- uid: Ladybug.RectangleExtensions.GetHandlePosition(Microsoft.Xna.Framework.Rectangle,Ladybug.BoxHandle)
   name: GetHandlePosition(Rectangle, BoxHandle)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_GetHandlePosition_Rectangle_Ladybug_BoxHandle_
-  commentId: M:Ladybug.RectangleExtensions.GetHandlePosition(Rectangle,Ladybug.BoxHandle)
-  fullName: Ladybug.RectangleExtensions.GetHandlePosition(Rectangle, Ladybug.BoxHandle)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_GetHandlePosition_Microsoft_Xna_Framework_Rectangle_Ladybug_BoxHandle_
+  commentId: M:Ladybug.RectangleExtensions.GetHandlePosition(Microsoft.Xna.Framework.Rectangle,Ladybug.BoxHandle)
+  fullName: Ladybug.RectangleExtensions.GetHandlePosition(Microsoft.Xna.Framework.Rectangle, Ladybug.BoxHandle)
   nameWithType: RectangleExtensions.GetHandlePosition(Rectangle, BoxHandle)
 - uid: Ladybug.RectangleExtensions.GetHandlePosition*
   name: GetHandlePosition
@@ -4274,11 +4362,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.RectangleExtensions.GetHandlePosition
   nameWithType: RectangleExtensions.GetHandlePosition
-- uid: Ladybug.RectangleExtensions.PointInBounds(Rectangle,Vector2)
+- uid: Ladybug.RectangleExtensions.PointInBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2)
   name: PointInBounds(Rectangle, Vector2)
-  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_PointInBounds_Rectangle_Vector2_
-  commentId: M:Ladybug.RectangleExtensions.PointInBounds(Rectangle,Vector2)
-  fullName: Ladybug.RectangleExtensions.PointInBounds(Rectangle, Vector2)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_PointInBounds_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.RectangleExtensions.PointInBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.RectangleExtensions.PointInBounds(Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Vector2)
   nameWithType: RectangleExtensions.PointInBounds(Rectangle, Vector2)
 - uid: Ladybug.RectangleExtensions.PointInBounds*
   name: PointInBounds
@@ -4293,11 +4381,11 @@ references:
   commentId: T:Ladybug.ResourceCatalog
   fullName: Ladybug.ResourceCatalog
   nameWithType: ResourceCatalog
-- uid: Ladybug.ResourceCatalog.#ctor(ContentManager)
+- uid: Ladybug.ResourceCatalog.#ctor(Microsoft.Xna.Framework.Content.ContentManager)
   name: ResourceCatalog(ContentManager)
-  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog__ctor_ContentManager_
-  commentId: M:Ladybug.ResourceCatalog.#ctor(ContentManager)
-  fullName: Ladybug.ResourceCatalog.ResourceCatalog(ContentManager)
+  href: api/Ladybug.ResourceCatalog.html#Ladybug_ResourceCatalog__ctor_Microsoft_Xna_Framework_Content_ContentManager_
+  commentId: M:Ladybug.ResourceCatalog.#ctor(Microsoft.Xna.Framework.Content.ContentManager)
+  fullName: Ladybug.ResourceCatalog.ResourceCatalog(Microsoft.Xna.Framework.Content.ContentManager)
   nameWithType: ResourceCatalog.ResourceCatalog(ContentManager)
 - uid: Ladybug.ResourceCatalog.#ctor*
   name: ResourceCatalog
@@ -4538,13 +4626,13 @@ references:
   commentId: E:Ladybug.Scene.LoadContentComplete
   fullName: Ladybug.Scene.LoadContentComplete
   nameWithType: Scene.LoadContentComplete
-- uid: Ladybug.Scene.OnDraw(Action{GameTime})
+- uid: Ladybug.Scene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})
   name: OnDraw(Action<GameTime>)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnDraw_Action_GameTime__
-  commentId: M:Ladybug.Scene.OnDraw(Action{GameTime})
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnDraw_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.Scene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})
   name.vb: OnDraw(Action(Of GameTime))
-  fullName: Ladybug.Scene.OnDraw(Action<GameTime>)
-  fullName.vb: Ladybug.Scene.OnDraw(Action(Of GameTime))
+  fullName: Ladybug.Scene.OnDraw(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.Scene.OnDraw(System.Action(Of Microsoft.Xna.Framework.GameTime))
   nameWithType: Scene.OnDraw(Action<GameTime>)
   nameWithType.vb: Scene.OnDraw(Action(Of GameTime))
 - uid: Ladybug.Scene.OnDraw*
@@ -4554,11 +4642,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnDraw
   nameWithType: Scene.OnDraw
-- uid: Ladybug.Scene.OnInitialize(Action)
+- uid: Ladybug.Scene.OnInitialize(System.Action)
   name: OnInitialize(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitialize_Action_
-  commentId: M:Ladybug.Scene.OnInitialize(Action)
-  fullName: Ladybug.Scene.OnInitialize(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitialize_System_Action_
+  commentId: M:Ladybug.Scene.OnInitialize(System.Action)
+  fullName: Ladybug.Scene.OnInitialize(System.Action)
   nameWithType: Scene.OnInitialize(Action)
 - uid: Ladybug.Scene.OnInitialize*
   name: OnInitialize
@@ -4567,13 +4655,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnInitialize
   nameWithType: Scene.OnInitialize
-- uid: Ladybug.Scene.OnInitializeAsync(Func{Task})
+- uid: Ladybug.Scene.OnInitializeAsync(System.Func{System.Threading.Tasks.Task})
   name: OnInitializeAsync(Func<Task>)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitializeAsync_Func_Task__
-  commentId: M:Ladybug.Scene.OnInitializeAsync(Func{Task})
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnInitializeAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Ladybug.Scene.OnInitializeAsync(System.Func{System.Threading.Tasks.Task})
   name.vb: OnInitializeAsync(Func(Of Task))
-  fullName: Ladybug.Scene.OnInitializeAsync(Func<Task>)
-  fullName.vb: Ladybug.Scene.OnInitializeAsync(Func(Of Task))
+  fullName: Ladybug.Scene.OnInitializeAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Ladybug.Scene.OnInitializeAsync(System.Func(Of System.Threading.Tasks.Task))
   nameWithType: Scene.OnInitializeAsync(Func<Task>)
   nameWithType.vb: Scene.OnInitializeAsync(Func(Of Task))
 - uid: Ladybug.Scene.OnInitializeAsync*
@@ -4583,11 +4671,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnInitializeAsync
   nameWithType: Scene.OnInitializeAsync
-- uid: Ladybug.Scene.OnLoadContent(Action)
+- uid: Ladybug.Scene.OnLoadContent(System.Action)
   name: OnLoadContent(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContent_Action_
-  commentId: M:Ladybug.Scene.OnLoadContent(Action)
-  fullName: Ladybug.Scene.OnLoadContent(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContent_System_Action_
+  commentId: M:Ladybug.Scene.OnLoadContent(System.Action)
+  fullName: Ladybug.Scene.OnLoadContent(System.Action)
   nameWithType: Scene.OnLoadContent(Action)
 - uid: Ladybug.Scene.OnLoadContent*
   name: OnLoadContent
@@ -4596,13 +4684,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnLoadContent
   nameWithType: Scene.OnLoadContent
-- uid: Ladybug.Scene.OnLoadContentAsync(Func{Task})
+- uid: Ladybug.Scene.OnLoadContentAsync(System.Func{System.Threading.Tasks.Task})
   name: OnLoadContentAsync(Func<Task>)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContentAsync_Func_Task__
-  commentId: M:Ladybug.Scene.OnLoadContentAsync(Func{Task})
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnLoadContentAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Ladybug.Scene.OnLoadContentAsync(System.Func{System.Threading.Tasks.Task})
   name.vb: OnLoadContentAsync(Func(Of Task))
-  fullName: Ladybug.Scene.OnLoadContentAsync(Func<Task>)
-  fullName.vb: Ladybug.Scene.OnLoadContentAsync(Func(Of Task))
+  fullName: Ladybug.Scene.OnLoadContentAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Ladybug.Scene.OnLoadContentAsync(System.Func(Of System.Threading.Tasks.Task))
   nameWithType: Scene.OnLoadContentAsync(Func<Task>)
   nameWithType.vb: Scene.OnLoadContentAsync(Func(Of Task))
 - uid: Ladybug.Scene.OnLoadContentAsync*
@@ -4612,11 +4700,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnLoadContentAsync
   nameWithType: Scene.OnLoadContentAsync
-- uid: Ladybug.Scene.OnPause(Action)
+- uid: Ladybug.Scene.OnPause(System.Action)
   name: OnPause(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause_Action_
-  commentId: M:Ladybug.Scene.OnPause(Action)
-  fullName: Ladybug.Scene.OnPause(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnPause_System_Action_
+  commentId: M:Ladybug.Scene.OnPause(System.Action)
+  fullName: Ladybug.Scene.OnPause(System.Action)
   nameWithType: Scene.OnPause(Action)
 - uid: Ladybug.Scene.OnPause*
   name: OnPause
@@ -4625,11 +4713,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnPause
   nameWithType: Scene.OnPause
-- uid: Ladybug.Scene.OnResume(Action)
+- uid: Ladybug.Scene.OnResume(System.Action)
   name: OnResume(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume_Action_
-  commentId: M:Ladybug.Scene.OnResume(Action)
-  fullName: Ladybug.Scene.OnResume(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnResume_System_Action_
+  commentId: M:Ladybug.Scene.OnResume(System.Action)
+  fullName: Ladybug.Scene.OnResume(System.Action)
   nameWithType: Scene.OnResume(Action)
 - uid: Ladybug.Scene.OnResume*
   name: OnResume
@@ -4638,11 +4726,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnResume
   nameWithType: Scene.OnResume
-- uid: Ladybug.Scene.OnStop(Action)
+- uid: Ladybug.Scene.OnStop(System.Action)
   name: OnStop(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop_Action_
-  commentId: M:Ladybug.Scene.OnStop(Action)
-  fullName: Ladybug.Scene.OnStop(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnStop_System_Action_
+  commentId: M:Ladybug.Scene.OnStop(System.Action)
+  fullName: Ladybug.Scene.OnStop(System.Action)
   nameWithType: Scene.OnStop(Action)
 - uid: Ladybug.Scene.OnStop*
   name: OnStop
@@ -4651,11 +4739,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnStop
   nameWithType: Scene.OnStop
-- uid: Ladybug.Scene.OnSuspend(Action)
+- uid: Ladybug.Scene.OnSuspend(System.Action)
   name: OnSuspend(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend_Action_
-  commentId: M:Ladybug.Scene.OnSuspend(Action)
-  fullName: Ladybug.Scene.OnSuspend(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnSuspend_System_Action_
+  commentId: M:Ladybug.Scene.OnSuspend(System.Action)
+  fullName: Ladybug.Scene.OnSuspend(System.Action)
   nameWithType: Scene.OnSuspend(Action)
 - uid: Ladybug.Scene.OnSuspend*
   name: OnSuspend
@@ -4664,11 +4752,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnSuspend
   nameWithType: Scene.OnSuspend
-- uid: Ladybug.Scene.OnUnload(Action)
+- uid: Ladybug.Scene.OnUnload(System.Action)
   name: OnUnload(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload_Action_
-  commentId: M:Ladybug.Scene.OnUnload(Action)
-  fullName: Ladybug.Scene.OnUnload(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnload_System_Action_
+  commentId: M:Ladybug.Scene.OnUnload(System.Action)
+  fullName: Ladybug.Scene.OnUnload(System.Action)
   nameWithType: Scene.OnUnload(Action)
 - uid: Ladybug.Scene.OnUnload*
   name: OnUnload
@@ -4677,11 +4765,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnload
   nameWithType: Scene.OnUnload
-- uid: Ladybug.Scene.OnUnpause(Action)
+- uid: Ladybug.Scene.OnUnpause(System.Action)
   name: OnUnpause(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause_Action_
-  commentId: M:Ladybug.Scene.OnUnpause(Action)
-  fullName: Ladybug.Scene.OnUnpause(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnpause_System_Action_
+  commentId: M:Ladybug.Scene.OnUnpause(System.Action)
+  fullName: Ladybug.Scene.OnUnpause(System.Action)
   nameWithType: Scene.OnUnpause(Action)
 - uid: Ladybug.Scene.OnUnpause*
   name: OnUnpause
@@ -4690,11 +4778,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnpause
   nameWithType: Scene.OnUnpause
-- uid: Ladybug.Scene.OnUnsuspend(Action)
+- uid: Ladybug.Scene.OnUnsuspend(System.Action)
   name: OnUnsuspend(Action)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend_Action_
-  commentId: M:Ladybug.Scene.OnUnsuspend(Action)
-  fullName: Ladybug.Scene.OnUnsuspend(Action)
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUnsuspend_System_Action_
+  commentId: M:Ladybug.Scene.OnUnsuspend(System.Action)
+  fullName: Ladybug.Scene.OnUnsuspend(System.Action)
   nameWithType: Scene.OnUnsuspend(Action)
 - uid: Ladybug.Scene.OnUnsuspend*
   name: OnUnsuspend
@@ -4703,13 +4791,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.Scene.OnUnsuspend
   nameWithType: Scene.OnUnsuspend
-- uid: Ladybug.Scene.OnUpdate(Action{GameTime})
+- uid: Ladybug.Scene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name: OnUpdate(Action<GameTime>)
-  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUpdate_Action_GameTime__
-  commentId: M:Ladybug.Scene.OnUpdate(Action{GameTime})
+  href: api/Ladybug.Scene.html#Ladybug_Scene_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__
+  commentId: M:Ladybug.Scene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})
   name.vb: OnUpdate(Action(Of GameTime))
-  fullName: Ladybug.Scene.OnUpdate(Action<GameTime>)
-  fullName.vb: Ladybug.Scene.OnUpdate(Action(Of GameTime))
+  fullName: Ladybug.Scene.OnUpdate(System.Action<Microsoft.Xna.Framework.GameTime>)
+  fullName.vb: Ladybug.Scene.OnUpdate(System.Action(Of Microsoft.Xna.Framework.GameTime))
   nameWithType: Scene.OnUpdate(Action<GameTime>)
   nameWithType.vb: Scene.OnUpdate(Action(Of GameTime))
 - uid: Ladybug.Scene.OnUpdate*
@@ -4773,7 +4861,14 @@ references:
 - uid: Ladybug.Scene.SpriteBatch
   name: SpriteBatch
   href: api/Ladybug.Scene.html#Ladybug_Scene_SpriteBatch
-  commentId: F:Ladybug.Scene.SpriteBatch
+  commentId: P:Ladybug.Scene.SpriteBatch
+  fullName: Ladybug.Scene.SpriteBatch
+  nameWithType: Scene.SpriteBatch
+- uid: Ladybug.Scene.SpriteBatch*
+  name: SpriteBatch
+  href: api/Ladybug.Scene.html#Ladybug_Scene_SpriteBatch_
+  commentId: Overload:Ladybug.Scene.SpriteBatch
+  isSpec: "True"
   fullName: Ladybug.Scene.SpriteBatch
   nameWithType: Scene.SpriteBatch
 - uid: Ladybug.Scene.State
@@ -4920,11 +5015,11 @@ references:
   commentId: T:Ladybug.ThreadManager
   fullName: Ladybug.ThreadManager
   nameWithType: ThreadManager
-- uid: Ladybug.ThreadManager.QueueAction(Action)
+- uid: Ladybug.ThreadManager.QueueAction(System.Action)
   name: QueueAction(Action)
-  href: api/Ladybug.ThreadManager.html#Ladybug_ThreadManager_QueueAction_Action_
-  commentId: M:Ladybug.ThreadManager.QueueAction(Action)
-  fullName: Ladybug.ThreadManager.QueueAction(Action)
+  href: api/Ladybug.ThreadManager.html#Ladybug_ThreadManager_QueueAction_System_Action_
+  commentId: M:Ladybug.ThreadManager.QueueAction(System.Action)
+  fullName: Ladybug.ThreadManager.QueueAction(System.Action)
   nameWithType: ThreadManager.QueueAction(Action)
 - uid: Ladybug.ThreadManager.QueueAction*
   name: QueueAction
@@ -4958,11 +5053,11 @@ references:
   commentId: T:Ladybug.TileMap.IDrawableLayer
   fullName: Ladybug.TileMap.IDrawableLayer
   nameWithType: IDrawableLayer
-- uid: Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
+- uid: Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(TileMap, SpriteBatch)
-  href: api/Ladybug.TileMap.IDrawableLayer.html#Ladybug_TileMap_IDrawableLayer_Draw_Ladybug_TileMap_TileMap_SpriteBatch_
-  commentId: M:Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
-  fullName: Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap, SpriteBatch)
+  href: api/Ladybug.TileMap.IDrawableLayer.html#Ladybug_TileMap_IDrawableLayer_Draw_Ladybug_TileMap_TileMap_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.TileMap.IDrawableLayer.Draw(Ladybug.TileMap.TileMap, Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: IDrawableLayer.Draw(TileMap, SpriteBatch)
 - uid: Ladybug.TileMap.IDrawableLayer.Draw*
   name: Draw
@@ -5003,11 +5098,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.ImageLayer.Dimensions
   nameWithType: ImageLayer.Dimensions
-- uid: Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
+- uid: Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(TileMap, SpriteBatch)
-  href: api/Ladybug.TileMap.ImageLayer.html#Ladybug_TileMap_ImageLayer_Draw_Ladybug_TileMap_TileMap_SpriteBatch_
-  commentId: M:Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
-  fullName: Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap, SpriteBatch)
+  href: api/Ladybug.TileMap.ImageLayer.html#Ladybug_TileMap_ImageLayer_Draw_Ladybug_TileMap_TileMap_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.TileMap.ImageLayer.Draw(Ladybug.TileMap.TileMap, Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: ImageLayer.Draw(TileMap, SpriteBatch)
 - uid: Ladybug.TileMap.ImageLayer.Draw*
   name: Draw
@@ -5061,13 +5156,13 @@ references:
   commentId: T:Ladybug.TileMap.MapObject
   fullName: Ladybug.TileMap.MapObject
   nameWithType: MapObject
-- uid: Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+- uid: Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Microsoft.Xna.Framework.Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name: MapObject(String, String, Rectangle, Dictionary<String, String>)
-  href: api/Ladybug.TileMap.MapObject.html#Ladybug_TileMap_MapObject__ctor_System_String_System_String_Rectangle_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+  href: api/Ladybug.TileMap.MapObject.html#Ladybug_TileMap_MapObject__ctor_System_String_System_String_Microsoft_Xna_Framework_Rectangle_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.TileMap.MapObject.#ctor(System.String,System.String,Microsoft.Xna.Framework.Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: MapObject(String, String, Rectangle, Dictionary(Of String, String))
-  fullName: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Rectangle, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Microsoft.Xna.Framework.Rectangle, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.TileMap.MapObject.MapObject(System.String, System.String, Microsoft.Xna.Framework.Rectangle, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: MapObject.MapObject(String, String, Rectangle, Dictionary<String, String>)
   nameWithType.vb: MapObject.MapObject(String, String, Rectangle, Dictionary(Of String, String))
 - uid: Ladybug.TileMap.MapObject.#ctor*
@@ -5180,11 +5275,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileLayer.Data
   nameWithType: TileLayer.Data
-- uid: Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
+- uid: Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(TileMap, SpriteBatch)
-  href: api/Ladybug.TileMap.TileLayer.html#Ladybug_TileMap_TileLayer_Draw_Ladybug_TileMap_TileMap_SpriteBatch_
-  commentId: M:Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap,SpriteBatch)
-  fullName: Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap, SpriteBatch)
+  href: api/Ladybug.TileMap.TileLayer.html#Ladybug_TileMap_TileLayer_Draw_Ladybug_TileMap_TileMap_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap,Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.TileMap.TileLayer.Draw(Ladybug.TileMap.TileMap, Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: TileLayer.Draw(TileMap, SpriteBatch)
 - uid: Ladybug.TileMap.TileLayer.Draw*
   name: Draw
@@ -5212,11 +5307,11 @@ references:
   commentId: T:Ladybug.TileMap.TileMap
   fullName: Ladybug.TileMap.TileMap
   nameWithType: TileMap
-- uid: Ladybug.TileMap.TileMap.#ctor(System.String,ContentManager,GraphicsDevice)
+- uid: Ladybug.TileMap.TileMap.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager,Microsoft.Xna.Framework.Graphics.GraphicsDevice)
   name: TileMap(String, ContentManager, GraphicsDevice)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap__ctor_System_String_ContentManager_GraphicsDevice_
-  commentId: M:Ladybug.TileMap.TileMap.#ctor(System.String,ContentManager,GraphicsDevice)
-  fullName: Ladybug.TileMap.TileMap.TileMap(System.String, ContentManager, GraphicsDevice)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap__ctor_System_String_Microsoft_Xna_Framework_Content_ContentManager_Microsoft_Xna_Framework_Graphics_GraphicsDevice_
+  commentId: M:Ladybug.TileMap.TileMap.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager,Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  fullName: Ladybug.TileMap.TileMap.TileMap(System.String, Microsoft.Xna.Framework.Content.ContentManager, Microsoft.Xna.Framework.Graphics.GraphicsDevice)
   nameWithType: TileMap.TileMap(String, ContentManager, GraphicsDevice)
 - uid: Ladybug.TileMap.TileMap.#ctor*
   name: TileMap
@@ -5225,13 +5320,13 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.TileMap
   nameWithType: TileMap.TileMap
-- uid: Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+- uid: Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Microsoft.Xna.Framework.Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name: BuildMapObject(String, String, Rectangle, Dictionary<String, String>)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_BuildMapObject_System_String_System_String_Rectangle_Dictionary_System_String_System_String__
-  commentId: M:Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Rectangle,Dictionary{System.String,System.String})
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_BuildMapObject_System_String_System_String_Microsoft_Xna_Framework_Rectangle_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Ladybug.TileMap.TileMap.BuildMapObject(System.String,System.String,Microsoft.Xna.Framework.Rectangle,System.Collections.Generic.Dictionary{System.String,System.String})
   name.vb: BuildMapObject(String, String, Rectangle, Dictionary(Of String, String))
-  fullName: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, Dictionary<System.String, System.String>)
-  fullName.vb: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Rectangle, Dictionary(Of System.String, System.String))
+  fullName: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Microsoft.Xna.Framework.Rectangle, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: Ladybug.TileMap.TileMap.BuildMapObject(System.String, System.String, Microsoft.Xna.Framework.Rectangle, System.Collections.Generic.Dictionary(Of System.String, System.String))
   nameWithType: TileMap.BuildMapObject(String, String, Rectangle, Dictionary<String, String>)
   nameWithType.vb: TileMap.BuildMapObject(String, String, Rectangle, Dictionary(Of String, String))
 - uid: Ladybug.TileMap.TileMap.BuildMapObject*
@@ -5267,11 +5362,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.Content
   nameWithType: TileMap.Content
-- uid: Ladybug.TileMap.TileMap.CoordIso2Ortho(Vector2)
+- uid: Ladybug.TileMap.TileMap.CoordIso2Ortho(Microsoft.Xna.Framework.Vector2)
   name: CoordIso2Ortho(Vector2)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_CoordIso2Ortho_Vector2_
-  commentId: M:Ladybug.TileMap.TileMap.CoordIso2Ortho(Vector2)
-  fullName: Ladybug.TileMap.TileMap.CoordIso2Ortho(Vector2)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_CoordIso2Ortho_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.TileMap.TileMap.CoordIso2Ortho(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.TileMap.TileMap.CoordIso2Ortho(Microsoft.Xna.Framework.Vector2)
   nameWithType: TileMap.CoordIso2Ortho(Vector2)
 - uid: Ladybug.TileMap.TileMap.CoordIso2Ortho*
   name: CoordIso2Ortho
@@ -5399,11 +5494,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.Orientation
   nameWithType: TileMap.Orientation
-- uid: Ladybug.TileMap.TileMap.ReadXml(XmlReader)
+- uid: Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
   name: ReadXml(XmlReader)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_ReadXml_XmlReader_
-  commentId: M:Ladybug.TileMap.TileMap.ReadXml(XmlReader)
-  fullName: Ladybug.TileMap.TileMap.ReadXml(XmlReader)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_ReadXml_System_Xml_XmlReader_
+  commentId: M:Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
+  fullName: Ladybug.TileMap.TileMap.ReadXml(System.Xml.XmlReader)
   nameWithType: TileMap.ReadXml(XmlReader)
 - uid: Ladybug.TileMap.TileMap.ReadXml*
   name: ReadXml
@@ -5469,11 +5564,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileMap.Width
   nameWithType: TileMap.Width
-- uid: Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
+- uid: Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
   name: WriteXml(XmlWriter)
-  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_WriteXml_XmlWriter_
-  commentId: M:Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
-  fullName: Ladybug.TileMap.TileMap.WriteXml(XmlWriter)
+  href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_WriteXml_System_Xml_XmlWriter_
+  commentId: M:Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
+  fullName: Ladybug.TileMap.TileMap.WriteXml(System.Xml.XmlWriter)
   nameWithType: TileMap.WriteXml(XmlWriter)
 - uid: Ladybug.TileMap.TileMap.WriteXml*
   name: WriteXml
@@ -5488,11 +5583,11 @@ references:
   commentId: T:Ladybug.TileMap.TileSet
   fullName: Ladybug.TileMap.TileSet
   nameWithType: TileSet
-- uid: Ladybug.TileMap.TileSet.#ctor(System.String,ContentManager,GraphicsDevice)
+- uid: Ladybug.TileMap.TileSet.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager,Microsoft.Xna.Framework.Graphics.GraphicsDevice)
   name: TileSet(String, ContentManager, GraphicsDevice)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet__ctor_System_String_ContentManager_GraphicsDevice_
-  commentId: M:Ladybug.TileMap.TileSet.#ctor(System.String,ContentManager,GraphicsDevice)
-  fullName: Ladybug.TileMap.TileSet.TileSet(System.String, ContentManager, GraphicsDevice)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet__ctor_System_String_Microsoft_Xna_Framework_Content_ContentManager_Microsoft_Xna_Framework_Graphics_GraphicsDevice_
+  commentId: M:Ladybug.TileMap.TileSet.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager,Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  fullName: Ladybug.TileMap.TileSet.TileSet(System.String, Microsoft.Xna.Framework.Content.ContentManager, Microsoft.Xna.Framework.Graphics.GraphicsDevice)
   nameWithType: TileSet.TileSet(String, ContentManager, GraphicsDevice)
 - uid: Ladybug.TileMap.TileSet.#ctor*
   name: TileSet
@@ -5543,11 +5638,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.Item
   nameWithType: TileSet.Item
-- uid: Ladybug.TileMap.TileSet.ReadXml(XmlReader)
+- uid: Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
   name: ReadXml(XmlReader)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_ReadXml_XmlReader_
-  commentId: M:Ladybug.TileMap.TileSet.ReadXml(XmlReader)
-  fullName: Ladybug.TileMap.TileSet.ReadXml(XmlReader)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_ReadXml_System_Xml_XmlReader_
+  commentId: M:Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
+  fullName: Ladybug.TileMap.TileSet.ReadXml(System.Xml.XmlReader)
   nameWithType: TileSet.ReadXml(XmlReader)
 - uid: Ladybug.TileMap.TileSet.ReadXml*
   name: ReadXml
@@ -5608,11 +5703,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.TileWidth
   nameWithType: TileSet.TileWidth
-- uid: Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
+- uid: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
   name: WriteXml(XmlWriter)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_XmlWriter_
-  commentId: M:Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
-  fullName: Ladybug.TileMap.TileSet.WriteXml(XmlWriter)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_System_Xml_XmlWriter_
+  commentId: M:Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
+  fullName: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
   nameWithType: TileSet.WriteXml(XmlWriter)
 - uid: Ladybug.TileMap.TileSet.WriteXml*
   name: WriteXml
@@ -5640,18 +5735,44 @@ references:
   isSpec: "True"
   fullName: Ladybug.Transform.Bounds
   nameWithType: Transform.Bounds
+- uid: Ladybug.Transform.DefaultScale
+  name: DefaultScale
+  href: api/Ladybug.Transform.html#Ladybug_Transform_DefaultScale
+  commentId: P:Ladybug.Transform.DefaultScale
+  fullName: Ladybug.Transform.DefaultScale
+  nameWithType: Transform.DefaultScale
+- uid: Ladybug.Transform.DefaultScale*
+  name: DefaultScale
+  href: api/Ladybug.Transform.html#Ladybug_Transform_DefaultScale_
+  commentId: Overload:Ladybug.Transform.DefaultScale
+  isSpec: "True"
+  fullName: Ladybug.Transform.DefaultScale
+  nameWithType: Transform.DefaultScale
+- uid: Ladybug.Transform.Location
+  name: Location
+  href: api/Ladybug.Transform.html#Ladybug_Transform_Location
+  commentId: P:Ladybug.Transform.Location
+  fullName: Ladybug.Transform.Location
+  nameWithType: Transform.Location
+- uid: Ladybug.Transform.Location*
+  name: Location
+  href: api/Ladybug.Transform.html#Ladybug_Transform_Location_
+  commentId: Overload:Ladybug.Transform.Location
+  isSpec: "True"
+  fullName: Ladybug.Transform.Location
+  nameWithType: Transform.Location
+- uid: Ladybug.Transform.Move(Microsoft.Xna.Framework.Vector2)
+  name: Move(Vector2)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_Move_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Transform.Move(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Transform.Move(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Transform.Move(Vector2)
 - uid: Ladybug.Transform.Move(System.Int32,System.Int32)
   name: Move(Int32, Int32)
   href: api/Ladybug.Transform.html#Ladybug_Transform_Move_System_Int32_System_Int32_
   commentId: M:Ladybug.Transform.Move(System.Int32,System.Int32)
   fullName: Ladybug.Transform.Move(System.Int32, System.Int32)
   nameWithType: Transform.Move(Int32, Int32)
-- uid: Ladybug.Transform.Move(Vector2)
-  name: Move(Vector2)
-  href: api/Ladybug.Transform.html#Ladybug_Transform_Move_Vector2_
-  commentId: M:Ladybug.Transform.Move(Vector2)
-  fullName: Ladybug.Transform.Move(Vector2)
-  nameWithType: Transform.Move(Vector2)
 - uid: Ladybug.Transform.Move*
   name: Move
   href: api/Ladybug.Transform.html#Ladybug_Transform_Move_
@@ -5698,6 +5819,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Transform.Scale
   nameWithType: Transform.Scale
+- uid: Ladybug.Transform.ScaleBy(Microsoft.Xna.Framework.Vector2)
+  name: ScaleBy(Vector2)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_ScaleBy_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Transform.ScaleBy(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Transform.ScaleBy(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Transform.ScaleBy(Vector2)
 - uid: Ladybug.Transform.ScaleBy(System.Single)
   name: ScaleBy(Single)
   href: api/Ladybug.Transform.html#Ladybug_Transform_ScaleBy_System_Single_
@@ -5711,11 +5838,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.Transform.ScaleBy
   nameWithType: Transform.ScaleBy
-- uid: Ladybug.Transform.SetBounds(Rectangle)
+- uid: Ladybug.Transform.SetBounds(Microsoft.Xna.Framework.Rectangle)
   name: SetBounds(Rectangle)
-  href: api/Ladybug.Transform.html#Ladybug_Transform_SetBounds_Rectangle_
-  commentId: M:Ladybug.Transform.SetBounds(Rectangle)
-  fullName: Ladybug.Transform.SetBounds(Rectangle)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_SetBounds_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.Transform.SetBounds(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.Transform.SetBounds(Microsoft.Xna.Framework.Rectangle)
   nameWithType: Transform.SetBounds(Rectangle)
 - uid: Ladybug.Transform.SetBounds*
   name: SetBounds
@@ -5724,12 +5851,18 @@ references:
   isSpec: "True"
   fullName: Ladybug.Transform.SetBounds
   nameWithType: Transform.SetBounds
-- uid: Ladybug.Transform.SetPosition(Vector2,Ladybug.BoxHandle)
+- uid: Ladybug.Transform.SetPosition(Microsoft.Xna.Framework.Vector2,Ladybug.BoxHandle)
   name: SetPosition(Vector2, BoxHandle)
-  href: api/Ladybug.Transform.html#Ladybug_Transform_SetPosition_Vector2_Ladybug_BoxHandle_
-  commentId: M:Ladybug.Transform.SetPosition(Vector2,Ladybug.BoxHandle)
-  fullName: Ladybug.Transform.SetPosition(Vector2, Ladybug.BoxHandle)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_SetPosition_Microsoft_Xna_Framework_Vector2_Ladybug_BoxHandle_
+  commentId: M:Ladybug.Transform.SetPosition(Microsoft.Xna.Framework.Vector2,Ladybug.BoxHandle)
+  fullName: Ladybug.Transform.SetPosition(Microsoft.Xna.Framework.Vector2, Ladybug.BoxHandle)
   nameWithType: Transform.SetPosition(Vector2, BoxHandle)
+- uid: Ladybug.Transform.SetPosition(System.Int32,System.Int32,Ladybug.BoxHandle)
+  name: SetPosition(Int32, Int32, BoxHandle)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_SetPosition_System_Int32_System_Int32_Ladybug_BoxHandle_
+  commentId: M:Ladybug.Transform.SetPosition(System.Int32,System.Int32,Ladybug.BoxHandle)
+  fullName: Ladybug.Transform.SetPosition(System.Int32, System.Int32, Ladybug.BoxHandle)
+  nameWithType: Transform.SetPosition(Int32, Int32, BoxHandle)
 - uid: Ladybug.Transform.SetPosition*
   name: SetPosition
   href: api/Ladybug.Transform.html#Ladybug_Transform_SetPosition_
@@ -5750,6 +5883,12 @@ references:
   isSpec: "True"
   fullName: Ladybug.Transform.SetRotation
   nameWithType: Transform.SetRotation
+- uid: Ladybug.Transform.SetScale(Microsoft.Xna.Framework.Vector2)
+  name: SetScale(Vector2)
+  href: api/Ladybug.Transform.html#Ladybug_Transform_SetScale_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Transform.SetScale(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Transform.SetScale(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Transform.SetScale(Vector2)
 - uid: Ladybug.Transform.SetScale(System.Single)
   name: SetScale(Single)
   href: api/Ladybug.Transform.html#Ladybug_Transform_SetScale_System_Single_
@@ -5769,13 +5908,13 @@ references:
   commentId: T:Ladybug.TypeExtensions
   fullName: Ladybug.TypeExtensions
   nameWithType: TypeExtensions
-- uid: Ladybug.TypeExtensions.TryLocateType(System.String,Type@,System.String[])
+- uid: Ladybug.TypeExtensions.TryLocateType(System.String,System.Type@,System.String[])
   name: TryLocateType(String, out Type, String[])
-  href: api/Ladybug.TypeExtensions.html#Ladybug_TypeExtensions_TryLocateType_System_String_Type__System_String___
-  commentId: M:Ladybug.TypeExtensions.TryLocateType(System.String,Type@,System.String[])
+  href: api/Ladybug.TypeExtensions.html#Ladybug_TypeExtensions_TryLocateType_System_String_System_Type__System_String___
+  commentId: M:Ladybug.TypeExtensions.TryLocateType(System.String,System.Type@,System.String[])
   name.vb: TryLocateType(String, ByRef Type, String())
-  fullName: Ladybug.TypeExtensions.TryLocateType(System.String, out Type, System.String[])
-  fullName.vb: Ladybug.TypeExtensions.TryLocateType(System.String, ByRef Type, System.String())
+  fullName: Ladybug.TypeExtensions.TryLocateType(System.String, out System.Type, System.String[])
+  fullName.vb: Ladybug.TypeExtensions.TryLocateType(System.String, ByRef System.Type, System.String())
   nameWithType: TypeExtensions.TryLocateType(String, out Type, String[])
   nameWithType.vb: TypeExtensions.TryLocateType(String, ByRef Type, String())
 - uid: Ladybug.TypeExtensions.TryLocateType*
@@ -5810,11 +5949,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.Button
   nameWithType: Button.Button
-- uid: Ladybug.UI.Button.Draw(SpriteBatch)
+- uid: Ladybug.UI.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.Button.Draw(SpriteBatch)
-  fullName: Ladybug.UI.Button.Draw(SpriteBatch)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: Button.Draw(SpriteBatch)
 - uid: Ladybug.UI.Button.Draw*
   name: Draw
@@ -5849,11 +5988,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.Label
   nameWithType: Button.Label
-- uid: Ladybug.UI.Button.OnClick(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnClick(System.Object,System.EventArgs)
   name: OnClick(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClick_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnClick(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnClick(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClick_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnClick(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnClick(System.Object, System.EventArgs)
   nameWithType: Button.OnClick(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnClick*
   name: OnClick
@@ -5862,11 +6001,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.OnClick
   nameWithType: Button.OnClick
-- uid: Ladybug.UI.Button.OnClickOut(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnClickOut(System.Object,System.EventArgs)
   name: OnClickOut(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClickOut_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnClickOut(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnClickOut(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnClickOut_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnClickOut(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnClickOut(System.Object, System.EventArgs)
   nameWithType: Button.OnClickOut(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnClickOut*
   name: OnClickOut
@@ -5875,11 +6014,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Button.OnClickOut
   nameWithType: Button.OnClickOut
-- uid: Ladybug.UI.Button.OnPositionChanged(System.Object,EventArgs)
+- uid: Ladybug.UI.Button.OnPositionChanged(System.Object,System.EventArgs)
   name: OnPositionChanged(Object, EventArgs)
-  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnPositionChanged_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.Button.OnPositionChanged(System.Object,EventArgs)
-  fullName: Ladybug.UI.Button.OnPositionChanged(System.Object, EventArgs)
+  href: api/Ladybug.UI.Button.html#Ladybug_UI_Button_OnPositionChanged_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.Button.OnPositionChanged(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.Button.OnPositionChanged(System.Object, System.EventArgs)
   nameWithType: Button.OnPositionChanged(Object, EventArgs)
 - uid: Ladybug.UI.Button.OnPositionChanged*
   name: OnPositionChanged
@@ -6059,11 +6198,11 @@ references:
   commentId: E:Ladybug.UI.Control.Disabled
   fullName: Ladybug.UI.Control.Disabled
   nameWithType: Control.Disabled
-- uid: Ladybug.UI.Control.Draw(SpriteBatch)
+- uid: Ladybug.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.Control.Draw(SpriteBatch)
-  fullName: Ladybug.UI.Control.Draw(SpriteBatch)
+  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: Control.Draw(SpriteBatch)
 - uid: Ladybug.UI.Control.Draw*
   name: Draw
@@ -6242,18 +6381,18 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Control.LocalPosition
   nameWithType: Control.LocalPosition
+- uid: Ladybug.UI.Control.Move(Microsoft.Xna.Framework.Vector2)
+  name: Move(Vector2)
+  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Move_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.UI.Control.Move(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.UI.Control.Move(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Control.Move(Vector2)
 - uid: Ladybug.UI.Control.Move(System.Int32,System.Int32)
   name: Move(Int32, Int32)
   href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Move_System_Int32_System_Int32_
   commentId: M:Ladybug.UI.Control.Move(System.Int32,System.Int32)
   fullName: Ladybug.UI.Control.Move(System.Int32, System.Int32)
   nameWithType: Control.Move(Int32, Int32)
-- uid: Ladybug.UI.Control.Move(Vector2)
-  name: Move(Vector2)
-  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Move_Vector2_
-  commentId: M:Ladybug.UI.Control.Move(Vector2)
-  fullName: Ladybug.UI.Control.Move(Vector2)
-  nameWithType: Control.Move(Vector2)
 - uid: Ladybug.UI.Control.Move*
   name: Move
   href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_Move_
@@ -6440,11 +6579,11 @@ references:
   commentId: E:Ladybug.UI.Control.RightClickStart
   fullName: Ladybug.UI.Control.RightClickStart
   nameWithType: Control.RightClickStart
-- uid: Ladybug.UI.Control.SetBounds(Rectangle)
+- uid: Ladybug.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)
   name: SetBounds(Rectangle)
-  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetBounds_Rectangle_
-  commentId: M:Ladybug.UI.Control.SetBounds(Rectangle)
-  fullName: Ladybug.UI.Control.SetBounds(Rectangle)
+  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetBounds_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)
   nameWithType: Control.SetBounds(Rectangle)
 - uid: Ladybug.UI.Control.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)
   name: SetBounds(Int32, Int32, Int32, Int32)
@@ -6459,11 +6598,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Control.SetBounds
   nameWithType: Control.SetBounds
-- uid: Ladybug.UI.Control.SetFont(SpriteFont)
+- uid: Ladybug.UI.Control.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: SetFont(SpriteFont)
-  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetFont_SpriteFont_
-  commentId: M:Ladybug.UI.Control.SetFont(SpriteFont)
-  fullName: Ladybug.UI.Control.SetFont(SpriteFont)
+  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.UI.Control.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.UI.Control.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: Control.SetFont(SpriteFont)
 - uid: Ladybug.UI.Control.SetFont*
   name: SetFont
@@ -6472,11 +6611,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Control.SetFont
   nameWithType: Control.SetFont
-- uid: Ladybug.UI.Control.SetPosition(Vector2)
+- uid: Ladybug.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)
   name: SetPosition(Vector2)
-  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetPosition_Vector2_
-  commentId: M:Ladybug.UI.Control.SetPosition(Vector2)
-  fullName: Ladybug.UI.Control.SetPosition(Vector2)
+  href: api/Ladybug.UI.Control.html#Ladybug_UI_Control_SetPosition_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)
   nameWithType: Control.SetPosition(Vector2)
 - uid: Ladybug.UI.Control.SetPosition*
   name: SetPosition
@@ -6542,11 +6681,11 @@ references:
   commentId: T:Ladybug.UI.ControlMoveEvent
   fullName: Ladybug.UI.ControlMoveEvent
   nameWithType: ControlMoveEvent
-- uid: Ladybug.UI.ControlMoveEvent.#ctor(Vector2,Vector2)
+- uid: Ladybug.UI.ControlMoveEvent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   name: ControlMoveEvent(Vector2, Vector2)
-  href: api/Ladybug.UI.ControlMoveEvent.html#Ladybug_UI_ControlMoveEvent__ctor_Vector2_Vector2_
-  commentId: M:Ladybug.UI.ControlMoveEvent.#ctor(Vector2,Vector2)
-  fullName: Ladybug.UI.ControlMoveEvent.ControlMoveEvent(Vector2, Vector2)
+  href: api/Ladybug.UI.ControlMoveEvent.html#Ladybug_UI_ControlMoveEvent__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.UI.ControlMoveEvent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.UI.ControlMoveEvent.ControlMoveEvent(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
   nameWithType: ControlMoveEvent.ControlMoveEvent(Vector2, Vector2)
 - uid: Ladybug.UI.ControlMoveEvent.#ctor*
   name: ControlMoveEvent
@@ -6650,11 +6789,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Label.Label
   nameWithType: Label.Label
-- uid: Ladybug.UI.Label.Draw(SpriteBatch)
+- uid: Ladybug.UI.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.Label.Draw(SpriteBatch)
-  fullName: Ladybug.UI.Label.Draw(SpriteBatch)
+  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: Label.Draw(SpriteBatch)
 - uid: Ladybug.UI.Label.Draw*
   name: Draw
@@ -6676,11 +6815,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Label.Initialize
   nameWithType: Label.Initialize
-- uid: Ladybug.UI.Label.SetColor(Color)
+- uid: Ladybug.UI.Label.SetColor(Microsoft.Xna.Framework.Color)
   name: SetColor(Color)
-  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_SetColor_Color_
-  commentId: M:Ladybug.UI.Label.SetColor(Color)
-  fullName: Ladybug.UI.Label.SetColor(Color)
+  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_SetColor_Microsoft_Xna_Framework_Color_
+  commentId: M:Ladybug.UI.Label.SetColor(Microsoft.Xna.Framework.Color)
+  fullName: Ladybug.UI.Label.SetColor(Microsoft.Xna.Framework.Color)
   nameWithType: Label.SetColor(Color)
 - uid: Ladybug.UI.Label.SetColor*
   name: SetColor
@@ -6689,11 +6828,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Label.SetColor
   nameWithType: Label.SetColor
-- uid: Ladybug.UI.Label.SetFont(SpriteFont)
+- uid: Ladybug.UI.Label.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: SetFont(SpriteFont)
-  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_SetFont_SpriteFont_
-  commentId: M:Ladybug.UI.Label.SetFont(SpriteFont)
-  fullName: Ladybug.UI.Label.SetFont(SpriteFont)
+  href: api/Ladybug.UI.Label.html#Ladybug_UI_Label_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.UI.Label.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.UI.Label.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: Label.SetFont(SpriteFont)
 - uid: Ladybug.UI.Label.SetFont*
   name: SetFont
@@ -6773,11 +6912,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Panel.Disable
   nameWithType: Panel.Disable
-- uid: Ladybug.UI.Panel.Draw(SpriteBatch)
+- uid: Ladybug.UI.Panel.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.Panel.html#Ladybug_UI_Panel_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.Panel.Draw(SpriteBatch)
-  fullName: Ladybug.UI.Panel.Draw(SpriteBatch)
+  href: api/Ladybug.UI.Panel.html#Ladybug_UI_Panel_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.Panel.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.Panel.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: Panel.Draw(SpriteBatch)
 - uid: Ladybug.UI.Panel.Draw*
   name: Draw
@@ -6831,11 +6970,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.ClearText
   nameWithType: TextBox.ClearText
-- uid: Ladybug.UI.TextBox.Draw(SpriteBatch)
+- uid: Ladybug.UI.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.TextBox.Draw(SpriteBatch)
-  fullName: Ladybug.UI.TextBox.Draw(SpriteBatch)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: TextBox.Draw(SpriteBatch)
 - uid: Ladybug.UI.TextBox.Draw*
   name: Draw
@@ -6844,11 +6983,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.Draw
   nameWithType: TextBox.Draw
-- uid: Ladybug.UI.TextBox.HandleTextInput(System.Object,TextInputEventArgs)
+- uid: Ladybug.UI.TextBox.HandleTextInput(System.Object,Microsoft.Xna.Framework.TextInputEventArgs)
   name: HandleTextInput(Object, TextInputEventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_HandleTextInput_System_Object_TextInputEventArgs_
-  commentId: M:Ladybug.UI.TextBox.HandleTextInput(System.Object,TextInputEventArgs)
-  fullName: Ladybug.UI.TextBox.HandleTextInput(System.Object, TextInputEventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_HandleTextInput_System_Object_Microsoft_Xna_Framework_TextInputEventArgs_
+  commentId: M:Ladybug.UI.TextBox.HandleTextInput(System.Object,Microsoft.Xna.Framework.TextInputEventArgs)
+  fullName: Ladybug.UI.TextBox.HandleTextInput(System.Object, Microsoft.Xna.Framework.TextInputEventArgs)
   nameWithType: TextBox.HandleTextInput(Object, TextInputEventArgs)
 - uid: Ladybug.UI.TextBox.HandleTextInput*
   name: HandleTextInput
@@ -6896,11 +7035,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.MaxCharacters
   nameWithType: TextBox.MaxCharacters
-- uid: Ladybug.UI.TextBox.OnClick(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnClick(System.Object,System.EventArgs)
   name: OnClick(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClick_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnClick(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnClick(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClick_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnClick(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnClick(System.Object, System.EventArgs)
   nameWithType: TextBox.OnClick(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnClick*
   name: OnClick
@@ -6909,11 +7048,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnClick
   nameWithType: TextBox.OnClick
-- uid: Ladybug.UI.TextBox.OnClickOut(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnClickOut(System.Object,System.EventArgs)
   name: OnClickOut(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClickOut_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnClickOut(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnClickOut(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnClickOut_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnClickOut(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnClickOut(System.Object, System.EventArgs)
   nameWithType: TextBox.OnClickOut(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnClickOut*
   name: OnClickOut
@@ -6922,11 +7061,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnClickOut
   nameWithType: TextBox.OnClickOut
-- uid: Ladybug.UI.TextBox.OnFocus(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnFocus(System.Object,System.EventArgs)
   name: OnFocus(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnFocus_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnFocus(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnFocus(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnFocus_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnFocus(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnFocus(System.Object, System.EventArgs)
   nameWithType: TextBox.OnFocus(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnFocus*
   name: OnFocus
@@ -6935,11 +7074,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.OnFocus
   nameWithType: TextBox.OnFocus
-- uid: Ladybug.UI.TextBox.OnUnFocus(System.Object,EventArgs)
+- uid: Ladybug.UI.TextBox.OnUnFocus(System.Object,System.EventArgs)
   name: OnUnFocus(Object, EventArgs)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnUnFocus_System_Object_EventArgs_
-  commentId: M:Ladybug.UI.TextBox.OnUnFocus(System.Object,EventArgs)
-  fullName: Ladybug.UI.TextBox.OnUnFocus(System.Object, EventArgs)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_OnUnFocus_System_Object_System_EventArgs_
+  commentId: M:Ladybug.UI.TextBox.OnUnFocus(System.Object,System.EventArgs)
+  fullName: Ladybug.UI.TextBox.OnUnFocus(System.Object, System.EventArgs)
   nameWithType: TextBox.OnUnFocus(Object, EventArgs)
 - uid: Ladybug.UI.TextBox.OnUnFocus*
   name: OnUnFocus
@@ -6961,11 +7100,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.TextBox.Panel
   nameWithType: TextBox.Panel
-- uid: Ladybug.UI.TextBox.SetFont(SpriteFont)
+- uid: Ladybug.UI.TextBox.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: SetFont(SpriteFont)
-  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_SetFont_SpriteFont_
-  commentId: M:Ladybug.UI.TextBox.SetFont(SpriteFont)
-  fullName: Ladybug.UI.TextBox.SetFont(SpriteFont)
+  href: api/Ladybug.UI.TextBox.html#Ladybug_UI_TextBox_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.UI.TextBox.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.UI.TextBox.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: TextBox.SetFont(SpriteFont)
 - uid: Ladybug.UI.TextBox.SetFont*
   name: SetFont
@@ -7134,11 +7273,11 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.UI.DefaultFont
   nameWithType: UI.DefaultFont
-- uid: Ladybug.UI.UI.Draw(SpriteBatch)
+- uid: Ladybug.UI.UI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   name: Draw(SpriteBatch)
-  href: api/Ladybug.UI.UI.html#Ladybug_UI_UI_Draw_SpriteBatch_
-  commentId: M:Ladybug.UI.UI.Draw(SpriteBatch)
-  fullName: Ladybug.UI.UI.Draw(SpriteBatch)
+  href: api/Ladybug.UI.UI.html#Ladybug_UI_UI_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_
+  commentId: M:Ladybug.UI.UI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
+  fullName: Ladybug.UI.UI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)
   nameWithType: UI.Draw(SpriteBatch)
 - uid: Ladybug.UI.UI.Draw*
   name: Draw
@@ -7485,11 +7624,11 @@ references:
   commentId: T:Ladybug.UI.UIClickEvent
   fullName: Ladybug.UI.UIClickEvent
   nameWithType: UIClickEvent
-- uid: Ladybug.UI.UIClickEvent.#ctor(Vector2)
+- uid: Ladybug.UI.UIClickEvent.#ctor(Microsoft.Xna.Framework.Vector2)
   name: UIClickEvent(Vector2)
-  href: api/Ladybug.UI.UIClickEvent.html#Ladybug_UI_UIClickEvent__ctor_Vector2_
-  commentId: M:Ladybug.UI.UIClickEvent.#ctor(Vector2)
-  fullName: Ladybug.UI.UIClickEvent.UIClickEvent(Vector2)
+  href: api/Ladybug.UI.UIClickEvent.html#Ladybug_UI_UIClickEvent__ctor_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.UI.UIClickEvent.#ctor(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.UI.UIClickEvent.UIClickEvent(Microsoft.Xna.Framework.Vector2)
   nameWithType: UIClickEvent.UIClickEvent(Vector2)
 - uid: Ladybug.UI.UIClickEvent.#ctor*
   name: UIClickEvent
@@ -7517,11 +7656,11 @@ references:
   commentId: T:Ladybug.UI.UIConfig
   fullName: Ladybug.UI.UIConfig
   nameWithType: UIConfig
-- uid: Ladybug.UI.UIConfig.#ctor(Ladybug.Game,SpriteFont)
+- uid: Ladybug.UI.UIConfig.#ctor(Ladybug.Game,Microsoft.Xna.Framework.Graphics.SpriteFont)
   name: UIConfig(Game, SpriteFont)
-  href: api/Ladybug.UI.UIConfig.html#Ladybug_UI_UIConfig__ctor_Ladybug_Game_SpriteFont_
-  commentId: M:Ladybug.UI.UIConfig.#ctor(Ladybug.Game,SpriteFont)
-  fullName: Ladybug.UI.UIConfig.UIConfig(Ladybug.Game, SpriteFont)
+  href: api/Ladybug.UI.UIConfig.html#Ladybug_UI_UIConfig__ctor_Ladybug_Game_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  commentId: M:Ladybug.UI.UIConfig.#ctor(Ladybug.Game,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  fullName: Ladybug.UI.UIConfig.UIConfig(Ladybug.Game, Microsoft.Xna.Framework.Graphics.SpriteFont)
   nameWithType: UIConfig.UIConfig(Game, SpriteFont)
 - uid: Ladybug.UI.UIConfig.#ctor*
   name: UIConfig

@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Snake Tutorial Part 3: The Snake </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Snake Tutorial Part 3: The Snake ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../../images/icon48.png">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="snake-tutorial-part-3-the-snake">Snake Tutorial Part 3: The Snake</h1>
+
+<p>In the previous chapter, we covered loading content and displaying it on the screen, as well as bringing in user input that we can use to change what is displayed to the screen.</p>
+<p>In this chapter, we'll set up the actual snake that the player will be controlling.</p>
+<p>At the end of this chapter, your game application will show a moving snake that can be controlled by the player.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To complete the steps outlined in this chapter, you will need to have completed the steps in the <a href="/articles/tutorials/1/2.html">previous chapter</a></p>
+<h2 id="preface-the-nature-of-snake">Preface: The Nature of Snake</h2>
+<p>As we work towards re-creating this classic game, we're bound to learn some things about it that we might not have noticed, or simply hadn't thought of.</p>
+<p>For instance, had you realized that Snake takes place on a grid? The snake moves in 90-degree, fixed increments, at a fixed rate. The apple also spawns at locations aligned to this grid.</p>
+<p>And speaking of the snake moving at a fixed rate with a consistent observable delay, that means the game also runs on a clock system that's separate from the game's update rate.</p>
+<p>We will need to account for both of these traits in our recreation of the game, which we will cover in this chapter.</p>
+<h2 id="step-1-the-snake-class">Step 1: The Snake Class</h2>
+<p>The next step we'll take on this journey is to create the <code>Snake</code> class, which will represent our snake. Create a new file called <code>Snake.cs</code> at <code>core/class/Snake.cs</code>, and for now populate it with the following:</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+
+using Microsoft.Xna.Framework;
+
+public class Snake
+{
+	public Snake(int length, Vector2 startPosition)
+	{
+		Length = length;
+		Positions.Add(startPosition);
+	}
+	
+	public List&lt;Vector2&gt; Positions { get; private set; } = new List&lt;Vector2&gt;();
+
+	public Vector2 Head { get =&gt; Positions[0]; }
+
+	public Vector2 Tail { get =&gt; Positions[Positions.Count - 1]; }
+
+	public int Length { get; private set; }
+}
+</code></pre>
+<p>As we mentioned in the previous section, Snake is a grid-based game. This means that essentially, the &quot;snake&quot; is simply a list of positions on that grid. As the snake &quot;moves&quot;, a new position is added in front of it, and its rear-most position is removed.</p>
+<p>This is how we will give the sense of motion in our game as well, so our <code>Snake</code> class will contain a list of positions (<code>Position</code>) which makes up its body, and to help us with the movement code down the line, we'll also add some properties that make it easy to find the snake's first (<code>Head</code>) and last (<code>Tail</code>) position elements. We also have a <code>Length</code> property that will represent how long our snake is.</p>
+<p>This is all we need in <code>Snake.cs</code> for now, but we will be returning to it very soon.</p>
+<h2 id="step-2-preparing-for-movement">Step 2: Preparing for Movement</h2>
+<p>Our snake will be able to move in one of four directions at any given time. To represent this, we will be creating an enumerator called <code>Direction</code>.</p>
+<p>Create a new file called <code>Direction.cs</code> at <code>core/class/Direction.cs</code>, and populate it with the following:</p>
+<pre><code class="lang-csharp">public enum Direction{Up, Down, Left, Right}
+</code></pre>
+<p>That one line is all we are going to need in <code>Direction.cs</code>. Now that we've created that, we're going to return to our <code>Snake.cs</code> file and add a <code>Direction</code> property:</p>
+<pre><code class="lang-csharp">public Direction Direction { get; private set; } = Direction.Right;
+</code></pre>
+<p>We'll use this property to track which direction the snake is currently moving in.</p>
+<h3 id="the-move-method">The Move Method</h3>
+<p>Now that our snake knows where its body segments are and knows what direction it is facing, we can add our <code>Move()</code> method, which will control the snake's movement.</p>
+<p>Add the following to <code>Snake.cs</code>:</p>
+<pre><code class="lang-csharp">public void Move()
+{
+	var newX = Head.X;
+	var newY = Head.Y;
+
+	switch (Direction)
+	{
+		case Direction.Up:
+			newY = Head.Y - 1;
+			break;
+		case Direction.Down:
+			newY = Head.Y + 1;
+			break;
+		case Direction.Left:
+			newX = Head.X - 1;
+			break;
+		case Direction.Right:
+			newX = Head.X + 1;
+			break;
+	}
+
+	var newPosition = new Vector2(newX, newY);
+	Positions.Insert(0, newPosition);
+
+	if (Positions.Count &gt; Length)
+	{
+		Positions.Remove(Tail);
+	}
+}
+</code></pre>
+<p>When invoked, <code>Move()</code> will add the position &quot;in front&quot; of the snake based on <code>Direction</code>, and will remove the <code>Tail</code> segment. This simultanous add/remove operation will give the illusion of motion each time <code>Move()</code> is called.</p>
+<p>Now that we have everything we need to move our snake, let's move over to our <code>MainScene</code> class and get it ready to create a snake and try to <code>Move()</code> it.</p>
+<h2 id="step-3-getting-our-snake-moving">Step 3: Getting our Snake Moving</h2>
+<p>As mentioned in the preface of this chapter, Snake runs on an internal clock, or a tick-based system that is independent of the update loop. We will have to update <code>MainScene</code> to accommodate this.</p>
+<p>First, add the following fields to <code>MainScene</code> in <code>core/scene/MainScene.cs</code>:</p>
+<pre><code class="lang-csharp">public const int GRID_CELL_SIZE = 16;
+public const int GRID_SIZE = 30;
+
+private int _tickDelay = 10;
+private int _tickTimer;
+
+private Snake _snake;
+</code></pre>
+<p>We define a few constants, <code>GRID_CELL_SIZE</code> and <code>GRID_SIZE</code> which we'll use to define the dimensions of our grid. In fact, we should use these to set the window size of our game to match the play area. We can do this back in <code>Program.cs</code>'s <code>Main()</code> method:</p>
+<pre><code class="lang-csharp">static void Main()
+{
+	using (var game = new Game())
+	{
+		//New section: Window sizing
+		game.GraphicsDeviceManager.PreferredBackBufferHeight = MainScene.GRID_CELL_SIZE * MainScene.GRID_SIZE;
+		game.GraphicsDeviceManager.PreferredBackBufferWidth = MainScene.GRID_CELL_SIZE * MainScene.GRID_SIZE;
+		game.GraphicsDeviceManager.ApplyChanges();
+
+		game.LoadScene&lt;MainScene&gt;();
+		game.Run();
+	}
+}
+</code></pre>
+<p>Back in <code>MainScene.cs</code>, the new <code>_tickDelay</code> and <code>_tickTimer</code> fields will represent the delay between each tick and the actual timer that is keeping track of when to execute the next tick, respectively.</p>
+<p>We also created a <code>_snake</code> field which will track our <code>Snake</code> instance.</p>
+<p>We'll need to initialize <code>_tickTimer</code> to be equal to <code>_tickDelay</code>, as well as initialize our <code>Snake</code> in <code>MainScene.Initialize()</code>, as such:</p>
+<pre><code class="lang-csharp">private void Initialize()
+{
+	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	_keyboard = new KeyboardMonitor();
+	_tickTimer = _tickDelay; // &lt;-- New item
+	_snake = new Snake(4, new Vector2(2, 2)); // &lt;-- New item
+}
+</code></pre>
+<p>Now that we have our timer fields and our snake created and initialized, we need to modify <code>MainScene</code>'s <code>Update()</code> method to use them.</p>
+<p>Modify <code>MainScene.Update()</code> as follows:</p>
+<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+{
+	_keyboard.BeginUpdate(Keyboard.GetState());
+	// We'll be replacing these user input actions with more
+	// snake-appropriate actions soon. For now, we'll leave them be
+	if (_keyboard.CheckButton(Keys.Up, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(0, -10);
+	}
+
+	if (_keyboard.CheckButton(Keys.Left, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(-10, 0);
+	}
+
+	if (_keyboard.CheckButton(Keys.Right, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(10, 0);
+	}
+
+	if (_keyboard.CheckButton(Keys.Down, InputState.Down))
+	{
+		_snakeSprite.Transform.Move(0, 10);
+	}
+
+	_keyboard.EndUpdate();
+
+	//New section: tick handling
+	if (_tickTimer &lt;= 0)
+	{
+		_snake.Move();
+		_tickTimer = _tickDelay;
+	}
+	else
+	{
+		_tickTimer--;
+	}
+}
+</code></pre>
+<p>With this done, our tick handling is in place, and we've created a <code>Snake</code> instance and are calling its <code>Move()</code> method. If run, your game application would instantiate a <code>Snake</code>, and move it to the right one space per tick. However, since we aren't yet drawing our <code>Snake</code>, you wouldn't see this happening!</p>
+<h2 id="step-4-drawing-our-snake">Step 4: Drawing our Snake</h2>
+<p>Now that we have our <code>MainScene</code> instantiating and moving a <code>Snake</code>, we need to update our <code>Draw()</code> method to draw the <code>Snake</code> to the screen.</p>
+<p>In <code>core/scene/MainScene.cs</code>, we'll be updating <code>MainScene.Draw()</code> to look like the following:</p>
+<pre><code class="lang-csharp">private void Draw(GameTime gameTime)
+{
+	SpriteBatch.Begin();
+
+	foreach (var segment in _snake.Positions)
+	{
+		SpriteBatch.Draw(
+			_snakeSprite.Texture,
+			new Rectangle((int)segment.X * GRID_CELL_SIZE, (int)segment.Y * GRID_CELL_SIZE, GRID_CELL_SIZE, GRID_CELL_SIZE),
+			_snakeSprite.Frame,
+			Color.White
+		);
+	}
+
+	SpriteBatch.End();
+}
+</code></pre>
+<p>We iterate over each of the locations in <code>_snake.Positions</code> and draw our <code>_snakeSprite</code> to the appropriate location on screen, translating each <code>Position</code> value to a spot on screen by using <code>GRID_CELL_SIZE</code>.</p>
+<p>Now, if you were to run the application, you should see the snake move across the screen. It will move to the right, and will even keep going once it's reached the right edge of the screen, and will keep going off-screen until the application is closed.</p>
+<p>We can't even change our snake's direction to keep it on the screen! Let's change that.</p>
+<h2 id="step-5-controling-our-snake">Step 5: Controling our Snake</h2>
+<p>Currently, in <code>MainScene.Update()</code>, we're responding to user input by attempting to move <code>_snakeSprite</code> directly. Since we're not using <code>_snakeSprite</code>'s location information to draw the snake (instead we're using <code>Snake.Positions</code>), this isn't going to have any effect on our game.</p>
+<p>What we need to do in order to move our snake is to change its <code>Direction</code> property -- but there are some caveats to this:</p>
+<ul>
+<li>Our snake cannot switch from any one direction to any other. If it is facing to the right -- it cannot simply turn around and face left, at least not in one move. Even if that were possible, it would run into itself and immediately cause the game to end!</li>
+<li>We are checking for user input every frame, but really the snake should only change direction once per <em>tick</em>. We can't check for user input only on the tick unless we want to frustrate our players.</li>
+</ul>
+<p>To get around these two caveats, we're going to do a few things: implement a <code>Snake.SetDirection()</code> method, add a new <code>Direction</code> property called <code>NextDirection</code>, update our current <code>Direction</code> property's name to <code>CurrentDirection</code>, and adjust <code>Snake.Move()</code> to use these new properties.</p>
+<p>First, we'll rename <code>Direction</code> and add <code>NextDirection</code> to <code>Snake</code> in <code>core/class/Snake.cs</code>:</p>
+<pre><code class="lang-csharp">// We'll be removing this property and replacing it
+//Direction Direction { get; private set; } = Direction.Right;
+
+Direction CurrentDirection { get; private set; }
+
+Direction NextDirection { get; private set; } = Direction.Right
+</code></pre>
+<p>Now, with those in place, we'll make some adjustments to the <code>Move()</code> method so that it uses our new properties:</p>
+<pre><code class="lang-csharp">public void Move()
+{
+	var newX = Head.X;
+	var newY = Head.Y;
+
+	CurrentDirection = NextDirection; //&lt;-- New item
+
+	switch (CurrentDirection) //&lt;-- Changed from Direction to CurrentDirection
+	{
+		case Direction.Up:
+			newY = Head.Y - 1;
+			break;
+		case Direction.Down:
+			newY = Head.Y + 1;
+			break;
+		case Direction.Left:
+			newX = Head.X - 1;
+			break;
+		case Direction.Right:
+			newX = Head.X + 1;
+			break;
+	}
+
+	var newPosition = new Vector2(newX, newY);
+	Positions.Insert(0, newPosition);
+
+	if (Positions.Count &gt; Length)
+	{
+		Positions.Remove(Tail);
+	}
+}
+</code></pre>
+<p>Next, with our <code>Move()</code> method updated with the new properties, we can add our new <code>SetDirection()</code> method to <code>Snake</code>:</p>
+<pre><code class="lang-csharp">public void SetDirection(Direction newDirection)
+{
+	if (newDirection == CurrentDirection)
+	{
+		// We don't need to do anything if we're telling the snake
+		// to go where it's already going!
+		return;
+	}
+
+	// Here, we'll check if the user is trying to tell the snake
+	// to go in the opposite direction than its current direction.
+	// If so, we'll simply ignore the request.
+	switch (newDirection)
+		{
+			case Direction.Up:
+				if (CurrentDirection != Direction.Down)
+				{
+					NextDirection = newDirection;
+				}
+				break;
+			case Direction.Down:
+				if (CurrentDirection != Direction.Up)
+				{
+					NextDirection = newDirection;
+				}
+				break;
+			case Direction.Left:
+				if (CurrentDirection != Direction.Right)
+				{
+					NextDirection = newDirection;
+				}
+				break;
+			case Direction.Right:
+				if (CurrentDirection != Direction.Left)
+				{
+					NextDirection = newDirection;
+				}
+				break;
+		}
+}
+</code></pre>
+<p>Finally, with our adjustments and new <code>SetDirection()</code> method in place, we can fix our user input in <code>MainScene.Update()</code> and let the player actually control the snake!</p>
+<p>In <code>core/scene/MainScene.cs</code>, replace the <code>_snakeSprite.Transform.Move()</code> calls in <code>MainScene.Update()</code> with <code>_snake.SetDirection()</code> calls, as follows:</p>
+<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+{
+	_keyboard.BeginUpdate(Keyboard.GetState());
+
+	if (_keyboard.CheckButton(Keys.Up, InputState.Down))
+	{
+		_snake.SetDirection(Direction.Up); //&lt;-- New item: method replacement
+	}
+
+	if (_keyboard.CheckButton(Keys.Left, InputState.Down))
+	{
+		_snake.SetDirection(Direction.Left); //&lt;-- New item: method replacement
+	}
+
+	if (_keyboard.CheckButton(Keys.Right, InputState.Down))
+	{
+		_snake.SetDirection(Direction.Right); //&lt;-- New item: method replacement
+	}
+
+	if (_keyboard.CheckButton(Keys.Down, InputState.Down))
+	{
+		_snake.SetDirection(Direction.Down); //&lt;-- New item: method replacement
+	}
+
+	_keyboard.EndUpdate();
+
+	if (_tickTimer &lt;= 0)
+	{
+		_snake.Move();
+		_tickTimer = _tickDelay;
+	}
+	else
+	{
+		_tickTimer--;
+	}
+}
+</code></pre>
+<p>Now, if you run your application, you should be able to control the snake!</p>
+<p>We are <em>very</em> close to having a complete, working recreation of Snake, but you may have noticed that some key elements are still missing:</p>
+<ul>
+<li>Our snake can leave the game window. The game should end when the snake hits a wall!</li>
+<li>There aren't any apples! How is our snake supposed to grow if there aren't any apples?</li>
+</ul>
+<p>Have you noticed what these missing elements have in common? They both involve collision detection and handling, which will be the primary focus of our next chapter.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We covered a lot in this chapter, all related to creating our <code>Snake</code> class, making it move, and controlling its direction through user input. We also made some adjustments to our <code>MainScene</code> class in order to facilitate our snake's movement.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>When you are ready to move on, jump into <a href="/articles/tutorials/1/4.html">the next chapter</a>, where we'll wrap up this Snake tutorial series by adding collision detection, apples, and scoring to our Snake game!</p>
+<p>Complete code for this chapter can be found <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/chapter3">here</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/documentation/docs-src/articles/tutorials/1/3.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

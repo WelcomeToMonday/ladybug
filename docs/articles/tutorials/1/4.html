@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Snake Tutorial Part 4: Collision </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Snake Tutorial Part 4: Collision ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../../images/icon48.png">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="snake-tutorial-part-4-collision">Snake Tutorial Part 4: Collision</h1>
+
+<p>In the previous chapter, we created our <code>Snake</code> instance and put it under the control of the player. This also required us to make some adjustments to <code>MainScene</code> so that it could properly accommodate our snake's movement and user input requirements.</p>
+<p>In this chapter, we'll be adding the final touches to our Snake game by adding collision detection and handling so our snake can interact with itself, walls, and apples.</p>
+<p><strong>By the end of this chapter, you'll have a complete Snake game!</strong></p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To complete the steps outlined in this chapter, you will need to have completed the steps in the <a href="/articles/tutorials/1/3.html">previous chapter</a>.</p>
+<h2 id="step-1-collision">Step 1: Collision</h2>
+<p>Now that our player can control the snake, we need to give them some obstacles to avoid and goals to try for. We'll work on putting in apples later on, so for now we'll work on the obstacles: walls, and the snake itself.</p>
+<p>In order for our game to detect when the snake has hit a wall or part of itself, we'll need to do some collision detection. Collision detection and handling is an incredibly important and often challenging subject in game design and development. Lucky for us, another benefit to snake being grid-based is that it makes collision checking and handling super easy!</p>
+<p>We'll be able to handle all of it in a new method in our <code>Snake</code> class.
+Edit <code>core/class/Snake.cs</code> and add the following method to <code>Snake</code>:</p>
+<pre><code class="lang-csharp">private bool CheckCollision(Vector2 checkPos)
+{
+	return
+		checkPos.X &lt; 0 || checkPos.X &gt; MainScene.GRID_SIZE - 1 || // check left/right walls
+		checkPos.Y &lt; 0 || checkPos.Y &gt; MainScene.GRID_SIZE - 1 || // check top/bottom walls
+		Positions.Contains(checkPos); // check self
+}
+</code></pre>
+<p>If we call this method on the position our snake is trying to add to its position list and it returns <code>true</code>, we know our snake has hit a wall or itself.</p>
+<p>Now that we have our <code>CheckCollision()</code> method, let's put it in <code>MainScene.Move()</code>:</p>
+<pre><code class="lang-csharp">private void Move()
+{
+	var newX = Head.X;
+	var newY = Head.Y;
+
+	switch (Direction)
+	{
+		case Direction.Up:
+			newY = Head.Y - 1;
+			break;
+		case Direction.Down:
+			newY = Head.Y + 1;
+			break;
+		case Direction.Left:
+			newX = Head.X - 1;
+			break;
+		case Direction.Right:
+			newX = Head.X + 1;
+			break;
+	}
+	
+	var newPos = new Vector2(newX, newY);
+
+	// New section: collision check
+	if (CheckCollision(newPos))
+	{
+		// We collided! ...but now what?
+	}
+
+	Positions.Insert(0, newPos);
+	
+	if (Positions.Count &gt; Length)
+	{
+		Positions.Remove(Tail);
+	}
+}
+</code></pre>
+<p>Great, now our snake will check if the next position will cause a collision every time it moves, and we can respond when a collision does happen.</p>
+<p>But how should we respond to a collision? We have many options, but one thing we know for sure is that it probably shouldn't be the <code>Snake</code> class' job to ultimately respond to a collision. A collision will change the game's state in a way that should be the responsibility of <code>MainScene</code>.</p>
+<p>So, how do we tell the <code>MainScene</code> that the <code>Snake</code> collided with something? There are two options that we may immediately choose from:</p>
+<ul>
+<li>Give <code>Snake</code> a reference to the MainScene and have the <code>Snake</code> instance invoke a method or change a property of <code>MainScene</code></li>
+<li>Define an event in <code>Snake</code> that is invoked when a collision happens, and have <code>MainScene</code> subscribe to that event.</li>
+</ul>
+<p>We're going to go with the second option.</p>
+<h3 id="the-snakecollide-event">The Snake.Collide Event</h3>
+<p>We'll be creating a new event in the <code>Snake</code> class called <code>Collide</code>. Edit <code>/core/class/Snake.cs</code> and add the following event to the <code>Snake</code> class:</p>
+<pre><code class="lang-csharp">public event EventHandler Collide;
+</code></pre>
+<p>Once that's in place, we can edit our <code>Snake.Move()</code> method and invoke this event in the <code>if(CheckCollision())</code> block:</p>
+<pre><code class="lang-csharp">private void Move()
+{
+	var newX = Head.X;
+	var newY = Head.Y;
+
+	switch (Direction)
+	{
+		case Direction.Up:
+			newY = Head.Y - 1;
+			break;
+		case Direction.Down:
+			newY = Head.Y + 1;
+			break;
+		case Direction.Left:
+			newX = Head.X - 1;
+			break;
+		case Direction.Right:
+			newX = Head.X + 1;
+			break;
+	}
+	
+	var newPos = new Vector2(newX, newY);
+
+	if (CheckCollision(newPos))
+	{
+		Collide?.Invoke(this, new EventArgs()); //&lt;-- New item
+	}
+
+	Positions.Insert(0, newPos);
+	
+	if (Positions.Count &gt; Length)
+	{
+		Positions.Remove(Tail);
+	}
+}
+</code></pre>
+<p>Now, whenever the <code>Snake</code> detects a collision, its <code>Collide</code> event will be invoked, alerting any subscribers that a collision has occurred.</p>
+<p><code>MainScene</code> can now subscribe to this event and respond to it with its own event handler, which we'll call <code>OnSnakeCollide()</code>. Edit <code>/core/scene/MainScene.cs</code> and add the following method to <code>MainScene</code>:</p>
+<pre><code class="lang-csharp">private void OnSnakeCollide(object sender, EventArgs e)
+{
+	// We'll fill this out soon.
+}
+</code></pre>
+<p>Now that we have an event handler for the <code>Collide</code> event, let's hook them together in <code>MainScene.Initialize()</code>:</p>
+<pre><code class="lang-csharp">private void Initialize()
+{
+	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	_keyboard = new KeyboardMonitor();
+	_tickTimer = _tickDelay;
+	_snake = new Snake(4, new Vector2(2, 2));
+	_snake.Collide += OnSnakeCollide;
+}
+</code></pre>
+<p>Now <code>MainScene.OnSnakeCollide()</code> will be invoked whenever <code>_snake</code> detects a collision!</p>
+<p>So now, let's think about what we want to happen when the snake collides itself with or a wall. We could close the game by calling <code>Game.Exit()</code> in <code>OnSnakeCollide()</code>, but it would be irritating to have to re-launch the game every time the game ends.</p>
+<p>Instead, let's restart the game, resetting the snake to its initial size and position. To make this easier, let's create a <code>NewGame()</code> method and move our <code>Snake</code> initialization code in there. We'll also call this in our <code>MainScene.Initialize</code> method so that we aren't definiting our snake initialization in two different places:</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and make the following changes to <code>MainScene</code>:</p>
+<ul>
+<li>Create <code>NewGame()</code> method, as follows:</li>
+</ul>
+<pre><code class="lang-csharp">private void NewGame()
+{
+	_snake = new Snake(4, new Vector2(2, 2));
+	_snake.Collide += OnSnakeCollide;
+}
+</code></pre>
+<ul>
+<li>Adjust <code>Initialize()</code> as follows:</li>
+</ul>
+<pre><code class="lang-csharp">private void Initialize()
+{
+	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
+	_keyboard = new KeyboardMonitor();
+	_tickTimer = _tickDelay;
+	NewGame(); // &lt;-- New item, replaces _snake = new Snake(...)
+}
+</code></pre>
+<ul>
+<li>Adjust <code>OnSnakeCollide()</code> as follows:</li>
+</ul>
+<pre><code class="lang-csharp">private void OnSnakeCollide(object sender, EventArgs e)
+{
+	NewGame(); // &lt;-- New item
+}
+</code></pre>
+<p>Now, when a collision is detected, the game will automatically restart.</p>
+<h2 id="step-2-adding-the-apple">Step 2: Adding the Apple</h2>
+<p>We've added the obstacles that the player must avoid, but now we need a goal for the player to try for while they avoid the obstacles. Let's add the apple next.</p>
+<p>Unlike our <code>Snake</code>, our apple will be very simple and will not require a dedicated class to represent it. It will essentially be a single point on the game grid that we'll check if the snake contains each tick. This means we can store the apple in <code>MainScene</code> as a <code>Vector2</code> called <code>_appleLocation</code>. We will also be placing the apple randomly, so we'll need a <code>Random</code> instance to generate random numbers.</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and add the following fields to <code>MainScene</code>:</p>
+<pre><code class="lang-csharp">private Vector2 _appleLocation;
+private Random _random = new Random();
+</code></pre>
+<p>Now, we need to place the apple on the grid. We'll need to replace the apple in a random location each time it is picked up, so we'll put the apple placement code into a method we'll call <code>PlaceApple()</code>.</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and add the following:</p>
+<pre><code class="lang-csharp">private void PlaceApple()
+{
+	Vector2 location;
+	
+	do
+	{
+		location = new Vector2(_random.Next(0, GRID_SIZE), _random.Next(0, GRID_SIZE));
+	}
+	while (_snake.Positions.Contains(location));
+
+	_appleLocation = location;
+}
+</code></pre>
+<p>This method will generate a random location and check it to make sure the snake doesn't already occupy that location before placing the apple there. If the snake does occupy the location it generates, it'll continue to generate new locations until it finds one that is unoccupied.</p>
+<p>Now that we have this method defined, let's call it in <code>MainScene</code> to place the apple upon the start of a new game so that the player has one waiting for them.</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and update the <code>NewGame()</code> method as follows:</p>
+<pre><code class="lang-csharp">private void NewGame()
+{
+	_snake = new Snake(4, new Vector2(2, 2));
+	_snake.Collide += OnSnakeCollide;
+	PlaceApple(); //&lt;-- New item
+}
+</code></pre>
+<p>Now an apple will be placed as soon as the game starts.</p>
+<h3 id="drawing-the-apple">Drawing the Apple</h3>
+<p>Now that we've placed the apple on the grid, we need to draw it so the player knows where it is. We can do this by making a simple addition to our <code>MainScene.Draw()</code> method.</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and update the <code>Draw()</code> method as follows:</p>
+<pre><code class="lang-csharp">	private void Draw(GameTime gameTime)
+	{
+	SpriteBatch.Begin();
+
+	foreach (var segment in _snake.Positions)
+	{
+		SpriteBatch.Draw(
+			_snakeSprite.Texture,
+			new Rectangle((int)segment.X * GRID_CELL_SIZE, (int)segment.Y * GRID_CELL_SIZE,GRID_CELL_SIZE, GRID_CELL_SIZE),
+			_snakeSprite.Frame,
+			Color.White
+		);
+	}
+
+	// New section: apple draw code
+	SpriteBatch.Draw(
+		_appleSprite.Texture,
+		new Rectangle((int)_appleLocation.X * GRID_CELL_SIZE, (int)_appleLocation.Y *GRID_CELL_SIZE, GRID_CELL_SIZE, GRID_CELL_SIZE),
+		_appleSprite.Frame,
+		Color.White
+	);
+	
+	SpriteBatch.End();
+	}
+</code></pre>
+<p>Now the apple will be drawn on screen at its correct position. The player can move the snake towards the apple and try to eat it, but nothing will happen quite yet. Next, we'll add collision detection for the apple`.</p>
+<h3 id="eating-the-apple">Eating the Apple</h3>
+<p>Although much of the collision code is handled through the <code>Snake</code> class, since the <code>MainScene</code> is responsible for placing the apple and keeping track of its location, we're going to have <code>MainScene</code> handle checking and handling collision for the apple.</p>
+<p>Just as before, since snake is grid-based, handling collision is very easy. We can check for collision with the apple each tick directly in <code>MainScene.Update()</code>'s tick-handling section.</p>
+<p>Edit <code>core/scene/MainScene.cs</code> and update the <code>Update()</code> method as follows:</p>
+<pre><code class="lang-csharp">private void Update()
+{
+	_keyboard.BeginUpdate(Keyboard.GetState());
+	// ... user input code ...
+	_keyboard.EndUpdate();
+
+	if (_tickTimer &lt;= 0)
+	{
+		_snake.Move();
+
+		// New section: apple collision check
+		if (_snake.Positions.Contains(_appleLocation))
+		{
+			PlaceApple();
+		}
+
+		_tickTimer = _tickDelay;
+	}
+	else
+	{
+		_tickTimer--;
+	}
+}
+</code></pre>
+<p>With this addition, when the snake touches the apple, a new one will immediately be placed in a random unoccupied space on the grid. However, even though the snake now &quot;eats&quot; the apple, it still doesn't grow.</p>
+<p>Let's fix that. Edit <code>core/class/Snake.cs</code> and add a new method called <code>Grow()</code> as follows:</p>
+<pre><code class="lang-csharp">public void Grow()
+{
+	Length++;
+}
+</code></pre>
+<p>Then, let's call this new method in the tick-handling section of <code>MainScene.Update()</code>:</p>
+<pre><code class="lang-csharp">private void Update()
+{
+	_keyboard.BeginUpdate(Keyboard.GetState());
+	// ... user input code ...
+	_keyboard.EndUpdate();
+
+	if (_tickTimer &lt;= 0)
+	{
+		_snake.Move();
+
+		if (_snake.Positions.Contains(_appleLocation))
+		{
+			_snake.Grow(); // &lt;-- New item
+			PlaceApple();
+		}
+
+		_tickTimer = _tickDelay;
+	}
+	else
+	{
+		_tickTimer--;
+	}
+}
+</code></pre>
+<p>And with that, now our snake will grow when it eats apples. What we have now is a complete, working game of Snake with all required features in place.</p>
+<p>You've done it!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! By completing this chapter, you have created your own recreation of the classic game, Snake! In doing so, you explored Ladybug's basic functionality, and are well on your way to creating bigger and better games.</p>
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="extending-snake-self-study-suggestions">Extending Snake: Self-Study Suggestions</h3>
+<p>Now that you have a basic complete Snake game, you could try adding to it! Some suggestions include:</p>
+<ul>
+<li>Adding a title screen and/or pause menu</li>
+<li>Tracking a score and rendering the score to the screen</li>
+<li>Adding audio</li>
+<li>Saving persistent high scores</li>
+</ul>
+<h3 id="more-tutorials">More Tutorials</h3>
+<p>Now that you've mastered this introductory tutorial, take a look at some of the other tutorials we have! (More tutorials coming soon!)</p>
+<p>Complete code for this chapter can be found <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/chapter4">here</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/documentation/docs-src/articles/tutorials/1/4.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -73,30 +73,61 @@
   
   <h1 id="Ladybug_Graphics_SpriteAtlas" data-uid="Ladybug.Graphics.SpriteAtlas" class="text-break">Class SpriteAtlas
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Ladybug SpriteAtlas</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">SpriteAtlas</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.Graphics.html">Ladybug.Graphics</a></h6>
   <h6><strong>Assembly</strong>: ladybug.dll</h6>
   <h5 id="Ladybug_Graphics_SpriteAtlas_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SpriteAtlas : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpriteAtlas</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.%23ctor(Microsoft.Xna.Framework.Graphics.Texture2D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L29">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas__ctor_" data-uid="Ladybug.Graphics.SpriteAtlas.#ctor*"></a>
-  <h4 id="Ladybug_Graphics_SpriteAtlas__ctor_Texture2D_System_Int32_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.#ctor(Texture2D,System.Int32,System.Int32)">SpriteAtlas(Texture2D, Int32, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_Graphics_SpriteAtlas__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32)">SpriteAtlas(Texture2D, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a new SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteAtlas(Texture2D sourceTexture, int rows, int cols)</code></pre>
+    <pre><code class="lang-csharp hljs">public SpriteAtlas(Texture2D sourceTexture, int cols, int rows)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -109,29 +140,86 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Texture2D</span></td>
+        <td><span class="xref">Microsoft.Xna.Framework.Graphics.Texture2D</span></td>
         <td><span class="parametername">sourceTexture</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">rows</span></td>
-        <td></td>
+        <td><p>Source texture</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">cols</span></td>
-        <td></td>
+        <td><p>Number of sprite columns in source texture</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>Number of sprite rows in source texture</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_Item_Microsoft_Xna_Framework_Vector2_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.Item(Microsoft.Xna.Framework.Vector2)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L132">View Source</a>
+  </span>
+  <a id="Ladybug_Graphics_SpriteAtlas_Item_" data-uid="Ladybug.Graphics.SpriteAtlas.Item*"></a>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_Item_Microsoft_Xna_Framework_Vector2_" data-uid="Ladybug.Graphics.SpriteAtlas.Item(Microsoft.Xna.Framework.Vector2)">Item[Vector2]</h4>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sprite this[Vector2 coords] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xna.Framework.Vector2</span></td>
+        <td><span class="parametername">coords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L61">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_Item_" data-uid="Ladybug.Graphics.SpriteAtlas.Item*"></a>
   <h4 id="Ladybug_Graphics_SpriteAtlas_Item_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.Item(System.Int32)">Item[Int32]</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -169,11 +257,17 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_Item_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.Item(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L94">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_Item_" data-uid="Ladybug.Graphics.SpriteAtlas.Item*"></a>
   <h4 id="Ladybug_Graphics_SpriteAtlas_Item_System_Int32_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -216,11 +310,17 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_Item_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L141">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_Item_" data-uid="Ladybug.Graphics.SpriteAtlas.Item*"></a>
   <h4 id="Ladybug_Graphics_SpriteAtlas_Item_System_String_" data-uid="Ladybug.Graphics.SpriteAtlas.Item(System.String)">Item[String]</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -258,33 +358,22 @@
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Ladybug_Graphics_SpriteAtlas_Item_" data-uid="Ladybug.Graphics.SpriteAtlas.Item*"></a>
-  <h4 id="Ladybug_Graphics_SpriteAtlas_Item_Vector2_" data-uid="Ladybug.Graphics.SpriteAtlas.Item(Vector2)">Item[Vector2]</h4>
-  <div class="markdown level1 summary"></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_SpriteHeight.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.SpriteHeight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L49">View Source</a>
+  </span>
+  <a id="Ladybug_Graphics_SpriteAtlas_SpriteHeight_" data-uid="Ladybug.Graphics.SpriteAtlas.SpriteHeight*"></a>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_SpriteHeight" data-uid="Ladybug.Graphics.SpriteAtlas.SpriteHeight">SpriteHeight</h4>
+  <div class="markdown level1 summary"><p>Height of a single sprite in the SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Sprite this[Vector2 coords] { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int SpriteHeight { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector2</span></td>
-        <td><span class="parametername">coords</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -295,16 +384,53 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a></td>
+        <td><span class="xref">System.Int32</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_SpriteWidth.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.SpriteWidth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L43">View Source</a>
+  </span>
+  <a id="Ladybug_Graphics_SpriteAtlas_SpriteWidth_" data-uid="Ladybug.Graphics.SpriteAtlas.SpriteWidth*"></a>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_SpriteWidth" data-uid="Ladybug.Graphics.SpriteAtlas.SpriteWidth">SpriteWidth</h4>
+  <div class="markdown level1 summary"><p>Width of a single sprite in this SpriteAtlas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SpriteWidth { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_Texture.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.Texture%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L55">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_Texture_" data-uid="Ladybug.Graphics.SpriteAtlas.Texture*"></a>
   <h4 id="Ladybug_Graphics_SpriteAtlas_Texture" data-uid="Ladybug.Graphics.SpriteAtlas.Texture">Texture</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Source texture used by this SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -320,18 +446,24 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Texture2D</span></td>
+        <td><span class="xref">Microsoft.Xna.Framework.Graphics.Texture2D</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_GetSpriteFromTag_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.GetSpriteFromTag(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L181">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_GetSpriteFromTag_" data-uid="Ladybug.Graphics.SpriteAtlas.GetSpriteFromTag*"></a>
   <h4 id="Ladybug_Graphics_SpriteAtlas_GetSpriteFromTag_System_String_" data-uid="Ladybug.Graphics.SpriteAtlas.GetSpriteFromTag(System.String)">GetSpriteFromTag(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> with the given tag</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -350,7 +482,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tag</span></td>
-        <td></td>
+        <td><p>Name of tag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -369,48 +502,17 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_Microsoft_Xna_Framework_Vector2_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.TagSprite(System.String%2CMicrosoft.Xna.Framework.Vector2)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L151">View Source</a>
+  </span>
   <a id="Ladybug_Graphics_SpriteAtlas_TagSprite_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite*"></a>
-  <h4 id="Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32,System.Int32)">TagSprite(String, Int32, Int32)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void TagSprite(string tag, int x, int y)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">tag</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">x</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">y</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Ladybug_Graphics_SpriteAtlas_TagSprite_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite*"></a>
-  <h4 id="Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_Vector2_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Vector2)">TagSprite(String, Vector2)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_Microsoft_Xna_Framework_Vector2_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,Microsoft.Xna.Framework.Vector2)">TagSprite(String, Vector2)</h4>
+  <div class="markdown level1 summary"><p>Adds a string tag to a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -429,12 +531,100 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tag</span></td>
-        <td></td>
+        <td><p>Name of tag</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">Vector2</span></td>
+        <td><span class="xref">Microsoft.Xna.Framework.Vector2</span></td>
         <td><span class="parametername">coordinates</span></td>
-        <td></td>
+        <td><p>Coordinate of <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> in SpriteAtlas</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.TagSprite(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L174">View Source</a>
+  </span>
+  <a id="Ladybug_Graphics_SpriteAtlas_TagSprite_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite*"></a>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32)">TagSprite(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Adds a string tag to a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TagSprite(string tag, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tag</span></td>
+        <td><p>Name of tag</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Index of <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> in SpriteAtlas</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas.TagSprite(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L167">View Source</a>
+  </span>
+  <a id="Ladybug_Graphics_SpriteAtlas_TagSprite_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite*"></a>
+  <h4 id="Ladybug_Graphics_SpriteAtlas_TagSprite_System_String_System_Int32_System_Int32_" data-uid="Ladybug.Graphics.SpriteAtlas.TagSprite(System.String,System.Int32,System.Int32)">TagSprite(String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Adds a string tag to a <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> stored in this SpriteAtlas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TagSprite(string tag, int x, int y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tag</span></td>
+        <td><p>Name of tag</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>X coordinate of <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> in SpriteAtlas</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Y coordinate of <a class="xref" href="Ladybug.Graphics.Sprite.html">Sprite</a> in SpriteAtlas</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -445,6 +635,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_Graphics_SpriteAtlas.md&amp;value=---%0Auid%3A%20Ladybug.Graphics.SpriteAtlas%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/graphics/Sprite/SpriteAtlas.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
