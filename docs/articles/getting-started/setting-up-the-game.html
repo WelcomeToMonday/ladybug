@@ -72,7 +72,7 @@
 <p>In this section, we'll be going over Ladybug's <code>Game</code> and <code>Scene</code> classes, and how you will use them to get your game up and running.</p>
 <h4 id="prerequisites">Prerequisites</h4>
 <p>To follow this article, you will need to have created a new project that references both MonoGame and Ladybug.</p>
-<p>See the <a href="/articles/getting-started/installation.html">previous article</a> for guidance on setting up a new Ladybug project.</p>
+<p>See the <a href="/ladybug/articles/getting-started/installation.html">previous article</a> for guidance on setting up a new Ladybug project.</p>
 <h2 id="ladybugs-game-class">Ladybug's Game Class</h2>
 <p>Ladybug is built upon Monogame/XNA, and at its most basic level runs on the same underlying <code>Game</code> class.</p>
 <p>Where Ladybug's <code>Game</code> class differs is with the concept of Scenes -- independent game loops that can manage their own resources and lifecycles, and can run concurrently with one another.</p>
@@ -108,7 +108,7 @@ public static class Program
 <li><code>OnDraw()</code>, in which all drawing logic is handled</li>
 </ul>
 <p>Other methods exist that allow you to further define behavior at different points in the lifecycle, such as when the Scene's Active/Paused/Suspended state changes, and when it is unloaded and removed from the <code>Game</code> instance that is managing it.
-For a full reference of these methods, check out the <a href="/api/Ladybug.Scene.html">Ladybug.Scene documentation</a>.</p>
+For a full reference of these methods, check out the <a href="/ladybug/api/Ladybug.Scene.html">Ladybug.Scene documentation</a>.</p>
 <h3 id="loading-and-unloading-scenes">Loading and Unloading Scenes</h3>
 <p>You can load a <code>Scene</code> into a <code>Game</code> instance by calling its <code>LoadScene()</code> method and passing it a new <code>Scene</code> object. Once loaded, a Scene is immediately initialized and set to the <code>ACTIVE</code> state, where it will have its <code>OnUpdate()</code> and <code>OnDraw()</code> methods called every frame.</p>
 <p>To unload a <code>Scene</code>, you can call <code>Unload()</code> on the Scene instance. Once Unloaded, a <code>Scene</code> is effectively destroyed, and would have to be Loaded again to be reactivated.</p>
@@ -169,7 +169,7 @@ using (var game = new Game())
 }
 
 </code></pre>
-<p><em>If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project, unless the scene contains platform-specific code. See <a href="/articles/installation.html">Installation and Setup</a> for a project structure example.</em></p>
+<p><em>If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project, unless the scene contains platform-specific code. See <a href="/ladybug/articles/installation.html">Installation and Setup</a> for a project structure example.</em></p>
 <h2 id="putting-it-all-together">Putting it All Together</h2>
 <p>Now that we've reviewed instantiating a new <code>Game</code> instance, creating a <code>Scene</code> instance, we'll walk through a quick example of using both together.</p>
 <p>We'll create a simple game that prints <code>Hello World</code> to the console and then closes itself.</p>
@@ -225,7 +225,7 @@ using (var game = new Game())
 <p>Now that you have a basic grasp of Ladybug's <code>Game</code> and <code>Scene</code> classes, you're ready to create some games!</p>
 <p>Here's where you can go from here:</p>
 <ul>
-<li>Check out the <a href="/articles/tutorials/1/intro.html">Learning Ladybug with Snake</a> tutorial and walk through re-creating the classic game of Snake with Ladybug</li>
+<li>Check out the <a href="/ladybug/articles/tutorials/1/intro.html">Learning Ladybug with Snake</a> tutorial and walk through re-creating the classic game of Snake with Ladybug</li>
 <li>Look through the excellent MonoGame/XNA Tutorials on <a href="http://rbwhitaker.wikidot.com/monogame-tutorials">R.B. Whitaker's Wiki</a></li>
 <li>Take a look at the <a href="http://www.monogame.net/documentation/?page=main">MonoGame Documentation</a> for more tutorials</li>
 </ul>

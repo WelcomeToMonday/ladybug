@@ -115,4 +115,4 @@ You will have to repeat this step for each Platform Target Project you have.
 
 ### Wrapping Up
 
-With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/articles/getting-started/setting-up-the-game.html), we'll go over setting up your first Ladybug Scene!
+With that, you should be all set to get started with Ladybug and MonoGame. In the [next section](/ladybug/articles/getting-started/setting-up-the-game.html), we'll go over setting up your first Ladybug Scene!

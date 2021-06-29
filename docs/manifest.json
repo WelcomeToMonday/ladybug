@@ -969,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started/installation.html",
-          "hash": "CirZAavszxvy8aOn40fw2Xb1eLRgDzJ0VjuQzMWkGEQ="
+          "hash": "ASGjCAyFXYc+M/DGNOJCTzxjw14nAlA6mOvVtwm+r8k="
         }
       },
       "is_incremental": true,
@@ -981,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started/setting-up-the-game.html",
-          "hash": "8DONmS4OZSPBIn2TkoXTxkxAl3E2IWbgvfz+FRinB+Y="
+          "hash": "+sUI/Bhdn34tfFX/qwNYbpp5DiUCbHtVWre8+Iw8QbM="
         }
       },
       "is_incremental": true,
@@ -993,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "m6nmgim30ylw6IibHNQ539Yy9LPqkasEczciLDAtw6c="
+          "hash": "E75t3ok7SzzBy311Xqo229r49NJhBEXkIcl+76w3aOU="
         }
       },
       "is_incremental": true,
@@ -1017,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials/1/1.html",
-          "hash": "u0lPCZTsUBys2trvn+WDag3UxdFJowp4BNCCZkTJPnU="
+          "hash": "h6+OXrExEokch5y87tnp4jyKQSmp6t8KfGlEOprQwQs="
         }
       },
       "is_incremental": true,
@@ -1029,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials/1/2.html",
-          "hash": "3zcD/+E1YG5NUz0tm2Dfwe7+qIJGWZVCEhJ233v40B0="
+          "hash": "bSwgLM6HOpTUC+YPAaFJ3YLPbo5V4tkDE3Ek5KQ2k5I="
         }
       },
       "is_incremental": true,
@@ -1041,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials/1/3.html",
-          "hash": "0kD9QCxSfRIH8Jt9ncDH6C7V7e5i3gApGCimsEBWqkI="
+          "hash": "wQ8PgfXKxJJiOf+crVAal8YhhRUrvSH9HSV+1m/ziM8="
         }
       },
       "is_incremental": true,
@@ -1053,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials/1/4.html",
-          "hash": "CHhRck0yUd0MKgi5EAxBPmeQ3vl3JhKpTV76sxwcxcQ="
+          "hash": "KP9LpgE4CdbWZu8niC1OuZ+zlhcuYulzBsMbm6rmff8="
         }
       },
       "is_incremental": true,
@@ -1065,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials/1/intro.html",
-          "hash": "Fkh344whUJeS1v5wxp/v2GIudaUF/z2OhUxVdKR2Tc0="
+          "hash": "92DZ1Syp1kTT8fZU2hmaW8KvQL6ed+6I7T6ys+Ik8iw="
         }
       },
       "is_incremental": true,
@@ -1124,7 +1124,7 @@
           "hash": "3otyeUQCEfbZuTOoXZdN03xX2yxyXrGikQgwhJ6W/zA="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1153,7 +1153,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 9
+          "skipped_file_count": 10
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,

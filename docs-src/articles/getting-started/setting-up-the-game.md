@@ -6,7 +6,7 @@ In this section, we'll be going over Ladybug's `Game` and `Scene` classes, and h
 #### Prerequisites
 To follow this article, you will need to have created a new project that references both MonoGame and Ladybug.
 
-See the [previous article](/articles/getting-started/installation.html) for guidance on setting up a new Ladybug project.
+See the [previous article](/ladybug/articles/getting-started/installation.html) for guidance on setting up a new Ladybug project.
 
 ## Ladybug's Game Class
 Ladybug is built upon Monogame/XNA, and at its most basic level runs on the same underlying `Game` class.
@@ -52,7 +52,7 @@ A `Scene` contains a wide array of methods that allow you to define its behavior
 * `OnDraw()`, in which all drawing logic is handled
 
 Other methods exist that allow you to further define behavior at different points in the lifecycle, such as when the Scene's Active/Paused/Suspended state changes, and when it is unloaded and removed from the `Game` instance that is managing it.
-For a full reference of these methods, check out the [Ladybug.Scene documentation](/api/Ladybug.Scene.html).
+For a full reference of these methods, check out the [Ladybug.Scene documentation](/ladybug/api/Ladybug.Scene.html).
 
 ### Loading and Unloading Scenes
 You can load a `Scene` into a `Game` instance by calling its `LoadScene()` method and passing it a new `Scene` object. Once loaded, a Scene is immediately initialized and set to the `ACTIVE` state, where it will have its `OnUpdate()` and `OnDraw()` methods called every frame.
@@ -121,7 +121,7 @@ using (var game = new Game())
 
 ```
 
-_If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project, unless the scene contains platform-specific code. See [Installation and Setup](/articles/installation.html) for a project structure example._
+_If you're using the Shared Project/Platform Target Project project structure, you will be creating your scenes in the Shared Project, unless the scene contains platform-specific code. See [Installation and Setup](/ladybug/articles/installation.html) for a project structure example._
 
 ## Putting it All Together
 Now that we've reviewed instantiating a new `Game` instance, creating a `Scene` instance, we'll walk through a quick example of using both together.
@@ -187,6 +187,6 @@ Now that you have a basic grasp of Ladybug's `Game` and `Scene` classes, you're 
 
 Here's where you can go from here:
 
-* Check out the [Learning Ladybug with Snake](/articles/tutorials/1/intro.html) tutorial and walk through re-creating the classic game of Snake with Ladybug
+* Check out the [Learning Ladybug with Snake](/ladybug/articles/tutorials/1/intro.html) tutorial and walk through re-creating the classic game of Snake with Ladybug
 * Look through the excellent MonoGame/XNA Tutorials on [R.B. Whitaker's Wiki](http://rbwhitaker.wikidot.com/monogame-tutorials)
 * Take a look at the [MonoGame Documentation](http://www.monogame.net/documentation/?page=main) for more tutorials

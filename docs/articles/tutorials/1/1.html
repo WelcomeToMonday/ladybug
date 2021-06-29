@@ -73,9 +73,9 @@
 <p>At the end of this chapter, your game project will load and run a custom <code>Scene</code> instance, with customized initialization, update, and draw behaviors.</p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>To complete this part, you will need to be familiar with the process and requirements of setting up a new Ladybug project.</p>
-<p>For more information on Ladybug's usage requirements, check out the <a href="/articles/getting-started/installation.html">Installation</a> article</p>
+<p>For more information on Ladybug's usage requirements, check out the <a href="/ladybug/articles/getting-started/installation.html">Installation</a> article</p>
 <p>For more information on setting up a new Ladybug project, check out the
-<a href="/articles/getting-started/setting-up-the-game.html">Setting Up the Game</a> article</p>
+<a href="/ladybug/articles/getting-started/setting-up-the-game.html">Setting Up the Game</a> article</p>
 <h2 id="step-0-review---setting-up-the-ladybug-project">Step 0: Review - Setting up the Ladybug Project</h2>
 <p>To get started we'll need to set up a new game project. We'll run through the steps here quickly, but if you need more information on these steps, check out the articles in the Getting Started section.</p>
 <p>If you're comfortable with setting up a Ladybug project, feel free to skip ahead to the next step.</p>
@@ -91,7 +91,7 @@ dotnet new mgdesktopgl -n xplatform
 <h3 id="review---shared-project-and-platform-target-folders">Review - Shared Project and Platform Target folders</h3>
 <p>The <code>core</code> folder contains the Shared Project that will be housing the bulk of our game source code. This allows us to store all platform-independent code in one place.</p>
 <p>The <code>xplatform</code> folder contains the Platform Target project, which is what we will actually be building our game executable from. It will reference the Shared Project in <code>core</code> and pulling in the game code from there.</p>
-<p>If you need a refresher on referencing the Shared Project from the Platform Target project, review the steps listed in <a href="/articles/getting-started/installation.html">Getting Started: Installation</a>, in the &quot;Hooking it All Together&quot; section.</p>
+<p>If you need a refresher on referencing the Shared Project from the Platform Target project, review the steps listed in <a href="/ladybug/articles/getting-started/installation.html">Getting Started: Installation</a>, in the &quot;Hooking it All Together&quot; section.</p>
 <h3 id="getting-ladybug-up-and-running">Getting Ladybug Up and Running</h3>
 <p>Once the project folders are in place, we'll need to decide how we're involving Ladybug in our project. The easiest way is to add it through the <code>dotnet</code> command:</p>
 <pre><code class="lang-bash">dotnet add package WelcomeToMonday.Ladybug
@@ -199,7 +199,7 @@ public class MainScene : Scene
 <p>We added some basic initialization behavior to <code>MainScene</code>, loaded our <code>MainScene</code> into our <code>Game</code> instance, and saw that our <code>Initialize()</code> method was invoked when our game was built and run.</p>
 <p>We also created some empty <code>Update()</code> and <code>Draw()</code> methods that we'll be using in the next chapter to extend <code>MainScene</code>'s functionality and take another step closer to creating our Snake game.</p>
 <h2 id="next-steps">Next Steps</h2>
-<p>With our <code>MainScene</code> in hand, it's time to head to the next chapter, <a href="/articles/tutorials/1/2.html">Sprites and Player Input</a>.</p>
+<p>With our <code>MainScene</code> in hand, it's time to head to the next chapter, <a href="/ladybug/articles/tutorials/1/2.html">Sprites and Player Input</a>.</p>
 <p>Complete code for this chapter can be found <a href="https://github.com/WelcomeToMonday/ladybug-samples/tree/main/tutorials/1/chapter1">here</a>.</p>
 </article>
           </div>
