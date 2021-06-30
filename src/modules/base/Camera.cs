@@ -15,10 +15,19 @@ namespace Ladybug
 		/// <summary>
 		/// Creates a new Camera
 		/// </summary>
-		/// <param name="viewport"></param>
-    public Camera(Viewport viewport)
+		/// <param name="bounds"></param>
+		public Camera(Rectangle bounds)
 		{
-			Bounds = viewport.Bounds;
+			Bounds = bounds;
+		}
+		
+		/// <summary>
+		/// Creates a new Camera
+		/// </summary>
+		/// <param name="viewport"></param>
+		public Camera(Viewport viewport) : this(viewport.Bounds)
+		{
+
 		}
 
 		/// <summary>
@@ -40,16 +49,16 @@ namespace Ladybug
 		public Rectangle AllowedArea { get; protected set; }
 
 		/// <summary>
-		/// Viewport bounds
+		/// Bounds representing what is contained within the camera's view
 		/// </summary>
 		/// <value></value>
 		public Rectangle View { get; protected set; }
 
 		/// <summary>
-		/// The Camera's size, scale, and rotation
+		/// Matrix representing the  Camera's size, scale, and rotation
 		/// </summary>
 		/// <value></value>
-		public Matrix Transform { get; protected set; }
+		public Matrix TransformMatrix { get; protected set; }
 
 		/// <summary>
 		/// Zoom level
@@ -147,8 +156,6 @@ namespace Ladybug
 			Position = new Vector2(posX, posY);
 		}
 
-    // See this for world/screen space notes
-		// https://www.dreamincode.net/forums/topic/237979-2d-camera-in-xna/
 		/// <summary>
 		/// Converts a location in screen position context to a location
 		/// in world position context
@@ -157,41 +164,20 @@ namespace Ladybug
 		/// <returns></returns>
 		public Vector2 ScreenToWorldSpace(Vector2 source)
 		{
-			return new Vector2
-			(
-				View.Location.X + (source.X / Zoom),
-				View.Location.Y + (source.Y / Zoom)
-			);
-		}
-
-		/// <summary>
-		/// Converts a location in world position context to a location in
-		/// screen position context
-		/// </summary>
-		/// <param name="source"></param>
-		/// <returns></returns>
-		public Vector2 WorldToScreenSpace(Vector2 source)
-		{
-			return new Vector2
-			(
-				(source.X - View.Location.X) * Zoom,
-				(source.Y - View.Location.Y) * Zoom
-			);
+			return Vector2.Transform(source, Matrix.Invert(TransformMatrix));
 		}
 
 		/// <summary>
 		/// Updates the Camera
 		/// </summary>
-		/// <param name="vp"></param>
-		public void Update(Viewport vp)
+		public void Update()
 		{
-			Bounds = vp.Bounds;
 			RefreshMatrix();
 		}
 
 		private void RefreshMatrix()
 		{
-			Transform =
+			TransformMatrix =
 				Matrix.CreateTranslation(new Vector3(-Position.X, -Position.Y, 0)) *
 				Matrix.CreateScale(Zoom) *
 				Matrix.CreateTranslation(new Vector3(Bounds.Width * 0.5f, Bounds.Height * 0.5f, 0));
@@ -205,7 +191,7 @@ namespace Ladybug
 		/// </summary>
 		private void RefreshView()
 		{
-			var inverseView = Matrix.Invert(Transform);
+			var inverseView = Matrix.Invert(TransformMatrix);
 
 			var topLeft = Vector2.Transform(Vector2.Zero, inverseView);
 			var topRight = Vector2.Transform(new Vector2(Bounds.X, 0), inverseView);
