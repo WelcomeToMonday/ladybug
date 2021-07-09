@@ -1,53 +1,97 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-
-namespace Ladybug.Input
+namespace Ladybug.UserInput
 {
-  public abstract class InputMonitor<T,K> : IInputMonitor<T,K>
-  {
-    protected T previousState;
-    protected T currentState;
+	/// <summary>
+	/// Abstract class providing basic input monitoring functionality
+	/// </summary>
+	/// <typeparam name="T">Input State type</typeparam>
+	/// <typeparam name="K">Button/Key type</typeparam>
+	public abstract class InputMonitor<T, K>
+	{
+		/// <summary>
+		/// Previous input state
+		/// </summary>
+		protected T previousState;
 
-    public bool UpdateActive {get; protected set;} = false;
+		/// <summary>
+		/// Current input state
+		/// </summary>
+		protected T currentState;
 
-    public void BeginUpdate (T newState)
-    {
-      currentState = newState;
-      UpdateActive = true;
-    }
+		/// <summary>
+		/// Whether the input monitor is currently being updated
+		/// </summary>
+		/// <value></value>
+		public bool UpdateActive { get; protected set; } = false;
 
-    public void EndUpdate()
-    {
-      UpdateActive = false;
-      previousState = currentState;
-    }
+		/// <summary>
+		/// Begins the input monitor update process
+		/// </summary>
+		/// <param name="newState"></param>
+		public void BeginUpdate(T newState)
+		{
+			currentState = newState;
+			UpdateActive = true;
+		}
 
-    public abstract InputState GetInputState(K key);
 
-    public bool CheckButton(K button, InputState state) => GetInputState(button) == state;
+		/// <summary>
+		/// Completes the input monitor update process
+		/// </summary>
+		public void EndUpdate()
+		{
+			UpdateActive = false;
+			previousState = currentState;
+		}
 
-    public bool CheckAnyButton(K[] keys, InputState state)
-    {
-      bool res = false;
+		/// <summary>
+		/// Gets the input state of a given key
+		/// </summary>
+		/// <param name="key"></param>
+		/// <returns></returns>
+		public abstract InputState GetInputState(K key);
 
-      foreach (var key in keys)
-      {
-        if (CheckButton(key, state)) res = true;
-      }
+		/// <summary>
+		/// Checks if a given key is in the given input state
+		/// </summary>
+		/// <param name="button"></param>
+		/// <param name="state"></param>
+		/// <returns></returns>
+		public bool CheckButton(K button, InputState state) => GetInputState(button) == state;
 
-      return res;
-    }
+		/// <summary>
+		/// Checks if any of the given keys are in the given input state
+		/// </summary>
+		/// <param name="keys"></param>
+		/// <param name="state"></param>
+		/// <returns></returns>
+		public bool CheckAnyButton(K[] keys, InputState state)
+		{
+			bool res = false;
 
-    public bool CheckAllButtons(K[] keys, InputState state)
-    {
-      bool res = true;
+			foreach (var key in keys)
+			{
+				if (CheckButton(key, state)) res = true;
+			}
 
-      foreach (var key in keys)
-      {
-        if (!CheckButton(key, state)) res = false;
-      }
+			return res;
+		}
 
-      return res;
-    }
-  }
+		/// <summary>
+		/// Checks if all of the given keys are in the given input state
+		/// </summary>
+		/// <param name="keys"></param>
+		/// <param name="state"></param>
+		/// <returns></returns>
+		public bool CheckAllButtons(K[] keys, InputState state)
+		{
+			bool res = true;
+
+			foreach (var key in keys)
+			{
+				if (!CheckButton(key, state)) res = false;
+			}
+
+			return res;
+		}
+	}
 }

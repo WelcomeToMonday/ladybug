@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+
+using Ladybug.UserInput;
 
 namespace Ladybug
 {
@@ -115,17 +118,22 @@ namespace Ladybug
 		private Action _onStop = () => { };
 		private Action _onResume = () => { };
 
+		private Dictionary<string, Action<InputActionEventArgs>> _inputActions = new Dictionary<string, Action<InputActionEventArgs>>();
+
 		/// <summary>
 		/// Creates a new Scene
 		/// </summary>
 		/// <param name="game"><see cref="Ladybug.Game"/> instance that will be managing this Scene</param>
 		/// <returns></returns>
-		public Scene(Game game) => SetGame(game);
+		public Scene(Game game) : this() => SetGame(game);
 
 		/// <summary>
 		/// Creates a new Scene
 		/// </summary>
-		public Scene() { }
+		public Scene()
+		{
+			Input.Action += _InputAction;
+		}
 
 		/// <summary>
 		/// Sets the <see cref="Ladybug.Game"/> object that will be managing this Scene
@@ -278,6 +286,29 @@ namespace Ladybug
 		internal void _Update(GameTime gameTime)
 		{
 			_onUpdate(gameTime);
+		}
+
+		/// <summary>
+		/// Sets the action to be performed upon a specific input action
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="action"></param>
+		/// <returns></returns>
+		public Scene OnInputAction(string name, Action<InputActionEventArgs> action)
+		{
+			if (!_inputActions.TryAdd(name, action))
+			{
+				_inputActions[name] = action;
+			}
+			return this;
+		}
+
+		private void _InputAction(object sender, InputActionEventArgs e)
+		{
+			if (_inputActions.ContainsKey(e.Name))
+			{
+				_inputActions[e.Name](e);
+			}
 		}
 
 		/// <summary>

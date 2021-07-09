@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
 using Ladybug;
-using Ladybug.Input;
+using Ladybug.UserInput;
 using Ladybug.ECS;
 
 
@@ -37,7 +37,7 @@ namespace Ladybug.UI
 
 		protected MouseMonitor MouseMonitor { get; set; }
 		protected KeyboardMonitor KeyboardMonitor { get; set; }
-		protected GamepadMonitor GamepadMonitor { get; set; }
+		protected GamePadMonitor GamePadMonitor { get; set; }
 
 		public UIState State { get; protected set; } = UIState.ACTIVE;
 
@@ -57,7 +57,7 @@ namespace Ladybug.UI
 
 			MouseMonitor = new MouseMonitor();
 			KeyboardMonitor = new KeyboardMonitor();
-			GamepadMonitor = new GamepadMonitor();
+			GamePadMonitor = new GamePadMonitor();
 		}
 
 		public Control this[string name] { get => RootPanel[name]; }
@@ -206,32 +206,32 @@ namespace Ladybug.UI
 
 				var cPos = MouseMonitor.GetCursorPosition();
 
-				if (MouseMonitor.CheckButton(MouseButtons.LeftClick, InputState.Pressed))
+				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Pressed))
 				{
 					OnClickStart(new UIClickEvent(cPos));
 				}
 
-				if (MouseMonitor.CheckButton(MouseButtons.LeftClick, InputState.Down))
+				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Down))
 				{
 					OnClickHold(new UIClickEvent(cPos));
 				}
 
-				if (MouseMonitor.CheckButton(MouseButtons.LeftClick, InputState.Released))
+				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Released))
 				{
 					OnClickEnd(new UIClickEvent(cPos));
 				}
 
-				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Pressed))
+				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Pressed))
 				{
 					OnRightClickStart(new UIClickEvent(cPos));
 				}
 
-				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Down))
+				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Down))
 				{
 					OnRightClickHold(new UIClickEvent(cPos));
 				}
 
-				if (MouseMonitor.CheckButton(MouseButtons.RightClick, InputState.Released))
+				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Released))
 				{
 					OnRightClickEnd(new UIClickEvent(cPos));
 				}

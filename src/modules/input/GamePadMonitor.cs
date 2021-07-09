@@ -3,19 +3,19 @@ using Microsoft.Xna.Framework.Input;
 namespace Ladybug.UserInput
 {
 	/// <summary>
-	/// Monitors changes in Keyboard key state
+	/// Monitors changes in GamePad button state
 	/// </summary>
-	public class KeyboardMonitor : InputMonitor<KeyboardState, Keys>
+	public class GamePadMonitor : InputMonitor<GamePadState, Buttons>
 	{
 		/// <summary>
-		/// Gets the <see cref="InputState"/> of the given key
+		/// Gets the <see cref="InputState"/> of the given button
 		/// </summary>
-		/// <param name="k"></param>
+		/// <param name="b"></param>
 		/// <returns></returns>
-		public override InputState GetInputState(Keys k)
+		public override InputState GetInputState(Buttons b)
 		{
-			bool pK = (previousState != null && previousState.IsKeyDown(k));
-			bool cK = currentState.IsKeyDown(k);
+			var pK = (previousState != null && previousState.IsButtonDown(b));
+			var cK = currentState.IsButtonDown(b);
 			bool stateChanged = previousState == null ? false : (cK != pK);
 
 			InputState state;

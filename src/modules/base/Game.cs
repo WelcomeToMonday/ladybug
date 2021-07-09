@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+using Ladybug.UserInput;
+
 namespace Ladybug
 {
 	/// <summary>
@@ -116,29 +118,6 @@ namespace Ladybug
 			}
 		}
 
-		/*
-		/// <summary>
-		/// Initializes the Game instance
-		/// </summary>
-		protected override void Initialize()
-		{
-			base.Initialize();
-		}
-		*/
-
-		/*
-		/// <summary>
-		/// Loads resources for managed Scenes
-		/// </summary>
-		protected override void LoadContent()
-		{
-			foreach (var scene in SceneList)
-			{
-				if (!scene.ContentLoaded) scene._LoadContent();
-			}
-		}
-		*/
-
 		/// <summary>
 		/// Updates all Scenes managed by this Game instance which are neither Paused nor Suspended.
 		/// </summary>
@@ -146,6 +125,7 @@ namespace Ladybug
 		protected override void Update(GameTime gameTime)
 		{
 			ThreadManager.Update();
+			Input.Begin();
 			for (var i = 0; i < SceneList.Count; i++)
 			{
 				if (SceneList[i].State == SceneState.ACTIVE)
@@ -153,6 +133,7 @@ namespace Ladybug
 					SceneList[i]._Update(gameTime);
 				}
 			}
+			Input.End();
 		}
 
 		/// <summary>

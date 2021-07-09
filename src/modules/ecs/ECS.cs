@@ -23,7 +23,6 @@ namespace Ladybug.ECS
 		/// <param name="scene">Scene object containing this ECS</param>
 		public ECS(Scene scene)
 		{
-			RegisterComponentSystem<InputComponent, InputComponentSystem>();
 			RegisterComponentSystem<SpriteComponent, SpriteComponentSystem>();
 			Scene = scene;
 			ResourceCatalog = scene.ResourceCatalog;
