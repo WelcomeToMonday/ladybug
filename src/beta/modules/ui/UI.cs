@@ -8,7 +8,7 @@ using Ladybug.UserInput;
 
 namespace Ladybug.Beta.UI
 {
-	public class UI : Panel
+	public class UI : Control
 	{
 		private List<Control> _controls = new List<Control>();
 
@@ -20,11 +20,16 @@ namespace Ladybug.Beta.UI
 		{
 			Scene = scene;
 			Controls = _controls.AsReadOnly();
+			
+			BlockCursor = false;
+			
 			_OnInitialize();
 			OnAddChild(AddChild);
 		}
 
 		public Control FocusedControl { get; private set; }
+
+		public Control TargetedControl { get; private set; }
 
 		public IList<Control> Controls { get; private set; }
 
@@ -37,7 +42,7 @@ namespace Ladybug.Beta.UI
 			_sortRequired = true;
 		}
 
-		private Vector2 GetCursorPosition()
+		public Vector2 GetCursorPosition()
 		{
 			var res = Input.Mouse.GetCursorPosition();
 
@@ -58,18 +63,26 @@ namespace Ladybug.Beta.UI
 
 		private void CheckInput()
 		{
+			TargetedControl = null;
+
 			for (var i = 0; i < _controlsByPriority.Count; i++)
 			{
 				var control = _controlsByPriority[i];
 				if (control.Bounds.Contains(GetCursorPosition()))
 				{
-					//_control._OnCursorOver(); //we'll use this for CursorEnter/CursorLeave
-					// actually, we can probably do this in Control.cs in the update loop better.
+					TargetedControl = control;
 					if (control.BlockCursor)
 					{
 						break;
 					}
 				}
+			}
+
+			var clickState = Input.Mouse.GetInputState(MouseButtons.Left);
+
+			if (TargetedControl != null && clickState != InputState.Up)
+			{
+				TargetedControl._OnClick(clickState);
 			}
 		}
 

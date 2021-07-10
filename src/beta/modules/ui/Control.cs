@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+using Ladybug.UserInput;
+
 namespace Ladybug.Beta.UI
 {
 	public abstract class Control
@@ -19,8 +21,11 @@ namespace Ladybug.Beta.UI
 		private Action _onInitialize = () => { };
 		private Action<Control> _onAttach = (Control parentControl) => { };
 		private Action<Control> _onAddChild = (Control childControl) => { };
+		private Action<InputState> _onClick = (InputState state) => { };
 		private Action _onFocus = () => { };
 		private Action _onUnfocus = () => { };
+		private Action _onCursorEnter = () => { };
+		private Action _onCursorLeave = () => { };
 		private Action _onUpdate = () => { };
 		private Action<SpriteBatch> _onDraw = (SpriteBatch spriteBatch) => { };
 
@@ -56,9 +61,11 @@ namespace Ladybug.Beta.UI
 
 		public UI UI { get; private set; }
 
-		public bool BlockCursor {get; set;} = true;
+		public bool BlockCursor { get; set; } = true;
 
-		public Rectangle Bounds {get; private set;}
+		public bool ContainsCursor { get; private set; }
+
+		public Rectangle Bounds { get; private set; }
 
 		public int ZIndex
 		{
@@ -129,6 +136,16 @@ namespace Ladybug.Beta.UI
 			}
 		}
 
+		public Control OnClick(Action<InputState> action)
+		{
+			_onClick = action;
+			return this;
+		}
+		internal void _OnClick(InputState state)
+		{
+			_OnClick(state);
+		}
+
 		public Control OnFocus(Action action)
 		{
 			_onFocus = action;
@@ -151,6 +168,26 @@ namespace Ladybug.Beta.UI
 			Unfocus.Invoke(this, new EventArgs());
 		}
 
+		public Control OnCursorEnter(Action action)
+		{
+			_onCursorEnter = action;
+			return this;
+		}
+		internal void _OnCursorEnter()
+		{
+			_onCursorEnter();
+		}
+
+		public Control OnCursorLeave(Action action)
+		{
+			_onCursorLeave = action;
+			return this;
+		}
+		internal void _OnCursorLeave()
+		{
+			_onCursorLeave();
+		}
+
 		/// <summary>
 		/// Sets the action performed when this control is updated
 		/// </summary>
@@ -159,9 +196,22 @@ namespace Ladybug.Beta.UI
 		{
 			_onUpdate = action;
 			return this;
-		} 
+		}
 		internal void _OnUpdate()
 		{
+			var _containsCursor = Bounds.Contains(UI.GetCursorPosition());
+
+			if (_containsCursor && !ContainsCursor)
+			{
+				_OnCursorEnter();
+				ContainsCursor = true;
+			}
+			else if (!_containsCursor && ContainsCursor)
+			{
+				_OnCursorLeave();
+				ContainsCursor = false;
+			}
+
 			_onUpdate();
 		}
 
