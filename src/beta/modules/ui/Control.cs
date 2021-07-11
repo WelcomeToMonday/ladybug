@@ -44,7 +44,7 @@ namespace Ladybug.Beta.UI
 		{
 			control = new T();
 
-			if (name != null || name != string.Empty)
+			if (name != null && name != string.Empty)
 			{
 				control.Name = name;
 			}
