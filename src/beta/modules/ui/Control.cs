@@ -9,7 +9,7 @@ using Ladybug.UserInput;
 
 namespace Ladybug.Beta.UI
 {
-	public abstract class Control
+	public class Control
 	{
 		public event EventHandler Click;
 		public event EventHandler Focus;
@@ -29,17 +29,34 @@ namespace Ladybug.Beta.UI
 		private Action _onUpdate = () => { };
 		private Action<SpriteBatch> _onDraw = (SpriteBatch spriteBatch) => { };
 
-		internal Control() { }
-
 		public Control this[string name]
 		{
 			get => _children.Where(c => c.Name == name).FirstOrDefault();
 		}
 
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="name">Name of the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
 		public Control AddControl<T>(string name = null) where T : Control, new() => AddControl<T>(name, out T control);
 
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="control">Reference to the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
 		public Control AddControl<T>(out T control) where T : Control, new() => AddControl<T>(null, out control);
 
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="name">Name of the new Control</param>
+		/// <param name="control">Reference to the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
 		public Control AddControl<T>(string name, out T control) where T : Control, new()
 		{
 			control = new T();
@@ -53,13 +70,25 @@ namespace Ladybug.Beta.UI
 			return this;
 		}
 
+		/// <summary>
+		/// Adds an existing Control as a child of this Control
+		/// </summary>
+		/// <param name="control">Control to add as a child of this Control</param>
+		/// <returns>Reference to the current Control</returns>
+		public Control AddControl(Control control)
+		{
+			_OnAddChild(control);
+			control._OnAttach(this);
+			return this;
+		}
+
 		public string Name { get; set; }
 
 		public Control Parent { get; private set; }
 
 		public IList<Control> Children { get; private set; }
 
-		public UI UI { get; private set; }
+		public UI UI { get; internal set; }
 
 		public bool BlockCursor { get; set; } = true;
 

@@ -18,6 +18,7 @@ namespace Ladybug.Beta.UI
 
 		public UI(Scene scene) : base()
 		{
+			UI = this;
 			Scene = scene;
 			Controls = _controls.AsReadOnly();
 			

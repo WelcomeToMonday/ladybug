@@ -6,11 +6,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug.ECS
 {
+
+	/// <summary>
+	/// ComponentSystem responsible for processing basic <see cref="Ladybug.ECS.Component"/>s
+	/// </summary>
+	public class BasicComponentSystem : ComponentSystem<Component> {};
+
 	/// <summary>
 	/// A Component that can be registered and managed
 	/// by an <see cref="Ladybug.ECS.ECS"/> instance
 	/// </summary>
-	public abstract class Component
+	public class Component
 	{
 		private int _drawPriority = 0;
 

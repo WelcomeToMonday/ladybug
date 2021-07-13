@@ -115,6 +115,14 @@ namespace Ladybug.ECS
 			return this;
 		}
 
+		public Entity AddComponent(Component component)
+		{
+			component.Entity = this;
+			Components.Add(component);
+			ECS.RegisterComponent(component);
+			return this;
+		}
+
 		/// <summary>
 		/// Attempts to retrieve a <see cref="Ladybug.ECS.Component"/>
 		/// contained in the Entity

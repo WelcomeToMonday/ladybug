@@ -8,7 +8,7 @@ namespace Ladybug.ECS.Components
 	/// <summary>
 	/// ComponentSystem responsible for processing <see cref="Ladybug.ECS.Components.SpriteComponent"/> Components
 	/// </summary>
-	public class SpriteComponentSystem : ComponentSystem<SpriteComponent> {}
+	public class SpriteComponentSystem : ComponentSystem<SpriteComponent> { }
 
 	/// <summary>
 	/// Ladybug standard component for sprites
@@ -30,14 +30,14 @@ namespace Ladybug.ECS.Components
 		/// by this SpriteComponent
 		/// </summary>
 		/// <value></value>
-		public AnimatedSprite Sprite{get; private set;}
+		public AnimatedSprite Sprite { get; private set; }
 
 		/// <summary>
 		/// Color filter applied to this SpriteComponent
 		/// </summary>
 		/// <value></value>
-		public Color Color {get; set;} = Color.White;
-		
+		public Color Color { get; set; } = Color.White;
+
 		/// <summary>
 		/// Sets the component's animated sprite
 		/// </summary>
@@ -59,7 +59,7 @@ namespace Ladybug.ECS.Components
 		/// animation
 		/// </param>
 		public void AddAnimation(
-			string animationName, 
+			string animationName,
 			SpriteAtlas sourceAtlas,
 			int rows,
 			int columns,
@@ -69,10 +69,10 @@ namespace Ladybug.ECS.Components
 			bool setDefault = false
 			)
 		{
-			var sequence = new AnimationSequence(sourceAtlas,startFrame,endFrame);
+			var sequence = new AnimationSequence(sourceAtlas, startFrame, endFrame);
 			sequence.Speed = animationSpeed;
 			if (Sprite == null) Sprite = new AnimatedSprite();
-			Sprite.AddAnimation(animationName,sequence,setDefault);
+			Sprite.AddAnimation(animationName, sequence, setDefault);
 		}
 
 		/// <summary>
@@ -99,28 +99,31 @@ namespace Ladybug.ECS.Components
 		{
 			Sprite.SetAnimation(animationName);
 		}
-		
+
 		private void Initialize()
 		{
 			if (Sprite == null) SetSprite(new AnimatedSprite());
 		}
-		
+
 		private void Update(GameTime gameTime)
 		{
-			Sprite?.CurrentAnimation.Play();
+			Sprite?.CurrentAnimation?.Play();
 		}
-		
+
 		private void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
 			if (Sprite != null && Visible)
 			{
 				var frame = Sprite.GetCurrentFrame;
-				spriteBatch.Draw(
-					frame.Texture,
-					Entity.Transform.Bounds,
-					frame.Frame,
-					Color
-				);
+				if (frame != null)
+				{
+					spriteBatch.Draw(
+						frame.Texture,
+						Entity.Transform.Bounds,
+						frame.Frame,
+						Color
+					);
+				}
 			}
 		}
 	}
