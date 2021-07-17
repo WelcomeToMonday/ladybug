@@ -20,10 +20,11 @@ namespace Ladybug.Beta.UI
 		{
 			UI = this;
 			Scene = scene;
+			ResourceCatalog = Scene.ResourceCatalog;
 			Controls = _controls.AsReadOnly();
-			
+
 			BlockCursor = false;
-			
+
 			_OnInitialize();
 			OnAddChild(AddChild);
 		}
@@ -37,6 +38,8 @@ namespace Ladybug.Beta.UI
 		public Scene Scene { get; private set; }
 
 		public VRC VRC { get; set; }
+
+		public ResourceCatalog ResourceCatalog { get; set; }
 
 		public void RequestSort()
 		{

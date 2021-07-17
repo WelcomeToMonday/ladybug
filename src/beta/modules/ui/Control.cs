@@ -15,6 +15,8 @@ namespace Ladybug.Beta.UI
 		public event EventHandler Focus;
 		public event EventHandler Unfocus;
 
+		public ResourceCatalog ResourceCatalog => UI?.ResourceCatalog;
+
 		private int _zIndex = 0;
 		private List<Control> _children = new List<Control>();
 
@@ -89,6 +91,10 @@ namespace Ladybug.Beta.UI
 		public IList<Control> Children { get; private set; }
 
 		public UI UI { get; internal set; }
+
+		public Scene Scene => UI?.Scene;
+
+		public Game Game => UI?.Scene?.Game;
 
 		public bool BlockCursor { get; set; } = true;
 
