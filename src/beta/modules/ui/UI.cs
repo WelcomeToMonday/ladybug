@@ -25,8 +25,7 @@ namespace Ladybug.Beta.UI
 
 			BlockCursor = false;
 
-			_OnInitialize();
-			OnAddChild(AddChild);
+			_Initialize();
 		}
 
 		public Control FocusedControl { get; private set; }
@@ -35,11 +34,11 @@ namespace Ladybug.Beta.UI
 
 		public IList<Control> Controls { get; private set; }
 
-		public Scene Scene { get; private set; }
+		public new Scene Scene { get; private set; }
 
 		public VRC VRC { get; set; }
 
-		public ResourceCatalog ResourceCatalog { get; set; }
+		public new ResourceCatalog ResourceCatalog { get; set; }
 
 		public void RequestSort()
 		{
@@ -58,7 +57,7 @@ namespace Ladybug.Beta.UI
 			return res;
 		}
 
-		private void AddChild(Control control)
+		protected override void AddChild(Control control)
 		{
 			_controls.Add(control);
 			_controlsByPriority.Add(control);
@@ -86,21 +85,21 @@ namespace Ladybug.Beta.UI
 
 			if (TargetedControl != null && clickState != InputState.Up)
 			{
-				TargetedControl._OnClick(clickState);
+				TargetedControl._Click(clickState);
 			}
 		}
 
-		public void Update()
+		public new void Update()
 		{
 			CheckInput();
-			_OnUpdate();
+			_Update();
 			for (var i = 0; i < Controls.Count; i++)
 			{
-				Controls[i]._OnUpdate();
+				Controls[i]._Update();
 			}
 		}
 
-		public void Draw(SpriteBatch spriteBatch)
+		public new void Draw(SpriteBatch spriteBatch)
 		{
 			if (_sortRequired)
 			{
@@ -113,11 +112,11 @@ namespace Ladybug.Beta.UI
 				});
 			}
 
-			_OnDraw(spriteBatch);
+			_Draw(spriteBatch);
 
 			for (var i = 0; i < Controls.Count; i++)
 			{
-				Controls[i]._OnDraw(spriteBatch);
+				Controls[i]._Draw(spriteBatch);
 			}
 		}
 	}

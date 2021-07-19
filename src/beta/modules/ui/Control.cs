@@ -9,27 +9,24 @@ using Ladybug.UserInput;
 
 namespace Ladybug.Beta.UI
 {
-	public class Control
+	public abstract class Control
 	{
-		public event EventHandler Click;
-		public event EventHandler Focus;
-		public event EventHandler Unfocus;
+		public event EventHandler<InputState> Clicked;
+		public event EventHandler Focused;
+		public event EventHandler Unfocused;
+		public event EventHandler CursorEntered;
+		public event EventHandler CursorLeft;
 
 		public ResourceCatalog ResourceCatalog => UI?.ResourceCatalog;
 
 		private int _zIndex = 0;
 		private List<Control> _children = new List<Control>();
 
-		private Action _onInitialize = () => { };
-		private Action<Control> _onAttach = (Control parentControl) => { };
-		private Action<Control> _onAddChild = (Control childControl) => { };
-		private Action<InputState> _onClick = (InputState state) => { };
-		private Action _onFocus = () => { };
-		private Action _onUnfocus = () => { };
-		private Action _onCursorEnter = () => { };
-		private Action _onCursorLeave = () => { };
-		private Action _onUpdate = () => { };
-		private Action<SpriteBatch> _onDraw = (SpriteBatch spriteBatch) => { };
+		/// <summary>
+		/// Begin inline composing of a new Control
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedControl Compose() => new ComposedControl();
 
 		public Control this[string name]
 		{
@@ -67,8 +64,8 @@ namespace Ladybug.Beta.UI
 			{
 				control.Name = name;
 			}
-			_OnAddChild(control);
-			control._OnAttach(this);
+			_AddChild(control);
+			control._Attach(this);
 			return this;
 		}
 
@@ -79,8 +76,8 @@ namespace Ladybug.Beta.UI
 		/// <returns>Reference to the current Control</returns>
 		public Control AddControl(Control control)
 		{
-			_OnAddChild(control);
-			control._OnAttach(this);
+			_AddChild(control);
+			control._Attach(this);
 			return this;
 		}
 
@@ -121,147 +118,94 @@ namespace Ladybug.Beta.UI
 		/// <value></value>
 		public bool Initialized { get; private set; } = false;
 
-		/// <summary>
-		/// Sets the action performed when this control is initialized
-		/// </summary>
-		/// <param name="action"></param>
-		public Control OnInitialize(Action action)
-		{
-			_onInitialize = action;
-			return this;
-		}
-		internal void _OnInitialize()
+		protected virtual void Initialize() { }
+		internal void _Initialize()
 		{
 			if (!Initialized)
 			{
-				_onInitialize();
+				Initialize();
 				Initialized = true;
 			}
 		}
 
-		/// <summary>
-		/// Sets the action performed when this control is added as a child of another control
-		/// </summary>
-		/// <param name="action"></param>
-		public Control OnAttach(Action<Control> action)
-		{
-			_onAttach = action;
-			return this;
-		}
-		internal void _OnAttach(Control parentControl)
+		protected virtual void Attach(Control parentControl) { }
+		internal void _Attach(Control parentControl)
 		{
 			Parent = parentControl;
 			UI = parentControl.UI;
 			ZIndex = parentControl.ZIndex + 1;
-			_onAttach(parentControl);
-			_OnInitialize();
+			_Attach(parentControl);
+			_Initialize();
 		}
 
-		public Control OnAddChild(Action<Control> action)
-		{
-			_onAddChild = action;
-			return this;
-		}
-		internal void _OnAddChild(Control childControl)
+		protected virtual void AddChild(Control childControl) { }
+		internal void _AddChild(Control childControl)
 		{
 			if (!_children.Contains(childControl))
 			{
 				_children.Add(childControl);
-				_onAddChild(childControl);
+				AddChild(childControl);
 			}
 		}
 
-		public Control OnClick(Action<InputState> action)
+		protected virtual void Click(InputState state) { }
+		internal void _Click(InputState state)
 		{
-			_onClick = action;
-			return this;
-		}
-		internal void _OnClick(InputState state)
-		{
-			_OnClick(state);
+			Click(state);
+			Clicked?.Invoke(this, state);
 		}
 
-		public Control OnFocus(Action action)
+		protected virtual void Focus() { }
+		internal void _Focus()
 		{
-			_onFocus = action;
-			return this;
-		}
-		internal void _OnFocus()
-		{
-			_onFocus();
-			Focus?.Invoke(this, new EventArgs());
+			Focus();
+			Focused?.Invoke(this, new EventArgs());
 		}
 
-		public Control OnUnfocus(Action action)
+		protected virtual void Unfocus() { }
+		internal void _Unfocus()
 		{
-			_onUnfocus = action;
-			return this;
-		}
-		internal void _OnUnfocus()
-		{
-			_onUnfocus();
-			Unfocus.Invoke(this, new EventArgs());
+			Unfocus();
+			Unfocused.Invoke(this, new EventArgs());
 		}
 
-		public Control OnCursorEnter(Action action)
+		protected virtual void CursorEnter() { }
+		internal void _CursorEnter()
 		{
-			_onCursorEnter = action;
-			return this;
-		}
-		internal void _OnCursorEnter()
-		{
-			_onCursorEnter();
+			CursorEnter();
+			CursorEntered?.Invoke(this, new EventArgs());
 		}
 
-		public Control OnCursorLeave(Action action)
+		protected virtual void CursorLeave() { }
+		internal void _CursorLeave()
 		{
-			_onCursorLeave = action;
-			return this;
-		}
-		internal void _OnCursorLeave()
-		{
-			_onCursorLeave();
+			CursorLeave();
+			CursorLeft?.Invoke(this, new EventArgs());
 		}
 
-		/// <summary>
-		/// Sets the action performed when this control is updated
-		/// </summary>
-		/// <param name="action"></param>
-		public Control OnUpdate(Action action)
-		{
-			_onUpdate = action;
-			return this;
-		}
-		internal void _OnUpdate()
+		protected virtual void Update() { }
+		internal void _Update()
 		{
 			var _containsCursor = Bounds.Contains(UI.GetCursorPosition());
 
 			if (_containsCursor && !ContainsCursor)
 			{
-				_OnCursorEnter();
+				_CursorEnter();
 				ContainsCursor = true;
 			}
 			else if (!_containsCursor && ContainsCursor)
 			{
-				_OnCursorLeave();
+				_CursorLeave();
 				ContainsCursor = false;
 			}
 
-			_onUpdate();
+			Update();
 		}
 
-		/// <summary>
-		///  Sets the action performed when this control is drawn
-		/// </summary>
-		/// <param name="action"></param>
-		public Control OnDraw(Action<SpriteBatch> action)
+		protected virtual void Draw(SpriteBatch spriteBatch) { }
+		internal void _Draw(SpriteBatch spriteBatch)
 		{
-			_onDraw = action;
-			return this;
-		}
-		internal void _OnDraw(SpriteBatch spriteBatch)
-		{
-			_onDraw(spriteBatch);
+			Draw(spriteBatch);
 		}
 	}
 }
