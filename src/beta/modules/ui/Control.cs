@@ -134,7 +134,7 @@ namespace Ladybug.Beta.UI
 			Parent = parentControl;
 			UI = parentControl.UI;
 			ZIndex = parentControl.ZIndex + 1;
-			_Attach(parentControl);
+			Attach(parentControl);
 			_Initialize();
 		}
 
