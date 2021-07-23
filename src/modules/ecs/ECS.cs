@@ -23,6 +23,7 @@ namespace Ladybug.ECS
 		/// <param name="scene">Scene object containing this ECS</param>
 		public ECS(Scene scene)
 		{
+			RegisterComponentSystem<ComposedComponent, ComposedComponentSystem>();
 			RegisterComponentSystem<SpriteComponent, SpriteComponentSystem>();
 			Scene = scene;
 			ResourceCatalog = scene.ResourceCatalog;
@@ -53,24 +54,30 @@ namespace Ladybug.ECS
 		private Dictionary<Type, Type> _componentsToSystems = new Dictionary<Type, Type>();
 
 		/// <summary>
+		/// Dictionary of PreUpdate methods called when this ECS is Updated
+		/// </summary>
+		private Dictionary<Type, Action<GameTime>> _preUpdateMethods = new Dictionary<Type, Action<GameTime>>();
+		/// <summary>
 		/// Dictionary of Update methods called when this ECS is Updated
 		/// </summary>
-		private Dictionary<Type, Action<string, GameTime>> _updateMethods = new Dictionary<Type, Action<string, GameTime>>();
-		
+		private Dictionary<Type, Action<GameTime>> _updateMethods = new Dictionary<Type, Action<GameTime>>();
+		/// <summary>
+		/// Dictionary of PostUpdate methods called when this ECS is Updated
+		/// </summary>
+		private Dictionary<Type, Action<GameTime>> _postUpdateMethods = new Dictionary<Type, Action<GameTime>>();
+
+		/// <summary>
+		/// Dictionary of PreDraw methods called when this ECS is Drawn
+		/// </summary>
+		private Dictionary<Type, Action<GameTime, SpriteBatch>> _preDrawMethods = new Dictionary<Type, Action<GameTime, SpriteBatch>>();
 		/// <summary>
 		/// Dictionary of Draw methods called when this ECS is Drawn
 		/// </summary>
-		private Dictionary<Type, Action<string, GameTime, SpriteBatch>> _drawMethods = new Dictionary<Type, Action<string, GameTime, SpriteBatch>>();
-
+		private Dictionary<Type, Action<GameTime, SpriteBatch>> _drawMethods = new Dictionary<Type, Action<GameTime, SpriteBatch>>();
 		/// <summary>
-		/// List of individual steps that are executed, in given order, during Update
+		/// Dictionary of PostDraw methods called when this ECS is Drawn
 		/// </summary>
-		private List<string> _updateSteps = new List<string> { "PreUpdate", "Update", "PostUpdate" };
-
-		/// <summary>
-		/// List of individual steps that are executed, in given order, during Draw
-		/// </summary>
-		private List<string> _drawSteps = new List<string> { "PreDraw", "Draw", "PostDraw" };
+		private Dictionary<Type, Action<GameTime, SpriteBatch>> _postDrawMethods = new Dictionary<Type, Action<GameTime, SpriteBatch>>();
 
 		/// <summary>
 		/// Registers a <see cref="Ladybug.ECS.Component"/> type and the <see cref="Ladybug.ECS.ComponentSystem{T}"/> type that will be processing it.
@@ -84,23 +91,54 @@ namespace Ladybug.ECS
 			if (!_componentsToSystems.ContainsKey(component))
 			{
 				_componentsToSystems.Add(component, system);
-				var updateMethod = system.GetMethod("Update", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
-				var drawMethod = system.GetMethod("Draw", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
 
-				Action<string, GameTime> updateAction = (string step, GameTime gameTime) =>
+				var preUpdateMethod = system.GetMethod("PreUpdate", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+				var updateMethod = system.GetMethod("Update", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+				var postUpdateMethod = system.GetMethod("PostUpdate", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+
+				var preDrawMethod = system.GetMethod("Draw", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+				var drawMethod = system.GetMethod("Draw", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+				var postDrawMethod = system.GetMethod("Draw", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+
+				Action<GameTime> preUpdateAction = (GameTime gameTime) =>
 				{
-					var args = new object[] { step, gameTime };
+					var args = new object[] { gameTime };
+					preUpdateMethod?.Invoke(null, args);
+				};
+				Action<GameTime> updateAction = (GameTime gameTime) =>
+				{
+					var args = new object[] { gameTime };
 					updateMethod?.Invoke(null, args);
 				};
-
-				Action<string, GameTime, SpriteBatch> drawAction = (string step, GameTime gameTime, SpriteBatch spriteBatch) =>
+				Action<GameTime> postUpdateAction = (GameTime gameTime) =>
 				{
-					var args = new object[] { step, gameTime, spriteBatch };
+					var args = new object[] { gameTime };
+					postUpdateMethod?.Invoke(null, args);
+				};
+
+				Action<GameTime, SpriteBatch> preDrawAction = (GameTime gameTime, SpriteBatch spriteBatch) =>
+				{
+					var args = new object[] { gameTime, spriteBatch };
+					drawMethod?.Invoke(null, args);
+				};
+				Action<GameTime, SpriteBatch> drawAction = (GameTime gameTime, SpriteBatch spriteBatch) =>
+				{
+					var args = new object[] { gameTime, spriteBatch };
+					drawMethod?.Invoke(null, args);
+				};
+				Action<GameTime, SpriteBatch> postDrawAction = (GameTime gameTime, SpriteBatch spriteBatch) =>
+				{
+					var args = new object[] { gameTime, spriteBatch };
 					drawMethod?.Invoke(null, args);
 				};
 
+				_preUpdateMethods.Add(system, preUpdateAction);
 				_updateMethods.Add(system, updateAction);
+				_postUpdateMethods.Add(system, postUpdateAction);
+
+				_preDrawMethods.Add(system, preDrawAction);
 				_drawMethods.Add(system, drawAction);
+				_postDrawMethods.Add(system, postDrawAction);
 			}
 		}
 
@@ -121,7 +159,7 @@ namespace Ladybug.ECS
 				throw new InvalidOperationException("Error registering component. No ComponentSystem is registered for this component type!");
 			}
 		}
-		
+
 		/// <summary>
 		/// Attempts to retrieve a reference to the <see cref="Ladybug.ECS.ComponentSystem{T}"/> type responsible
 		/// for processing the given <see cref="Ladybug.ECS.Component"/>
@@ -245,92 +283,23 @@ namespace Ladybug.ECS
 		}
 
 		/// <summary>
-		/// Adds a step to this ECS's update process
-		/// </summary>
-		/// <param name="step">Name of step to be added</param>
-		/// <param name="index">
-		/// Position of step in update process. Appends the step to 
-		/// the end of the process if set to -1 or not specified
-		/// </param>
-		public void AddUpdateStep(string step, int index = -1)
-		{
-			if (_updateSteps.Contains(step))
-			{
-				return;
-			}
-
-			if (index == -1)
-			{
-				_updateSteps.Add(step);
-			}
-			else
-			{
-				_updateSteps.Insert(index, step);
-			}
-		}
-
-		/// <summary>
-		/// Defines the update steps used by this ECS
-		/// </summary>
-		/// <param name="steps">List of update steps to be used by this ECS</param>
-		public void SetUpdateSteps(List<string> steps) => _updateSteps = steps;
-		
-		/// <summary>
-		/// Defines the update steps used by this ECS
-		/// </summary>
-		/// <param name="steps">List of update steps to be used by this ECS</param>
-		public void SetUpdateSteps(params string[] steps) => SetUpdateSteps(steps.ToList());
-
-		/// <summary>
-		/// Adds a step to this ECS's draw process
-		/// </summary>
-		/// <param name="step">Name of draw step to be added</param>
-		/// <param name="index">
-		/// Position of step in draw process. Appends the step to 
-		/// the end of the process if set to -1 or not specified
-		/// </param>
-		public void AddDrawStep(string step, int index = -1)
-		{
-			if (_drawSteps.Contains(step))
-			{
-				return;
-			}
-
-			if (index == -1)
-			{
-				_drawSteps.Add(step);
-			}
-			else
-			{
-				_drawSteps.Insert(index, step);
-			}
-		}
-
-		/// <summary>
-		/// Defines the draw steps used by this ECS
-		/// </summary>
-		/// <param name="steps">List of draw steps to be used by this ECS</param>
-		public void SetDrawSteps(List<string> steps) => _drawSteps = steps;
-
-		/// <summary>
-		/// Defines the draw steps used by this ECS
-		/// </summary>
-		/// <param name="steps">List of draw steps to be used by this ECS</param>
-		public void SetDrawSteps(params string[] steps) => SetDrawSteps(steps.ToList());
-
-		/// <summary>
 		/// Runs the update process for the current frame for all
 		/// components managed by this ECS
 		/// </summary>
 		/// <param name="gameTime"></param>
 		public void Update(GameTime gameTime)
 		{
-			foreach (var step in _updateSteps)
+			foreach (var preUpdate in _preUpdateMethods.Values)
 			{
-				foreach (var update in _updateMethods.Values)
-				{
-					update(step, gameTime);
-				}
+				preUpdate(gameTime);
+			}
+			foreach (var update in _updateMethods.Values)
+			{
+				update(gameTime);
+			}
+			foreach (var postUpdate in _postUpdateMethods.Values)
+			{
+				postUpdate(gameTime);
 			}
 		}
 
@@ -342,12 +311,17 @@ namespace Ladybug.ECS
 		/// <param name="spriteBatch"></param>
 		public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
-			foreach (var step in _drawSteps)
+			foreach (var preDraw in _preDrawMethods.Values)
 			{
-				foreach (var draw in _drawMethods.Values)
-				{
-					draw(step, gameTime, spriteBatch);
-				}
+				preDraw(gameTime, spriteBatch);
+			}
+			foreach (var draw in _drawMethods.Values)
+			{
+				draw(gameTime, spriteBatch);
+			}
+			foreach (var postDraw in _postDrawMethods.Values)
+			{
+				postDraw(gameTime, spriteBatch);
 			}
 		}
 

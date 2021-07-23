@@ -71,14 +71,14 @@ Further, a Scene's behavior upon changing state can be defined through the `Paus
 
 ### Making a Scene
 
-To create a `Scene`, simply instantiate a `new Scene(Game)` object and use its `On*()` methods to define its behavior. This can be done anywhere in your project, but for sample purposes, we'll show you what this would look like if we were to create it right where we set up our `Game` instance.
+To create a `Scene`, simply instantiate a new `Scene` object using `Scene.Compose()` and use its `On*()` methods to define its behavior. This can be done anywhere in your project, but for sample purposes, we'll show you what this would look like if we were to create it right where we set up our `Game` instance.
 
 ```csharp
 // Instantiate a new Game instance, called game.
 using (var game = new Game())
 {
 	// Instantiate a new Scene instance, called scene.
-	var scene = new Scene(game)
+	var scene = Scene.Compose(game)
 		.OnLoadContent(() =>
 		{
 			// Content resources are loaded here
@@ -149,7 +149,7 @@ Although we can create a scene right within the `using` block in `Main()`, we'll
 ```csharp
 public Scene CreateMainScene(Game game)
 {
-	var mainScene = new Scene(game)
+	var mainScene = Scene.Compose(game)
 		.OnUpdate((GameTime gameTime) =>
 		{
 			Console.WriteLine("Hello World");

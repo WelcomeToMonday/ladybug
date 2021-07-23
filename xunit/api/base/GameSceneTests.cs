@@ -25,7 +25,7 @@ namespace Ladybug.Tests.Base
 
 			using (var game = new Game())
 			{
-				var scene = new Scene(game)
+				var scene = Scene.Compose(game)
 					.OnInitialize(() => { testInit = 1; })
 					.OnLoadContent(() => { testLoad = 1; })
 					.OnUpdate((GameTime gameTime) => { testUpdate = 1; })
@@ -50,7 +50,7 @@ namespace Ladybug.Tests.Base
 			var initStart = false;
 			var initComplete = false;
 
-			var scene = new Scene()
+			var scene = Scene.Compose()
 				.OnInitializeAsync(() =>
 					Task.Run(() =>
 					{
@@ -78,7 +78,7 @@ namespace Ladybug.Tests.Base
 			var loadStart = false;
 			var loadComplete = false;
 
-			var scene = new Scene()
+			var scene = Scene.Compose()
 				.OnLoadContentAsync(() =>
 					Task.Run(() =>
 					{

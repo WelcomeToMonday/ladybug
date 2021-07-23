@@ -13,7 +13,7 @@ namespace Ladybug.FSM
 		/// </summary>
 		public event EventHandler StateChanged;
 
-		private State _currentState = new State();
+		private State _currentState = State.Compose();
 
 		/// <summary>
 		/// Creates a new StateMachine instance

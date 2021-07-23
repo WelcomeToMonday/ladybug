@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -112,6 +113,31 @@ namespace Ladybug.ECS
 			};
 			Components.Add(component);
 			ECS.RegisterComponent(component);
+			return this;
+		}
+
+		/// <summary>
+		/// Adds an existing <see cref="Ladybug.ECS.Component"/> instance to
+		/// this Entity
+		/// </summary>
+		/// <param name="component"></param>
+		/// <returns></returns>
+		public Entity AddComponent(Component component)
+		{
+			if (component.Entity == this)
+			{
+				// Component has already been added to this Entity; nothing to do
+				return this;
+			}
+			if (component.Entity != null)
+			{
+				throw new InvalidOperationException("A component can only be assigned to one Entity");
+			}
+
+			component.Entity = this;
+			Components.Add(component);
+			ECS.RegisterComponent(component);
+
 			return this;
 		}
 

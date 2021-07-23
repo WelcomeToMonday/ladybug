@@ -8,7 +8,7 @@ namespace Ladybug.FSM
 	/// A State that can be processed by a
 	/// <see cref="Ladybug.FSM.StateMachine"/>
 	/// </summary>
-	public class State
+	public abstract class State
 	{
 		/// <summary>
 		/// State has become the StateMachine's
@@ -22,84 +22,40 @@ namespace Ladybug.FSM
 		/// </summary>
 		public event EventHandler Exited;
 
-		private Action _onEnter = () => {};
-		private Action<GameTime> _onUpdate = (GameTime gameTime) => {};
-		private Action _onExit = () => {};
+		/// <summary>
+		/// Begin inline composing of a new State
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedState Compose() => new ComposedState();
 
 		/// <summary>
-		/// Creates a new State
+		/// Method called when a StateMachine enters this State
 		/// </summary>
-		public State()
-		{
-
-		}
-
-		/// <summary>
-		/// Crates a new State,
-		/// copying the behavior of the provided
-		/// state
-		/// </summary>
-		/// <param name="template">Template State</param>
-		public State(State template)
-		{
-			_onEnter = template._onEnter;
-			_onUpdate = template._onUpdate;
-			_onExit = template._onExit;
-		}
-
+		protected virtual void Enter() { }
 		internal void _Enter()
 		{
-			_onEnter();
+			Enter();
 			Entered?.Invoke(this, new EventArgs());
 		}
 
+		/// <summary>
+		/// Method called each frame a StateMachine is in this State
+		/// </summary>
+		/// <param name="gameTime"></param>
+		protected virtual void Update(GameTime gameTime) { }
 		internal void _Update(GameTime gameTime)
 		{
-			_onUpdate(gameTime);
+			Update(gameTime);
 		}
 		
+		/// <summary>
+		/// Method called when a StateMachine exits this State
+		/// </summary>
+		protected virtual void Exit() { }
 		internal void _Exit()
 		{
-			_onExit();
+			Exit();
 			Exited?.Invoke(this, new EventArgs());
-		}
-
-		/// <summary>
-		/// Sets the behavior of this State when
-		/// this becomes the active
-		/// state of a <see cref="StateMachine"/>
-		/// </summary>
-		/// <param name="action">Action defining OnEnter behavior</param>
-		/// <returns></returns>
-		public State OnEnter(Action action)
-		{
-			_onEnter = action;
-			return this;
-		}
-
-		/// <summary>
-		/// Sets the behavior of this State when
-		/// its <see cref="StateMachine"/> is updated
-		/// </summary>
-		/// <param name="action">Action defining OnUpdate behavior</param>
-		/// <returns></returns>
-		public State OnUpdate(Action<GameTime> action)
-		{
-			_onUpdate = action;
-			return this;
-		}
-
-		/// <summary>
-		/// Sets the behavior of this State when
-		/// a <see cref="StateMachine"/> replaces this State with
-		/// another State
-		/// </summary>
-		/// <param name="action">Action defining OnExit behavior</param>
-		/// <returns></returns>
-		public State OnExit(Action action)
-		{
-			_onExit = action;
-			return this;
 		}
 	}
 }

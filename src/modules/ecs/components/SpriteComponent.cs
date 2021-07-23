@@ -16,16 +16,6 @@ namespace Ladybug.ECS.Components
 	public class SpriteComponent : Component
 	{
 		/// <summary>
-		/// Creates a new SpriteComponent instance
-		/// </summary>
-		public SpriteComponent()
-		{
-			OnInitialize(Initialize);
-			OnUpdate(Update);
-			OnDraw(Draw);
-		}
-
-		/// <summary>
 		/// <see cref="Ladybug.Graphics.AnimatedSprite"/> instance used
 		/// by this SpriteComponent
 		/// </summary>
@@ -100,17 +90,29 @@ namespace Ladybug.ECS.Components
 			Sprite.SetAnimation(animationName);
 		}
 		
-		private void Initialize()
+		/// <summary>
+		/// Initializes the SpriteComponent
+		/// </summary>
+		protected override void Initialize()
 		{
 			if (Sprite == null) SetSprite(new AnimatedSprite());
 		}
 		
-		private void Update(GameTime gameTime)
+		/// <summary>
+		/// Called every frame
+		/// </summary>
+		/// <param name="gameTime"></param>
+		protected override void Update(GameTime gameTime)
 		{
 			Sprite?.CurrentAnimation.Play();
 		}
 		
-		private void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+		/// <summary>
+		/// Draws the SpriteComponent
+		/// </summary>
+		/// <param name="gameTime"></param>
+		/// <param name="spriteBatch"></param>
+		protected override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
 			if (Sprite != null && Visible)
 			{

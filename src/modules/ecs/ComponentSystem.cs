@@ -45,12 +45,11 @@ namespace Ladybug.ECS
 		}
 
 		/// <summary>
-		/// Run an Update step for all <see cref="Ladybug.ECS.Component"/>
+		/// Update all <see cref="Ladybug.ECS.Component"/>
 		/// instances registered with this ComponentSystem
 		/// </summary>
-		/// <param name="step">Update step to run</param>
 		/// <param name="gameTime"></param>
-		public static void Update(string step, GameTime gameTime)
+		public static void Update(GameTime gameTime)
 		{
 			if (_components == null || _components.Count < 1)
 			{
@@ -63,21 +62,19 @@ namespace Ladybug.ECS
 				{
 					throw new InvalidOperationException("Entity has not been Initialized!");
 				}
-				if (c.CheckRunUpdate() && c._UpdateSteps.ContainsKey(step))
-				{
-					c._UpdateSteps[step](gameTime);
-				}
+				c._PreUpdate(gameTime);
+				c._Update(gameTime);
+				c._PostUpdate(gameTime);
 			}
 		}
 
 		/// <summary>
-		/// Run a Draw step for all <see cref="Ladybug.ECS.Component"/>
+		/// Draw all <see cref="Ladybug.ECS.Component"/>
 		/// instances registered with this ComponentSystem
 		/// </summary>
-		/// <param name="step">Draw step to run</param>
 		/// <param name="gameTime"></param>
 		/// <param name="spriteBatch"></param>
-		public static void Draw(string step, GameTime gameTime, SpriteBatch spriteBatch)
+		public static void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
 			if (_components == null || _components.Count < 1)
 			{
@@ -95,10 +92,9 @@ namespace Ladybug.ECS
 				{
 					throw new InvalidOperationException("Entity has not been Initialized!");
 				}
-				if (c.CheckRunDraw() && c._DrawSteps.ContainsKey(step))
-				{
-					c._DrawSteps[step](gameTime, spriteBatch);
-				}
+				c._PreDraw(gameTime, spriteBatch);
+				c._Draw(gameTime, spriteBatch);
+				c._PostDraw(gameTime, spriteBatch);
 			}
 		}
 

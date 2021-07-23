@@ -10,7 +10,7 @@ namespace Ladybug.Tests.Base
 		[Fact]
 		public void TestLoadContent()
 		{
-			var scene = new Scene();
+			var scene = Scene.Compose();
 			Texture2D texture = null;
 			var drawCalled = false;
 			var loadContentCalled = false;

@@ -32,7 +32,7 @@ namespace Ladybug.Tests.Documentation.Articles
 			var testInit = 0;
 			using (var game = new Game())
 			{
-				var scene = new Scene(game)
+				var scene = Scene.Compose(game)
 					.OnLoadContent(()=>{})
 					.OnInitialize(()=>{testInit++;})
 					.OnUpdate((GameTime gameTime)=>{})
@@ -41,7 +41,7 @@ namespace Ladybug.Tests.Documentation.Articles
 				game.LoadScene(scene);
 				game.RunOneFrame();
 
-				Assert.Equal(testInit, 1);
+				Assert.Equal(1, testInit);
 			}
 		}
 
@@ -56,12 +56,12 @@ namespace Ladybug.Tests.Documentation.Articles
 
 				game.RunOneFrame();
 			}
-			Assert.Equal(_testInt, 1);
+			Assert.Equal(1, _testInt);
 		}
 
 		private Scene CreateMainScene(Game game)
 		{
-			var mainScene = new Scene(game)
+			var mainScene = Scene.Compose(game)
 				.OnUpdate((GameTime gameTime) =>
 				{
 					_testInt++;

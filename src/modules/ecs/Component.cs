@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+using Ladybug.ECS.Components;
+
 namespace Ladybug.ECS
 {
 	/// <summary>
@@ -13,11 +15,6 @@ namespace Ladybug.ECS
 	public abstract class Component
 	{
 		private int _drawPriority = 0;
-
-		private Action _onInitialize = () => { };
-
-		internal Dictionary<string, Action<GameTime>> _UpdateSteps { get; private set; } = new Dictionary<string, Action<GameTime>>();
-		internal Dictionary<string, Action<GameTime, SpriteBatch>> _DrawSteps { get; private set; } = new Dictionary<string, Action<GameTime, SpriteBatch>>();
 
 		/// <summary>
 		/// Name of the Component instance
@@ -96,11 +93,18 @@ namespace Ladybug.ECS
 				}
 			}
 		}
+		
+		/// <summary>
+		/// Whether this Component has been initialized
+		/// </summary>
+		/// <value></value>
+		public bool Initialized { get; private set; } = false;
 
-		internal void _Initialize()
-		{
-			_onInitialize();
-		}
+		/// <summary>
+		/// Begin inline composition of a Component
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedComponent Compose() => new ComposedComponent();
 
 		/// <summary>
 		/// Determines whether to Update this component each frame
@@ -109,7 +113,7 @@ namespace Ladybug.ECS
 		/// <remarks>
 		/// By default, checks that Active and Entity.Active are true
 		/// </remarks>
-		public virtual bool CheckRunUpdate() => Entity.Active && Active;
+		protected virtual bool CheckRunUpdate() => Entity.Active && Active;
 
 		/// <summary>
 		/// Determines whether to Draw this component each frame
@@ -118,61 +122,99 @@ namespace Ladybug.ECS
 		/// <remarks>
 		/// By default, checks that <see cref="Visible"/> and <see cref="Entity.Visible"/> are true
 		/// </remarks>
-		public virtual bool CheckRunDraw() => Entity.Visible && Visible;
+		protected virtual bool CheckRunDraw() => Entity.Visible && Visible;
 
 		/// <summary>
-		/// Defines this Component's behavior upon initialization
+		/// Run when Component is initialized
 		/// </summary>
-		/// <param name="action">Action to be performed by this Component upon initialization</param>
-		/// <returns></returns>
-		public Component OnInitialize(Action action)
+		protected virtual void Initialize() { }
+		internal void _Initialize()
 		{
-			_onInitialize = action;
-			return this;
+			if (!Initialized)
+			{
+				Initialize();
+			}
 		}
 
 		/// <summary>
-		/// Defines this Component's behavior upon updating
+		/// Run immediately before Update
 		/// </summary>
-		/// <param name="action">Action to be performed by this Component upon each update</param>
-		/// <returns></returns>
-		/// <remarks>
-		/// This overload sets the action taken during the "Update" Update step
-		/// </remarks>
-		public Component OnUpdate(Action<GameTime> action) => OnUpdate("Update", action);
-
-		/// <summary>
-		/// Defines this Component's behavior upon the given update step
-		/// </summary>
-		/// <param name="step">Update step on which the given action will be performed</param>
-		/// <param name="action">Action to perform on the given Update step</param>
-		/// <returns></returns>
-		public Component OnUpdate(string step, Action<GameTime> action)
+		/// <param name="gameTime"></param>
+		protected virtual void PreUpdate(GameTime gameTime) { }
+		internal void _PreUpdate(GameTime gameTime)
 		{
-			_UpdateSteps[step] = action;
-			return this;
+			if (CheckRunUpdate())
+			{
+				PreUpdate(gameTime);
+			}
 		}
 
 		/// <summary>
-		/// Defines this Component's behavior upon being drawn
+		/// Run when this component is Updated by the ECS
 		/// </summary>
-		/// <param name="action">Action to be performed by this Component upon each draw call</param>
-		/// <returns></returns>
-		/// <remarks>
-		/// This overload sets the action taken upon the "Draw" Draw step
-		/// </remarks>
-		public Component OnDraw(Action<GameTime, SpriteBatch> action) => OnDraw("Draw", action);
+		/// <param name="gameTime"></param>
+		protected virtual void Update(GameTime gameTime) { }
+		internal void _Update(GameTime gameTime)
+		{
+			if (CheckRunUpdate())
+			{
+				Update(gameTime);
+			}
+		}
 
 		/// <summary>
-		/// Defines this Component's behavior upon the given draw step
+		/// Run immediately after Update
 		/// </summary>
-		/// <param name="step">Draw step on which the given action will be performed</param>
-		/// <param name="action">Action to perform on the given Draw step</param>
-		/// <returns></returns>
-		public Component OnDraw(string step, Action<GameTime, SpriteBatch> action)
+		/// <param name="gameTime"></param>
+		protected virtual void PostUpdate(GameTime gameTime) { }
+		internal void _PostUpdate(GameTime gameTime)
 		{
-			_DrawSteps[step] = action;
-			return this;
+			if (CheckRunUpdate())
+			{
+				PostUpdate(gameTime);
+			}
+		}
+
+		/// <summary>
+		/// Run immediately before Draw
+		/// </summary>
+		/// <param name="gameTime"></param>
+		/// <param name="spriteBatch"></param>
+		protected virtual void PreDraw(GameTime gameTime, SpriteBatch spriteBatch) { }
+		internal void _PreDraw(GameTime gameTime, SpriteBatch spriteBatch)
+		{
+			if (CheckRunUpdate())
+			{
+				PreDraw(gameTime, spriteBatch);
+			}
+		}
+
+		/// <summary>
+		/// Run when the ECS Draws this Component
+		/// </summary>
+		/// <param name="gameTime"></param>
+		/// <param name="spriteBatch"></param>
+		protected virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) { }
+		internal void _Draw(GameTime gameTime, SpriteBatch spriteBatch)
+		{
+			if (CheckRunUpdate())
+			{
+				Draw(gameTime, spriteBatch);
+			}
+		}
+
+		/// <summary>
+		/// Run immediately after Draw
+		/// </summary>
+		/// <param name="gameTime"></param>
+		/// <param name="spriteBatch"></param>
+		protected virtual void PostDraw(GameTime gameTime, SpriteBatch spriteBatch) { }
+		internal void _PostDraw(GameTime gameTime, SpriteBatch spriteBatch)
+		{
+			if (CheckRunUpdate())
+			{
+				PostDraw(gameTime, spriteBatch);
+			}
 		}
 	}
 }

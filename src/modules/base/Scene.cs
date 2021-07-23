@@ -26,7 +26,7 @@ namespace Ladybug
 	/// <summary>
 	/// A Scene represents a single game Update/Render loop.
 	/// </summary>
-	public class Scene
+	public abstract class Scene
 	{
 		/// <summary>
 		/// Asynchronous content loading has started
@@ -98,26 +98,6 @@ namespace Ladybug
 		/// </summary>
 		public SpriteBatch SpriteBatch { get; private set; }
 
-		private Func<Task> _onLoadContentAsync = new Func<Task>(() => Task.CompletedTask);
-		private Func<Task> _onInitializeAsync = new Func<Task>(() => Task.CompletedTask);
-
-		private Action _onLoadContent = () => { };
-		private Action _onInitialize = () => { };
-
-		private Action<GameTime> _onUpdate = (GameTime gameTime) => { };
-		private Action<GameTime> _onDraw = (GameTime gameTime) => { };
-
-		private Action _onUnload = () => { };
-
-		private Action _onPause = () => { };
-		private Action _onUnpause = () => { };
-
-		private Action _onSuspend = () => { };
-		private Action _onUnsuspend = () => { };
-
-		private Action _onStop = () => { };
-		private Action _onResume = () => { };
-
 		private Dictionary<string, Action<InputActionEventArgs>> _inputActions = new Dictionary<string, Action<InputActionEventArgs>>();
 
 		/// <summary>
@@ -134,6 +114,19 @@ namespace Ladybug
 		{
 			Input.Action += _InputAction;
 		}
+
+		/// <summary>
+		/// Begins inline composition of a new Scene
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedScene Compose() => new ComposedScene();
+
+		/// <summary>
+		/// Begins inline composition of a new Scene
+		/// </summary>
+		/// <param name="game"></param>
+		/// <returns></returns>
+		public static ComposedScene Compose(Game game) => new ComposedScene(game);
 
 		/// <summary>
 		/// Sets the <see cref="Ladybug.Game"/> object that will be managing this Scene
@@ -193,99 +186,61 @@ namespace Ladybug
 		public SceneState State { get; private set; } = SceneState.ACTIVE;
 
 		/// <summary>
-		/// Sets the task that is run asynchronously when the Scene's
-		/// content is loaded
+		/// Run when content is loaded asynchronously
 		/// </summary>
-		/// <param name="func">Asynchronous task run upon loading the Scene's content</param>
-		/// <returns>Scene</returns>
-		public Scene OnLoadContentAsync(Func<Task> func)
-		{
-			_onLoadContentAsync = func;
-			return this;
-		}
-
+		protected virtual void LoadContentAsync() { }
 		internal async void _LoadContentAsync()
 		{
-			ContentLoadedAsync = true;
 			LoadContentAsyncStart?.Invoke(this, new EventArgs());
-			await _onLoadContentAsync();
+			await Task.Run(() => LoadContentAsync());
+			ContentLoadedAsync = true;
 			LoadContentAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => _LoadContent());
 		}
 
 		/// <summary>
-		/// Sets the task that is run when the Scene is initialized
-		/// asynchronously
+		/// Run when the Scene is initialized asynchronously
 		/// </summary>
-		/// <param name="func">Asycronous task run upon initializing the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnInitializeAsync(Func<Task> func)
-		{
-			_onInitializeAsync = func;
-			return this;
-		}
-
+		protected virtual void InitializeAsync() { }
 		internal async void _InitializeAsync()
 		{
-			InitializedAsync = true;
 			InitializeAsyncStart?.Invoke(this, new EventArgs());
-			await _onInitializeAsync();
+			await Task.Run(() => InitializeAsync());
+			InitializedAsync = true;
 			InitializeAsyncComplete?.Invoke(this, new EventArgs());
 			ThreadManager.QueueAction(() => _Initialize());
 		}
 
 		/// <summary>
-		/// Sets the action that is run when the Scene's content is
-		/// loaded.
+		/// Run when content is loaded into the Scene
 		/// </summary>
-		/// <param name="action">Action run upon loading the Scene's content</param>
-		/// <returns>Scene</returns>
-		public Scene OnLoadContent(Action action)
-		{
-			_onLoadContent = action;
-			return this;
-		}
-
+		protected virtual void LoadContent() { }
 		internal void _LoadContent()
 		{
+			LoadContent();
 			ContentLoaded = true;
-			_onLoadContent();
 			LoadContentComplete?.Invoke(this, new EventArgs());
 		}
 
 		/// <summary>
-		/// Sets the action that is run when the Scene is initialized
+		/// Run when the Scene is Initialized
 		/// </summary>
-		/// <param name="action">Action run upon initializing the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnInitialize(Action action)
-		{
-			_onInitialize = action;
-			return this;
-		}
-
+		protected virtual void Initialize() { }
 		internal void _Initialize()
 		{
+			Initialize();
 			Initialized = true;
-			_onInitialize();
 			InitializeComplete?.Invoke(this, new EventArgs());
 		}
 
 		/// <summary>
-		/// Sets the action that is run every frame when the Scene
-		/// is updated
+		/// Run each frame when the Scene is updated
 		/// </summary>
-		/// <param name="action">Action run upon updating the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnUpdate(Action<GameTime> action)
-		{
-			_onUpdate = action;
-			return this;
-		}
-
+		/// <param name="gameTime"></param>
+		protected virtual void Update(GameTime gameTime) { }
 		internal void _Update(GameTime gameTime)
 		{
-			_onUpdate(gameTime);
+			Update(gameTime);
 		}
 
 		/// <summary>
@@ -294,15 +249,13 @@ namespace Ladybug
 		/// <param name="name"></param>
 		/// <param name="action"></param>
 		/// <returns></returns>
-		public Scene OnInputAction(string name, Action<InputActionEventArgs> action)
+		protected void SetInputAction(string name, Action<InputActionEventArgs> action)
 		{
 			if (!_inputActions.TryAdd(name, action))
 			{
 				_inputActions[name] = action;
 			}
-			return this;
 		}
-
 		private void _InputAction(object sender, InputActionEventArgs e)
 		{
 			if (_inputActions.ContainsKey(e.Name))
@@ -312,54 +265,28 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Sets the action that is run every frame when
-		/// the Scene Draws to the screen
+		/// Run when the Scene is drawn
 		/// </summary>
-		/// <param name="action">Action run upon drawing the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnDraw(Action<GameTime> action)
-		{
-			_onDraw = action;
-			return this;
-		}
-
+		/// <param name="gameTime"></param>
+		protected virtual void Draw(GameTime gameTime) { }
 		internal void _Draw(GameTime gameTime)
 		{
-			_onDraw(gameTime);
-		}
-
-		/// <summary>
-		/// Sets the action that is run when the Scene
-		/// is unloaded
-		/// </summary>
-		/// <param name="action">Action run upon unloading the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnUnload(Action action)
-		{
-			_onUnload = action;
-			return this;
+			Draw(gameTime);
 		}
 
 		/// <summary>
 		/// Unloads the Scene, removing it from the <see cref="Ladybug.Game"/> instance that is managing it
 		/// </summary>
-		public void Unload()
+		public void UnloadScene()
 		{
-			_onUnload();
+			Unload();
 			Game.UnloadScene(this);
 			Unloaded?.Invoke(this, new EventArgs());
 		}
-
 		/// <summary>
-		/// Sets the action that is run when the Scene is paused
+		/// Run when the Scene is unloaded
 		/// </summary>
-		/// <param name="action">Action run upon pausing the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnPause(Action action)
-		{
-			_onPause = action;
-			return this;
-		}
+		protected virtual void Unload() { }
 
 		/// <summary>
 		/// Pauses the Scene
@@ -368,25 +295,18 @@ namespace Ladybug
 		/// A paused Scene will not execute Update actions,
 		/// but will still execute Draw actions
 		/// </remarks>
-		public void Pause()
+		public void PauseScene()
 		{
 			State = SceneState.PAUSED;
 			Paused?.Invoke(this, new EventArgs());
-			_onPause();
+			Pause();
 			Stopped?.Invoke(this, new EventArgs());
-			_onStop();
+			Stop();
 		}
-
 		/// <summary>
-		/// Sets the action that is run when the Scene is unpaused
+		/// Run when the Scene is paused
 		/// </summary>
-		/// <param name="action">Action run upon unpausing the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnUnpause(Action action)
-		{
-			_onUnpause = action;
-			return this;
-		}
+		protected virtual void Pause() { }
 
 		/// <summary>
 		/// Unpauses the Scene
@@ -395,28 +315,21 @@ namespace Ladybug
 		/// Returns the Scene to ACTIVE state,
 		/// only if state was previously PAUSED
 		/// </remarks>
-		public void Unpause()
+		public void UnpauseScene()
 		{
 			if (State == SceneState.PAUSED)
 			{
 				State = SceneState.ACTIVE;
 				Unpaused?.Invoke(this, new EventArgs());
-				_onUnpause();
+				Unpause();
 				Resumed?.Invoke(this, new EventArgs());
-				_onResume();
+				Resume();
 			}
 		}
-
 		/// <summary>
-		/// Sets the action that is run when the scene is suspended
+		/// Run when the Scene is unpaused
 		/// </summary>
-		/// <param name="action">Action run upon suspending the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnSuspend(Action action)
-		{
-			_onSuspend = action;
-			return this;
-		}
+		protected virtual void Unpause() { }
 
 		/// <summary>
 		/// Suspends the Scene
@@ -425,26 +338,18 @@ namespace Ladybug
 		/// A suspended Scene will not execute
 		/// Update or Draw actions
 		/// </remarks>
-		public void Suspend()
+		public void SuspendScene()
 		{
 			State = SceneState.SUSPENDED;
 			Suspended?.Invoke(this, new EventArgs());
-			_onSuspend();
+			Suspend();
 			Stopped?.Invoke(this, new EventArgs());
-			_onStop();
+			Stop();
 		}
-
 		/// <summary>
-		/// Sets the action that is run when the Scene is
-		/// unsuspended
+		/// Run when the scene is suspended
 		/// </summary>
-		/// <param name="action">Action run upon unsuspending the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnUnsuspend(Action action)
-		{
-			_onUnsuspend = action;
-			return this;
-		}
+		protected virtual void Suspend() { }
 
 		/// <summary>
 		/// Unsuspends the Scene
@@ -453,40 +358,30 @@ namespace Ladybug
 		/// Returns the Scene to ACTIVE state,
 		/// only if state was previously SUSPENDED
 		/// </remarks>
-		public void Unsuspend()
+		public void UnsuspendScene()
 		{
 			if (State == SceneState.SUSPENDED)
 			{
 				State = SceneState.ACTIVE;
 				Unsuspended?.Invoke(this, new EventArgs());
-				_onUnsuspend();
+				Unsuspend();
 				Resumed?.Invoke(this, new EventArgs());
-				_onResume();
+				Resume();
 			}
 		}
+		/// <summary>
+		/// Run when the scene is unsuspended
+		/// </summary>
+		protected virtual void Unsuspend() { }
 
 		/// <summary>
-		/// Sets the action that run when the Scene is
-		/// paused or suspended
+		/// Run when the scene is paused or suspended
 		/// </summary>
-		/// <param name="action">Action run upon pausing or suspending the Scene</param>
-		/// <returns>Scene</returns>
-		public Scene OnStop(Action action)
-		{
-			_onStop = action;
-			return this;
-		}
+		protected virtual void Stop() { }
 
 		/// <summary>
-		/// Sets the action that is run when the Scene is
-		/// unpaused or unsuspended
+		/// Run when the scene is unpaused or unsuspended
 		/// </summary>
-		/// <param name="action"></param>
-		/// <returns>Scene</returns>
-		public Scene OnResume(Action action)
-		{
-			_onResume = action;
-			return this;
-		}
+		protected virtual void Resume() { }
 	}
 }
