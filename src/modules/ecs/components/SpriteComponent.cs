@@ -39,11 +39,9 @@ namespace Ladybug.ECS.Components
 		/// </summary>
 		/// <param name="animationName">Name of the new Animation</param>
 		/// <param name="sourceAtlas">Source <see cref="Ladybug.Graphics.SpriteAtlas"/></param>
-		/// <param name="rows">Rows in the source texture</param>
-		/// <param name="columns">Columns in the source texture</param>
-		/// <param name="animationSpeed">Speed of the animation</param>
 		/// <param name="startFrame">First frame of the animation</param>
 		/// <param name="endFrame">Last frame of the animation</param>
+		/// <param name="animationSpeed">Speed of the animation</param>
 		/// <param name="setDefault">
 		/// Whether to set this animation as the SpriteComponent's default
 		/// animation
@@ -51,11 +49,9 @@ namespace Ladybug.ECS.Components
 		public void AddAnimation(
 			string animationName,
 			SpriteAtlas sourceAtlas,
-			int rows,
-			int columns,
-			int animationSpeed,
 			int startFrame,
 			int endFrame,
+			int animationSpeed,
 			bool setDefault = false
 			)
 		{
