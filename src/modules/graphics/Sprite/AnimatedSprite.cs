@@ -4,7 +4,7 @@ namespace Ladybug.Graphics
 {
 	public class AnimatedSprite
 	{
-		private Dictionary<string,AnimationSequence> _animationList = new Dictionary<string,AnimationSequence>();
+		private Dictionary<string, AnimationSequence> _animationList = new Dictionary<string, AnimationSequence>();
 		private string _defaultAnimationName;
 		private string _currentAnimationName;
 
@@ -19,21 +19,32 @@ namespace Ladybug.Graphics
 			SetAnimation("default");
 		}
 
-		public AnimationSequence CurrentAnimation {get => _animationList[_currentAnimationName];}
-		
-		public Sprite GetCurrentFrame => _animationList[_currentAnimationName].GetCurrentFrame();
+		public AnimationSequence CurrentAnimation
+		{
+			get
+			{
+				AnimationSequence res = null;
+				if (_currentAnimationName != null && _animationList.TryGetValue(_currentAnimationName, out AnimationSequence sequence))
+				{
+					res = sequence;
+				}
+				return res;
+			}
+		}
+
+		public Sprite GetCurrentFrame => CurrentAnimation?.GetCurrentFrame();//_animationList[_currentAnimationName].GetCurrentFrame();
 
 		public void AddAnimation(string animationName, AnimationSequence sequence, bool makeDefault = false)
 		{
 			if (!_animationList.ContainsKey(animationName))
 			{
-				_animationList.Add(animationName,sequence);
+				_animationList.Add(animationName, sequence);
 			}
 			else
 			{
 				_animationList[animationName] = sequence;
 			}
-			
+
 			if (makeDefault)
 			{
 				_defaultAnimationName = animationName;

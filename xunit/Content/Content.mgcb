@@ -13,6 +13,16 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin font/default.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font/default.spritefont
+
+#begin font/OpenSans-Regular.ttf
+/copy:font/OpenSans-Regular.ttf
+
 #begin image/bot.png
 /importer:TextureImporter
 /processor:TextureProcessor

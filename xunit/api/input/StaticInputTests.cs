@@ -28,7 +28,7 @@ namespace Ladybug.Tests.UserInput
 			{
 				Assert.NotNull(Input.Keyboard);
 				Assert.NotNull(Input.Mouse);
-				
+
 				Input.SetGamepadCount(count);
 				var gp = Input.GamePads;
 

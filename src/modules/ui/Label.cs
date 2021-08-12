@@ -1,5 +1,3 @@
-using System;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -7,78 +5,116 @@ using Ladybug.Graphics;
 
 namespace Ladybug.UI
 {
+	/// <summary>
+	/// Static class containing resource keys for common Label resources
+	/// </summary>
+	public static class LabelResources
+	{
+		/// <summary>
+		/// Unique string key for default Label font
+		/// </summary>
+		public static readonly string DefaultFont = "ladybug_label_default_font";
+	}
+
+	/// <summary>
+	/// Ladybug base Label control
+	/// </summary>
 	public class Label : Control
 	{
 		private TextSprite _textSprite;
 
-		public Label(Control parentControl = null, string name = "") : base(parentControl, name)
+		/// <summary>
+		/// The Label's text content
+		/// </summary>
+		public string Text
 		{
-			PositionChanged += OnPositionChanged;
+			get => m_Text;
+			set
+			{
+				if (m_Text != value)
+				{
+					m_Text = value;
+					SetText(m_Text);
+				}
+			}
 		}
 
-		public override void Initialize()
+		/// <summary>
+		/// The Label's Text Color
+		/// </summary>
+		public Color TextColor
 		{
-			/*
+			get => _textSprite.DefaultTextColor;
+			set => _textSprite.SetColor(value);
+		}
+
+		/// <summary>
+		/// The Label's Font
+		/// </summary>
+		public SpriteFont Font
+		{
+			get => m_Font;
+			set
+			{
+				if (m_Font != value)
+				{
+					m_Font = value;
+					SetText(Text);
+				}
+			}
+		}
+
+		private string m_Text = "";
+		private SpriteFont m_Font;
+
+		/// <summary>
+		/// Called when the button is initialized
+		/// </summary>
+		protected override void Initialize()
+		{
+			if (ResourceCatalog.TryGetResource<SpriteFont>(UIResources.DefaultFont, out SpriteFont uiDefaultFont))
+			{
+				Font = uiDefaultFont;
+			}
+
+			if (ResourceCatalog.TryGetResource<SpriteFont>(LabelResources.DefaultFont, out SpriteFont labelDefaultFont))
+			{
+				Font = labelDefaultFont;
+			}
+
+			_textSprite = new TextSprite("", Font);
+		}
+
+		private void SetText(string text)
+		{
+			if (Font == null || _textSprite == null)
+			{
+				return;
+			}
+			Text = text;
+			_textSprite.SetBounds(new Rectangle(Bounds.Location.X, Bounds.Location.Y, int.MaxValue, int.MaxValue));
+			_textSprite.SetText(text);
 			_textSprite.SetBoundsToText();
 			SetBounds(_textSprite.Bounds);
-			*/
-			SetText(Text);
 		}
 
-		public string Text { get; protected set; } = "Label";
-
-		public void SetText(string newText)
+		/// <summary>
+		/// Called when the Label's bounds are updated
+		/// </summary>
+		/// <param name="oldBounds"></param>
+		/// <param name="newBounds"></param>
+		protected override void UpdateBounds(Rectangle oldBounds, Rectangle newBounds)
 		{
-			if (Font != null)
-			{
-				Text = newText;
-				var dimensions = Text == "" ? new Vector2(0, 0) : new Vector2(1000, 100);
-				if (_textSprite == null)
-				{
-					_textSprite = new TextSprite(newText, Font, new Rectangle(0, 0, 1000, 1000));
-				}
-				_textSprite.SetBounds(new Rectangle(
-					(int)Bounds.Location.X,
-					(int)Bounds.Location.Y,
-					(int)dimensions.X,
-					(int)dimensions.Y));
-				_textSprite.SetText(newText);
-				_textSprite.SetBoundsToText();
-				SetBounds(_textSprite.Bounds);
-			}
+			_textSprite.SetBounds(newBounds);
 		}
 
-		public void SetColor(Color color) => _textSprite?.SetColor(color);
-
-		public void SetScale(float scale) => _textSprite?.SetScale(scale);
-
-		public override void SetFont(SpriteFont font)
+		/// <summary>
+		/// Called when the Label is drawn
+		/// </summary>
+		/// <param name="spriteBatch"></param>
+		protected override void Draw(SpriteBatch spriteBatch)
 		{
-			base.SetFont(font);
-			_textSprite?.SetFont(font);
-		}
-
-		private void OnPositionChanged(object sender, EventArgs e)
-		{
-			_textSprite?.SetBoundsToText();
-			_textSprite?.SetBounds(
-				_textSprite.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.Center), BoxHandle.Center)
-				);
-		}
-
-		public override void Draw(SpriteBatch spriteBatch)
-		{
-			if (BackgroundImage != null)
-			{
-				spriteBatch.Draw
-				(
-					BackgroundImage,
-					Bounds,
-					null,
-					Color.White
-				);
-			}
-			_textSprite?.Draw(spriteBatch);
+			_textSprite.Draw(spriteBatch);
 		}
 	}
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,90 +5,91 @@ using Ladybug.Graphics;
 
 namespace Ladybug.UI
 {
-	public class Button : Control
+	/// <summary>
+	/// Static class containing unique resource keys for Buttons
+	/// </summary>
+	public static class ButtonResources
 	{
+		/// <summary>
+		/// Unique string key for default Button background
+		/// </summary>
+		public static readonly string DefaultBackground = "ladybug_button_background_default";
 
-		public Button(Control parentControl = null, string name = "") : base (parentControl, name)
+		/// <summary>
+		/// Unique string key for default Button font
+		/// </summary>
+		public static readonly string DefaultFont = "ladybug_button_font_default";
+	}
+
+	/// <summary>
+	/// Ladybug base Button control
+	/// </summary>
+	public class Button : Panel
+	{
+		private Label _label;
+
+		/// <summary>
+		/// The Button's text content
+		/// </summary>
+		/// <value></value>
+		public string Text
 		{
-			PositionChanged += OnPositionChanged;
-			ClickStart += OnClick;
-			ClickOut += OnClickOut;
+			get => _label.Text;
+			set
+			{
+				_label.Text = value;
+				SetBounds(Bounds); // re-center text
+			}
 		}
 
-		public override void Initialize()
+		/// <summary>
+		/// The color of the Button's text
+		/// </summary>
+		/// <value></value>
+		public Color TextColor
+			{
+			get => _label.TextColor;
+			set => _label.TextColor = value;
+			}
+
+		/// <summary>
+		/// The Button's font
+		/// </summary>
+		/// <value></value>
+		public SpriteFont Font
+		{
+			get => _label.Font;
+			set => _label.Font = value;
+		}
+
+		/// <summary>
+		/// Called when the Button is initialized
+		/// </summary>
+		protected override void Initialize()
 		{
 			base.Initialize();
-			//UI = parentControl?.UI;
 
-			Panel = new Panel(this);
-			Label = new Label(this);
-
-			Panel.BackgroundImage = null;
-
-			Panel.SetBounds(
-				new Rectangle(
-					(int)Label.Bounds.X,
-					(int)Label.Bounds.Y,
-					Label.Bounds.Width + 40,
-					Label.Bounds.Height + 20
-					)
-			);
-
-			SetBounds(Panel.Bounds);
-
-			Label.SetBounds(
-				Label.Bounds.CopyAtPosition(
-					Panel.Bounds.GetHandlePosition(BoxHandle.Center), 
-					BoxHandle.Center)
-			);
-		}
-
-		protected virtual void OnPositionChanged(object sender, EventArgs e)
-		{
-			Panel.SetBounds(Bounds);
-			SetLabelText(Label.Text);
-		}
-
-		protected virtual void OnClick(object sender, EventArgs e)
-		{
-			UI.SetFocus(this);
-		}
-
-		protected virtual void OnClickOut(object sender, EventArgs e)
-		{
-			if (HasFocus)
+			if (ResourceCatalog.TryGetResource<Texture2D>(ButtonResources.DefaultBackground, out Texture2D defaultBackground))
 			{
-				UI.ClearFocus();
+				BackgroundTexture = defaultBackground;
+			}
+
+			AddControl<Label>(out _label);
+
+			if (ResourceCatalog.TryGetResource<SpriteFont>(ButtonResources.DefaultFont, out SpriteFont defaultFont))
+			{
+				_label.Font = defaultFont;
 			}
 		}
 
-		public void SetLabelText(string labelText)
+		/// <summary>
+		/// Called when the Button's bounds are updated
+		/// </summary>
+		/// <param name="oldBounds"></param>
+		/// <param name="newBounds"></param>
+		protected override void UpdateBounds(Rectangle oldBounds, Rectangle newBounds)
 		{
-			Label.SetText(labelText);
-			Label.SetBounds(
-				Label.Bounds.CopyAtPosition(
-					Panel.Bounds.GetHandlePosition(BoxHandle.Center), 
-					BoxHandle.Center)
-			);
+			_label.SetBounds(_label.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.Center), BoxHandle.Center));
 		}
-
-		public override void Draw(SpriteBatch spriteBatch)
-		{
-			if (BackgroundImage != null)
-			{
-				spriteBatch.Draw
-				(
-					BackgroundImage,
-					Bounds,
-					null,
-					Color.White
-				);
-			}
-			Panel.Draw(spriteBatch);
-			Label.Draw(spriteBatch);
-		}
-
-		public Panel Panel {get; set;}
-		public Label Label {get; set;}
 	}
 }

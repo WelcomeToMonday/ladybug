@@ -1,9 +1,12 @@
+#pragma warning disable 1591 // Hide XMLdoc warnings.
+
 using System;
 
 using Microsoft.Xna.Framework;
 
-namespace Ladybug.UI
+namespace Ladybug.Legacy.UI
 {
+	[Obsolete("Ladybug Legacy UI is Obsolete. Please upgrade to 2.0 API ASAP")]
 	public class UIControlChangeEvent : EventArgs
 	{
 		public UIControlChangeEvent(Control newControl, Control previousControl) : base()
@@ -16,6 +19,7 @@ namespace Ladybug.UI
 		public Control PreviousControl { get; private set; }
 	}
 
+	[Obsolete("Ladybug Legacy UI is Obsolete. Please upgrade to 2.0 API ASAP")]
 	public class UIClickEvent : EventArgs
 	{
 		public UIClickEvent(Vector2 cursorPosition)
@@ -26,6 +30,7 @@ namespace Ladybug.UI
 		public Vector2 CursorPosition { get; private set; }
 	}
 
+	[Obsolete("Ladybug Legacy UI is Obsolete. Please upgrade to 2.0 API ASAP")]
 	public class UIStateChangeEvent : EventArgs
 	{
 		public UIStateChangeEvent(UIState newState, UIState oldState)
@@ -38,6 +43,7 @@ namespace Ladybug.UI
 		public UIState OldState { get; private set; }
 	}
 
+	[Obsolete("Ladybug Legacy UI is Obsolete. Please upgrade to 2.0 API ASAP")]
 	public class ControlMoveEvent : EventArgs
 	{
 		public ControlMoveEvent(Vector2 oldPosition, Vector2 newPosition)
@@ -49,7 +55,7 @@ namespace Ladybug.UI
 			XOffset = (int)delta.X;
 			YOffset = (int)delta.Y;
 		}
-		
+
 		public Vector2 OldPosition { get; private set; }
 		public Vector2 NewPosition { get; private set; }
 
@@ -58,3 +64,5 @@ namespace Ladybug.UI
 		public int YOffset { get; private set; }
 	}
 }
+
+#pragma warning restore 1591

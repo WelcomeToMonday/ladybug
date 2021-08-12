@@ -1,3 +1,5 @@
+#pragma warning disable 1591 // Hide XMLdoc warnings.
+
 using System;
 
 using Microsoft.Xna.Framework;
@@ -6,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Ladybug;
 using Ladybug.ECS;
 
-namespace Ladybug.UI
+namespace Ladybug.Legacy.UI
 {
 	[Flags]
 	public enum Input
@@ -37,3 +39,5 @@ namespace Ladybug.UI
 	}
 
 }
+
+#pragma warning restore 1591

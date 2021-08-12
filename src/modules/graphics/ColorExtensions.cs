@@ -125,10 +125,12 @@ namespace Ladybug.Graphics
 					object s = null;
 					s = typeof(Color).GetProperty(color).GetValue(s, null);
 					result = (Color)s;
+					success = true;
 					break;
 
 				case ColorFormat.HEX:
 					result = ColorExtensions.GetColorFromHex(color);
+					success = true;
 					break;
 
 				case ColorFormat.RGB:
@@ -139,6 +141,7 @@ namespace Ladybug.Graphics
 					var rgbb = int.Parse(values[2]);
 
 					result = new Color(rgbr, rgbg, rgbb);
+					success = true;
 					break;
 			}
 			return success;

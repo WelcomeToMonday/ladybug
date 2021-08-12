@@ -5,404 +5,407 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+using Ladybug.UserInput;
+
 namespace Ladybug.UI
 {
 	/// <summary>
-	/// Base Class for all Menu Controls
+	/// Base Ladybug UI Control class
 	/// </summary>
 	public abstract class Control
 	{
-		#region Constants
-
-		private const int CHILD_CONTROL_COUNT_DEFAULT = 10;
-
-		#endregion
-
-		#region Enums
-
-		#endregion
-
 		#region Events
+		/// <summary>
+		/// The Control has been clicked
+		/// </summary>
+		public event EventHandler<InputState> Clicked;
 
-		public event EventHandler Focus;
-		public event EventHandler UnFocus;
+		/// <summary>
+		/// The control is in focus, but a space it does 
+		/// not occupy has been clicked
+		/// </summary>
+		public event EventHandler ClickedOut;
 
-		public event EventHandler Enabled;
-		public event EventHandler Disabled;
+		/// <summary>
+		/// The Control has gained focus
+		/// </summary>
+		public event EventHandler Focused;
 
-		public event EventHandler<ControlMoveEvent> PositionChanged;
-		public event EventHandler SizeChanged;
+		/// <summary>
+		/// The Control has lost focus
+		/// </summary>
+		public event EventHandler Unfocused;
 
-		public event EventHandler Click;
-		public event EventHandler ClickStart;
-		public event EventHandler ClickHold;
-		public event EventHandler ClickEnd;
-		public event EventHandler ClickOut;
+		/// <summary>
+		/// The cursor has entered the control's bounds
+		/// </summary>
+		public event EventHandler CursorEntered;
 
-		public event EventHandler RightClick;
-		public event EventHandler RightClickStart;
-		public event EventHandler RightClickHold;
-		public event EventHandler RightClickEnd;
-		public event EventHandler RightClickOut;
+		/// <summary>
+		/// The cursor has left the control's bounds
+		/// </summary>
+		public event EventHandler CursorLeft;
+		#endregion // Events
 
-		public event EventHandler CursorEnter;
-		public event EventHandler CursorLeave;
+		#region Fields
+		private int _zIndex = 0;
+		private List<Control> _children = new List<Control>();
+		#endregion // Fields
 
-		#endregion
-
-		#region Member Variables
-
-		private bool _containsCursor = false;
-
-		#endregion
-
-		#region Constructors
-		/*
+		/// <summary>
+		/// Create a new Control
+		/// </summary>
 		public Control()
 		{
-
+			Children = _children.AsReadOnly();
 		}
-		*/
-		public Control(Control parentControl = null, string name = "")
-		{
-			Name = name;
-			if (parentControl != null)
-			{
-				parentControl.AddControl(this);
-			}
-			Initialize();
-		}
-
-		#endregion
-
+		
 		#region Properties
+		/// <summary>
+		/// Reference to the managing UI's ResourceCatalog
+		/// </summary>
+		public ResourceCatalog ResourceCatalog => UI?.ResourceCatalog;
 
-		public Control this[string name] { get => FindControl(name); }
+		/// <summary>
+		/// Access one of this Control's children by name
+		/// </summary>
+		/// <value></value>
+		public Control this[string name]
+		{
+			get => _children.Where(c => c.Name == name).FirstOrDefault();
+		}
 
-		public UI UI { get; set; }
-
-		public Rectangle Bounds { get; set; }
-
-		public Vector2 LocalPosition { get => Bounds.Location.ToVector2() - Parent.Bounds.Location.ToVector2(); }
-
-		public Vector2 GlobalPosition { get => Bounds.Location.ToVector2(); }
-
-		public Control Parent { get; set; }
-
+		/// <summary>
+		/// Name of this Control
+		/// </summary>
+		/// <value></value>
 		public string Name { get; set; }
 
-		public int ID { get; set; }
+		/// <summary>
+		/// This Control's parent Control
+		/// </summary>
+		/// <value></value>
+		public Control Parent { get; private set; }
 
-		public List<Control> Controls
+		/// <summary>
+		/// This Control's Children
+		/// </summary>
+		/// <value></value>
+		public IList<Control> Children { get; private set; }
+
+		/// <summary>
+		/// This Control's managing UI
+		/// </summary>
+		/// <value></value>
+		public UI UI { get; internal set; }
+
+		/// <summary>
+		/// This Controls' managing scene
+		/// </summary>
+		public Scene Scene => UI?.Scene;
+
+		/// <summary>
+		/// This control's managing game
+		/// </summary>
+		public Game Game => UI?.Scene?.Game;
+
+		/// <summary>
+		/// Whether the Control currently has focus
+		/// </summary>
+		public bool HasFocus => UI?.FocusedControl == this;
+
+		/// <summary>
+		/// Whether to allow the cursor to target controls beneath this Control
+		/// </summary>
+		/// <value></value>
+		public bool BlockCursor { get; set; } = true;
+
+		/// <summary>
+		/// Whether the cursor is within this Control's bounds
+		/// </summary>
+		/// <value></value>
+		public bool ContainsCursor { get; private set; }
+
+		/// <summary>
+		/// The cursor's position, width, and height
+		/// </summary>
+		/// <value></value>
+		public Rectangle Bounds { get; private set; }
+
+		/// <summary>
+		/// The draw depth of this Control
+		/// </summary>
+		/// <value></value>
+		public int ZIndex
 		{
-			get
+			get => _zIndex;
+			set
 			{
-				if (_controls == null)
+				if (value != _zIndex)
 				{
-					_controls = new List<Control>(CHILD_CONTROL_COUNT_DEFAULT);
-				}
-				return _controls;
-			}
-			set => _controls = value;
-		}
-		private List<Control> _controls;
-
-		public Dictionary<string, string> Attributes
-		{
-			get
-			{
-				if (_attributes == null)
-				{
-					_attributes = new Dictionary<string, string>();
-				}
-				return _attributes;
-			}
-			set => _attributes = value;
-		}
-		private Dictionary<string, string> _attributes;
-
-		public bool IsEnabled { get; protected set; } = true;
-
-		public bool Visible { get; set; } = true;
-
-		public bool HasFocus
-		{
-			get
-			{
-				var res = false;
-				if (UI != null)
-				{
-					res = UI.FocusedControl == this;
-				}
-				return res;
-			}
-		}
-
-		public Texture2D BackgroundImage { get; set; }
-
-		public SpriteFont Font { get; protected set; }
-
-		#endregion
-
-		#region Methods
-
-		public virtual void Initialize()
-		{
-			if (UI != null)
-			{
-				UI.FocusChange += OnUIFocusChange;
-				
-				UI.ClickStart += OnUIClickStart;
-				UI.ClickHold += OnUIClickHold;
-				UI.ClickEnd += OnUIClickEnd;
-
-				UI.RightClickStart += OnUIRightClickStart;
-				UI.RightClickHold += OnUIRightClickHold;
-				UI.RightClickEnd += OnUIRightClickEnd;
-			}
-		}
-
-		protected virtual void OnUIFocusChange(object sender, UIControlChangeEvent e)
-		{
-			if (e.NewControl == this)
-			{
-				Focus?.Invoke(this, new EventArgs());
-			}
-
-			if (e.PreviousControl == this)
-			{
-				UnFocus?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIClickStart(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				ClickStart?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIClickHold(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				ClickHold?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIClickEnd(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				ClickEnd?.Invoke(this, new EventArgs());
-				Click?.Invoke(this, new EventArgs());
-			}
-			else
-			{
-				ClickOut?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIRightClickStart(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				RightClickStart?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIRightClickHold(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				RightClickHold?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void OnUIRightClickEnd(object sender, UIClickEvent e)
-		{
-			if (IsEnabled && Bounds.Contains(e.CursorPosition))
-			{
-				RightClickEnd?.Invoke(this, new EventArgs());
-				RightClick?.Invoke(this, new EventArgs());
-			}
-			else
-			{
-				RightClickOut?.Invoke(this, new EventArgs());
-			}
-		}
-
-		public virtual void Enable()
-		{
-			if (!IsEnabled)
-			{
-				IsEnabled = true;
-				OnEnable();
-			}
-		}
-
-		protected void OnEnable()
-		{
-			Enabled?.Invoke(this, new EventArgs());
-		}
-
-		public virtual void Disable()
-		{
-			if (IsEnabled)
-			{
-				IsEnabled = false;
-				OnDisable();
-			}
-		}
-
-		protected void OnDisable()
-		{
-			Disabled?.Invoke(this, new EventArgs());
-		}
-
-		public virtual void Update()
-		{
-			if (IsEnabled)
-			{
-				if (Bounds.Contains(UI.CursorPosition))
-				{
-					if (!_containsCursor)
-					{
-						_containsCursor = true;
-						CursorEnter?.Invoke(this, new EventArgs());
-					}
-				}
-				else
-				{
-					if (_containsCursor)
-					{
-						_containsCursor = false;
-						CursorLeave?.Invoke(this, new EventArgs());
-					}
-				}
-				foreach (var c in Controls)
-				{
-					c.Update();
-				}
-			}
-			else if (!IsEnabled && _containsCursor)
-			{
-				_containsCursor = false;
-			}
-		}
-
-		public virtual void Draw(SpriteBatch spriteBatch)
-		{
-			foreach (var c in Controls)
-			{
-				if (c.Visible)
-				{
-					c.Draw(spriteBatch);
+					_zIndex = value;
+					UI.RequestSort();
 				}
 			}
 		}
 
+		/// <summary>
+		/// Whether the control has been initialized
+		/// </summary>
+		/// <value></value>
+		public bool Initialized { get; private set; } = false;
+		#endregion // Properties
+
+		#region Standard Methods
+		/// <summary>
+		/// Begin inline composing of a new Control
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedControl Compose() => new ComposedControl();
+
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="name">Name of the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
+		public Control AddControl<T>(string name = null) where T : Control, new() => AddControl<T>(name, out T control);
+
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="control">Reference to the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
+		public Control AddControl<T>(out T control) where T : Control, new() => AddControl<T>(null, out control);
+
+		/// <summary>
+		/// Adds a new child Control of type T to this Control
+		/// </summary>
+		/// <param name="name">Name of the new Control</param>
+		/// <param name="control">Reference to the new Control</param>
+		/// <typeparam name="T">Type of the new Control</typeparam>
+		/// <returns>Reference to the current Control</returns>
+		public Control AddControl<T>(string name, out T control) where T : Control, new()
+		{
+			control = new T();
+
+			if (name != null && name != string.Empty)
+			{
+				control.Name = name;
+			}
+			_AddChild(control);
+			control._Attach(this);
+			return this;
+		}
+
+		/// <summary>
+		/// Adds an existing Control as a child of this Control
+		/// </summary>
+		/// <param name="control">Control to add as a child of this Control</param>
+		/// <returns>Reference to the current Control</returns>
+		public Control AddControl(Control control)
+		{
+			_AddChild(control);
+			control._Attach(this);
+			return this;
+		}
+
+		/// <summary>
+		/// Sets the Control's Bounds
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="width"></param>
+		/// <param name="height"></param>
+		public void SetBounds(int x, int y, int width, int height) => SetBounds(new Rectangle(x, y, width, height));
+		
+		/// <summary>
+		/// Sets the Control's Bounds
+		/// </summary>
+		/// <param name="newBounds"></param>
 		public void SetBounds(Rectangle newBounds)
 		{
-			//Vector2 pos = PositionMode == PositionMode.ABSOLUTE ? newBounds.Location.ToVector2() : Parent.Bounds.Location.ToVector2() + newBounds.Location.ToVector2();
 			var oldBounds = Bounds;
-			Vector2 pos = newBounds.Location.ToVector2();
-			Bounds = new Rectangle((int)pos.X, (int)pos.Y, newBounds.Width, newBounds.Height);
-			PositionChanged?.Invoke(this, new ControlMoveEvent(oldBounds.Location.ToVector2(), newBounds.Location.ToVector2()));
-			SizeChanged?.Invoke(this, new EventArgs());
+			Bounds = newBounds;
+			_UpdateBounds(oldBounds, newBounds);
 		}
 
-		public void SetBounds(int x, int y, int width, int height) => SetBounds(new Rectangle(x, y, width, height));
+		/// <summary>
+		/// Sets the Control's Position
+		/// </summary>
+		/// <param name="newPos"></param>
+		public void SetPosition(Vector2 newPos) => SetPosition((int)newPos.X, (int)newPos.Y);
 
-		public virtual void SetFont(SpriteFont font) => Font = font;
+		/// <summary>
+		/// Sets the Control's Position
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		public void SetPosition(int x, int y) => SetBounds(Bounds.CopyAtPosition(x, y));
 
-		public void Move(int x, int y) => Move(new Vector2(x, y));
+		/// <summary>
+		/// Moves the Control relative to its current position
+		/// </summary>
+		/// <param name="newPos"></param>
+		public void Move(Vector2 newPos) => Move((int)newPos.X, (int)newPos.Y);
 
-		public void Move(Vector2 newPos)
+		/// <summary>
+		/// Moves the Control relative to its current position
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		public void Move(int x, int y) => SetBounds(Bounds.CopyAtOffset(x, y));
+		
+		#endregion // Standard Methods
+
+		#region Virtual Lifecycle Methods
+		/// <summary>
+		/// Called when the Control is Initialized
+		/// </summary>
+		protected virtual void Initialize() { }
+		internal void _Initialize()
 		{
-			var oldBounds = Bounds;
-			var newBounds = new Rectangle
-			(
-				(int)Bounds.Location.X + (int)newPos.X,
-				(int)Bounds.Location.Y + (int)newPos.Y,
-				Bounds.Width,
-				Bounds.Height
-			);
-			SetBounds(newBounds);
-			PositionChanged?.Invoke(this, new ControlMoveEvent(oldBounds.Location.ToVector2(), newBounds.Location.ToVector2()));
-		}
-
-		public void SetPosition(Vector2 newPos)
-		{
-			Rectangle newBounds = new Rectangle((int)newPos.X, (int)newPos.Y, Bounds.Width, Bounds.Height);
-			SetBounds(newBounds);
-		}
-
-		public void AddControl(Control newControl)
-		{
-			if (!Controls.Contains(newControl))
+			if (!Initialized)
 			{
-				newControl.Parent = this;
-				newControl.UI = UI;
-
-				newControl.Font = UI?.DefaultFont;
-
-				if (UI?.DefaultBackground != null) // keep an eye on this
-				{
-					newControl.BackgroundImage = UI.DefaultBackground;
-				}
-
-				Controls.Add(newControl);
+				Initialize();
+				Initialized = true;
 			}
 		}
 
-		public Control FindControl(string name, bool recurse = false)
+		/// <summary>
+		/// Called when the Control is attached to a parent control
+		/// </summary>
+		/// <param name="parentControl"></param>
+		protected virtual void Attach(Control parentControl) { }
+		internal void _Attach(Control parentControl)
 		{
-			return FindControl<Control>(name, recurse);
+			Parent = parentControl;
+			UI = parentControl.UI;
+			UI.RegisterControl(this);
+			ZIndex = parentControl.ZIndex + 1;
+			Attach(parentControl);
+			_Initialize();
 		}
 
-		public T FindControl<T>(string name = null, bool recurse = false, bool strictTypeMatch = false) where T : Control
+		/// <summary>
+		/// Called when a child control is attached to this Control
+		/// </summary>
+		/// <param name="childControl"></param>
+		protected virtual void AddChild(Control childControl) { }
+		internal void _AddChild(Control childControl)
 		{
-			var res = strictTypeMatch
-			? Controls.OfType<T>().Where(control => (name == null ? true : control.Name == name) && control.GetType() == typeof(T)).FirstOrDefault()
-			: Controls.OfType<T>().Where(control => (name == null ? true : control.Name == name)).FirstOrDefault();
-
-			if (recurse && res == null)
+			if (!_children.Contains(childControl))
 			{
-				foreach (var c in Controls)
-				{
-					var subRes = c.FindControl<T>(name, recurse, strictTypeMatch);
-					if (subRes != null)
-					{
-						res = subRes;
-						break;
-					}
-				}
+				_children.Add(childControl);
+				AddChild(childControl);
+			}
+		}
+
+		/// <summary>
+		/// Called when this Control is clicked
+		/// </summary>
+		/// <param name="state"></param>
+		protected virtual void Click(InputState state) { }
+		internal void _Click(InputState state)
+		{
+			Click(state);
+			Clicked?.Invoke(this, state);
+		}
+
+		/// <summary>
+		/// Called when this Control is in focus,
+		/// but a space outside its bounds has been clicked
+		/// </summary>
+		protected virtual void ClickOut() { }
+		internal void _ClickOut()
+		{
+			ClickOut();
+			ClickedOut?.Invoke(this, new EventArgs());
+		}
+
+		/// <summary>
+		/// Called when this Control gains focus
+		/// </summary>
+		protected virtual void Focus() { }
+		internal void _Focus()
+		{
+			Focus();
+			Focused?.Invoke(this, new EventArgs());
+		}
+
+		/// <summary>
+		/// Called when this Control loses focus
+		/// </summary>
+		protected virtual void Unfocus() { }
+		internal void _Unfocus()
+		{
+			Unfocus();
+			Unfocused?.Invoke(this, new EventArgs());
+		}
+
+		/// <summary>
+		/// Called when the cursor enters this Control's bounds
+		/// </summary>
+		protected virtual void CursorEnter() { }
+		internal void _CursorEnter()
+		{
+			CursorEnter();
+			CursorEntered?.Invoke(this, new EventArgs());
+		}
+
+		/// <summary>
+		/// Called when the cursor leaves this Control's bounds
+		/// </summary>
+		protected virtual void CursorLeave() { }
+		internal void _CursorLeave()
+		{
+			CursorLeave();
+			CursorLeft?.Invoke(this, new EventArgs());
+		}
+
+		/// <summary>
+		/// Called when this Control's bounds are updated
+		/// </summary>
+		/// <param name="oldBounds"></param>
+		/// <param name="newBounds"></param>
+		protected virtual void UpdateBounds(Rectangle oldBounds, Rectangle newBounds) { }
+		internal void _UpdateBounds(Rectangle oldBounds, Rectangle newBounds)
+		{
+			UpdateBounds(oldBounds, newBounds);
+		}
+
+		/// <summary>
+		/// Called when this Control is updated each frame
+		/// </summary>
+		protected virtual void Update() { }
+		internal void _Update()
+		{
+			var _containsCursor = Bounds.Contains(UI.GetCursorPosition());
+
+			if (_containsCursor && !ContainsCursor)
+			{
+				_CursorEnter();
+				ContainsCursor = true;
+			}
+			else if (!_containsCursor && ContainsCursor)
+			{
+				_CursorLeave();
+				ContainsCursor = false;
 			}
 
-			return res;
+			Update();
 		}
 
-		public List<T> FindControls<T>(bool strictTypeMatch = false, bool recurse = true) where T : Control
+		/// <summary>
+		/// Called when this Control is drawn
+		/// </summary>
+		/// <param name="spriteBatch"></param>
+		protected virtual void Draw(SpriteBatch spriteBatch) { }
+		internal void _Draw(SpriteBatch spriteBatch)
 		{
-			var res = strictTypeMatch
-			? Controls.OfType<T>().Where(control => control.GetType() == typeof(T)).ToList()
-			: Controls.OfType<T>().ToList();
-
-			if (recurse)
-			{
-				Controls.ToList().ForEach(
-					control =>
-					{
-						var subRes = control.FindControls<T>(strictTypeMatch, recurse);
-						subRes.ForEach(item => res.Add(item));
-					}
-				);
-			}
-
-			return res;
+			Draw(spriteBatch);
 		}
-		#endregion
+		#endregion // Virtual Lifecycle Methods
 	}
 }

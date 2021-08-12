@@ -1,261 +1,236 @@
 using System;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
-using Ladybug;
 using Ladybug.UserInput;
-using Ladybug.ECS;
-
-
-public enum UIState 
-	{
-	 ACTIVE, // Update and Draw called every frame
-	 PAUSED, // Draw called every frame, but not Update
-	 SUSPENDED // Neither Update nor Draw called
-	}
 
 namespace Ladybug.UI
 {
-	public class UI
+	/// <summary>
+	/// Static class containing resource keys for common UI resources
+	/// </summary>
+	public static class UIResources
 	{
+		/// <summary>
+		/// Default background texture used by this UI's controls
+		/// </summary>
+		public static readonly string DefaultBackground = "ladybug_ui_background_default";
 
-		public event EventHandler<UIControlChangeEvent> FocusChange;
+		/// <summary>
+		/// Default font used by this UI's controls
+		/// </summary>
+		public static readonly string DefaultFont = "ladybug_ui_font_default";
+	}
 
-		public event EventHandler<UIClickEvent> ClickStart;
-		public event EventHandler<UIClickEvent> ClickHold;
-		public event EventHandler<UIClickEvent> ClickEnd;
+	/// <summary>
+	/// Ladybug root UI manager
+	/// </summary>
+	public class UI : Control
+	{
+		private List<Control> _controls = new List<Control>();
 
-		public event EventHandler<UIClickEvent> RightClickStart;
-		public event EventHandler<UIClickEvent> RightClickHold;
-		public event EventHandler<UIClickEvent> RightClickEnd;
+		private List<Control> _controlsByPriority = new List<Control>();
 
-		public event EventHandler<UIStateChangeEvent> StateChanged;
+		private bool _sortRequired = false;
 
-		private Panel m_rootPanel;
-
-		protected MouseMonitor MouseMonitor { get; set; }
-		protected KeyboardMonitor KeyboardMonitor { get; set; }
-		protected GamePadMonitor GamePadMonitor { get; set; }
-
-		public UIState State { get; protected set; } = UIState.ACTIVE;
-
-		public UI(UIConfig config)
+		/// <summary>
+		/// Creates a new UI
+		/// </summary>
+		/// <param name="scene"><see cref="Ladybug.Scene"/> managing this UI</param>
+		/// <returns></returns>
+		public UI(Scene scene) : base()
 		{
-			DefaultFont = config.DefaultFont;
-			RootPanel.SetBounds(config.Bounds);
-			RootPanel.SetFont(config.DefaultFont);
-			Inputs = config.Inputs;
-			Game = config.Game;
-			Catalog = config.Catalog;
+			UI = this;
+			Scene = scene;
+			ResourceCatalog = Scene.ResourceCatalog;
+			Controls = _controls.AsReadOnly();
+			ZIndex = -1;
 
-			if (config.DefaultBackground != null)
-			{
-				DefaultBackground = config.DefaultBackground;
-			}
+			BlockCursor = false;
 
-			MouseMonitor = new MouseMonitor();
-			KeyboardMonitor = new KeyboardMonitor();
-			GamePadMonitor = new GamePadMonitor();
+			_Initialize();
 		}
 
-		public Control this[string name] { get => RootPanel[name]; }
-
-		public SpriteFont DefaultFont { get; private set; }
-
-		public Texture2D DefaultBackground { get; private set; }
-
-		public Input Inputs { get; set; }
-
-		public ResourceCatalog Catalog { get; set; }
-
+		/// <summary>
+		/// Control that is currently in focus
+		/// </summary>
 		public Control FocusedControl { get; private set; }
 
-		public Game Game { get; set; }
+		/// <summary>
+		/// Control that is currently targeted by the cursor
+		/// </summary>
+		public Control TargetedControl { get; private set; }
 
-		public Panel RootPanel
+		/// <summary>
+		/// List of Controls managed by this UI
+		/// </summary>
+		public IList<Control> Controls { get; private set; }
+
+		/// <summary>
+		/// Scene that is managing this UI
+		/// </summary>
+		public new Scene Scene { get; private set; }
+
+		/// <summary>
+		/// Virtual Resolution Container that is rendering this UI
+		/// </summary>
+		public VRC VRC { get; set; }
+
+		/// <summary>
+		/// This UI's resident ResourceCatalog
+		/// </summary>
+		public new ResourceCatalog ResourceCatalog { get; set; }
+
+		/// <summary>
+		/// Request the UI update the order of managed controls.
+		/// </summary>
+		public void RequestSort()
 		{
-			get
+			_sortRequired = true;
+		}
+
+		/// <summary>
+		/// Get the current position of the cursor
+		/// </summary>
+		public Vector2 GetCursorPosition()
+		{
+			var res = Input.Mouse.GetCursorPosition();
+
+			if (VRC != null)
 			{
-				if (m_rootPanel == null)
-				{
-					m_rootPanel = new Panel();
-					m_rootPanel.UI = this;
-				}
-				return m_rootPanel;
-			}
-		}
-
-		public Vector2 CursorPosition { get; protected set; }
-
-		public void Pause()
-		{
-			if (State != UIState.PAUSED)
-			{
-				SetState(UIState.PAUSED);
-			}
-		}
-
-		public void Unpause()
-		{
-			if (State == UIState.PAUSED)
-			{
-				SetState(UIState.ACTIVE);
-			}
-		}
-
-		public void Suspend()
-		{
-			if (State != UIState.SUSPENDED)
-			{
-				SetState(UIState.SUSPENDED);
-			}
-		}
-
-		public void Unsuspend()
-		{
-			if (State == UIState.SUSPENDED)
-			{
-				SetState(UIState.ACTIVE);
-			}
-		}
-
-		public void SetState(UIState newState)
-		{
-			var oldState = State;
-			State = newState;
-			StateChanged?.Invoke(this, new UIStateChangeEvent(newState, oldState));
-		}
-
-		public void AddControl(Control control)
-		{
-			RootPanel.AddControl(control);
-		}
-
-		public void SetFocus(Control control)
-		{
-			if (FocusedControl != control)
-			{
-				var oldControl = FocusedControl;
-
-				FocusedControl = control;
-				FocusChange?.Invoke(this, new UIControlChangeEvent(control, oldControl));
-			}
-		}
-
-		public void ClearFocus()
-		{
-			SetFocus(null);
-		}
-
-		private Vector2 GetCursorPosition()
-		{
-			Vector2 res = Vector2.Zero;
-
-			if (Inputs.HasFlag(Input.Mouse))
-			{
-				res = MouseMonitor.GetCursorPosition();
-			}
-			else
-			{
-				if (FocusedControl != null)
-				{
-					res = FocusedControl.Bounds.Center.ToVector2();
-				}
+				res = VRC.ScreenToCanvasSpace(res);
 			}
 
 			return res;
 		}
-
-		protected void OnClickStart(UIClickEvent e)
+		/*
+		/// <summary>
+		/// Called when a Control is attached to this UI
+		/// </summary>
+		/// <param name="control"></param>
+		protected override void AddChild(Control control)
 		{
-			ClickStart?.Invoke(this, e);
+			_controls.Add(control);
+			_controlsByPriority.Add(control);
+			RequestSort();
 		}
+		*/
 
-		protected void OnClickHold(UIClickEvent e)
+		/// <summary>
+		/// Registers a Control to be managed by this UI
+		/// </summary>
+		/// <param name="control"></param>
+		public void RegisterControl(Control control)
 		{
-			ClickHold?.Invoke(this, e);
-		}
-
-		protected void OnClickEnd(UIClickEvent e)
-		{
-			ClickEnd?.Invoke(this, e);
-		}
-
-		protected void OnRightClickStart(UIClickEvent e)
-		{
-			RightClickStart?.Invoke(this, e);
-		}
-
-		protected void OnRightClickHold(UIClickEvent e)
-		{
-			RightClickHold?.Invoke(this, e);
-		}
-
-		protected void OnRightClickEnd(UIClickEvent e)
-		{
-			RightClickEnd?.Invoke(this, e);
-		}
-
-		protected virtual void HandleInput()
-		{
-			if (Inputs.HasFlag(Input.Mouse))
+			if (_controls.Contains(control))
 			{
-				MouseMonitor.BeginUpdate(Mouse.GetState());
-
-				var cPos = MouseMonitor.GetCursorPosition();
-
-				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Pressed))
-				{
-					OnClickStart(new UIClickEvent(cPos));
-				}
-
-				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Down))
-				{
-					OnClickHold(new UIClickEvent(cPos));
-				}
-
-				if (MouseMonitor.CheckButton(MouseButtons.Left, InputState.Released))
-				{
-					OnClickEnd(new UIClickEvent(cPos));
-				}
-
-				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Pressed))
-				{
-					OnRightClickStart(new UIClickEvent(cPos));
-				}
-
-				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Down))
-				{
-					OnRightClickHold(new UIClickEvent(cPos));
-				}
-
-				if (MouseMonitor.CheckButton(MouseButtons.Right, InputState.Released))
-				{
-					OnRightClickEnd(new UIClickEvent(cPos));
-				}
-
-				MouseMonitor.EndUpdate();
+				return;
 			}
 
-			CursorPosition = GetCursorPosition();
+			_controls.Add(control);
+			_controlsByPriority.Add(control);
+			RequestSort();
 		}
 
-		public virtual void Update()
+		/// <summary>
+		/// Sets the UI's focused control
+		/// </summary>
+		/// <param name="control"></param>
+		public void SetFocus(Control control)
 		{
-			if (State == UIState.ACTIVE)
+			if (FocusedControl == control || !Controls.Contains(control))
 			{
-				HandleInput();
-				RootPanel.Update();
+				return;
+			}
+
+			if (FocusedControl != null)
+			{
+				FocusedControl._Unfocus();
+				FocusedControl = null;
+			}
+
+			FocusedControl = control;
+			FocusedControl._Focus();
+		}
+
+		/// <summary>
+		/// Clear's the UI's focused control
+		/// </summary>
+		public void ClearFocus()
+		{
+			if (FocusedControl != null)
+			{
+				FocusedControl._Unfocus();
+				FocusedControl = null;
 			}
 		}
 
-		public virtual void Draw(SpriteBatch spriteBatch)
+		private void CheckInput()
 		{
-			if (State != UIState.SUSPENDED)
+			TargetedControl = null;
+
+			for (var i = 0; i < _controlsByPriority.Count; i++)
 			{
-				RootPanel.Draw(spriteBatch);
+				var control = _controlsByPriority[i];
+				if (control.Bounds.Contains(GetCursorPosition()))
+				{
+					TargetedControl = control;
+					if (control.BlockCursor)
+					{
+						break;
+					}
+				}
+			}
+
+			var clickState = Input.Mouse.GetInputState(MouseButtons.Left);
+			if (clickState != InputState.Up)
+			{
+				if (FocusedControl != null && TargetedControl != FocusedControl)
+				{
+					FocusedControl._ClickOut();
+				}
+
+				TargetedControl?._Click(clickState);
+			}
+		}
+
+		/// <summary>
+		/// Called when the UI is updated
+		/// </summary>
+		public new void Update()
+		{
+			CheckInput();
+			_Update();
+			for (var i = 0; i < Children.Count; i++)
+			{
+				Controls[i]._Update();
+			}
+		}
+
+		/// <summary>
+		/// Called when the UI is drawn
+		/// </summary>
+		/// <param name="spriteBatch"></param>
+		public new void Draw(SpriteBatch spriteBatch)
+		{
+			if (_sortRequired)
+			{
+				_controlsByPriority.Sort((Control x, Control y) =>
+				{
+					var res = 0;
+					if (x.ZIndex > y.ZIndex) res = 1; //todo: verify correct </> values
+					if (x.ZIndex < y.ZIndex) res = -1;
+					return res;
+				});
+			}
+
+			_Draw(spriteBatch);
+
+			for (var i = 0; i < Controls.Count; i++)
+			{
+				Controls[i]._Draw(spriteBatch);
 			}
 		}
 	}
