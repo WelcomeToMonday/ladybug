@@ -286,6 +286,9 @@ namespace Ladybug
 		/// <summary>
 		/// Run when the Scene is unloaded
 		/// </summary>
+		/// <remarks>
+		/// To unload the scene, use <see cref="UnloadScene"/> instead
+		/// </remarks>
 		protected virtual void Unload() { }
 
 		/// <summary>
@@ -306,6 +309,9 @@ namespace Ladybug
 		/// <summary>
 		/// Run when the Scene is paused
 		/// </summary>
+		/// <remarks>
+		/// To pause the scene, use <see cref="PauseScene"/> instead
+		/// </remarks>
 		protected virtual void Pause() { }
 
 		/// <summary>
@@ -329,6 +335,9 @@ namespace Ladybug
 		/// <summary>
 		/// Run when the Scene is unpaused
 		/// </summary>
+		/// <remarks>
+		/// To unpause the scene, use <see cref="UnpauseScene"/> instead
+		/// </remarks>
 		protected virtual void Unpause() { }
 
 		/// <summary>
@@ -349,6 +358,9 @@ namespace Ladybug
 		/// <summary>
 		/// Run when the scene is suspended
 		/// </summary>
+		/// <remarks>
+		/// To suspend the scene, use <see cref="SuspendScene"/> instead
+		/// </remarks>
 		protected virtual void Suspend() { }
 
 		/// <summary>
@@ -372,16 +384,25 @@ namespace Ladybug
 		/// <summary>
 		/// Run when the scene is unsuspended
 		/// </summary>
+		/// <remarks>
+		/// To unsuspend the scene, use <see cref="UnsuspendScene"/> instead
+		/// </remarks>
 		protected virtual void Unsuspend() { }
 
 		/// <summary>
 		/// Run when the scene is paused or suspended
 		/// </summary>
+		/// <remarks>
+		/// To stop the scene, use <see cref="PauseScene"/> or <see cref="SuspendScene"/> instead
+		/// </remarks>
 		protected virtual void Stop() { }
 
 		/// <summary>
 		/// Run when the scene is unpaused or unsuspended
 		/// </summary>
+		/// <remarks>
+		/// To resum the scene, use <see cref="UnpauseScene"/> or <see cref="UnsuspendScene"/> instead
+		/// </remarks>
 		protected virtual void Resume() { }
 	}
 }
