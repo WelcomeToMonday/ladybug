@@ -59,7 +59,7 @@ namespace Ladybug.UI
 		{
 			Children = _children.AsReadOnly();
 		}
-		
+
 		#region Properties
 		/// <summary>
 		/// Reference to the managing UI's ResourceCatalog
@@ -113,6 +113,42 @@ namespace Ladybug.UI
 		/// Whether the Control currently has focus
 		/// </summary>
 		public bool HasFocus => UI?.FocusedControl == this;
+
+		/// <summary>
+		/// Whether the Control is currently active
+		/// </summary>
+		/// <value></value>
+		public bool Active
+		{ 
+			get => m_Active; 
+			set
+			{
+				if (m_Active != value)
+				{
+					m_Active = value;
+					_ToggleActive(value);
+				}
+			}
+		}
+		private bool m_Active = true;
+
+		/// <summary>
+		/// Whether the Control is currently visible
+		/// </summary>
+		/// <value></value>
+		public bool Visible 
+		{ 
+			get => m_Visible; 
+			set
+			{
+				if (m_Visible != value)
+				{
+					m_Visible = value;
+					_ToggleVisible(value);
+				}
+			}
+		}
+		private bool m_Visible = true;
 
 		/// <summary>
 		/// Whether to allow the cursor to target controls beneath this Control
@@ -219,7 +255,7 @@ namespace Ladybug.UI
 		/// <param name="width"></param>
 		/// <param name="height"></param>
 		public void SetBounds(int x, int y, int width, int height) => SetBounds(new Rectangle(x, y, width, height));
-		
+
 		/// <summary>
 		/// Sets the Control's Bounds
 		/// </summary>
@@ -256,7 +292,7 @@ namespace Ladybug.UI
 		/// <param name="x"></param>
 		/// <param name="y"></param>
 		public void Move(int x, int y) => SetBounds(Bounds.CopyAtOffset(x, y));
-		
+
 		#endregion // Standard Methods
 
 		#region Virtual Lifecycle Methods
@@ -376,6 +412,26 @@ namespace Ladybug.UI
 		}
 
 		/// <summary>
+		/// Called when this Control's <see cref="Visible"/> property is changed
+		/// </summary>
+		/// <param name="value"></param>
+		protected virtual void ToggleVisible(bool value) {}
+		internal void _ToggleVisible(bool value)
+		{
+			ToggleVisible(value);
+		}
+
+		/// <summary>
+		/// Called when this Control's <see cref="Active"/> property is changed
+		/// </summary>
+		/// <param name="value"></param>
+		protected virtual void ToggleActive(bool value) {}
+		internal void _ToggleActive(bool value)
+		{
+			ToggleActive(value);
+		}
+
+		/// <summary>
 		/// Called when this Control is updated each frame
 		/// </summary>
 		protected virtual void Update() { }
@@ -388,13 +444,18 @@ namespace Ladybug.UI
 				_CursorEnter();
 				ContainsCursor = true;
 			}
-			else if (!_containsCursor && ContainsCursor)
+			else if (
+				(!_containsCursor && ContainsCursor) ||  // used to contain cursor
+				(ContainsCursor && (!Active || !Visible))// contains cursor, but was set not visible/active
+				)
 			{
 				_CursorLeave();
 				ContainsCursor = false;
 			}
-
-			Update();
+			if (Active)
+			{
+				Update();
+			}
 		}
 
 		/// <summary>
@@ -404,7 +465,10 @@ namespace Ladybug.UI
 		protected virtual void Draw(SpriteBatch spriteBatch) { }
 		internal void _Draw(SpriteBatch spriteBatch)
 		{
-			Draw(spriteBatch);
+			if (Visible)
+			{
+				Draw(spriteBatch);
+			}
 		}
 		#endregion // Virtual Lifecycle Methods
 	}

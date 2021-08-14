@@ -22,6 +22,8 @@ namespace Ladybug.UI
 		private Action _onCursorEnter = () => { };
 		private Action _onCursorLeave = () => { };
 		private Action<Rectangle, Rectangle> _onUpdateBounds = (Rectangle oldBounds, Rectangle newBounds) => { };
+		private Action<bool> _onToggleVisible = (bool value) => { };
+		private Action<bool> _onToggleActive = (bool value) => { };
 		private Action _onUpdate = () => { };
 		private Action<SpriteBatch> _onDraw = (SpriteBatch spriteBatch) => { };
 
@@ -134,6 +136,36 @@ namespace Ladybug.UI
 			return this;
 		}
 		protected override void UpdateBounds(Rectangle oldBounds, Rectangle newBounds) => _onUpdateBounds(oldBounds, newBounds);
+
+		/// <summary>
+		/// Action run when this Control's <see cref="Control.Visible"/> property is updated
+		/// </summary>
+		/// <param name="action"></param>
+		/// <returns></returns>
+		public ComposedControl OnToggleVisible(Action<bool> action)
+		{
+			_onToggleVisible = action;
+			return this;
+		}
+		protected override void ToggleVisible(bool value)
+		{
+			_onToggleVisible(value);
+		}
+
+		/// <summary>
+		/// Action run when this Control's <see cref="Control.Active"/> property is updated
+		/// </summary>
+		/// <param name="action"></param>
+		/// <returns></returns>
+		public ComposedControl OnToggleActive(Action<bool> action)
+		{
+			_onToggleActive = action;
+			return this;
+		}
+		protected override void ToggleActive(bool value)
+		{
+			_onToggleActive(value);
+		}
 
 		/// <summary>
 		/// Action run when this Control is updated each frame

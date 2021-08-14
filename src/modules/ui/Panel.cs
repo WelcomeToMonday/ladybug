@@ -127,6 +127,30 @@ namespace Ladybug.UI
 		}
 
 		/// <summary>
+		/// Called when the Panel's <see cref="Control.Active"/> property is updated
+		/// </summary>
+		/// <param name="value"></param>
+		protected override void ToggleActive(bool value)
+		{
+			foreach (var control in Children)
+			{
+				control.Active = value;
+			}
+		}
+
+		/// <summary>
+		/// Called when the Panel's <see cref="Control.Visible"/> property is updated
+		/// </summary>
+		/// <param name="value"></param>
+		protected override void ToggleVisible(bool value)
+		{
+			foreach (var control in Children)
+			{
+				control.Visible = value;
+			}
+		}
+
+		/// <summary>
 		/// Called when the Panel is drawn
 		/// </summary>
 		/// <param name="spriteBatch"></param>

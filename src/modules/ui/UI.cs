@@ -174,6 +174,12 @@ namespace Ladybug.UI
 			for (var i = 0; i < _controlsByPriority.Count; i++)
 			{
 				var control = _controlsByPriority[i];
+
+				if (!control.Active || !control.Visible)
+				{
+					continue;
+				}
+
 				if (control.Bounds.Contains(GetCursorPosition()))
 				{
 					TargetedControl = control;
@@ -201,6 +207,11 @@ namespace Ladybug.UI
 		/// </summary>
 		public new void Update()
 		{
+			if (!Active)
+			{
+				return;
+			}
+
 			CheckInput();
 			_Update();
 			for (var i = 0; i < Children.Count; i++)
@@ -215,6 +226,11 @@ namespace Ladybug.UI
 		/// <param name="spriteBatch"></param>
 		public new void Draw(SpriteBatch spriteBatch)
 		{
+			if (!Visible)
+			{
+				return;
+			}
+
 			if (_sortRequired)
 			{
 				_controlsByPriority.Sort((Control x, Control y) =>
