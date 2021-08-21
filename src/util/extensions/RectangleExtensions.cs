@@ -12,6 +12,10 @@ namespace Ladybug
 		/// </summary>
 		TopLeft,
 		/// <summary>
+		/// Center of top edge
+		/// </summary>
+		TopCenter,
+		/// <summary>
 		/// Top-right corner
 		/// </summary>
 		TopRight,
@@ -20,13 +24,25 @@ namespace Ladybug
 		/// </summary>
 		BottomLeft,
 		/// <summary>
+		/// Center of bottom edge
+		/// </summary>
+		BottomCenter,
+		/// <summary>
 		/// Bottom-right corner
 		/// </summary> 
 		BottomRight,
 		/// <summary>
 		/// Center
 		/// </summary>
-		Center
+		Center,
+		/// <summary>
+		/// Center of left edge
+		/// </summary>
+		LeftCenter,
+		/// <summary>
+		/// Center of right edge
+		/// </summary>
+		RightCenter
 	}
 
 	/// <summary>
@@ -57,6 +73,10 @@ namespace Ladybug
 					x = (int)(position.X - r.Width);
 					y = (int)position.Y;
 					break;
+				case BoxHandle.TopCenter:
+					x = (int)(position.X) - (r.Width / 2);
+					y = (int)position.Y;
+					break;
 				case BoxHandle.BottomLeft:
 					x = (int)(position.X);
 					y = (int)(position.Y - r.Height);
@@ -65,8 +85,20 @@ namespace Ladybug
 					x = (int)(position.X - r.Width);
 					y = (int)(position.Y - r.Height);
 					break;
+				case BoxHandle.BottomCenter:
+					x = (int)(position.X) - (r.Width / 2);
+					y = (int)(position.Y - r.Height);
+					break;
 				case BoxHandle.Center:
 					x = (int)(position.X) - (r.Width / 2);
+					y = (int)(position.Y) - (r.Height / 2);
+					break;
+				case BoxHandle.LeftCenter:
+					x = (int)(position.X);
+					y = (int)(position.Y) - (r.Height / 2);
+					break;
+				case BoxHandle.RightCenter:
+					x = (int)(position.X - r.Width);
 					y = (int)(position.Y) - (r.Height / 2);
 					break;
 			}
@@ -151,6 +183,12 @@ namespace Ladybug
 						(int)r.Y
 					);
 					break;
+				case BoxHandle.TopCenter:
+					res = new Vector2(
+						(int)(r.X + (r.Width / 2)),
+						(int)r.Y
+					);
+					break;
 				case BoxHandle.BottomLeft:
 					res = new Vector2(
 						(int)r.X,
@@ -163,9 +201,27 @@ namespace Ladybug
 						(int)r.Y + r.Height
 					);
 					break;
+				case BoxHandle.BottomCenter:
+					res = new Vector2(
+						(int)(r.X + (r.Width / 2)),
+						(int)r.Y + r.Height
+					);
+					break;
 				case BoxHandle.Center:
 					res = new Vector2(
 						(int)(r.X + (r.Width / 2)),
+						(int)(r.Y + (r.Height / 2))
+					);
+					break;
+				case BoxHandle.LeftCenter:
+					res = new Vector2(
+						(int)r.X,
+						(int)(r.Y + (r.Height / 2))
+					);
+					break;
+				case BoxHandle.RightCenter:
+					res = new Vector2(
+						(int)(int)r.X + r.Width,
 						(int)(r.Y + (r.Height / 2))
 					);
 					break;

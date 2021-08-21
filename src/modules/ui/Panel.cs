@@ -23,7 +23,7 @@ namespace Ladybug.UI
 	/// <remarks>
 	/// Panels specialize in containing child Controls, and update the position of child controls relative to the Panel's bounds.
 	/// </remarks>
-	public class Panel : Control
+	public class Panel : ControlContainer
 	{
 		/// <summary>
 		/// Type of background texture used by this Panel
@@ -82,8 +82,25 @@ namespace Ladybug.UI
 			_generatedBackground :
 			m_BackgroundTexture;
 
+		/// <summary>
+		/// Panel's contents' vertical alignment
+		/// </summary>
+		/// <value></value>
+		public VerticalAlignment VerticalAlignment {get; set;} = VerticalAlignment.Center;
+
+		/// <summary>
+		/// Panel's contents' horizontal alignment
+		/// </summary>
+		/// <value></value>
+		public HorizontalAlignment HorizontalAlignment {get; set;} = HorizontalAlignment.Center;
+
 		private void BuildBackground()
 		{
+			if (BackgroundTexture == null)
+			{
+				return;
+			}
+
 			ThreadManager.QueueAction(() =>
 			{
 				_generatedBackground = Sprite.GetTextureFromMap(BackgroundTexture, new Vector2(Bounds.Width, Bounds.Height), Game.GraphicsDevice);
@@ -120,7 +137,7 @@ namespace Ladybug.UI
 		protected override void UpdateBounds(Rectangle oldBounds, Rectangle newBounds)
 		{
 			Vector2 diff = newBounds.Location.ToVector2() - oldBounds.Location.ToVector2();
-			foreach (var child in Children)
+			foreach (var child in Controls)
 			{
 				child.Move(diff);
 			}
@@ -132,7 +149,7 @@ namespace Ladybug.UI
 		/// <param name="value"></param>
 		protected override void ToggleActive(bool value)
 		{
-			foreach (var control in Children)
+			foreach (var control in Controls)
 			{
 				control.Active = value;
 			}
@@ -144,7 +161,7 @@ namespace Ladybug.UI
 		/// <param name="value"></param>
 		protected override void ToggleVisible(bool value)
 		{
-			foreach (var control in Children)
+			foreach (var control in Controls)
 			{
 				control.Visible = value;
 			}
@@ -154,16 +171,20 @@ namespace Ladybug.UI
 		/// Called when the Panel is drawn
 		/// </summary>
 		/// <param name="spriteBatch"></param>
-		protected override void Draw(SpriteBatch spriteBatch)
+		public override void Draw(SpriteBatch spriteBatch)
 		{
-			if (Background != null)
+			if (Visible)
 			{
-				spriteBatch.Draw(
-					Background,
-					Bounds,
-					null,
-					Color.White
-				);
+				if (Background != null)
+				{
+					spriteBatch.Draw(
+						Background,
+						Bounds,
+						null,
+						Color.White
+					);
+				}
+				base.Draw(spriteBatch);
 			}
 		}
 	}

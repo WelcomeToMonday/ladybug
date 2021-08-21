@@ -49,7 +49,6 @@ namespace Ladybug.UI
 
 		#region Fields
 		private int _zIndex = 0;
-		private List<Control> _children = new List<Control>();
 		#endregion // Fields
 
 		/// <summary>
@@ -57,7 +56,7 @@ namespace Ladybug.UI
 		/// </summary>
 		public Control()
 		{
-			Children = _children.AsReadOnly();
+			//	Children = _children.AsReadOnly();
 		}
 
 		#region Properties
@@ -65,15 +64,6 @@ namespace Ladybug.UI
 		/// Reference to the managing UI's ResourceCatalog
 		/// </summary>
 		public ResourceCatalog ResourceCatalog => UI?.ResourceCatalog;
-
-		/// <summary>
-		/// Access one of this Control's children by name
-		/// </summary>
-		/// <value></value>
-		public Control this[string name]
-		{
-			get => _children.Where(c => c.Name == name).FirstOrDefault();
-		}
 
 		/// <summary>
 		/// Name of this Control
@@ -85,13 +75,7 @@ namespace Ladybug.UI
 		/// This Control's parent Control
 		/// </summary>
 		/// <value></value>
-		public Control Parent { get; private set; }
-
-		/// <summary>
-		/// This Control's Children
-		/// </summary>
-		/// <value></value>
-		public IList<Control> Children { get; private set; }
+		public IControlContainer Parent { get; private set; }
 
 		/// <summary>
 		/// This Control's managing UI
@@ -119,8 +103,8 @@ namespace Ladybug.UI
 		/// </summary>
 		/// <value></value>
 		public bool Active
-		{ 
-			get => m_Active; 
+		{
+			get => m_Active;
 			set
 			{
 				if (m_Active != value)
@@ -136,9 +120,9 @@ namespace Ladybug.UI
 		/// Whether the Control is currently visible
 		/// </summary>
 		/// <value></value>
-		public bool Visible 
-		{ 
-			get => m_Visible; 
+		public bool Visible
+		{
+			get => m_Visible;
 			set
 			{
 				if (m_Visible != value)
@@ -198,54 +182,6 @@ namespace Ladybug.UI
 		/// </summary>
 		/// <returns></returns>
 		public static ComposedControl Compose() => new ComposedControl();
-
-		/// <summary>
-		/// Adds a new child Control of type T to this Control
-		/// </summary>
-		/// <param name="name">Name of the new Control</param>
-		/// <typeparam name="T">Type of the new Control</typeparam>
-		/// <returns>Reference to the current Control</returns>
-		public Control AddControl<T>(string name = null) where T : Control, new() => AddControl<T>(name, out T control);
-
-		/// <summary>
-		/// Adds a new child Control of type T to this Control
-		/// </summary>
-		/// <param name="control">Reference to the new Control</param>
-		/// <typeparam name="T">Type of the new Control</typeparam>
-		/// <returns>Reference to the current Control</returns>
-		public Control AddControl<T>(out T control) where T : Control, new() => AddControl<T>(null, out control);
-
-		/// <summary>
-		/// Adds a new child Control of type T to this Control
-		/// </summary>
-		/// <param name="name">Name of the new Control</param>
-		/// <param name="control">Reference to the new Control</param>
-		/// <typeparam name="T">Type of the new Control</typeparam>
-		/// <returns>Reference to the current Control</returns>
-		public Control AddControl<T>(string name, out T control) where T : Control, new()
-		{
-			control = new T();
-
-			if (name != null && name != string.Empty)
-			{
-				control.Name = name;
-			}
-			_AddChild(control);
-			control._Attach(this);
-			return this;
-		}
-
-		/// <summary>
-		/// Adds an existing Control as a child of this Control
-		/// </summary>
-		/// <param name="control">Control to add as a child of this Control</param>
-		/// <returns>Reference to the current Control</returns>
-		public Control AddControl(Control control)
-		{
-			_AddChild(control);
-			control._Attach(this);
-			return this;
-		}
 
 		/// <summary>
 		/// Sets the Control's Bounds
@@ -313,29 +249,15 @@ namespace Ladybug.UI
 		/// Called when the Control is attached to a parent control
 		/// </summary>
 		/// <param name="parentControl"></param>
-		protected virtual void Attach(Control parentControl) { }
-		internal void _Attach(Control parentControl)
+		protected virtual void Attach(IControlContainer parentControl) { }
+		internal void _Attach(IControlContainer parentControl)
 		{
 			Parent = parentControl;
 			UI = parentControl.UI;
 			UI.RegisterControl(this);
-			ZIndex = parentControl.ZIndex + 1;
+			//ZIndex = parentControl.ZIndex + 1; // todo: set zindex in AddChild instead
 			Attach(parentControl);
 			_Initialize();
-		}
-
-		/// <summary>
-		/// Called when a child control is attached to this Control
-		/// </summary>
-		/// <param name="childControl"></param>
-		protected virtual void AddChild(Control childControl) { }
-		internal void _AddChild(Control childControl)
-		{
-			if (!_children.Contains(childControl))
-			{
-				_children.Add(childControl);
-				AddChild(childControl);
-			}
 		}
 
 		/// <summary>
@@ -415,7 +337,7 @@ namespace Ladybug.UI
 		/// Called when this Control's <see cref="Visible"/> property is changed
 		/// </summary>
 		/// <param name="value"></param>
-		protected virtual void ToggleVisible(bool value) {}
+		protected virtual void ToggleVisible(bool value) { }
 		internal void _ToggleVisible(bool value)
 		{
 			ToggleVisible(value);
@@ -425,7 +347,7 @@ namespace Ladybug.UI
 		/// Called when this Control's <see cref="Active"/> property is changed
 		/// </summary>
 		/// <param name="value"></param>
-		protected virtual void ToggleActive(bool value) {}
+		protected virtual void ToggleActive(bool value) { }
 		internal void _ToggleActive(bool value)
 		{
 			ToggleActive(value);
@@ -434,8 +356,7 @@ namespace Ladybug.UI
 		/// <summary>
 		/// Called when this Control is updated each frame
 		/// </summary>
-		protected virtual void Update() { }
-		internal void _Update()
+		public virtual void Update()
 		{
 			var _containsCursor = Bounds.Contains(UI.GetCursorPosition());
 
@@ -452,24 +373,13 @@ namespace Ladybug.UI
 				_CursorLeave();
 				ContainsCursor = false;
 			}
-			if (Active)
-			{
-				Update();
-			}
 		}
 
 		/// <summary>
 		/// Called when this Control is drawn
 		/// </summary>
 		/// <param name="spriteBatch"></param>
-		protected virtual void Draw(SpriteBatch spriteBatch) { }
-		internal void _Draw(SpriteBatch spriteBatch)
-		{
-			if (Visible)
-			{
-				Draw(spriteBatch);
-			}
-		}
+		public virtual void Draw(SpriteBatch spriteBatch) { }
 		#endregion // Virtual Lifecycle Methods
 	}
 }

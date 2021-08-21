@@ -101,6 +101,11 @@ namespace Ladybug.Graphics
 		/// <returns></returns>
 		public static Texture2D GetTextureFromMap(Texture2D sourceMap, Vector2 spriteDimensions, GraphicsDevice graphicsDevice, int? cellSideLength = null)
 		{
+			if (sourceMap == null || spriteDimensions.X == 0 || spriteDimensions.Y == 0)
+			{
+				return null;
+			}
+
 			int sideLength = (cellSideLength == null) ? (int)(sourceMap.Bounds.Width / 3) : (int)cellSideLength;
 
 			// Create component sprites

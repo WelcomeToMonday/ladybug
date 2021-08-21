@@ -14,8 +14,7 @@ namespace Ladybug.UI
 	public sealed class ComposedControl : Control
 	{
 		private Action _onInitialize = () => { };
-		private Action<Control> _onAttach = (Control parentControl) => { };
-		private Action<Control> _onAddChild = (Control childControl) => { };
+		private Action<IControlContainer> _onAttach = (IControlContainer parentControl) => { };
 		private Action<InputState> _onClick = (InputState state) => { };
 		private Action _onFocus = () => { };
 		private Action _onUnfocus = () => { };
@@ -46,24 +45,12 @@ namespace Ladybug.UI
 		/// </summary>
 		/// <param name="action"></param>
 		/// <returns></returns>
-		public ComposedControl OnAttach(Action<Control> action)
+		public ComposedControl OnAttach(Action<IControlContainer> action)
 		{
 			_onAttach = action;
 			return this;
 		}
-		protected override void Attach(Control parentControl) => _onAttach(parentControl);
-
-		/// <summary>
-		/// Action run when a child control is attached to this Control
-		/// </summary>
-		/// <param name="action"></param>
-		/// <returns></returns>
-		public ComposedControl OnAddChild(Action<Control> action)
-		{
-			_onAddChild = action;
-			return this;
-		}
-		protected override void AddChild(Control childControl) => _onAddChild(childControl);
+		protected override void Attach(IControlContainer parentControl) => _onAttach(parentControl);
 
 		/// <summary>
 		/// Action run when this Control is clicked
@@ -177,7 +164,7 @@ namespace Ladybug.UI
 			_onUpdate = action;
 			return this;
 		}
-		protected override void Update() => _onUpdate();
+		public override void Update() => _onUpdate();
 
 		/// <summary>
 		/// Action run when this Control is drawn
@@ -189,7 +176,7 @@ namespace Ladybug.UI
 			_onDraw = action;
 			return this;
 		}
-		protected override void Draw(SpriteBatch spriteBatch) => _onDraw(spriteBatch);
+		public override void Draw(SpriteBatch spriteBatch) => _onDraw(spriteBatch);
 	}
 }
 #pragma warning restore 1591

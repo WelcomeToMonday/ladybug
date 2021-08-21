@@ -1,3 +1,5 @@
+#pragma warning disable 1591 // Hide XMLdoc warnings.
+
 namespace Ladybug.UI
 {
 	/// <summary>
@@ -14,4 +16,25 @@ namespace Ladybug.UI
 		/// </summary>
 		Map
 	};
+
+	public enum VerticalAlignment
+	{
+		Top,
+		Center,
+		Bottom,
+	}
+
+	public enum HorizontalAlignment
+	{
+		Left,
+		Center,
+		Right
+	}
+
+	public enum Orientation
+	{
+		Vertical,
+		Horizontal
+	}
 }
+#pragma warning restore 1591

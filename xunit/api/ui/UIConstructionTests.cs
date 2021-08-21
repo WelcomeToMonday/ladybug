@@ -18,14 +18,18 @@ namespace Ladybug.Tests.UI
 				var scene = Scene.Compose();
 				game.LoadScene(scene);
 
-				var ui = new GUI.UI(scene)
-					.AddControl<Panel>("root", out Panel rootPanel);
+				var ui = new GUI.UI(scene);
+
+				ui.AddControl<Panel>("root", out Panel rootPanel);
 
 				rootPanel.AddControl<Panel>("child");
 
-				var childPanel = ui["root"]["child"] as Panel;
+				var childPanel = ui["child"] as Panel;
+				var childPanel2 = rootPanel["child"];
 
 				Assert.NotNull(childPanel);
+				Assert.NotNull(childPanel2);
+				Assert.Equal(childPanel, childPanel2);
 			}
 		}
 

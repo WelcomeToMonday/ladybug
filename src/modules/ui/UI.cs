@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,11 +28,9 @@ namespace Ladybug.UI
 	/// <summary>
 	/// Ladybug root UI manager
 	/// </summary>
-	public class UI : Control
+	public class UI : ControlContainer
 	{
-		private List<Control> _controls = new List<Control>();
-
-		private List<Control> _controlsByPriority = new List<Control>();
+		private List<Control> _allControls = new List<Control>();
 
 		private bool _sortRequired = false;
 
@@ -45,11 +44,10 @@ namespace Ladybug.UI
 			UI = this;
 			Scene = scene;
 			ResourceCatalog = Scene.ResourceCatalog;
-			Controls = _controls.AsReadOnly();
+			AllControls = _allControls.AsReadOnly();
 			ZIndex = -1;
 
 			BlockCursor = false;
-
 			_Initialize();
 		}
 
@@ -66,7 +64,7 @@ namespace Ladybug.UI
 		/// <summary>
 		/// List of Controls managed by this UI
 		/// </summary>
-		public IList<Control> Controls { get; private set; }
+		public IList<Control> AllControls { get; private set; }
 
 		/// <summary>
 		/// Scene that is managing this UI
@@ -82,6 +80,15 @@ namespace Ladybug.UI
 		/// This UI's resident ResourceCatalog
 		/// </summary>
 		public new ResourceCatalog ResourceCatalog { get; set; }
+
+		/// <summary>
+		/// Locates a Control managed by this UI by name
+		/// </summary>
+		/// <param name="name"></param>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
+		public override T FindControl<T>(string name)
+		=> AllControls.OfType<T>().Where(control => control.Name == name).FirstOrDefault();
 
 		/// <summary>
 		/// Request the UI update the order of managed controls.
@@ -105,18 +112,6 @@ namespace Ladybug.UI
 
 			return res;
 		}
-		/*
-		/// <summary>
-		/// Called when a Control is attached to this UI
-		/// </summary>
-		/// <param name="control"></param>
-		protected override void AddChild(Control control)
-		{
-			_controls.Add(control);
-			_controlsByPriority.Add(control);
-			RequestSort();
-		}
-		*/
 
 		/// <summary>
 		/// Registers a Control to be managed by this UI
@@ -124,13 +119,11 @@ namespace Ladybug.UI
 		/// <param name="control"></param>
 		public void RegisterControl(Control control)
 		{
-			if (_controls.Contains(control))
+			if (_allControls.Contains(control))
 			{
 				return;
 			}
-
-			_controls.Add(control);
-			_controlsByPriority.Add(control);
+			_allControls.Add(control);
 			RequestSort();
 		}
 
@@ -171,9 +164,9 @@ namespace Ladybug.UI
 		{
 			TargetedControl = null;
 
-			for (var i = 0; i < _controlsByPriority.Count; i++)
+			for (var i = 0; i < AllControls.Count; i++)
 			{
-				var control = _controlsByPriority[i];
+				var control = AllControls[i];
 
 				if (!control.Active || !control.Visible)
 				{
@@ -203,51 +196,43 @@ namespace Ladybug.UI
 		}
 
 		/// <summary>
-		/// Called when the UI is updated
+		/// Updates the UI and its components each frame
 		/// </summary>
-		public new void Update()
+		public override void Update()
 		{
 			if (!Active)
 			{
 				return;
 			}
 
-			CheckInput();
-			_Update();
-			for (var i = 0; i < Children.Count; i++)
-			{
-				Controls[i]._Update();
-			}
-		}
-
-		/// <summary>
-		/// Called when the UI is drawn
-		/// </summary>
-		/// <param name="spriteBatch"></param>
-		public new void Draw(SpriteBatch spriteBatch)
-		{
-			if (!Visible)
-			{
-				return;
-			}
-
 			if (_sortRequired)
 			{
-				_controlsByPriority.Sort((Control x, Control y) =>
+				_allControls.Sort((Control x, Control y) =>
 				{
 					var res = 0;
 					if (x.ZIndex > y.ZIndex) res = 1; //todo: verify correct </> values
 					if (x.ZIndex < y.ZIndex) res = -1;
 					return res;
 				});
+				_sortRequired = false;
 			}
 
-			_Draw(spriteBatch);
+			CheckInput();
+			base.Update();
+		}
 
-			for (var i = 0; i < Controls.Count; i++)
+		/// <summary>
+		/// Draws the UI and its components each frame
+		/// </summary>
+		/// <param name="spriteBatch"></param>
+		public override void Draw(SpriteBatch spriteBatch)
+		{
+			if (!Visible)
 			{
-				Controls[i]._Draw(spriteBatch);
+				return;
 			}
+
+			base.Draw(spriteBatch);
 		}
 	}
 }

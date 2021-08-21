@@ -68,7 +68,7 @@ namespace Ladybug.UI
 		private SpriteFont m_Font;
 
 		/// <summary>
-		/// Called when the button is initialized
+		/// Called when the label is initialized
 		/// </summary>
 		protected override void Initialize()
 		{
@@ -112,7 +112,7 @@ namespace Ladybug.UI
 		/// Called when the Label is drawn
 		/// </summary>
 		/// <param name="spriteBatch"></param>
-		protected override void Draw(SpriteBatch spriteBatch)
+		public override void Draw(SpriteBatch spriteBatch)
 		{
 			_textSprite.Draw(spriteBatch);
 		}
