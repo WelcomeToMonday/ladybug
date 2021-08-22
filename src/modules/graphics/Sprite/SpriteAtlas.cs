@@ -16,7 +16,7 @@ namespace Ladybug.Graphics
 		private int _rows;
 		private int _cols;
 
-		private Dictionary<Vector2, Sprite> _sprites;
+		private Dictionary<Vector2, Sprite> _sprites = new Dictionary<Vector2, Sprite>();
 
 		private Dictionary<string, Vector2> _tags;
 

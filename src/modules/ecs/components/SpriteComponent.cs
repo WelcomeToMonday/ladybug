@@ -113,12 +113,15 @@ namespace Ladybug.ECS.Components
 			if (Sprite != null && Visible)
 			{
 				var frame = Sprite.GetCurrentFrame;
-				spriteBatch.Draw(
-					frame.Texture,
-					Entity.Transform.Bounds,
-					frame.Frame,
-					Color
-				);
+				if (frame != null)
+				{
+					spriteBatch.Draw(
+						frame.Texture,
+						Entity.Transform.Bounds,
+						frame.Frame,
+						Color
+					);
+				}
 			}
 		}
 	}

@@ -210,7 +210,7 @@ namespace Ladybug.UI
 				_allControls.Sort((Control x, Control y) =>
 				{
 					var res = 0;
-					if (x.ZIndex < y.ZIndex) res = 1; //todo: verify correct </> values
+					if (x.ZIndex < y.ZIndex) res = 1;
 					if (x.ZIndex > y.ZIndex) res = -1;
 					return res;
 				});

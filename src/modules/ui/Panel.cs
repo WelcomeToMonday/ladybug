@@ -82,18 +82,6 @@ namespace Ladybug.UI
 			_generatedBackground :
 			m_BackgroundTexture;
 
-		/// <summary>
-		/// Panel's contents' vertical alignment
-		/// </summary>
-		/// <value></value>
-		public VerticalAlignment VerticalAlignment {get; set;} = VerticalAlignment.Center;
-
-		/// <summary>
-		/// Panel's contents' horizontal alignment
-		/// </summary>
-		/// <value></value>
-		public HorizontalAlignment HorizontalAlignment {get; set;} = HorizontalAlignment.Center;
-
 		private void BuildBackground()
 		{
 			if (BackgroundTexture == null)

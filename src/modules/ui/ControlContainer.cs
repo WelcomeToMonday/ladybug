@@ -75,8 +75,8 @@ namespace Ladybug.UI
 			{
 				control.Name = name;
 			}
-			_AddChild(control);
 			control._Attach(this);
+			_AddChild(control);
 			return this;
 		}
 
@@ -87,8 +87,8 @@ namespace Ladybug.UI
 		/// <returns>Reference to the current Control</returns>
 		public ControlContainer AddControl(Control control)
 		{
-			_AddChild(control);
 			control._Attach(this);
+			_AddChild(control);
 			return this;
 		}
 

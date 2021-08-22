@@ -100,8 +100,8 @@ namespace Ladybug.Graphics
 		
 		private void BuildFrames(SpriteAtlas sourceAtlas, int startFrame, int endFrame)
 		{
-			_frames = new Sprite[endFrame - startFrame];
-			for (var i = 0; i < endFrame - startFrame; i++)
+			_frames = new Sprite[(endFrame - startFrame) + 1];
+			for (var i = 0; i < (endFrame - startFrame) + 1; i++)
 			{
 				_frames[i] = sourceAtlas[startFrame + i];
 			}

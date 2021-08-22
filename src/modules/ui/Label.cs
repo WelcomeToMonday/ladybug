@@ -70,7 +70,8 @@ namespace Ladybug.UI
 		/// <summary>
 		/// Called when the label is initialized
 		/// </summary>
-		protected override void Initialize()
+		//protected override void Initialize()
+		protected override void Attach(IControlContainer parentControl)
 		{
 			if (ResourceCatalog.TryGetResource<SpriteFont>(UIResources.DefaultFont, out SpriteFont uiDefaultFont))
 			{

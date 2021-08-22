@@ -90,7 +90,7 @@ namespace Ladybug.UI
 		/// <param name="newBounds"></param>
 		protected override void UpdateBounds(Rectangle oldBounds, Rectangle newBounds)
 		{
-			_label.SetBounds(_label.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.Center), BoxHandle.Center));
+			_label?.SetBounds(_label.Bounds.CopyAtPosition(Bounds.GetHandlePosition(BoxHandle.Center), BoxHandle.Center));
 		}
 	}
 }
