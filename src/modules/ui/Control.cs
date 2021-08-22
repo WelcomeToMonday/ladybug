@@ -254,8 +254,8 @@ namespace Ladybug.UI
 		{
 			Parent = parentControl;
 			UI = parentControl.UI;
+			ZIndex = parentControl.ZIndex + 1;
 			UI.RegisterControl(this);
-			//ZIndex = parentControl.ZIndex + 1; // todo: set zindex in AddChild instead
 			Attach(parentControl);
 			_Initialize();
 		}

@@ -18,5 +18,11 @@ namespace Ladybug.UI
 		/// </summary>
 		/// <value></value>
 		IList<Control> Controls { get; }
+		
+		/// <summary>
+		/// Z-Index depth of control
+		/// </summary>
+		/// <value></value>
+		int ZIndex { get; }
 	}
 }

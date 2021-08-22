@@ -75,6 +75,7 @@ namespace Ladybug.UI
 			}
 
 			AddControl<Label>(out _label);
+			_label.BlockCursor = false;
 
 			if (ResourceCatalog.TryGetResource<SpriteFont>(ButtonResources.DefaultFont, out SpriteFont defaultFont))
 			{
