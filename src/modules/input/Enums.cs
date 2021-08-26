@@ -1,7 +1,7 @@
 namespace Ladybug.UserInput
 {
 	/// <summary>
-	/// Represents variou states a key can be in at any given time
+	/// Represents various states a key can be in at any given time
 	/// </summary>
 	public enum InputState
 	{
