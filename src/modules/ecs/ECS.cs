@@ -29,6 +29,14 @@ namespace Ladybug.ECS
 			ResourceCatalog = scene.ResourceCatalog;
 		}
 
+		/// <summary>\
+		/// ECS Destructor
+		/// </summary>
+		~ECS()
+		{
+			Unload();
+		}
+
 		/// <summary>
 		/// This ECS's resident <see cref="Ladybug.ResourceCatalog"/>
 		/// </summary>
@@ -280,6 +288,17 @@ namespace Ladybug.ECS
 			});
 
 			return res;
+		}
+
+		/// <summary>
+		/// Unloads the ECS, clearing all of its managed entities and components
+		/// </summary>
+		public void Unload()
+		{
+			foreach (var system in _componentsToSystems.Values)
+			{
+				system.GetMethod("DeregisterAll", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)?.Invoke(null, null);
+			}
 		}
 
 		/// <summary>

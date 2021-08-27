@@ -44,6 +44,11 @@ namespace Ladybug.ECS
 			}
 		}
 
+		public static void DeregisterAll()
+		{
+			_components = new List<T>();
+		}
+
 		/// <summary>
 		/// Update all <see cref="Ladybug.ECS.Component"/>
 		/// instances registered with this ComponentSystem
