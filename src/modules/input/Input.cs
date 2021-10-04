@@ -90,6 +90,32 @@ namespace Ladybug.UserInput
 			}
 		}
 
+		/// <summary>
+		/// Removes keys and buttons bound to the given action
+		/// </summary>
+		/// <param name="name"></param>
+		public static void ClearAction(string name)
+		{
+			if (_keyboardActions.TryGetValue(name, out MGInput.Keys[] keys))
+			{
+				_keyboardActions.Remove(name);
+			}
+
+			if (_gamePadActions.TryGetValue(name, out MGInput.Buttons[] buttons))
+			{
+				_gamePadActions.Remove(name);
+			}
+		}
+
+		/// <summary>
+		/// Removes all defined actions
+		/// </summary>
+		public static void ClearAllActions()
+		{
+			_keyboardActions.Clear();
+			_gamePadActions.Clear();
+		}
+
 		internal static void Begin()
 		{
 			Keyboard.BeginUpdate(MGInput.Keyboard.GetState());
