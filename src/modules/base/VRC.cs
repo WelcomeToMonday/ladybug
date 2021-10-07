@@ -179,7 +179,7 @@ namespace Ladybug
 
 			_onDrawBackground(gameTime, spriteBatch);
 
-			_spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Opaque);
+			_spriteBatch.Begin(sortMode: SpriteSortMode.Immediate, blendState: BlendState.Opaque, samplerState: SamplerState.PointClamp);
 			_spriteBatch.Draw(_renderTarget, Canvas, Color.White);
 			_spriteBatch.End();
 		}
