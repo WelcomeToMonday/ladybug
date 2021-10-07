@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug.TileMap
 {
-	public class TileMap : IXmlSerializable
+	public class TileMap
 	{
 		public enum TileOrientation {ORTHOGRAPHIC, ISOMETRIC}
 
@@ -52,8 +52,6 @@ namespace Ladybug.TileMap
 		public int TileWidth { get; private set; }
 
 		public int TileHeight { get; private set; }
-
-		public List<MapObject> MapObjects { get; protected set; }
 
 		public void ReadXml(XmlReader reader)
 		{
@@ -231,24 +229,6 @@ namespace Ladybug.TileMap
 			//BuildMapTexture(layers, width, height, tileWidth, tileHeight);
 		}
 
-		public List<T> GetMapObjects<T>() where T : MapObject
-		{
-			var list = MapObjects.Where(o => o.GetType() == typeof(T));
-			var newList = new List<T>();
-
-			foreach (var item in list)
-			{
-				newList.Add((T)item);
-			}
-
-			return newList;
-		}
-
-		public List<MapObject> GetMapObjects(string type)
-		{
-			return MapObjects.Where(o => o.Type == type).ToList();
-		}
-
 		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
 		{
 			// to be overridden in derived classes
@@ -257,16 +237,6 @@ namespace Ladybug.TileMap
 		public virtual void HandleMapProperty(string name, string value)
 		{
 			// to be overridden in derived classes
-		}
-
-		public void WriteXml(XmlWriter writer)
-		{
-
-		}
-
-		public System.Xml.Schema.XmlSchema GetSchema()
-		{
-			return null;
 		}
 
 		private Vector2 GetMapBounds()
@@ -293,7 +263,6 @@ namespace Ladybug.TileMap
 			return res;
 		}
 
-		//public void BuildMapTexture(List<TileLayer> layers, int width, int height, int tileWidth, int tileHeight)
 		public void BuildMapTexture()
 		{
 			var mapBounds = GetMapBounds();
