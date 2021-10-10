@@ -56,10 +56,6 @@ namespace Ladybug.TileMap
 		public void ReadXml(XmlReader reader)
 		{
 			List<IDrawableLayer> layers = new List<IDrawableLayer>();
-			int width = 0;
-			int height = 0;
-			int tileWidth = 0;
-			int tileHeight = 0;
 
 			while (reader.Read())
 			{
@@ -69,16 +65,16 @@ namespace Ladybug.TileMap
 					{
 						case "map":
 							reader.MoveToAttribute("width");
-							int.TryParse(reader.Value, out width);
+							if (int.TryParse(reader.Value, out int width)) Width = width;
 
 							reader.MoveToAttribute("height");
-							int.TryParse(reader.Value, out height);
+							if (int.TryParse(reader.Value, out int height)) Height = height;
 
 							reader.MoveToAttribute("tilewidth");
-							int.TryParse(reader.Value, out tileWidth);
+							if (int.TryParse(reader.Value, out int tileWidth)) TileWidth = tileWidth;
 
 							reader.MoveToAttribute("tileheight");
-							int.TryParse(reader.Value, out tileHeight);
+							if (int.TryParse(reader.Value, out int tileHeight)) TileHeight = tileHeight;
 							break;
 
 						case "tileset":
@@ -152,7 +148,8 @@ namespace Ladybug.TileMap
 										{
 											case "data":
 												reader.MoveToContent();
-												layer.SetData(reader.ReadInnerXml(), width, height);
+												//layer.SetData(reader.ReadInnerXml(), width, height);
+												layer.SetData(reader.ReadInnerXml(), Width, Height);
 												break;
 											case "properties":
 												break;
@@ -221,10 +218,12 @@ namespace Ladybug.TileMap
 					}
 				}
 			}
+			/*
 			Width = width;
 			Height = height;
 			TileWidth = tileWidth;
 			TileHeight = tileHeight;
+			*/
 			_layers = layers;
 			//BuildMapTexture(layers, width, height, tileWidth, tileHeight);
 		}
