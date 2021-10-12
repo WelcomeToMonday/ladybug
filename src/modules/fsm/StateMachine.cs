@@ -6,14 +6,18 @@ namespace Ladybug.FSM
 	/// <summary>
 	/// Ladybug Finite State Machine
 	/// </summary>
-	public class StateMachine
+	public class StateMachine<T> where T : State
 	{
 		/// <summary>
 		/// The current <see cref="Ladybug.FSM.State"/> has changed
 		/// </summary>
 		public event EventHandler StateChanged;
 
-		private State _currentState = State.Compose();
+		/// <summary>
+		/// The FSM's current State
+		/// </summary>
+		/// <value></value>
+		protected T CurrentState { get; private set; }
 
 		/// <summary>
 		/// Creates a new StateMachine instance
@@ -27,7 +31,7 @@ namespace Ladybug.FSM
 		/// Creates a new Statemachine Instance
 		/// </summary>
 		/// <param name="initialState">Initial <see cref="Ladybug.FSM.State"/></param>
-		public StateMachine(State initialState)
+		public StateMachine(T initialState)
 		{
 			ChangeState(initialState);
 		}
@@ -36,15 +40,15 @@ namespace Ladybug.FSM
 		/// Changes the active <see cref="Ladybug.FSM.State"/>
 		/// </summary>
 		/// <param name="newState">New <see cref="Ladybug.FSM.State"/></param>
-		public void ChangeState(State newState)
+		public void ChangeState(T newState)
 		{
-			if (_currentState != null)
+			if (CurrentState != null)
 			{
-				_currentState._Exit();
+				CurrentState._Exit();
 			}
 
-			_currentState = newState;
-			_currentState._Enter();
+			CurrentState = newState;
+			CurrentState._Enter();
 			StateChanged?.Invoke(this, new EventArgs());
 		}
 
@@ -54,7 +58,21 @@ namespace Ladybug.FSM
 		/// <param name="gameTime"></param>
 		public void Update(GameTime gameTime)
 		{
-			_currentState?._Update(gameTime);
+			CurrentState?._Update(gameTime);
+		}
+	}
+
+	/// <summary>
+	/// Ladybug Finite State Machine
+	/// </summary>
+	public class StateMachine : StateMachine<State>
+	{
+		/// <summary>
+		/// Creates a new StateMachine instance
+		/// </summary>
+		public StateMachine() : base()
+		{
+			ChangeState(State.Compose());
 		}
 	}
 }
