@@ -20,7 +20,6 @@ namespace Ladybug.TileMap
 
 		private ContentManager _contentManager;
 
-		//private List<TileLayer> _layers;
 		private List<IDrawableLayer> _layers;
 
 		private List<TileSet> _tileSets = new List<TileSet>();
@@ -30,7 +29,6 @@ namespace Ladybug.TileMap
 			_contentManager = contentManager;
 			this.graphicsDevice = graphicsDevice;
 			_filePath = filePath;
-			//var fullFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _contentManager.RootDirectory, filePath);
 			var data = _contentManager.Load<XmlDocument>(filePath);
 
 			using (XmlReader xReader = data.GetReader())
@@ -148,7 +146,6 @@ namespace Ladybug.TileMap
 										{
 											case "data":
 												reader.MoveToContent();
-												//layer.SetData(reader.ReadInnerXml(), width, height);
 												layer.SetData(reader.ReadInnerXml(), Width, Height);
 												break;
 											case "properties":
@@ -207,6 +204,12 @@ namespace Ladybug.TileMap
 												mSubReader.MoveToAttribute("value");
 												var propValue = mSubReader.Value;
 
+												// If the node has inner HTML, this should
+												// replace propValue with the content. Otherwise,
+												// it should leave propValue at its current value (somehow!)
+												mSubReader.ReadInnerXml();
+												propValue = mSubReader.Value;
+
 												props[propName] = propValue;
 												break;
 										}
@@ -218,14 +221,7 @@ namespace Ladybug.TileMap
 					}
 				}
 			}
-			/*
-			Width = width;
-			Height = height;
-			TileWidth = tileWidth;
-			TileHeight = tileHeight;
-			*/
 			_layers = layers;
-			//BuildMapTexture(layers, width, height, tileWidth, tileHeight);
 		}
 
 		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
