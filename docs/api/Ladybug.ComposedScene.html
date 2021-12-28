@@ -1,0 +1,1221 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ComposedScene
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ComposedScene
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../images/icon48.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon48.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Ladybug.ComposedScene">
+  
+  
+  <h1 id="Ladybug_ComposedScene" data-uid="Ladybug.ComposedScene" class="text-break">Class ComposedScene
+  </h1>
+  <div class="markdown level0 summary"><p>An inline-composable Scene</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Ladybug.Scene.html">Scene</a></div>
+    <div class="level2"><span class="xref">ComposedScene</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_LoadContentAsyncStart">Scene.LoadContentAsyncStart</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_LoadContentAsyncComplete">Scene.LoadContentAsyncComplete</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_InitializeAsyncStart">Scene.InitializeAsyncStart</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_InitializeAsyncComplete">Scene.InitializeAsyncComplete</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_LoadContentComplete">Scene.LoadContentComplete</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_InitializeComplete">Scene.InitializeComplete</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Paused">Scene.Paused</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unpaused">Scene.Unpaused</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Suspended">Scene.Suspended</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unsuspended">Scene.Unsuspended</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unloaded">Scene.Unloaded</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Stopped">Scene.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Resumed">Scene.Resumed</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Compose">Scene.Compose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Compose_Ladybug_Game_">Scene.Compose(Game)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Services">Scene.Services</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_SpriteBatch">Scene.SpriteBatch</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_InitializedAsync">Scene.InitializedAsync</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_ContentLoadedAsync">Scene.ContentLoadedAsync</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Initialized">Scene.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_ContentLoaded">Scene.ContentLoaded</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_ResourceCatalog">Scene.ResourceCatalog</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Content">Scene.Content</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Game">Scene.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_State">Scene.State</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_SetGame_Ladybug_Game_">Scene.SetGame(Game)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_SetInputAction_System_String_System_Action_Ladybug_UserInput_InputActionEventArgs__">Scene.SetInputAction(String, Action&lt;InputActionEventArgs&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_UnloadScene">Scene.UnloadScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_PauseScene">Scene.PauseScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_UnpauseScene">Scene.UnpauseScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_SuspendScene">Scene.SuspendScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_UnsuspendScene">Scene.UnsuspendScene()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Ladybug.html">Ladybug</a></h6>
+  <h6><strong>Assembly</strong>: ladybug.dll</h6>
+  <h5 id="Ladybug_ComposedScene_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ComposedScene : Scene</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Draw_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Draw(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L125">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Draw_" data-uid="Ladybug.ComposedScene.Draw*"></a>
+  <h4 id="Ladybug_ComposedScene_Draw_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ComposedScene.Draw(Microsoft.Xna.Framework.GameTime)">Draw(GameTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Draw(GameTime gameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Draw_Microsoft_Xna_Framework_GameTime_">Scene.Draw(GameTime)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L87">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Initialize_" data-uid="Ladybug.ComposedScene.Initialize*"></a>
+  <h4 id="Ladybug_ComposedScene_Initialize" data-uid="Ladybug.ComposedScene.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Initialize()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Initialize">Scene.Initialize()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_InitializeAsync.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.InitializeAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L62">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_InitializeAsync_" data-uid="Ladybug.ComposedScene.InitializeAsync*"></a>
+  <h4 id="Ladybug_ComposedScene_InitializeAsync" data-uid="Ladybug.ComposedScene.InitializeAsync">InitializeAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void InitializeAsync()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_InitializeAsync">Scene.InitializeAsync()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_LoadContent.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.LoadContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L75">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_LoadContent_" data-uid="Ladybug.ComposedScene.LoadContent*"></a>
+  <h4 id="Ladybug_ComposedScene_LoadContent" data-uid="Ladybug.ComposedScene.LoadContent">LoadContent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadContent()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_LoadContent">Scene.LoadContent()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_LoadContentAsync.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.LoadContentAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L49">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_LoadContentAsync_" data-uid="Ladybug.ComposedScene.LoadContentAsync*"></a>
+  <h4 id="Ladybug_ComposedScene_LoadContentAsync" data-uid="Ladybug.ComposedScene.LoadContentAsync">LoadContentAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadContentAsync()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_LoadContentAsync">Scene.LoadContentAsync()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnDraw_System_Action_Microsoft_Xna_Framework_GameTime__.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnDraw(System.Action%7BMicrosoft.Xna.Framework.GameTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L120">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnDraw_" data-uid="Ladybug.ComposedScene.OnDraw*"></a>
+  <h4 id="Ladybug_ComposedScene_OnDraw_System_Action_Microsoft_Xna_Framework_GameTime__" data-uid="Ladybug.ComposedScene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})">OnDraw(Action&lt;GameTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run every frame when
+the Scene Draws to the screen</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnDraw(Action&lt;GameTime&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">Microsoft.Xna.Framework.GameTime</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon drawing the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnInitialize_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnInitialize(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L82">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnInitialize_" data-uid="Ladybug.ComposedScene.OnInitialize*"></a>
+  <h4 id="Ladybug_ComposedScene_OnInitialize_System_Action_" data-uid="Ladybug.ComposedScene.OnInitialize(System.Action)">OnInitialize(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene is initialized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnInitialize(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon initializing the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnInitializeAsync_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnInitializeAsync(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L57">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnInitializeAsync_" data-uid="Ladybug.ComposedScene.OnInitializeAsync*"></a>
+  <h4 id="Ladybug_ComposedScene_OnInitializeAsync_System_Action_" data-uid="Ladybug.ComposedScene.OnInitializeAsync(System.Action)">OnInitializeAsync(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the task that is run when the Scene is initialized
+asynchronously</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnInitializeAsync(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Asycronous action run upon initializing the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnInputAction_System_String_System_Action_Ladybug_UserInput_InputActionEventArgs__.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnInputAction(System.String%2CSystem.Action%7BLadybug.UserInput.InputActionEventArgs%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L108">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnInputAction_" data-uid="Ladybug.ComposedScene.OnInputAction*"></a>
+  <h4 id="Ladybug_ComposedScene_OnInputAction_System_String_System_Action_Ladybug_UserInput_InputActionEventArgs__" data-uid="Ladybug.ComposedScene.OnInputAction(System.String,System.Action{Ladybug.UserInput.InputActionEventArgs})">OnInputAction(String, Action&lt;InputActionEventArgs&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run upon the given input action</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnInputAction(string name, Action&lt;InputActionEventArgs&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Ladybug.UserInput.InputActionEventArgs.html">InputActionEventArgs</a>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnLoadContent_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnLoadContent(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L70">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnLoadContent_" data-uid="Ladybug.ComposedScene.OnLoadContent*"></a>
+  <h4 id="Ladybug_ComposedScene_OnLoadContent_System_Action_" data-uid="Ladybug.ComposedScene.OnLoadContent(System.Action)">OnLoadContent(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene's content is
+loaded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnLoadContent(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon loading the Scene's content</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnLoadContentAsync_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnLoadContentAsync(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L44">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnLoadContentAsync_" data-uid="Ladybug.ComposedScene.OnLoadContentAsync*"></a>
+  <h4 id="Ladybug_ComposedScene_OnLoadContentAsync_System_Action_" data-uid="Ladybug.ComposedScene.OnLoadContentAsync(System.Action)">OnLoadContentAsync(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the task that is run asynchronously when the Scene's
+content is loaded</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnLoadContentAsync(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Asynchronous action run upon loading the Scene's content</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnPause_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnPause(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L145">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnPause_" data-uid="Ladybug.ComposedScene.OnPause*"></a>
+  <h4 id="Ladybug_ComposedScene_OnPause_System_Action_" data-uid="Ladybug.ComposedScene.OnPause(System.Action)">OnPause(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene is paused</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnPause(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon pausing the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnResume_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnResume(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L208">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnResume_" data-uid="Ladybug.ComposedScene.OnResume*"></a>
+  <h4 id="Ladybug_ComposedScene_OnResume_System_Action_" data-uid="Ladybug.ComposedScene.OnResume(System.Action)">OnResume(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene is
+unpaused or unsuspended</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnResume(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnStop_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnStop(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L195">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnStop_" data-uid="Ladybug.ComposedScene.OnStop*"></a>
+  <h4 id="Ladybug_ComposedScene_OnStop_System_Action_" data-uid="Ladybug.ComposedScene.OnStop(System.Action)">OnStop(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that run when the Scene is
+paused or suspended</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnStop(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon pausing or suspending the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnSuspend_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnSuspend(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L169">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnSuspend_" data-uid="Ladybug.ComposedScene.OnSuspend*"></a>
+  <h4 id="Ladybug_ComposedScene_OnSuspend_System_Action_" data-uid="Ladybug.ComposedScene.OnSuspend(System.Action)">OnSuspend(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the scene is suspended</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnSuspend(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon suspending the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnUnload_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnUnload(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L133">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnUnload_" data-uid="Ladybug.ComposedScene.OnUnload*"></a>
+  <h4 id="Ladybug_ComposedScene_OnUnload_System_Action_" data-uid="Ladybug.ComposedScene.OnUnload(System.Action)">OnUnload(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene
+is unloaded</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnUnload(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon unloading the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnUnpause_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnUnpause(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L157">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnUnpause_" data-uid="Ladybug.ComposedScene.OnUnpause*"></a>
+  <h4 id="Ladybug_ComposedScene_OnUnpause_System_Action_" data-uid="Ladybug.ComposedScene.OnUnpause(System.Action)">OnUnpause(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene is unpaused</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnUnpause(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon unpausing the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnUnsuspend_System_Action_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnUnsuspend(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L182">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnUnsuspend_" data-uid="Ladybug.ComposedScene.OnUnsuspend*"></a>
+  <h4 id="Ladybug_ComposedScene_OnUnsuspend_System_Action_" data-uid="Ladybug.ComposedScene.OnUnsuspend(System.Action)">OnUnsuspend(Action)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run when the Scene is
+unsuspended</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnUnsuspend(Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon unsuspending the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.OnUpdate(System.Action%7BMicrosoft.Xna.Framework.GameTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L95">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_OnUpdate_" data-uid="Ladybug.ComposedScene.OnUpdate*"></a>
+  <h4 id="Ladybug_ComposedScene_OnUpdate_System_Action_Microsoft_Xna_Framework_GameTime__" data-uid="Ladybug.ComposedScene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">OnUpdate(Action&lt;GameTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the action that is run every frame when the Scene
+is updated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComposedScene OnUpdate(Action&lt;GameTime&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">Microsoft.Xna.Framework.GameTime</span>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action run upon updating the Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ComposedScene.html">ComposedScene</a></td>
+        <td><p>Scene</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Pause.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Pause%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L150">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Pause_" data-uid="Ladybug.ComposedScene.Pause*"></a>
+  <h4 id="Ladybug_ComposedScene_Pause" data-uid="Ladybug.ComposedScene.Pause">Pause()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Pause()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Pause">Scene.Pause()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Resume.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Resume%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L213">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Resume_" data-uid="Ladybug.ComposedScene.Resume*"></a>
+  <h4 id="Ladybug_ComposedScene_Resume" data-uid="Ladybug.ComposedScene.Resume">Resume()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Resume()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Resume">Scene.Resume()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Stop.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Stop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L200">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Stop_" data-uid="Ladybug.ComposedScene.Stop*"></a>
+  <h4 id="Ladybug_ComposedScene_Stop" data-uid="Ladybug.ComposedScene.Stop">Stop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Stop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Stop">Scene.Stop()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Suspend.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Suspend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L174">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Suspend_" data-uid="Ladybug.ComposedScene.Suspend*"></a>
+  <h4 id="Ladybug_ComposedScene_Suspend" data-uid="Ladybug.ComposedScene.Suspend">Suspend()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Suspend()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Suspend">Scene.Suspend()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Unload.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Unload%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L138">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Unload_" data-uid="Ladybug.ComposedScene.Unload*"></a>
+  <h4 id="Ladybug_ComposedScene_Unload" data-uid="Ladybug.ComposedScene.Unload">Unload()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Unload()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unload">Scene.Unload()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Unpause.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Unpause%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L162">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Unpause_" data-uid="Ladybug.ComposedScene.Unpause*"></a>
+  <h4 id="Ladybug_ComposedScene_Unpause" data-uid="Ladybug.ComposedScene.Unpause">Unpause()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Unpause()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unpause">Scene.Unpause()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Unsuspend.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Unsuspend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L187">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Unsuspend_" data-uid="Ladybug.ComposedScene.Unsuspend*"></a>
+  <h4 id="Ladybug_ComposedScene_Unsuspend" data-uid="Ladybug.ComposedScene.Unsuspend">Unsuspend()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Unsuspend()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Unsuspend">Scene.Unsuspend()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L100">View Source</a>
+  </span>
+  <a id="Ladybug_ComposedScene_Update_" data-uid="Ladybug.ComposedScene.Update*"></a>
+  <h4 id="Ladybug_ComposedScene_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ComposedScene.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Update(GameTime gameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xna.Framework.GameTime</span></td>
+        <td><span class="parametername">gameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Ladybug.Scene.html#Ladybug_Scene_Update_Microsoft_Xna_Framework_GameTime_">Scene.Update(GameTime)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ComposedScene.md&amp;value=---%0Auid%3A%20Ladybug.ComposedScene%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/base/ComposedScene.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

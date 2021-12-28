@@ -114,34 +114,26 @@ public class MainScene : Scene
 {
 	private Sprite _snakeSprite; // &lt;-- 3: New member variable
 
-	public MainScene()
-	{
-		OnInitialize(Initialize);
-		OnLoadContent(LoadContent); // &lt;-- 4: New method call
-		OnUpdate(Update);
-		OnDraw(Draw);
-	}
-
-	private void Initialize()
+	protected override void Initialize()
 	{
 		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	}
 
-	// 5: New method
-	private void LoadContent()
+	// 4: New method
+	protected override void LoadContent()
 	{
 		Texture2D snakeTexture = ResourceCatalog.LoadResource&lt;Texture2D&gt;(&quot;snake&quot;, &quot;image/snake-body&quot;);
 		_snakeSprite = new Sprite(snakeTexture);
 	}
 
-	private void Update(GameTime gameTime)
+	protected override void Update(GameTime gameTime)
 	{
 		// Our update code will go here
 	}
 
-	private void Draw(GameTime gameTime)
+	protected override void Draw(GameTime gameTime)
 	{
-		// 6: New draw logic
+		// 5: New draw logic
 		SpriteBatch.Begin();
 		_snakeSprite.Draw(SpriteBatch);
 		SpriteBatch.End();
@@ -154,9 +146,9 @@ public class MainScene : Scene
 <p>We added <code>MonoGame.Xna.Framework</code> and <code>Ladybug.Graphics</code> to our <code>using</code> directives. This is so that we can use <code>Texture2D</code> and <code>Sprite</code>, respectively.</p>
 <h4 id="3-new-member-variable">3: New Member Variable</h4>
 <p>We created a new <code>_snakeSprite</code> variable of type <code>Sprite</code>. This will be the sprite that we draw to the screen.</p>
-<h4 id="4-5-new-method-calls-and-definitions">4-5: New Method Calls and Definitions</h4>
-<p>We added another &quot;On*()&quot; method to our constructor, <code>OnLoadContent()</code>. Just like our other methods in the constructor, this will be used to tell our Scene what to do at a certain point in its lifecycle -- in this case, when it loads in content.</p>
-<p>Also just like the other methods in the constructor, we create a matching method for <code>OnLoadContent()</code>, this time called <code>LoadContent()</code>. In this new method, we load our <code>snake-body.png</code> file into a <code>ResourceCatalog</code> and assign the resulting resource to a local variable <code>snakeTexture</code>. <code>ResourceCatalog</code>'s first argument contains a simple name we can use to reference the <code>snake-body.png</code> texture later, while the second argument contains the file path to <code>snake-body.png</code> relative to the <code>core/Content</code> folder, without the file extension.</p>
+<h4 id="4-new-override-method-loadcontent">4 New Override Method: LoadContent</h4>
+<p>We've added a new override method: <code>LoadContent()</code>, which will be called when the scene is being set up.</p>
+<p>In this new method, we load our <code>snake-body.png</code> file into a <code>ResourceCatalog</code> and assign the resulting resource to a local variable <code>snakeTexture</code>. <code>ResourceCatalog</code>'s first argument contains a simple name we can use to reference the <code>snake-body.png</code> texture later, while the second argument contains the file path to <code>snake-body.png</code> relative to the <code>core/Content</code> folder, without the file extension.</p>
 <p>Now that we have <code>snake-body.png</code> loaded into the texture <code>snakeTexture</code>, we use that to create a Sprite and assign it to <code>_snakeSprite</code>.</p>
 <h4 id="6-new-draw-logic">6: New Draw Logic</h4>
 <p>Now that we have something to draw, we can do something with our <code>Draw()</code> method.</p>
@@ -183,27 +175,19 @@ public class MainScene : Scene
 	private Sprite _snakeSprite; 
 	private KeyboardMonitor _keyboard; // &lt;-- 3: New member variable 
 
-	public MainScene()
-	{
-		OnInitialize(Initialize);
-		OnLoadContent(LoadContent);
-		OnUpdate(Update);
-		OnDraw(Draw);
-	}
-
-	private void Initialize()
+	protected override void Initialize()
 	{
 		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 		_keyboard = new KeyboardMonitor(); // &lt;-- 4: New initialization item
 	}
 
-	private void LoadContent()
+	protected override void LoadContent()
 	{
 		Texture2D snakeTexture = ResourceCatalog.LoadResource&lt;Texture2D&gt;(&quot;snake&quot;, &quot;image/snake-body&quot;);
 		_snakeSprite = new Sprite(snakeTexture);
 	}
 
-	private void Update(GameTime gameTime)
+	protected override void Update(GameTime gameTime)
 	{
 		// 5: New update logic
 		_keyboard.BeginUpdate(Keyboard.GetState());
@@ -216,7 +200,7 @@ public class MainScene : Scene
 		_keyboard.EndUpdate();
 	}
 
-	private void Draw(GameTime gameTime)
+	protected override void Draw(GameTime gameTime)
 	{
 		SpriteBatch.Begin();
 		_snakeSprite.Draw(SpriteBatch);
@@ -239,7 +223,7 @@ public class MainScene : Scene
 <h2 id="step-4-putting-it-together">Step 4: Putting it Together</h2>
 <p>Now that we've handled drawing to the screen and gathering input, let's combine them!</p>
 <p>Lucky for us, this is very easy. Replace the contents of <code>MainScene.cs</code>'s <code>Update()</code> method with the following:</p>
-<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+<pre><code class="lang-csharp">protected override void Update(GameTime gameTime)
 {
 	_keyboard.BeginUpdate(Keyboard.GetState());
 

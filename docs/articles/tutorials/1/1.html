@@ -132,19 +132,13 @@ using Ladybug;
 
 public class MainScene : Scene
 {
-	public MainScene()
-	{
-		OnInitialize(Initialize);
-	}
-
-	private void Initialize()
+	protected override void Initialize()
 	{
 		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	}
 }
 </code></pre>
-<p>In the above code, we define a new class derived from <code>Ladybug.Scene</code> called <code>MainScene</code>. We define its constructor as well as a private <code>Initialize()</code> method, which will write &quot;Main Scene Initialized&quot; to the console when invoked.</p>
-<p>Additionally, we call <code>OnInitialize(Initialize)</code> in the constructor. This is tells Ladybug that we want to run our <code>Initialize()</code> method when our scene class is initialized, which will happen when it is loaded into a <code>Game</code> instance.</p>
+<p>In the above code, we define a new class derived from <code>Ladybug.Scene</code> called <code>MainScene</code>. Within the class, we override the <code>Initialize()</code> method which, when invoked, will write &quot;Main Scene Initialized&quot; to the console when invoked, which will happen when it is loaded into a <code>Game</code> instance.</p>
 <p>Speaking of which, now that we have our <code>MainScene</code> class defined, we can load it into our <code>Game</code> instance in <code>Program.cs</code> so that it is run when the game starts</p>
 <pre><code class="lang-csharp">// xplatform/Program.cs
 // ...
@@ -161,7 +155,7 @@ static void Main()
 <p>Now, when the application is built and run, you should see <code>Main Scene Initialized!</code> printed to the console.</p>
 <h2 id="step-2-adding-update-and-draw">Step 2: Adding Update and Draw</h2>
 <p>Our <code>MainScene</code> class has a working <code>Initialize()</code> method that is appropriately being called as soon as it is loaded into the <code>Game</code> instance. This is a great start, but our game is still nothing but an empty window.</p>
-<p>To fix this, we'll need to define <code>MainScene</code>'s <code>OnUpdate</code> and <code>OnDraw</code> behavior. We'll leave most of the details to the next chapter, but for now let's get our basic <code>Update()</code> and <code>Draw()</code> methods set up.</p>
+<p>To fix this, we'll need to override <code>MainScene</code>'s <code>Update</code> and <code>Draw</code> methods. We'll leave most of the details to the next chapter, but for now let's get our basic <code>Update()</code> and <code>Draw()</code> methods set up.</p>
 <pre><code class="lang-csharp">// core/scene/MainScene.cs
 using System;
 using Microsoft.Xna.Framework;
@@ -169,26 +163,17 @@ using Ladybug;
 
 public class MainScene : Scene
 {
-	public MainScene()
-	{
-		OnInitialize(Initialize);
-		// Just like OnInitialize(), we'll hook up Update()
-		// and Draw() to OnUpdate and OnDraw here
-		OnUpdate(Update);
-		OnDraw(Draw);
-	}
-
-	private void Initialize()
+	protected override void Initialize()
 	{
 		Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	}
 
-	private void Update(GameTime gameTime)
+	protected override void Update(GameTime gameTime)
 	{
 		// Our update code will go here
 	}
 
-	private void Draw(GameTime gameTime)
+	protected override void Draw(GameTime gameTime)
 	{
 		// Our draw code will go here
 	}

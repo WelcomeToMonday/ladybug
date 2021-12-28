@@ -183,7 +183,7 @@ Edit <code>core/class/Snake.cs</code> and add the following method to <code>Snak
 }
 </code></pre>
 <p>Now that we have an event handler for the <code>Collide</code> event, let's hook them together in <code>MainScene.Initialize()</code>:</p>
-<pre><code class="lang-csharp">private void Initialize()
+<pre><code class="lang-csharp">protected override void Initialize()
 {
 	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	_keyboard = new KeyboardMonitor();
@@ -208,7 +208,7 @@ Edit <code>core/class/Snake.cs</code> and add the following method to <code>Snak
 <ul>
 <li>Adjust <code>Initialize()</code> as follows:</li>
 </ul>
-<pre><code class="lang-csharp">private void Initialize()
+<pre><code class="lang-csharp">protected override void Initialize()
 {
 	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	_keyboard = new KeyboardMonitor();
@@ -261,8 +261,8 @@ private Random _random = new Random();
 <h3 id="drawing-the-apple">Drawing the Apple</h3>
 <p>Now that we've placed the apple on the grid, we need to draw it so the player knows where it is. We can do this by making a simple addition to our <code>MainScene.Draw()</code> method.</p>
 <p>Edit <code>core/scene/MainScene.cs</code> and update the <code>Draw()</code> method as follows:</p>
-<pre><code class="lang-csharp">	private void Draw(GameTime gameTime)
-	{
+<pre><code class="lang-csharp">protected override void Draw(GameTime gameTime)
+{
 	SpriteBatch.Begin();
 
 	foreach (var segment in _snake.Positions)
@@ -284,14 +284,14 @@ private Random _random = new Random();
 	);
 	
 	SpriteBatch.End();
-	}
+}
 </code></pre>
 <p>Now the apple will be drawn on screen at its correct position. The player can move the snake towards the apple and try to eat it, but nothing will happen quite yet. Next, we'll add collision detection for the apple`.</p>
 <h3 id="eating-the-apple">Eating the Apple</h3>
 <p>Although much of the collision code is handled through the <code>Snake</code> class, since the <code>MainScene</code> is responsible for placing the apple and keeping track of its location, we're going to have <code>MainScene</code> handle checking and handling collision for the apple.</p>
 <p>Just as before, since snake is grid-based, handling collision is very easy. We can check for collision with the apple each tick directly in <code>MainScene.Update()</code>'s tick-handling section.</p>
 <p>Edit <code>core/scene/MainScene.cs</code> and update the <code>Update()</code> method as follows:</p>
-<pre><code class="lang-csharp">private void Update()
+<pre><code class="lang-csharp">protected override void Update()
 {
 	_keyboard.BeginUpdate(Keyboard.GetState());
 	// ... user input code ...
@@ -323,7 +323,7 @@ private Random _random = new Random();
 }
 </code></pre>
 <p>Then, let's call this new method in the tick-handling section of <code>MainScene.Update()</code>:</p>
-<pre><code class="lang-csharp">private void Update()
+<pre><code class="lang-csharp">protected override void Update()
 {
 	_keyboard.BeginUpdate(Keyboard.GetState());
 	// ... user input code ...

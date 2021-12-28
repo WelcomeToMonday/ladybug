@@ -73,17 +73,19 @@
   
   <h1 id="Ladybug_UI_Control" data-uid="Ladybug.UI.Control" class="text-break">Class Control
   </h1>
-  <div class="markdown level0 summary"><p>Base Class for all Menu Controls</p>
+  <div class="markdown level0 summary"><p>Base Ladybug UI Control class</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Control</span></div>
-      <div class="level2"><a class="xref" href="Ladybug.UI.Button.html">Button</a></div>
+      <div class="level2"><a class="xref" href="Ladybug.UI.AnimationFrame.html">AnimationFrame</a></div>
+      <div class="level2"><a class="xref" href="Ladybug.UI.ComposedControl.html">ComposedControl</a></div>
+      <div class="level2"><a class="xref" href="Ladybug.UI.ControlContainer.html">ControlContainer</a></div>
       <div class="level2"><a class="xref" href="Ladybug.UI.Label.html">Label</a></div>
-      <div class="level2"><a class="xref" href="Ladybug.UI.Panel.html">Panel</a></div>
-      <div class="level2"><a class="xref" href="Ladybug.UI.TextBox.html">TextBox</a></div>
+      <div class="level2"><a class="xref" href="Ladybug.UI.SpriteFrame.html">SpriteFrame</a></div>
+      <div class="level2"><a class="xref" href="Ladybug.UI.TextureFrame.html">TextureFrame</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -119,57 +121,37 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control__ctor_Ladybug_UI_Control_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.%23ctor(Ladybug.UI.Control%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control__ctor.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L66">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L57">View Source</a>
   </span>
   <a id="Ladybug_UI_Control__ctor_" data-uid="Ladybug.UI.Control.#ctor*"></a>
-  <h4 id="Ladybug_UI_Control__ctor_Ladybug_UI_Control_System_String_" data-uid="Ladybug.UI.Control.#ctor(Ladybug.UI.Control,System.String)">Control(Control, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control__ctor" data-uid="Ladybug.UI.Control.#ctor">Control()</h4>
+  <div class="markdown level1 summary"><p>Create a new Control</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Control(Control parentControl = null, string name = &quot;&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public Control()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.Control.html">Control</a></td>
-        <td><span class="parametername">parentControl</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Attributes.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Attributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Active.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Active%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L110">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L105">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_Attributes_" data-uid="Ladybug.UI.Control.Attributes*"></a>
-  <h4 id="Ladybug_UI_Control_Attributes" data-uid="Ladybug.UI.Control.Attributes">Attributes</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Active_" data-uid="Ladybug.UI.Control.Active*"></a>
+  <h4 id="Ladybug_UI_Control_Active" data-uid="Ladybug.UI.Control.Active">Active</h4>
+  <div class="markdown level1 summary"><p>Whether the Control is currently active</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; Attributes { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Active { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -181,25 +163,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_BackgroundImage.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.BackgroundImage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_BlockCursor.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.BlockCursor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L141">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L141">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_BackgroundImage_" data-uid="Ladybug.UI.Control.BackgroundImage*"></a>
-  <h4 id="Ladybug_UI_Control_BackgroundImage" data-uid="Ladybug.UI.Control.BackgroundImage">BackgroundImage</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_BlockCursor_" data-uid="Ladybug.UI.Control.BlockCursor*"></a>
+  <h4 id="Ladybug_UI_Control_BlockCursor" data-uid="Ladybug.UI.Control.BlockCursor">BlockCursor</h4>
+  <div class="markdown level1 summary"><p>Whether to allow the cursor to target controls beneath this Control</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Texture2D BackgroundImage { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool BlockCursor { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -211,7 +194,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Graphics.Texture2D</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -221,15 +204,16 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Bounds.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Bounds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L84">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L153">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Bounds_" data-uid="Ladybug.UI.Control.Bounds*"></a>
   <h4 id="Ladybug_UI_Control_Bounds" data-uid="Ladybug.UI.Control.Bounds">Bounds</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The cursor's position, width, and height</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Rectangle Bounds { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Rectangle Bounds { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -248,18 +232,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Controls.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Controls%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ContainsCursor.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ContainsCursor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L96">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L147">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_Controls_" data-uid="Ladybug.UI.Control.Controls*"></a>
-  <h4 id="Ladybug_UI_Control_Controls" data-uid="Ladybug.UI.Control.Controls">Controls</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_ContainsCursor_" data-uid="Ladybug.UI.Control.ContainsCursor*"></a>
+  <h4 id="Ladybug_UI_Control_ContainsCursor" data-uid="Ladybug.UI.Control.ContainsCursor">ContainsCursor</h4>
+  <div class="markdown level1 summary"><p>Whether the cursor is within this Control's bounds</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Control&gt; Controls { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool ContainsCursor { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -271,25 +256,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Ladybug.UI.Control.html">Control</a>&gt;</td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Font.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Font%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Game.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Game%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L143">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L94">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_Font_" data-uid="Ladybug.UI.Control.Font*"></a>
-  <h4 id="Ladybug_UI_Control_Font" data-uid="Ladybug.UI.Control.Font">Font</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Game_" data-uid="Ladybug.UI.Control.Game*"></a>
+  <h4 id="Ladybug_UI_Control_Game" data-uid="Ladybug.UI.Control.Game">Game</h4>
+  <div class="markdown level1 summary"><p>This control's managing game</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteFont Font { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Game Game { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -301,37 +287,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Graphics.SpriteFont</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_GlobalPosition.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.GlobalPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L88">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_GlobalPosition_" data-uid="Ladybug.UI.Control.GlobalPosition*"></a>
-  <h4 id="Ladybug_UI_Control_GlobalPosition" data-uid="Ladybug.UI.Control.GlobalPosition">GlobalPosition</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 GlobalPosition { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Vector2</span></td>
+        <td><a class="xref" href="Ladybug.Game.html">Game</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -341,11 +297,12 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_HasFocus.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.HasFocus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L128">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L99">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_HasFocus_" data-uid="Ladybug.UI.Control.HasFocus*"></a>
   <h4 id="Ladybug_UI_Control_HasFocus" data-uid="Ladybug.UI.Control.HasFocus">HasFocus</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Whether the Control currently has focus</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -368,48 +325,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ID.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Initialized.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Initialized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L94">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L176">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_ID_" data-uid="Ladybug.UI.Control.ID*"></a>
-  <h4 id="Ladybug_UI_Control_ID" data-uid="Ladybug.UI.Control.ID">ID</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Initialized_" data-uid="Ladybug.UI.Control.Initialized*"></a>
+  <h4 id="Ladybug_UI_Control_Initialized" data-uid="Ladybug.UI.Control.Initialized">Initialized</h4>
+  <div class="markdown level1 summary"><p>Whether the control has been initialized</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ID { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_IsEnabled.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.IsEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L124">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_IsEnabled_" data-uid="Ladybug.UI.Control.IsEnabled*"></a>
-  <h4 id="Ladybug_UI_Control_IsEnabled" data-uid="Ladybug.UI.Control.IsEnabled">IsEnabled</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsEnabled { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Initialized { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -428,91 +356,15 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Item_System_String_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L80">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_Item_" data-uid="Ladybug.UI.Control.Item*"></a>
-  <h4 id="Ladybug_UI_Control_Item_System_String_" data-uid="Ladybug.UI.Control.Item(System.String)">Item[String]</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Control this[string name] { get; }</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.Control.html">Control</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_LocalPosition.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.LocalPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L86">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_LocalPosition_" data-uid="Ladybug.UI.Control.LocalPosition*"></a>
-  <h4 id="Ladybug_UI_Control_LocalPosition" data-uid="Ladybug.UI.Control.LocalPosition">LocalPosition</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 LocalPosition { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Vector2</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Name.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L92">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L72">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Name_" data-uid="Ladybug.UI.Control.Name*"></a>
   <h4 id="Ladybug_UI_Control_Name" data-uid="Ladybug.UI.Control.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of this Control</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -538,15 +390,16 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Parent.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L90">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L78">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Parent_" data-uid="Ladybug.UI.Control.Parent*"></a>
   <h4 id="Ladybug_UI_Control_Parent" data-uid="Ladybug.UI.Control.Parent">Parent</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This Control's parent Control</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Control Parent { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IControlContainer Parent { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -558,7 +411,69 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.UI.Control.html">Control</a></td>
+        <td><a class="xref" href="Ladybug.UI.IControlContainer.html">IControlContainer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ResourceCatalog.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ResourceCatalog%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L66">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_ResourceCatalog_" data-uid="Ladybug.UI.Control.ResourceCatalog*"></a>
+  <h4 id="Ladybug_UI_Control_ResourceCatalog" data-uid="Ladybug.UI.Control.ResourceCatalog">ResourceCatalog</h4>
+  <div class="markdown level1 summary"><p>Reference to the managing UI's ResourceCatalog</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResourceCatalog ResourceCatalog { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ResourceCatalog.html">ResourceCatalog</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Scene.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Scene%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L89">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_Scene_" data-uid="Ladybug.UI.Control.Scene*"></a>
+  <h4 id="Ladybug_UI_Control_Scene" data-uid="Ladybug.UI.Control.Scene">Scene</h4>
+  <div class="markdown level1 summary"><p>This Controls' managing scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene Scene { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.Scene.html">Scene</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -568,15 +483,16 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_UI.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.UI%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L82">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L84">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_UI_" data-uid="Ladybug.UI.Control.UI*"></a>
   <h4 id="Ladybug_UI_Control_UI" data-uid="Ladybug.UI.Control.UI">UI</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This Control's managing UI</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UI UI { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public UI UI { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -598,11 +514,12 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Visible.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L126">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L123">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Visible_" data-uid="Ladybug.UI.Control.Visible*"></a>
   <h4 id="Ladybug_UI_Control_Visible" data-uid="Ladybug.UI.Control.Visible">Visible</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Whether the Control is currently visible</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -623,22 +540,54 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ZIndex.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ZIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L159">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_ZIndex_" data-uid="Ladybug.UI.Control.ZIndex*"></a>
+  <h4 id="Ladybug_UI_Control_ZIndex" data-uid="Ladybug.UI.Control.ZIndex">ZIndex</h4>
+  <div class="markdown level1 summary"><p>The draw depth of this Control</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ZIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_AddControl_Ladybug_UI_Control_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.AddControl(Ladybug.UI.Control)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Attach_Ladybug_UI_IControlContainer_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Attach(Ladybug.UI.IControlContainer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L342">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L252">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_AddControl_" data-uid="Ladybug.UI.Control.AddControl*"></a>
-  <h4 id="Ladybug_UI_Control_AddControl_Ladybug_UI_Control_" data-uid="Ladybug.UI.Control.AddControl(Ladybug.UI.Control)">AddControl(Control)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Attach_" data-uid="Ladybug.UI.Control.Attach*"></a>
+  <h4 id="Ladybug_UI_Control_Attach_Ladybug_UI_IControlContainer_" data-uid="Ladybug.UI.Control.Attach(Ladybug.UI.IControlContainer)">Attach(IControlContainer)</h4>
+  <div class="markdown level1 summary"><p>Called when the Control is attached to a parent control</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddControl(Control newControl)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Attach(IControlContainer parentControl)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -651,37 +600,136 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ladybug.UI.Control.html">Control</a></td>
-        <td><span class="parametername">newControl</span></td>
+        <td><a class="xref" href="Ladybug.UI.IControlContainer.html">IControlContainer</a></td>
+        <td><span class="parametername">parentControl</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Disable.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Disable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Click_Ladybug_UserInput_InputState_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Click(Ladybug.UserInput.InputState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L250">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L267">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_Disable_" data-uid="Ladybug.UI.Control.Disable*"></a>
-  <h4 id="Ladybug_UI_Control_Disable" data-uid="Ladybug.UI.Control.Disable">Disable()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Click_" data-uid="Ladybug.UI.Control.Click*"></a>
+  <h4 id="Ladybug_UI_Control_Click_Ladybug_UserInput_InputState_" data-uid="Ladybug.UI.Control.Click(Ladybug.UserInput.InputState)">Click(InputState)</h4>
+  <div class="markdown level1 summary"><p>Called when this Control is clicked</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Disable()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Click(InputState state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.UserInput.InputState.html">InputState</a></td>
+        <td><span class="parametername">state</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickOut.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L278">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_ClickOut_" data-uid="Ladybug.UI.Control.ClickOut*"></a>
+  <h4 id="Ladybug_UI_Control_ClickOut" data-uid="Ladybug.UI.Control.ClickOut">ClickOut()</h4>
+  <div class="markdown level1 summary"><p>Called when this Control is in focus,
+but a space outside its bounds has been clicked</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ClickOut()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Compose.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Compose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L184">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_Compose_" data-uid="Ladybug.UI.Control.Compose*"></a>
+  <h4 id="Ladybug_UI_Control_Compose" data-uid="Ladybug.UI.Control.Compose">Compose()</h4>
+  <div class="markdown level1 summary"><p>Begin inline composing of a new Control</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ComposedControl Compose()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.UI.ComposedControl.html">ComposedControl</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorEnter.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorEnter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L308">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_CursorEnter_" data-uid="Ladybug.UI.Control.CursorEnter*"></a>
+  <h4 id="Ladybug_UI_Control_CursorEnter" data-uid="Ladybug.UI.Control.CursorEnter">CursorEnter()</h4>
+  <div class="markdown level1 summary"><p>Called when the cursor enters this Control's bounds</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CursorEnter()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorLeave.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorLeave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L318">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_CursorLeave_" data-uid="Ladybug.UI.Control.CursorLeave*"></a>
+  <h4 id="Ladybug_UI_Control_CursorLeave" data-uid="Ladybug.UI.Control.CursorLeave">CursorLeave()</h4>
+  <div class="markdown level1 summary"><p>Called when the cursor leaves this Control's bounds</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CursorLeave()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L295">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L382">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Draw_" data-uid="Ladybug.UI.Control.Draw*"></a>
   <h4 id="Ladybug_UI_Control_Draw_Microsoft_Xna_Framework_Graphics_SpriteBatch_" data-uid="Ladybug.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">Draw(SpriteBatch)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Called when this Control is drawn</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -706,237 +754,47 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Enable.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Enable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Focus.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Focus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L236">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L288">View Source</a>
   </span>
-  <a id="Ladybug_UI_Control_Enable_" data-uid="Ladybug.UI.Control.Enable*"></a>
-  <h4 id="Ladybug_UI_Control_Enable" data-uid="Ladybug.UI.Control.Enable">Enable()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Ladybug_UI_Control_Focus_" data-uid="Ladybug.UI.Control.Focus*"></a>
+  <h4 id="Ladybug_UI_Control_Focus" data-uid="Ladybug.UI.Control.Focus">Focus()</h4>
+  <div class="markdown level1 summary"><p>Called when this Control gains focus</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Enable()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Focus()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_FindControl_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.FindControl(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L360">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_FindControl_" data-uid="Ladybug.UI.Control.FindControl*"></a>
-  <h4 id="Ladybug_UI_Control_FindControl_System_String_System_Boolean_" data-uid="Ladybug.UI.Control.FindControl(System.String,System.Boolean)">FindControl(String, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Control FindControl(string name, bool recurse = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">recurse</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.Control.html">Control</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_FindControl__1_System_String_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.FindControl%60%601(System.String%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L365">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_FindControl_" data-uid="Ladybug.UI.Control.FindControl*"></a>
-  <h4 id="Ladybug_UI_Control_FindControl__1_System_String_System_Boolean_System_Boolean_" data-uid="Ladybug.UI.Control.FindControl``1(System.String,System.Boolean,System.Boolean)">FindControl&lt;T&gt;(String, Boolean, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T FindControl&lt;T&gt;(string name = null, bool recurse = false, bool strictTypeMatch = false)
-    where T : Control</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">recurse</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">strictTypeMatch</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_FindControls__1_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.FindControls%60%601(System.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L387">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_FindControls_" data-uid="Ladybug.UI.Control.FindControls*"></a>
-  <h4 id="Ladybug_UI_Control_FindControls__1_System_Boolean_System_Boolean_" data-uid="Ladybug.UI.Control.FindControls``1(System.Boolean,System.Boolean)">FindControls&lt;T&gt;(Boolean, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;T&gt; FindControls&lt;T&gt;(bool strictTypeMatch = false, bool recurse = true)
-    where T : Control</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">strictTypeMatch</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">recurse</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L149">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L238">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Initialize_" data-uid="Ladybug.UI.Control.Initialize*"></a>
   <h4 id="Ladybug_UI_Control_Initialize" data-uid="Ladybug.UI.Control.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Called when the Control is Initialized</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Initialize()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Initialize()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Move_Microsoft_Xna_Framework_Vector2_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Move(Microsoft.Xna.Framework.Vector2)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L322">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L223">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Move_" data-uid="Ladybug.UI.Control.Move*"></a>
   <h4 id="Ladybug_UI_Control_Move_Microsoft_Xna_Framework_Vector2_" data-uid="Ladybug.UI.Control.Move(Microsoft.Xna.Framework.Vector2)">Move(Vector2)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Moves the Control relative to its current position</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -964,11 +822,12 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Move_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Move(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L320">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L230">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Move_" data-uid="Ladybug.UI.Control.Move*"></a>
   <h4 id="Ladybug_UI_Control_Move_System_Int32_System_Int32_" data-uid="Ladybug.UI.Control.Move(System.Int32,System.Int32)">Move(Int32, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Moves the Control relative to its current position</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -998,303 +857,15 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnDisable.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnDisable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L259">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnDisable_" data-uid="Ladybug.UI.Control.OnDisable*"></a>
-  <h4 id="Ladybug_UI_Control_OnDisable" data-uid="Ladybug.UI.Control.OnDisable">OnDisable()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnDisable()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnEnable.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnEnable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L245">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnEnable_" data-uid="Ladybug.UI.Control.OnEnable*"></a>
-  <h4 id="Ladybug_UI_Control_OnEnable" data-uid="Ladybug.UI.Control.OnEnable">OnEnable()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnEnable()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIClickEnd_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIClickEnd(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L194">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIClickEnd_" data-uid="Ladybug.UI.Control.OnUIClickEnd*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIClickEnd_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIClickEnd(System.Object,Ladybug.UI.UIClickEvent)">OnUIClickEnd(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIClickEnd(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIClickHold_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIClickHold(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L186">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIClickHold_" data-uid="Ladybug.UI.Control.OnUIClickHold*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIClickHold_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIClickHold(System.Object,Ladybug.UI.UIClickEvent)">OnUIClickHold(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIClickHold(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIClickStart_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIClickStart(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L178">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIClickStart_" data-uid="Ladybug.UI.Control.OnUIClickStart*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIClickStart_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIClickStart(System.Object,Ladybug.UI.UIClickEvent)">OnUIClickStart(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIClickStart(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIFocusChange_System_Object_Ladybug_UI_UIControlChangeEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIFocusChange(System.Object%2CLadybug.UI.UIControlChangeEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L165">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIFocusChange_" data-uid="Ladybug.UI.Control.OnUIFocusChange*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIFocusChange_System_Object_Ladybug_UI_UIControlChangeEvent_" data-uid="Ladybug.UI.Control.OnUIFocusChange(System.Object,Ladybug.UI.UIControlChangeEvent)">OnUIFocusChange(Object, UIControlChangeEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnUIFocusChange(object sender, UIControlChangeEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIControlChangeEvent.html">UIControlChangeEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIRightClickEnd_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIRightClickEnd(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L223">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIRightClickEnd_" data-uid="Ladybug.UI.Control.OnUIRightClickEnd*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIRightClickEnd_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIRightClickEnd(System.Object,Ladybug.UI.UIClickEvent)">OnUIRightClickEnd(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIRightClickEnd(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIRightClickHold_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIRightClickHold(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L215">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIRightClickHold_" data-uid="Ladybug.UI.Control.OnUIRightClickHold*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIRightClickHold_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIRightClickHold(System.Object,Ladybug.UI.UIClickEvent)">OnUIRightClickHold(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIRightClickHold(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_OnUIRightClickStart_System_Object_Ladybug_UI_UIClickEvent_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.OnUIRightClickStart(System.Object%2CLadybug.UI.UIClickEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L207">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_OnUIRightClickStart_" data-uid="Ladybug.UI.Control.OnUIRightClickStart*"></a>
-  <h4 id="Ladybug_UI_Control_OnUIRightClickStart_System_Object_Ladybug_UI_UIClickEvent_" data-uid="Ladybug.UI.Control.OnUIRightClickStart(System.Object,Ladybug.UI.UIClickEvent)">OnUIRightClickStart(Object, UIClickEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnUIRightClickStart(object sender, UIClickEvent e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ladybug.UI.UIClickEvent.html">UIClickEvent</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SetBounds_Microsoft_Xna_Framework_Rectangle_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L306">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L199">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_SetBounds_" data-uid="Ladybug.UI.Control.SetBounds*"></a>
   <h4 id="Ladybug_UI_Control_SetBounds_Microsoft_Xna_Framework_Rectangle_" data-uid="Ladybug.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)">SetBounds(Rectangle)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the Control's Bounds</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1322,11 +893,12 @@
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SetBounds_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SetBounds(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L316">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L193">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_SetBounds_" data-uid="Ladybug.UI.Control.SetBounds*"></a>
   <h4 id="Ladybug_UI_Control_SetBounds_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Ladybug.UI.Control.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)">SetBounds(Int32, Int32, Int32, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the Control's Bounds</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1366,46 +938,15 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L318">View Source</a>
-  </span>
-  <a id="Ladybug_UI_Control_SetFont_" data-uid="Ladybug.UI.Control.SetFont*"></a>
-  <h4 id="Ladybug_UI_Control_SetFont_Microsoft_Xna_Framework_Graphics_SpriteFont_" data-uid="Ladybug.UI.Control.SetFont(Microsoft.Xna.Framework.Graphics.SpriteFont)">SetFont(SpriteFont)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void SetFont(SpriteFont font)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Xna.Framework.Graphics.SpriteFont</span></td>
-        <td><span class="parametername">font</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SetPosition_Microsoft_Xna_Framework_Vector2_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L336">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L210">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_SetPosition_" data-uid="Ladybug.UI.Control.SetPosition*"></a>
   <h4 id="Ladybug_UI_Control_SetPosition_Microsoft_Xna_Framework_Vector2_" data-uid="Ladybug.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)">SetPosition(Vector2)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the Control's Position</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1430,34 +971,225 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SetPosition_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SetPosition(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L217">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_SetPosition_" data-uid="Ladybug.UI.Control.SetPosition*"></a>
+  <h4 id="Ladybug_UI_Control_SetPosition_System_Int32_System_Int32_" data-uid="Ladybug.UI.Control.SetPosition(System.Int32,System.Int32)">SetPosition(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets the Control's Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPosition(int x, int y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ToggleActive_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ToggleActive(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L350">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_ToggleActive_" data-uid="Ladybug.UI.Control.ToggleActive*"></a>
+  <h4 id="Ladybug_UI_Control_ToggleActive_System_Boolean_" data-uid="Ladybug.UI.Control.ToggleActive(System.Boolean)">ToggleActive(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Called when this Control's <a class="xref" href="Ladybug.UI.Control.html#Ladybug_UI_Control_Active">Active</a> property is changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ToggleActive(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ToggleVisible_System_Boolean_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ToggleVisible(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L340">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_ToggleVisible_" data-uid="Ladybug.UI.Control.ToggleVisible*"></a>
+  <h4 id="Ladybug_UI_Control_ToggleVisible_System_Boolean_" data-uid="Ladybug.UI.Control.ToggleVisible(System.Boolean)">ToggleVisible(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Called when this Control's <a class="xref" href="Ladybug.UI.Control.html#Ladybug_UI_Control_Visible">Visible</a> property is changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ToggleVisible(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Unfocus.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Unfocus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L298">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_Unfocus_" data-uid="Ladybug.UI.Control.Unfocus*"></a>
+  <h4 id="Ladybug_UI_Control_Unfocus" data-uid="Ladybug.UI.Control.Unfocus">Unfocus()</h4>
+  <div class="markdown level1 summary"><p>Called when this Control loses focus</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Unfocus()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Update.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Update%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L264">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L359">View Source</a>
   </span>
   <a id="Ladybug_UI_Control_Update_" data-uid="Ladybug.UI.Control.Update*"></a>
   <h4 id="Ladybug_UI_Control_Update" data-uid="Ladybug.UI.Control.Update">Update()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Called when this Control is updated each frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void Update()</code></pre>
   </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_UpdateBounds_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.UpdateBounds(Microsoft.Xna.Framework.Rectangle%2CMicrosoft.Xna.Framework.Rectangle)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L330">View Source</a>
+  </span>
+  <a id="Ladybug_UI_Control_UpdateBounds_" data-uid="Ladybug.UI.Control.UpdateBounds*"></a>
+  <h4 id="Ladybug_UI_Control_UpdateBounds_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_" data-uid="Ladybug.UI.Control.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">UpdateBounds(Rectangle, Rectangle)</h4>
+  <div class="markdown level1 summary"><p>Called when this Control's bounds are updated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateBounds(Rectangle oldBounds, Rectangle newBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xna.Framework.Rectangle</span></td>
+        <td><span class="parametername">oldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Xna.Framework.Rectangle</span></td>
+        <td><span class="parametername">newBounds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="events">Events
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Click.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Click%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Clicked.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Clicked%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L36">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L21">View Source</a>
   </span>
-  <h4 id="Ladybug_UI_Control_Click" data-uid="Ladybug.UI.Control.Click">Click</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control_Clicked" data-uid="Ladybug.UI.Control.Clicked">Clicked</h4>
+  <div class="markdown level1 summary"><p>The Control has been clicked</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Click</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;InputState&gt; Clicked</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Ladybug.UserInput.InputState.html">InputState</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickedOut.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickedOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L27">View Source</a>
+  </span>
+  <h4 id="Ladybug_UI_Control_ClickedOut" data-uid="Ladybug.UI.Control.ClickedOut">ClickedOut</h4>
+  <div class="markdown level1 summary"><p>The control is in focus, but a space it does
+not occupy has been clicked</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler ClickedOut</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1476,17 +1208,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickEnd.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorEntered.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorEntered%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L39">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L42">View Source</a>
   </span>
-  <h4 id="Ladybug_UI_Control_ClickEnd" data-uid="Ladybug.UI.Control.ClickEnd">ClickEnd</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control_CursorEntered" data-uid="Ladybug.UI.Control.CursorEntered">CursorEntered</h4>
+  <div class="markdown level1 summary"><p>The cursor has entered the control's bounds</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler ClickEnd</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler CursorEntered</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1505,17 +1238,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickHold.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickHold%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorLeft.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorLeft%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L38">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L47">View Source</a>
   </span>
-  <h4 id="Ladybug_UI_Control_ClickHold" data-uid="Ladybug.UI.Control.ClickHold">ClickHold</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control_CursorLeft" data-uid="Ladybug.UI.Control.CursorLeft">CursorLeft</h4>
+  <div class="markdown level1 summary"><p>The cursor has left the control's bounds</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler ClickHold</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler CursorLeft</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1534,17 +1268,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickOut.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Focused.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Focused%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L40">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L32">View Source</a>
   </span>
-  <h4 id="Ladybug_UI_Control_ClickOut" data-uid="Ladybug.UI.Control.ClickOut">ClickOut</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control_Focused" data-uid="Ladybug.UI.Control.Focused">Focused</h4>
+  <div class="markdown level1 summary"><p>The Control has gained focus</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler ClickOut</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler Focused</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1563,394 +1298,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_ClickStart.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.ClickStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Unfocused.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Unfocused%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L37">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L37">View Source</a>
   </span>
-  <h4 id="Ladybug_UI_Control_ClickStart" data-uid="Ladybug.UI.Control.ClickStart">ClickStart</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Ladybug_UI_Control_Unfocused" data-uid="Ladybug.UI.Control.Unfocused">Unfocused</h4>
+  <div class="markdown level1 summary"><p>The Control has lost focus</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler ClickStart</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorEnter.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorEnter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L48">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_CursorEnter" data-uid="Ladybug.UI.Control.CursorEnter">CursorEnter</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler CursorEnter</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_CursorLeave.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.CursorLeave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L49">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_CursorLeave" data-uid="Ladybug.UI.Control.CursorLeave">CursorLeave</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler CursorLeave</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Disabled.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Disabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L31">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_Disabled" data-uid="Ladybug.UI.Control.Disabled">Disabled</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Disabled</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Enabled.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Enabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L30">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_Enabled" data-uid="Ladybug.UI.Control.Enabled">Enabled</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Enabled</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_Focus.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.Focus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L27">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_Focus" data-uid="Ladybug.UI.Control.Focus">Focus</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Focus</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_PositionChanged.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.PositionChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L33">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_PositionChanged" data-uid="Ladybug.UI.Control.PositionChanged">PositionChanged</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ControlMoveEvent&gt; PositionChanged</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Ladybug.UI.ControlMoveEvent.html">ControlMoveEvent</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_RightClick.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.RightClick%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L42">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_RightClick" data-uid="Ladybug.UI.Control.RightClick">RightClick</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler RightClick</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_RightClickEnd.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.RightClickEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L45">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_RightClickEnd" data-uid="Ladybug.UI.Control.RightClickEnd">RightClickEnd</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler RightClickEnd</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_RightClickHold.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.RightClickHold%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L44">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_RightClickHold" data-uid="Ladybug.UI.Control.RightClickHold">RightClickHold</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler RightClickHold</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_RightClickOut.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.RightClickOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L46">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_RightClickOut" data-uid="Ladybug.UI.Control.RightClickOut">RightClickOut</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler RightClickOut</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_RightClickStart.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.RightClickStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L43">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_RightClickStart" data-uid="Ladybug.UI.Control.RightClickStart">RightClickStart</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler RightClickStart</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_SizeChanged.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.SizeChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L34">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_SizeChanged" data-uid="Ladybug.UI.Control.SizeChanged">SizeChanged</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler SizeChanged</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control_UnFocus.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control.UnFocus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L28">View Source</a>
-  </span>
-  <h4 id="Ladybug_UI_Control_UnFocus" data-uid="Ladybug.UI.Control.UnFocus">UnFocus</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler UnFocus</code></pre>
+    <pre><code class="lang-csharp hljs">public event EventHandler Unfocused</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1978,7 +1337,7 @@
                     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_UI_Control.md&amp;value=---%0Auid%3A%20Ladybug.UI.Control%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/dev-alpha/src/modules/ui/Control.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ui/Control.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

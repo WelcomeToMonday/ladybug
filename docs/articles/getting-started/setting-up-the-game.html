@@ -122,12 +122,12 @@ For a full reference of these methods, check out the <a href="/ladybug/api/Ladyb
 <p>A Scene's state can be changed through the <code>Pause()</code>, <code>Unpause()</code>, <code>Suspend()</code>, and <code>Unsuspend()</code> methods.</p>
 <p>Further, a Scene's behavior upon changing state can be defined through the <code>Paused</code>, <code>Unpaused</code>, <code>Suspended</code>, <code>Unsuspended</code>, <code>Stopped</code>, and <code>Resumed</code> events, as well as through the <code>OnPause()</code>, <code>OnUnpause()</code>, <code>OnSuspend()</code>, <code>OnUnsuspend()</code>, <code>OnStop()</code>, and <code>OnResume()</code> methods.</p>
 <h3 id="making-a-scene">Making a Scene</h3>
-<p>To create a <code>Scene</code>, simply instantiate a <code>new Scene(Game)</code> object and use its <code>On*()</code> methods to define its behavior. This can be done anywhere in your project, but for sample purposes, we'll show you what this would look like if we were to create it right where we set up our <code>Game</code> instance.</p>
+<p>To create a <code>Scene</code>, simply instantiate a new <code>Scene</code> object using <code>Scene.Compose()</code> and use its <code>On*()</code> methods to define its behavior. This can be done anywhere in your project, but for sample purposes, we'll show you what this would look like if we were to create it right where we set up our <code>Game</code> instance.</p>
 <pre><code class="lang-csharp">// Instantiate a new Game instance, called game.
 using (var game = new Game())
 {
 	// Instantiate a new Scene instance, called scene.
-	var scene = new Scene(game)
+	var scene = Scene.Compose(game)
 		.OnLoadContent(() =&gt;
 		{
 			// Content resources are loaded here
@@ -191,7 +191,7 @@ using (var game = new Game())
 <p>Although we can create a scene right within the <code>using</code> block in <code>Main()</code>, we'll explore creating the <code>Scene</code> in a new method in the <code>Program</code> class for this example. We'll call this method <code>CreateMainScene()</code>.</p>
 <pre><code class="lang-csharp">public Scene CreateMainScene(Game game)
 {
-	var mainScene = new Scene(game)
+	var mainScene = Scene.Compose(game)
 		.OnUpdate((GameTime gameTime) =&gt;
 		{
 			Console.WriteLine(&quot;Hello World&quot;);

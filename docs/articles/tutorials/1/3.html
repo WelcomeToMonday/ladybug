@@ -179,7 +179,7 @@ private Snake _snake;
 <p>Back in <code>MainScene.cs</code>, the new <code>_tickDelay</code> and <code>_tickTimer</code> fields will represent the delay between each tick and the actual timer that is keeping track of when to execute the next tick, respectively.</p>
 <p>We also created a <code>_snake</code> field which will track our <code>Snake</code> instance.</p>
 <p>We'll need to initialize <code>_tickTimer</code> to be equal to <code>_tickDelay</code>, as well as initialize our <code>Snake</code> in <code>MainScene.Initialize()</code>, as such:</p>
-<pre><code class="lang-csharp">private void Initialize()
+<pre><code class="lang-csharp">protected override void Initialize()
 {
 	Console.WriteLine(&quot;Main Scene Initialized!&quot;);
 	_keyboard = new KeyboardMonitor();
@@ -189,7 +189,7 @@ private Snake _snake;
 </code></pre>
 <p>Now that we have our timer fields and our snake created and initialized, we need to modify <code>MainScene</code>'s <code>Update()</code> method to use them.</p>
 <p>Modify <code>MainScene.Update()</code> as follows:</p>
-<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+<pre><code class="lang-csharp">protected override void Update(GameTime gameTime)
 {
 	_keyboard.BeginUpdate(Keyboard.GetState());
 	// We'll be replacing these user input actions with more
@@ -232,7 +232,7 @@ private Snake _snake;
 <h2 id="step-4-drawing-our-snake">Step 4: Drawing our Snake</h2>
 <p>Now that we have our <code>MainScene</code> instantiating and moving a <code>Snake</code>, we need to update our <code>Draw()</code> method to draw the <code>Snake</code> to the screen.</p>
 <p>In <code>core/scene/MainScene.cs</code>, we'll be updating <code>MainScene.Draw()</code> to look like the following:</p>
-<pre><code class="lang-csharp">private void Draw(GameTime gameTime)
+<pre><code class="lang-csharp">protected override void Draw(GameTime gameTime)
 {
 	SpriteBatch.Begin();
 
@@ -345,7 +345,7 @@ Direction NextDirection { get; private set; } = Direction.Right
 </code></pre>
 <p>Finally, with our adjustments and new <code>SetDirection()</code> method in place, we can fix our user input in <code>MainScene.Update()</code> and let the player actually control the snake!</p>
 <p>In <code>core/scene/MainScene.cs</code>, replace the <code>_snakeSprite.Transform.Move()</code> calls in <code>MainScene.Update()</code> with <code>_snake.SetDirection()</code> calls, as follows:</p>
-<pre><code class="lang-csharp">private void Update(GameTime gameTime)
+<pre><code class="lang-csharp">protected override void Update(GameTime gameTime)
 {
 	_keyboard.BeginUpdate(Keyboard.GetState());
 
