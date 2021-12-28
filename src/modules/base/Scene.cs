@@ -28,6 +28,7 @@ namespace Ladybug
 	/// </summary>
 	public abstract class Scene
 	{
+		#region Events
 		/// <summary>
 		/// Asynchronous content loading has started
 		/// </summary>
@@ -92,13 +93,22 @@ namespace Ladybug
 		/// The Scene has been unpaused or unsuspended
 		/// </summary>
 		public event EventHandler Resumed;
-
-		/// <summary>
-		/// The Scene's default SpriteBatch
-		/// </summary>
-		public SpriteBatch SpriteBatch { get; private set; }
+		#endregion // Events
 
 		private Dictionary<string, Action<InputActionEventArgs>> _inputActions = new Dictionary<string, Action<InputActionEventArgs>>();
+
+		/// <summary>
+		/// Begins inline composition of a new Scene
+		/// </summary>
+		/// <returns></returns>
+		public static ComposedScene Compose() => new ComposedScene();
+
+		/// <summary>
+		/// Begins inline composition of a new Scene
+		/// </summary>
+		/// <param name="game"></param>
+		/// <returns></returns>
+		public static ComposedScene Compose(Game game) => new ComposedScene(game);
 
 		/// <summary>
 		/// Creates a new Scene
@@ -116,30 +126,15 @@ namespace Ladybug
 		}
 
 		/// <summary>
-		/// Begins inline composition of a new Scene
+		/// Contains services registered with this Scene
 		/// </summary>
-		/// <returns></returns>
-		public static ComposedScene Compose() => new ComposedScene();
+		/// <value></value>
+		public GameServiceContainer Services { get; private set; }
 
 		/// <summary>
-		/// Begins inline composition of a new Scene
+		/// The Scene's default SpriteBatch
 		/// </summary>
-		/// <param name="game"></param>
-		/// <returns></returns>
-		public static ComposedScene Compose(Game game) => new ComposedScene(game);
-
-		/// <summary>
-		/// Sets the <see cref="Ladybug.Game"/> object that will be managing this Scene
-		/// </summary>
-		/// <param name="game">Game object that will be managing this Scene</param>
-		public void SetGame(Game game)
-		{
-			Game = game;
-			Content = new ContentManager(Game.Content.ServiceProvider);
-			Content.RootDirectory = "Content";
-			ResourceCatalog = new ResourceCatalog(Content);
-			SpriteBatch = new SpriteBatch(game.GraphicsDevice);
-		}
+		public SpriteBatch SpriteBatch { get; private set; }
 
 		/// <summary>
 		/// Whether this Scene has completed asynchronous initialization
@@ -184,6 +179,21 @@ namespace Ladybug
 		/// Current <see cref="Ladybug.SceneState"/> of the Scene
 		/// </summary>
 		public SceneState State { get; private set; } = SceneState.ACTIVE;
+
+		/// <summary>
+		/// Sets the <see cref="Ladybug.Game"/> object that will be managing this Scene
+		/// </summary>
+		/// <param name="game">Game object that will be managing this Scene</param>
+		public void SetGame(Game game)
+		{
+			Game = game;
+			Content = new ContentManager(Game.Content.ServiceProvider);
+			Content.RootDirectory = "Content";
+			ResourceCatalog = new ResourceCatalog(Content);
+			SpriteBatch = new SpriteBatch(game.GraphicsDevice);
+			Services = new GameServiceContainer();
+			Services.AddService(ResourceCatalog);
+		}
 
 		/// <summary>
 		/// Run when content is loaded asynchronously

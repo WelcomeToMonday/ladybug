@@ -8,6 +8,7 @@ using GUI = Ladybug.UI;
 
 namespace Ladybug.Tests.UI
 {
+	[Collection("Unique: Game Instantiation")]
 	public class UIConstructionTests
 	{
 		[Fact]
