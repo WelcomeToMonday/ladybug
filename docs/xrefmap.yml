@@ -2459,6 +2459,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Extensions.AngleTo
   nameWithType: Extensions.AngleTo
+- uid: Ladybug.Extensions.Bezier(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  name: Bezier(Vector2, Vector2, Vector2, Vector2, Single)
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_Bezier_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_
+  commentId: M:Ladybug.Extensions.Bezier(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  fullName: Ladybug.Extensions.Bezier(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, System.Single)
+  nameWithType: Extensions.Bezier(Vector2, Vector2, Vector2, Vector2, Single)
+- uid: Ladybug.Extensions.Bezier*
+  name: Bezier
+  href: api/Ladybug.Extensions.html#Ladybug_Extensions_Bezier_
+  commentId: Overload:Ladybug.Extensions.Bezier
+  isSpec: "True"
+  fullName: Ladybug.Extensions.Bezier
+  nameWithType: Extensions.Bezier
 - uid: Ladybug.Extensions.DistanceTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   name: DistanceTo(Vector2, Vector2)
   href: api/Ladybug.Extensions.html#Ladybug_Extensions_DistanceTo_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
