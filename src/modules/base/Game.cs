@@ -31,6 +31,7 @@ namespace Ladybug
 			Content.RootDirectory = "Content";
 			IsMouseVisible = true;
 			GraphicsDeviceManager.ApplyChanges();
+			ResourceCatalog = new ResourceCatalog(Content);
 			ThreadManager = new ThreadManager();
 		}
 
