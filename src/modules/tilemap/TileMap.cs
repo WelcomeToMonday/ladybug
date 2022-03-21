@@ -224,12 +224,12 @@ namespace Ladybug.TileMap
 			_layers = layers;
 		}
 
-		public virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
+		protected virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
 		{
 			// to be overridden in derived classes
 		}
 
-		public virtual void HandleMapProperty(string name, string value)
+		protected virtual void HandleMapProperty(string name, string value)
 		{
 			// to be overridden in derived classes
 		}
