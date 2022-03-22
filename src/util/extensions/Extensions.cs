@@ -99,11 +99,11 @@ namespace Ladybug
 		/// <summary>
 		/// Interpolate a Bezier curve
 		/// </summary>
-		/// <param name="p0"></param>
-		/// <param name="p1"></param>
-		/// <param name="p2"></param>
-		/// <param name="p3"></param>
-		/// <param name="t"></param>
+		/// <param name="p0">The curve's source node</param>
+		/// <param name="p1">The "handle" of the curve's source node</param>
+		/// <param name="p2">The "handle" of the curve's destination node</param>
+		/// <param name="p3">The curve's destination node</param>
+		/// <param name="t">The position along the curve, from 0.0f to 1.0f</param>
 		/// <returns></returns>
 		public static Vector2 Bezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float t)
 		{
