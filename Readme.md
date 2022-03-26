@@ -13,7 +13,7 @@ The Ladybug MGCB Extension required for advanced content handling unfortunately 
 ### NuGet Package
 The base Ladybug Framework can be installed into your project via NuGet
 
-[Ladybug NuGet Package](#) _(coming soon)_
+[Ladybug NuGet Package](https://nuget.org/packages/WelcomeToMonday.Ladybug/)
 
 ### Framework Build Instructions
 
