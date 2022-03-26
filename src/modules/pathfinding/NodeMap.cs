@@ -3,12 +3,28 @@ using System.Linq;
 
 namespace Ladybug.Pathfinding
 {
+	/// <summary>
+	/// Represents a collection of pathfinding graph nodes
+	/// </summary>
 	public class NodeMap
 	{
+		/// <summary>
+		/// List of pathable node objects within this map
+		/// </summary>
+		/// <returns></returns>
 		public List<IPathable> Nodes { get; private set; } = new List<IPathable>();
 
+		// note: Not used by library. Necessary?
+		/// <summary>
+		/// A collection of saved paths within this map
+		/// </summary>
+		/// <value></value>
 		public Dictionary<string, NodePath> SavedPaths { get; private set; }
 
+		/// <summary>
+		/// Add one or more nodes to the map
+		/// </summary>
+		/// <param name="nodes"></param>
 		public void AddNodes(params IPathable[] nodes)
 		{
 			foreach (var n in nodes)
@@ -17,6 +33,10 @@ namespace Ladybug.Pathfinding
 			}
 		}
 
+		/// <summary>
+		/// Add one or more nodes to the map
+		/// </summary>
+		/// <param name="nodes"></param>
 		public void AddNodes(List<IPathable> nodes)
 		{
 			foreach (var n in nodes)
@@ -25,6 +45,12 @@ namespace Ladybug.Pathfinding
 			}
 		}
 
+		/// <summary>
+		/// Find a path between two nones
+		/// </summary>
+		/// <param name="startNode"></param>
+		/// <param name="endNode"></param>
+		/// <returns></returns>
 		public NodePath Find(IPathable startNode, IPathable endNode)
 		{
 			NodePath path = null;

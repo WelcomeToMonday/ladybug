@@ -97,7 +97,26 @@ namespace Ladybug.UI
 			}
 		}
 
+		/// <summary>
+		/// Equivalence operator: Returns <c>true</c> if Margins are equivalent
+		/// </summary>
+		/// <param name="lhs"></param>
+		/// <param name="rhs"></param>
+		/// <returns></returns>
 		public static bool operator ==(Margin lhs, Margin rhs) => lhs.Equals(rhs);
+
+		/// <summary>
+		/// Negated equivalence operator: Returns <c>true</c> if Margins are not equivalent
+		/// </summary>
+		/// <param name="lhs"></param>
+		/// <param name="rhs"></param>
+		/// <returns></returns>
 		public static bool operator !=(Margin lhs, Margin rhs) => !lhs.Equals(rhs);
+
+		/// <inheritdoc />
+		public override int GetHashCode()
+		{
+			return (Top, Right, Bottom, Left).GetHashCode();
+		}
 	}
 }

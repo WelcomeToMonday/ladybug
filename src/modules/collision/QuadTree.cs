@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug.Collision
 {
+	/// <summary>
+	/// Represents a recursive container used for efficient collision detection
+	/// </summary>
 	public class QuadTree
 	{
 		private int _maxObjects = 10;
@@ -15,6 +18,11 @@ namespace Ladybug.Collision
 		private Rectangle _bounds;
 		private QuadTree[] _nodes;
 
+		/// <summary>
+		/// Create a new QuadTree
+		/// </summary>
+		/// <param name="level"></param>
+		/// <param name="bounds"></param>
 		public QuadTree(int level, Rectangle bounds)
 		{
 			_level = level;
@@ -23,9 +31,21 @@ namespace Ladybug.Collision
 			_nodes = new QuadTree[4];
 		}
 
-		public Rectangle Bounds { get => _bounds; } // Temp, used for testing
-		public QuadTree[] Nodes { get => _nodes; }  // Temp, used for testing
+		/// <summary>
+		/// The bounds of the area the QuadTree checks collisions within
+		/// </summary>
+		/// <value></value>
+		public Rectangle Bounds { get => _bounds; }
 
+		/// <summary>
+		/// List of sub-quadtrees
+		/// </summary>
+		/// <value></value>
+		public QuadTree[] Nodes { get => _nodes; }
+
+		/// <summary>
+		/// Clears the QuadTree, removing its tracked collidable objects and sub-quadtree nodes
+		/// </summary>
 		public void Clear()
 		{
 			_objects.Clear();
@@ -40,6 +60,10 @@ namespace Ladybug.Collision
 			}
 		}
 
+		/// <summary>
+		/// Inserts a collider for this QuadTree to manage collision detection for
+		/// </summary>
+		/// <param name="collider"></param>
 		public void Insert(ICollision collider)
 		{
 			if (_nodes[0] != null)
@@ -85,7 +109,13 @@ namespace Ladybug.Collision
 				}
 			}
 		}
-		
+
+		/// <summary>
+		/// Retrieves results of collision checks
+		/// </summary>
+		/// <param name="returnObjects"></param>
+		/// <param name="collider"></param>
+		/// <returns></returns>
 		public CollisionGroup Retrieve(ref List<ICollision> returnObjects, ICollision collider)
 		{
 			var index = GetIndices(collider);
@@ -103,6 +133,13 @@ namespace Ladybug.Collision
 			return new CollisionGroup(collider, returnObjects);
 		}
 
+		/// <summary>
+		/// Retrieves collision results for all colliders of a specified type
+		/// </summary>
+		/// <param name="returnObjects"></param>
+		/// <param name="collider"></param>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
 		public CollisionGroup RetrieveByType<T>(ref List<T> returnObjects, ICollision collider) where T : ICollision
 		{
 			var index = GetIndices(collider);

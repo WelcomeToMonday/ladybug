@@ -2,6 +2,9 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug.UI
 {
+	/// <summary>
+	/// A Panel that automatically positions child elements in a vertical stack
+	/// </summary>
 	public class StackPanel : Panel
 	{
 		/// <summary>
@@ -203,6 +206,7 @@ namespace Ladybug.UI
 			*/
 		}
 
+		/// <inheritdoc />
 		protected override void AddChild(Control childControl)
 		{
 			base.AddChild(childControl);

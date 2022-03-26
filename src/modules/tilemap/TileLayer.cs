@@ -3,19 +3,42 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Ladybug.TileMap
 {
+	/// <summary>
+	/// Represents a layer of tilemap tiles
+	/// </summary>
 	public class TileLayer : IDrawableLayer
 	{
+		/// <summary>
+		/// Create a TileLayer
+		/// </summary>
 		public TileLayer()
 		{
 
 		}
+
+		/// <summary>
+		/// Create a TileLayer
+		/// </summary>
+		/// <param name="data"></param>
+		/// <param name="width"></param>
+		/// <param name="height"></param>
 		public TileLayer(string data, int width, int height)
 		{
 			SetData(data, width, height);
 		}
 		
+		/// <summary>
+		/// The TileLayer's data, organized as a two-dimensional array of Tile IDs
+		/// </summary>
+		/// <value></value>
 		public int[,] Data { get; private set; }
 
+		/// <summary>
+		/// Set the TileLayer's content data
+		/// </summary>
+		/// <param name="data"></param>
+		/// <param name="width"></param>
+		/// <param name="height"></param>
 		public void SetData(string data, int width, int height)
 		{
 			Data = new int[width, height];
@@ -31,6 +54,11 @@ namespace Ladybug.TileMap
 			}
 		}
 
+		/// <summary>
+		/// Draws the TileLayer onto a TileMap
+		/// </summary>
+		/// <param name="tileMap"></param>
+		/// <param name="spriteBatch"></param>
 		public void Draw(TileMap tileMap, SpriteBatch spriteBatch)
 		{
 			for (var row = 0; row < tileMap.Height; row++)
@@ -70,13 +98,13 @@ namespace Ladybug.TileMap
 			switch (tileMap.Orientation)
 			{
 				default:
-				case TileMap.TileOrientation.ORTHOGRAPHIC:
+				case TileMap.TileOrientation.Orthographic:
 					res = new Vector2(
 						tileMap.TileWidth * col,
 						tileMap.TileHeight * row
 					);
 					break;
-				case TileMap.TileOrientation.ISOMETRIC:
+				case TileMap.TileOrientation.Isometric:
 					res = new Vector2(tileMap.Height * (tileMap.TileWidth / 2), 0) - new Vector2(tileMap.TileWidth / 2, 0) //origin point
 					+ new Vector2(-row * (tileMap.TileWidth/2), row * (tileMap.TileHeight/2)) // row offset
 					+ new Vector2(col * tileMap.TileWidth / 2, col * tileMap.TileHeight / 2); // col offset

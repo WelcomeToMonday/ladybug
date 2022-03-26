@@ -21,11 +21,22 @@ namespace Ladybug.Collision
 			_otherColliders = otherColliders;
 		}
 
+		/// <summary>
+		/// Checks collision by checking if any other colliders intersect with this collider's bounds
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<ICollision> CheckCollisionByBounds(int offset = 0)
 		{
 			return CheckCollisionByBounds<ICollision>(offset);
 		}
 		// todo: Add Vector4 offset support
+
+		/// <summary>
+		/// Checks collision by checking if any other colliders intersect with this collider's bounds
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<T> CheckCollisionByBounds<T>(int offset = 0) where T : ICollision
 		{
 			if (_otherColliders.Contains(_targetCollider)) _otherColliders.Remove(_targetCollider);
@@ -78,13 +89,46 @@ namespace Ladybug.Collision
 			return results;
 		}
 
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<ICollision> CheckCollisionByPoints(int offset = 0) => CheckCollisionByPoints<ICollision>(offset);
+
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<ICollision> CheckCollisionByPoints(Vector2 offset) => CheckCollisionByPoints<ICollision>(offset);
+
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<ICollision> CheckCollisionByPoints(Vector4 offset) => CheckCollisionByPoints<ICollision>(offset);
 
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<T> CheckCollisionByPoints<T>(int offset = 0) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset, offset, offset, offset));
+
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<T> CheckCollisionByPoints<T>(Vector2 offset) where T : ICollision => CheckCollisionByPoints<T>(new Vector4(offset.X, offset.X, offset.Y, offset.Y));
 		
+		/// <summary>
+		/// Checks collision by checking if other colliders intersect with a point relative to each bounding face, defined by offset
+		/// </summary>
+		/// <param name="offset"></param>
+		/// <returns></returns>
 		public CollisionResult<T> CheckCollisionByPoints<T>(Vector4 offset) where T : ICollision
 		{
 			if (typeof(T) == _targetCollider.GetType() && _otherColliders.Contains((T)_targetCollider)) _otherColliders.Remove((T)_targetCollider);

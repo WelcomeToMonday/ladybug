@@ -12,6 +12,11 @@ using Ladybug.Graphics;
 
 namespace Ladybug.TileMap
 {
+	// Note: since we don't use the XML Serializer to read or write tilemaps, we probably don't need to
+	// use IXmlSerializable
+	/// <summary>
+	/// Represents a collection of tiles
+	/// </summary>
 	public class TileSet : IXmlSerializable
 	{
 		//public Vector2 TileDimensions;
@@ -29,6 +34,12 @@ namespace Ladybug.TileMap
 
 		private int m_tileCount;
 
+		/// <summary>
+		/// Create a TileSet
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <param name="contentManager"></param>
+		/// <param name="graphicsDevice"></param>
 		public TileSet(string filePath, ContentManager contentManager, GraphicsDevice graphicsDevice)
 		{
 			_filePath = filePath;
@@ -45,25 +56,53 @@ namespace Ladybug.TileMap
 			BuildSpriteList();
 		}
 
+		/// <summary>
+		/// Width of this TileSet's individual tiles, in pixels
+		/// </summary>
+		/// <value></value>
 		public int TileWidth {get => _tileWidth;}
 
+		/// <summary>
+		/// Height of this TileSet's individual tiles, in pixels
+		/// </summary>
+		/// <value></value>
 		public int TileHeight{get => _tileHeight;}
 
+		/// <summary>
+		/// Number of tiles defined within this TileSet
+		/// </summary>
+		/// <value></value>
 		public int TileCount
 		{
 			get => m_tileCount;
 			private set => m_tileCount = value;
 		}
 
+		/// <summary>
+		/// The GID of the first tile in this TileSet
+		/// </summary>
+		/// <value></value>
 		public int FirstGID { get; set; } = 0;
 
+		/// <summary>
+		/// The range of tile IDs within this TileSet
+		/// </summary>
+		/// <returns></returns>
 		public Vector2 TileRange { get => new Vector2(FirstGID, (TileCount + FirstGID) - 1); }
 
+		/// <summary>
+		/// Retrieves a tile within this tileset by its position
+		/// </summary>
+		/// <value></value>
 		public Sprite this[int i]
 		{
 			get => _tileSprites[i];
 		}
 
+		/// <summary>
+		/// Build a TileSet from an XML Definition
+		/// </summary>
+		/// <param name="reader"></param>
 		public void ReadXml(XmlReader reader)
 		{
 			while (reader.Read())
@@ -106,12 +145,13 @@ namespace Ladybug.TileMap
 			}
 		}
 
-		public void WriteXml(XmlWriter writer)
+		void IXmlSerializable.WriteXml(XmlWriter writer)
 		{
 
 		}
 
-		public System.Xml.Schema.XmlSchema GetSchema()
+
+		System.Xml.Schema.XmlSchema IXmlSerializable.GetSchema()
 		{
 			return null;
 		}

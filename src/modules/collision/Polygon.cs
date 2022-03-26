@@ -4,8 +4,15 @@ using Microsoft.Xna.Framework;
 
 namespace Ladybug.Collision
 {
+	/// <summary>
+	/// Represents an abstract polygon shape with three or more vectors
+	/// </summary>
 	public class Polygon
 	{
+		/// <summary>
+		/// Creates a new polygon object from three or more vectors
+		/// </summary>
+		/// <param name="vectors"></param>
 		public Polygon(params Vector2[] vectors)
 		{
 			if (vectors.Length >= 3)
@@ -23,8 +30,17 @@ namespace Ladybug.Collision
 			}
 		}
 
+		/// <summary>
+		/// The vertices of the polygon
+		/// </summary>
+		/// <value></value>
 		public Vector2[] Points { get; private set; }
 
+		/// <summary>
+		/// Returns <c>true</c> if the given vector lies within the bounds of the polygon
+		/// </summary>
+		/// <param name="vector"></param>
+		/// <returns></returns>
 		public bool ContainsVector(Vector2 vector)
 		{
 			bool res = false;

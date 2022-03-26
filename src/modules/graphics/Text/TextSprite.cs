@@ -7,12 +7,22 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug.Graphics
 {
+	/// <summary>
+	/// Represents a drawable section of text
+	/// </summary>
 	public class TextSprite
 	{
 
 		private string _rawText;
 		private List<FormattedString> _output;
 
+		/// <summary>
+		/// Create a TextSprite
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="font"></param>
+		/// <param name="bounds"></param>
+		/// <returns></returns>
 		public TextSprite(string text, SpriteFont font, Rectangle bounds = new Rectangle())
 		{
 			SetBounds(bounds);
@@ -20,6 +30,13 @@ namespace Ladybug.Graphics
 			SetText(text);
 		}
 
+		/// <summary>
+		/// Create a TextSprite
+		/// </summary>
+		/// <param name="input"></param>
+		/// <param name="defaultFont"></param>
+		/// <param name="bounds"></param>
+		/// <returns></returns>
 		public TextSprite(List<FormattedString> input, SpriteFont defaultFont, Rectangle bounds = new Rectangle())
 		{
 			SetBounds(bounds);
@@ -27,6 +44,10 @@ namespace Ladybug.Graphics
 			_output = input;
 		}
 
+		/// <summary>
+		/// The formatted text this TextSprite will render
+		/// </summary>
+		/// <value></value>
 		public List<FormattedString> FormattedText
 		{
 			get
@@ -40,16 +61,40 @@ namespace Ladybug.Graphics
 			}
 		}
 
+		/// <summary>
+		/// This TextSprite's default font
+		/// </summary>
+		/// <value></value>
 		public SpriteFont DefaultFont { get; private set; }
 
+		/// <summary>
+		/// This TextSprite's default text color
+		/// </summary>
+		/// <value></value>
 		public Color DefaultTextColor { get; private set; } = Color.White;
 
+		/// <summary>
+		/// This TextSprite's default scale value
+		/// </summary>
+		/// <value></value>
 		public float DefaultScale { get; private set; } = 1.0f;
 
+		/// <summary>
+		/// The Color Palette used by this TextSprite
+		/// </summary>
+		/// <value></value>
 		public Dictionary<string, string> ColorPalette {get; private set;}
 
+		/// <summary>
+		/// The TextSprite's bounds
+		/// </summary>
+		/// <value></value>
 		public Rectangle Bounds { get; private set; }
 
+		/// <summary>
+		/// The current length of the TextSprite's text content
+		/// </summary>
+		/// <value></value>
 		public int Length
 		{
 			get
@@ -68,34 +113,61 @@ namespace Ladybug.Graphics
 			}
 		}
 
+		/// <summary>
+		/// Set the TextSprite's text content
+		/// </summary>
+		/// <param name="text"></param>
 		public void SetText(string text)
 		{
 			_rawText = text;
 			BuildOutput();
 		}
 
+		/// <summary>
+		/// Set the TextSprite's font
+		/// </summary>
+		/// <param name="font"></param>
 		public void SetFont(SpriteFont font)
 		{
 			DefaultFont = font;
 		}
 
+		/// <summary>
+		/// Set the bounds of the TextSprite
+		/// </summary>
+		/// <param name="r"></param>
 		public void SetBounds(Rectangle r)
 		{
 			Bounds = r;
 		}
 
+		/// <summary>
+		/// Set the color of the TextSprite
+		/// </summary>
+		/// <param name="c"></param>
 		public void SetColor(Color c)
 		{
 			DefaultTextColor = c;
 		}
 
+		/// <summary>
+		/// Set the scale of the TextSprite
+		/// </summary>
+		/// <param name="s"></param>
 		public void SetScale(float s)
 		{
 			DefaultScale = s;
 		}
 
+		/// <summary>
+		/// Set the TextSprite's color palette
+		/// </summary>
+		/// <param name="palette"></param>
 		public void SetPalette(Dictionary<string, string> palette) => ColorPalette = palette;
 
+		/// <summary>
+		/// Set the TextSprite's bounds to fit its text content
+		/// </summary>
 		public void SetBoundsToText()
 		{
 			//Vector2 dimensions = Font.MeasureString(Text);
@@ -186,6 +258,10 @@ namespace Ladybug.Graphics
 			_output = f;
 		}
 
+		/// <summary>
+		/// Draw the TextSprite
+		/// </summary>
+		/// <param name="spriteBatch"></param>
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			Vector2 offset = Bounds.Location.ToVector2();

@@ -44,6 +44,9 @@ namespace Ladybug.ECS
 			}
 		}
 
+		/// <summary>
+		/// Deregisters all components managed by this system
+		/// </summary>
 		public static void DeregisterAll()
 		{
 			_components = new List<T>();

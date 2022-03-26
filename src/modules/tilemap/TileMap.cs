@@ -11,10 +11,29 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Ladybug.TileMap
 {
+	/// <summary>
+	/// Represents a map constructed from layers containing tiles, images, and objects
+	/// </summary>
 	public class TileMap
 	{
-		public enum TileOrientation {ORTHOGRAPHIC, ISOMETRIC}
-
+		/// <summary>
+		/// The overall orientation of the tilemap
+		/// </summary>
+		public enum TileOrientation
+		{
+			/// <summary>
+			/// Orthographic TileMap Orientation
+			/// </summary>
+			Orthographic,
+			/// <summary>
+			/// Isometric TileMap orientation
+			/// </summary>
+			Isometric
+		}
+		// todo: This should be a property
+		/// <summary>
+		/// The GraphicsDevice used to dynamically build this tilemap's sprite
+		/// </summary>
 		protected GraphicsDevice graphicsDevice;
 		private string _filePath;
 
@@ -24,6 +43,12 @@ namespace Ladybug.TileMap
 
 		private List<TileSet> _tileSets = new List<TileSet>();
 
+		/// <summary>
+		/// Create a TileMap
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <param name="contentManager"></param>
+		/// <param name="graphicsDevice"></param>
 		public TileMap(string filePath, ContentManager contentManager, GraphicsDevice graphicsDevice)
 		{
 			_contentManager = contentManager;
@@ -37,20 +62,52 @@ namespace Ladybug.TileMap
 			}
 		}
 
-		public TileOrientation Orientation {get; set;} = TileOrientation.ORTHOGRAPHIC;
+		/// <summary>
+		/// The TileMap's orientation
+		/// </summary>
+		/// <value></value>
+		public TileOrientation Orientation { get; set; } = TileOrientation.Orthographic;
 
+		/// <summary>
+		/// The TileMap's content manager
+		/// </summary>
+		/// <value></value>
 		public ContentManager Content { get => _contentManager; }
 
+		/// <summary>
+		/// The TileMap's final texture
+		/// </summary>
+		/// <value></value>
 		public Texture2D MapTexture { get; private set; }
 
+		/// <summary>
+		/// The TileMap's width, in pixels
+		/// </summary>
+		/// <value></value>
 		public int Width { get; private set; }
 
+		/// <summary>
+		/// The TileMap's height, in pixels
+		/// </summary>
+		/// <value></value>
 		public int Height { get; private set; }
 
+		/// <summary>
+		/// The width of the TileMap's individual tiles, in pixels
+		/// </summary>
+		/// <value></value>
 		public int TileWidth { get; private set; }
 
+		/// <summary>
+		/// The height of the TileMap's individual tiles, in pixels
+		/// </summary>
+		/// <value></value>
 		public int TileHeight { get; private set; }
 
+		/// <summary>
+		/// Build the TileMap from XML Content
+		/// </summary>
+		/// <param name="reader"></param>
 		public void ReadXml(XmlReader reader)
 		{
 			List<IDrawableLayer> layers = new List<IDrawableLayer>();
@@ -224,11 +281,23 @@ namespace Ladybug.TileMap
 			_layers = layers;
 		}
 
+		/// <summary>
+		/// Build a MapObject from its base data
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="type"></param>
+		/// <param name="bounds"></param>
+		/// <param name="properties"></param>
 		protected virtual void BuildMapObject(string name, string type, Rectangle bounds, Dictionary<string, string> properties)
 		{
 			// to be overridden in derived classes
 		}
 
+		/// <summary>
+		/// Handle properties defined within a tilemap
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="value"></param>
 		protected virtual void HandleMapProperty(string name, string value)
 		{
 			// to be overridden in derived classes
@@ -240,24 +309,27 @@ namespace Ladybug.TileMap
 			switch (Orientation)
 			{
 				default:
-				case TileOrientation.ORTHOGRAPHIC:
+				case TileOrientation.Orthographic:
 					res = new Vector2(
 						Width * TileWidth,
 						Height * TileHeight
 					);
 					break;
-				case TileOrientation.ISOMETRIC:
+				case TileOrientation.Isometric:
 					var side = Height + Width;
 					res = new Vector2(
 						(int)(side * (TileWidth / 2)),
 						(int)(side * (TileHeight / 2))
-					);	
+					);
 					break;
 			}
 
 			return res;
 		}
 
+		/// <summary>
+		/// Dynamically build the TileMap's texture and store it in the MapTexture property
+		/// </summary>
 		public void BuildMapTexture()
 		{
 			var mapBounds = GetMapBounds();
@@ -298,10 +370,15 @@ namespace Ladybug.TileMap
 			MapTexture = fullTexture;
 		}
 
+		/// <summary>
+		/// Convert an Isometric Coordinate to an Orthographic Coordinate
+		/// </summary>
+		/// <param name="isoCoord"></param>
+		/// <returns></returns>
 		public Vector2 CoordIso2Ortho(Vector2 isoCoord)
 		{
 			// Tiled is intersting in that the "origin" of an iso tile is at its foot and not its top.
-			// Therefore, we offset the Y by tileheight so that cooordinates show in-game where they 
+			// Therefore, we offset the Y by tileheight so that coordinates show in-game where they 
 			// show in the Tiled editor.
 
 			return new Vector2(Height * (TileWidth / 2), TileHeight) // anchor
@@ -309,6 +386,11 @@ namespace Ladybug.TileMap
 			+ new Vector2(isoCoord.X, isoCoord.X / 2);
 		}
 
+		/// <summary>
+		/// Retrieve a tile's source tileset by the tile's ID
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public TileSet FindTileSet(int id)
 		{
 			TileSet res = null;
