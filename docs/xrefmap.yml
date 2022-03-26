@@ -7709,18 +7709,18 @@ references:
   commentId: T:Ladybug.TileMap.TileMap.TileOrientation
   fullName: Ladybug.TileMap.TileMap.TileOrientation
   nameWithType: TileMap.TileOrientation
-- uid: Ladybug.TileMap.TileMap.TileOrientation.ISOMETRIC
-  name: ISOMETRIC
-  href: api/Ladybug.TileMap.TileMap.TileOrientation.html#Ladybug_TileMap_TileMap_TileOrientation_ISOMETRIC
-  commentId: F:Ladybug.TileMap.TileMap.TileOrientation.ISOMETRIC
-  fullName: Ladybug.TileMap.TileMap.TileOrientation.ISOMETRIC
-  nameWithType: TileMap.TileOrientation.ISOMETRIC
-- uid: Ladybug.TileMap.TileMap.TileOrientation.ORTHOGRAPHIC
-  name: ORTHOGRAPHIC
-  href: api/Ladybug.TileMap.TileMap.TileOrientation.html#Ladybug_TileMap_TileMap_TileOrientation_ORTHOGRAPHIC
-  commentId: F:Ladybug.TileMap.TileMap.TileOrientation.ORTHOGRAPHIC
-  fullName: Ladybug.TileMap.TileMap.TileOrientation.ORTHOGRAPHIC
-  nameWithType: TileMap.TileOrientation.ORTHOGRAPHIC
+- uid: Ladybug.TileMap.TileMap.TileOrientation.Isometric
+  name: Isometric
+  href: api/Ladybug.TileMap.TileMap.TileOrientation.html#Ladybug_TileMap_TileMap_TileOrientation_Isometric
+  commentId: F:Ladybug.TileMap.TileMap.TileOrientation.Isometric
+  fullName: Ladybug.TileMap.TileMap.TileOrientation.Isometric
+  nameWithType: TileMap.TileOrientation.Isometric
+- uid: Ladybug.TileMap.TileMap.TileOrientation.Orthographic
+  name: Orthographic
+  href: api/Ladybug.TileMap.TileMap.TileOrientation.html#Ladybug_TileMap_TileMap_TileOrientation_Orthographic
+  commentId: F:Ladybug.TileMap.TileMap.TileOrientation.Orthographic
+  fullName: Ladybug.TileMap.TileMap.TileOrientation.Orthographic
+  nameWithType: TileMap.TileOrientation.Orthographic
 - uid: Ladybug.TileMap.TileMap.TileWidth
   name: TileWidth
   href: api/Ladybug.TileMap.TileMap.html#Ladybug_TileMap_TileMap_TileWidth
@@ -7779,19 +7779,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.FirstGID
   nameWithType: TileSet.FirstGID
-- uid: Ladybug.TileMap.TileSet.GetSchema
-  name: GetSchema()
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_GetSchema
-  commentId: M:Ladybug.TileMap.TileSet.GetSchema
-  fullName: Ladybug.TileMap.TileSet.GetSchema()
-  nameWithType: TileSet.GetSchema()
-- uid: Ladybug.TileMap.TileSet.GetSchema*
-  name: GetSchema
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_GetSchema_
-  commentId: Overload:Ladybug.TileMap.TileSet.GetSchema
-  isSpec: "True"
-  fullName: Ladybug.TileMap.TileSet.GetSchema
-  nameWithType: TileSet.GetSchema
 - uid: Ladybug.TileMap.TileSet.Item(System.Int32)
   name: Item[Int32]
   href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_Item_System_Int32_
@@ -7821,6 +7808,23 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.ReadXml
   nameWithType: TileSet.ReadXml
+- uid: Ladybug.TileMap.TileSet.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)
+  name: IXmlSerializable.WriteXml(XmlWriter)
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_System_Xml_Serialization_IXmlSerializable_WriteXml_System_Xml_XmlWriter_
+  commentId: M:Ladybug.TileMap.TileSet.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)
+  name.vb: System.Xml.Serialization.IXmlSerializable.WriteXml(XmlWriter)
+  fullName: Ladybug.TileMap.TileSet.System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+  nameWithType: TileSet.IXmlSerializable.WriteXml(XmlWriter)
+  nameWithType.vb: TileSet.System.Xml.Serialization.IXmlSerializable.WriteXml(XmlWriter)
+- uid: Ladybug.TileMap.TileSet.System#Xml#Serialization#IXmlSerializable#WriteXml*
+  name: IXmlSerializable.WriteXml
+  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_System_Xml_Serialization_IXmlSerializable_WriteXml_
+  commentId: Overload:Ladybug.TileMap.TileSet.System#Xml#Serialization#IXmlSerializable#WriteXml
+  isSpec: "True"
+  name.vb: System.Xml.Serialization.IXmlSerializable.WriteXml
+  fullName: Ladybug.TileMap.TileSet.System.Xml.Serialization.IXmlSerializable.WriteXml
+  nameWithType: TileSet.IXmlSerializable.WriteXml
+  nameWithType.vb: TileSet.System.Xml.Serialization.IXmlSerializable.WriteXml
 - uid: Ladybug.TileMap.TileSet.TileCount
   name: TileCount
   href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_TileCount
@@ -7873,19 +7877,6 @@ references:
   isSpec: "True"
   fullName: Ladybug.TileMap.TileSet.TileWidth
   nameWithType: TileSet.TileWidth
-- uid: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
-  name: WriteXml(XmlWriter)
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_System_Xml_XmlWriter_
-  commentId: M:Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
-  fullName: Ladybug.TileMap.TileSet.WriteXml(System.Xml.XmlWriter)
-  nameWithType: TileSet.WriteXml(XmlWriter)
-- uid: Ladybug.TileMap.TileSet.WriteXml*
-  name: WriteXml
-  href: api/Ladybug.TileMap.TileSet.html#Ladybug_TileMap_TileSet_WriteXml_
-  commentId: Overload:Ladybug.TileMap.TileSet.WriteXml
-  isSpec: "True"
-  fullName: Ladybug.TileMap.TileSet.WriteXml
-  nameWithType: TileSet.WriteXml
 - uid: Ladybug.Transform
   name: Transform
   href: api/Ladybug.Transform.html
@@ -9397,6 +9388,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.UI.Margin.Equals
   nameWithType: Margin.Equals
+- uid: Ladybug.UI.Margin.GetHashCode
+  name: GetHashCode()
+  href: api/Ladybug.UI.Margin.html#Ladybug_UI_Margin_GetHashCode
+  commentId: M:Ladybug.UI.Margin.GetHashCode
+  fullName: Ladybug.UI.Margin.GetHashCode()
+  nameWithType: Margin.GetHashCode()
+- uid: Ladybug.UI.Margin.GetHashCode*
+  name: GetHashCode
+  href: api/Ladybug.UI.Margin.html#Ladybug_UI_Margin_GetHashCode_
+  commentId: Overload:Ladybug.UI.Margin.GetHashCode
+  isSpec: "True"
+  fullName: Ladybug.UI.Margin.GetHashCode
+  nameWithType: Margin.GetHashCode
 - uid: Ladybug.UI.Margin.Left
   name: Left
   href: api/Ladybug.UI.Margin.html#Ladybug_UI_Margin_Left
