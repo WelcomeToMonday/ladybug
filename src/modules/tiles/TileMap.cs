@@ -226,13 +226,13 @@ namespace Ladybug.Tiles
 					{
 						case "layer":
 							var tl = new TileLayer(layer, this);
-							BuildLayer(tl);
 							Layers.Add(tl);
+							BuildLayer(tl);
 							break;
 						case "imagelayer":
 							var il = new ImageLayer(layer, this);
-							BuildLayer(il);
 							Layers.Add(il);
+							BuildLayer(il);
 							break;
 						case "objectgroup":
 							var objects = layer.SelectNodes("./object");

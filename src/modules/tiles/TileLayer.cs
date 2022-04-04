@@ -32,6 +32,7 @@ namespace Ladybug.Tiles
 			{
 				foreach (XmlElement prop in propNode.SelectNodes("./property"))
 				{
+					Properties.TryAdd(node.Attributes["name"].Value, node.Attributes["value"].Value);
 					BuildCustomProperty(prop);
 				}
 			}
@@ -89,7 +90,7 @@ namespace Ladybug.Tiles
 		/// <param name="node"></param>
 		protected virtual void BuildCustomProperty(XmlElement node)
 		{
-			Properties.TryAdd(node.Attributes["name"].Value, node.Attributes["value"].Value);
+			// To be overridden by derived classes
 		}
 
 		/// <summary>
