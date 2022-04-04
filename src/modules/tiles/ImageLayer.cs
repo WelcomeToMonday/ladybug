@@ -44,6 +44,8 @@ namespace Ladybug.Tiles
 					null
 				);
 
+			Texture = TileMap.Content.Load<Texture2D>(imagePath);
+
 			int.TryParse(imageNode.Attributes["width"].Value, out int width);
 			int.TryParse(imageNode.Attributes["height"].Value, out int height);
 			int.TryParse(XmlElement.Attributes["offsetx"].Value, out int offsetx);
