@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ladybug.ECS.html",
-          "hash": "uoMB4GQ2fFtfYN1XSRx0cx/MG6AtTxK+k+uTtQ0Zr24="
+          "hash": "p6O9z4ybSMZcCNz6C2+m2sIYO11k1n0IYR3w5nLGZ2w="
         }
       },
       "is_incremental": false,
@@ -454,6 +454,102 @@
         ".html": {
           "relative_path": "api/Ladybug.Graphics.html",
           "hash": "e9Iz0bc1K7wXkLNQPOTS8FMzFWsNdiX9BqBmRkdekk0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.IDrawableLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.IDrawableLayer.html",
+          "hash": "pNItatoj23FmX+5reISxM9Y29kyScWyDsWnO2z5FeJc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.ImageLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.ImageLayer.html",
+          "hash": "s35mVl20i1Je8TSpGZ+bfZrBYQDBxuCfPr//gVL2dE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.MapObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.MapObject.html",
+          "hash": "GRhGR/T0GjK8AXU+0yeA7rpZlan6UDV7qzsTdXu+SUg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.TileLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.TileLayer.html",
+          "hash": "nLkwNLL4yBvoGjYhmOj13pBA/D563H0ibDD7l2lBBv0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.TileMap.TileOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.TileMap.TileOrientation.html",
+          "hash": "Gg0ZyzCicMaa5Mp7t08Sj4BfQz1REMphyT/a+1Ytc2o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.TileMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.TileMap.html",
+          "hash": "omUYu1EDbeMe8JboD0T0Ef5ieQutPlOQ1JkjlHlasb4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.TileSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.TileSet.html",
+          "hash": "m68HegeYDuTo81VyCovwaa9uAOPohSTiaE6JlQeFGUU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ladybug.Legacy.TileMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ladybug.Legacy.TileMap.html",
+          "hash": "AzBHwxvr7K+nB6mN5HwLxNQgDCsea+mDLfXE1kEloQ8="
         }
       },
       "is_incremental": false,
@@ -749,11 +845,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.IDrawableLayer.yml",
+      "source_relative_path": "api/Ladybug.Tiles.ImageLayer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.IDrawableLayer.html",
-          "hash": "x2Zj6JQJIrK0pJ3sAitGZhTi7c/p+oEzlCOFNFYrhQo="
+          "relative_path": "api/Ladybug.Tiles.ImageLayer.html",
+          "hash": "YeiqKnJpNANOH2sD6lGwrzITCBY8dyoDmzNkRcXZd5M="
         }
       },
       "is_incremental": false,
@@ -761,11 +857,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.ImageLayer.yml",
+      "source_relative_path": "api/Ladybug.Tiles.Orientation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.ImageLayer.html",
-          "hash": "NQqmj2vQitZm8z2brK/S5bxJL18gws+Msx5lgPI0iTE="
+          "relative_path": "api/Ladybug.Tiles.Orientation.html",
+          "hash": "jq3rzSqZm0NdYc+8qoTeAr+FdEIAjq6w0upuxOHxMg4="
         }
       },
       "is_incremental": false,
@@ -773,11 +869,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.MapObject.yml",
+      "source_relative_path": "api/Ladybug.Tiles.TileLayer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.MapObject.html",
-          "hash": "WPz+Wb2iPmUIV4W1T2qwoEM9VWlqjXpfIkrMqCp/ZEE="
+          "relative_path": "api/Ladybug.Tiles.TileLayer.html",
+          "hash": "o1/P5iitmcsdHvPZTJNUb9id/P1O4ucakiJWKVn8uZQ="
         }
       },
       "is_incremental": false,
@@ -785,11 +881,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.TileLayer.yml",
+      "source_relative_path": "api/Ladybug.Tiles.TileMap.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.TileLayer.html",
-          "hash": "/FMHSrsaChP57RoExsnithHpIQUtUOfgepBBWx12rhU="
+          "relative_path": "api/Ladybug.Tiles.TileMap.html",
+          "hash": "ToHm7n6pVhAfTPaDfHIs2FcC7eApCJ8gEyHqVpGMyKo="
         }
       },
       "is_incremental": false,
@@ -797,11 +893,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.TileMap.TileOrientation.yml",
+      "source_relative_path": "api/Ladybug.Tiles.TileSet.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.TileMap.TileOrientation.html",
-          "hash": "oRLdS+p1qH1qYCzypxznuxODECooW1S1eqEfD+I2t/E="
+          "relative_path": "api/Ladybug.Tiles.TileSet.html",
+          "hash": "SBX4rzToih3ZNrNELD1jZJvnRe0paC4OokcSPrpvVKQ="
         }
       },
       "is_incremental": false,
@@ -809,35 +905,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.TileMap.yml",
+      "source_relative_path": "api/Ladybug.Tiles.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Ladybug.TileMap.TileMap.html",
-          "hash": "RfGbx5S+J7E8wXOaaXi7bzH2wAvbz+lQ5oUqVIfGpQY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.TileSet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Ladybug.TileMap.TileSet.html",
-          "hash": "qwse4A1neXtnzbN83a0RYGrNDxAMoyyQhQu0ml6jeSQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Ladybug.TileMap.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Ladybug.TileMap.html",
-          "hash": "Hi49x6LGBjoPi+dNB1xDfI/b2tR2XV7F+JOIA+hGhvY="
+          "relative_path": "api/Ladybug.Tiles.html",
+          "hash": "oJDXIKJLC58uPJdRHWghLuaWtg4yBVlirVfEZ9374Ow="
         }
       },
       "is_incremental": false,
@@ -1293,7 +1365,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ladybug.html",
-          "hash": "01XYsxcFqmwjKs0a8HViAFLQtJifdUSU/vBP10KEwYQ="
+          "hash": "PWCalKdmp+swzQx4VM5u/ODca0QeYxs6WyBUJ0z8Fgs="
         }
       },
       "is_incremental": false,
@@ -1308,7 +1380,7 @@
           "hash": "W1tP384ea/BPcTUBJpEPKi93RXNzPfUQBbCd9viAiT4="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1317,7 +1389,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xLi/qiU3NFh9u3pkKEgQWMHPWacySpb+jK9nlbELO3Q="
+          "hash": "6L071FLnW9cUOcS+dnwR85qsZy3WU/QdJntYEXuNWno="
         }
       },
       "is_incremental": false,
@@ -1518,8 +1590,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 110,
-          "skipped_file_count": 13
+          "total_file_count": 116,
+          "skipped_file_count": 102
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
