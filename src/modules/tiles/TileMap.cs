@@ -273,7 +273,20 @@ namespace Ladybug.Tiles
 			// To be overridden by derived classes
 		}
 
-		internal void _BuildTile(Tile tile) => BuildTile(tile);
+		internal void _BuildTile(Tile tile)
+		{
+			var props = tile.XmlElement?.SelectNodes("./properties/property");
+			if (props != null)
+			{
+				tile.Properties = new Dictionary<string, string>();
+				foreach (XmlElement prop in props)
+				{
+					tile.Properties.TryAdd(prop.Attributes["name"].Value, prop.Attributes["value"].Value);
+				}
+			}
+
+			BuildTile(tile);
+		}
 
 		/// <summary>
 		/// Handle the process of building an object

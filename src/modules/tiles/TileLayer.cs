@@ -54,7 +54,8 @@ namespace Ladybug.Tiles
 		/// <summary>
 		/// Tile data
 		/// </summary>
-		public int[,] Tiles { get; private set; }
+		//public int[,] Tiles { get; private set; }
+		public Tile[,] Tiles { get; private set; }
 
 		/// <summary>
 		/// TileLayer properties
@@ -70,7 +71,8 @@ namespace Ladybug.Tiles
 			int.TryParse(XmlElement.Attributes["width"].Value, out int width);
 			int.TryParse(XmlElement.Attributes["height"].Value, out int height);
 
-			Tiles = new int[width, height];
+			//Tiles = new int[width, height];
+			Tiles = new Tile[width, height];
 			var dataNode = XmlElement.SelectSingleNode("./data") as XmlElement;
 			var tileList = dataNode.InnerText.Trim('\n').Split(',');
 			var tileIndex = 0;
@@ -78,7 +80,19 @@ namespace Ladybug.Tiles
 			{
 				for (var col = 0; col < width; col++)
 				{
-					int.TryParse(tileList[tileIndex], out Tiles[col, row]);
+					//int.TryParse(tileList[tileIndex], out Tiles[col, row]);
+					int.TryParse(tileList[tileIndex], out int tileId);
+					tileId--; //correct for tiled adding 1 to tile IDs
+					if (tileId >= 0)
+					{
+						var tileSet = TileMap.FindTileSet(tileId);
+						Tiles[col, row] = tileSet[tileId - tileSet.FirstGID];
+					}
+					else
+					{
+						Tiles[col, row] = null;
+					}
+
 					tileIndex++;
 				}
 			}
@@ -103,9 +117,26 @@ namespace Ladybug.Tiles
 			{
 				for (var col = 0; col < TileMap.Width; col++)
 				{
+					if (Tiles[col, row] != null)
+					{
+						var tile = Tiles[col, row];
+						var pos = GetTilePosition(col, row);
+						spriteBatch.Draw(
+							tile.Sprite.Texture,
+							new Rectangle(
+								(int)pos.X,
+								(int)pos.Y,
+								tile.Width,
+								tile.Height
+							),
+							tile.Sprite.Frame,
+							Color.White
+						);
+					}
 					// Tiled adds +1 to Tile IDs so 0 can represent empty fields.
 					// Since we're using the ID to determine position on the tileset
 					// sprite atlas, we're going to subtract one so the math checks out.
+					/*
 					var tileID = Tiles[col, row] - 1;
 					if (tileID >= 0)
 					{
@@ -125,6 +156,7 @@ namespace Ladybug.Tiles
 							Color.White
 						);
 					}
+					*/
 				}
 			}
 		}

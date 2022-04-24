@@ -1,5 +1,5 @@
 using System.Xml;
-
+using System.Collections.Generic;
 using Ladybug.Graphics;
 
 namespace Ladybug.Tiles
@@ -13,6 +13,36 @@ namespace Ladybug.Tiles
 		{
 
 		}
+
+		/// <summary>
+		/// Tile's custom properties
+		/// </summary>
+		/// <value></value>
+		public Dictionary<string, string> Properties { get; internal set; }
+
+		/// <summary>
+		/// Tileset containing this tile
+		/// </summary>
+		/// <value></value>
+		public TileSet TileSet { get; internal set; }
+
+		/// <summary>
+		/// Tile's ID within the containing tileset
+		/// </summary>
+		/// <value></value>
+		public int ID { get; internal set; }
+
+		/// <summary>
+		/// Tile's width in pixels
+		/// </summary>
+		/// <value></value>
+		public int Width { get; internal set; }
+
+		/// <summary>
+		/// Tile's height in pixels
+		/// </summary>
+		/// <value></value>
+		public int Height { get; internal set; }
 
 		/// <summary>
 		/// Tile's sprite to be rendered upon drawing

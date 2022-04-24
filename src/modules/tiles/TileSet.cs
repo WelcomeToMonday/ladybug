@@ -193,8 +193,12 @@ namespace Ladybug.Tiles
 				{
 					var tile = new Tile()
 					{
+						TileSet = this,
+						ID = currentTileID,
 						Sprite = SpriteAtlas[c, r],
-						XmlElement = GetTileXml(currentTileID)
+						XmlElement = GetTileXml(currentTileID),
+						Width = TileWidth,
+						Height = TileHeight,
 					};
 					Tiles[c, r] = tile;
 					TileMap._BuildTile(tile);
