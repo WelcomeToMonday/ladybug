@@ -32,14 +32,26 @@ namespace Ladybug.Tiles
 		}
 
 		/// <summary>
-		/// Access this TileSet's SpriteAtlas content by index
+		/// Access a tile defined as part of thils tileset by its index
 		/// </summary>
-		public Sprite this[int i] => SpriteAtlas[i];
+		public Tile this[int i] => this[Index2Coord(i)];
 
 		/// <summary>
-		/// Access this TileSet's SpriteAtlas content by coordinate
+		/// Access a tile defined as part of this tileset by its coordinate position
+		/// within the tileset
 		/// </summary>
-		public Sprite this[int i, int j] => SpriteAtlas[i, j];
+		public Tile this[int i, int j] => Tiles[i, j];
+
+		/// <summary>
+		/// Access a tile defined as part of this tileset by its coordinate position
+		/// within the tileset
+		/// </summary>
+		public Tile this[Vector2 v] => this[(int)v.X, (int)v.Y];
+
+		/// <summary>
+		/// Tiles defined as part of this tileset
+		/// </summary>
+		public Tile[,] Tiles { get; private set; }
 
 		/// <summary>
 		/// The ID of the first Tile in this TileSet
@@ -158,6 +170,7 @@ namespace Ladybug.Tiles
 			);
 
 			BuildAtlas(imagePath);
+			BuildTiles();
 		}
 
 		private void BuildAtlas(string imagePath)
@@ -168,6 +181,45 @@ namespace Ladybug.Tiles
 			// tilesets with spacing set won't look right until
 			// we get this addressed.
 			SpriteAtlas = new SpriteAtlas(tex, ColumnCount, RowCount);
+		}
+
+		private void BuildTiles()
+		{
+			Tiles = new Tile[ColumnCount, RowCount];
+			var currentTileID = 0;
+			for (var r = 0; r < RowCount; r++)
+			{
+				for (var c = 0; c < ColumnCount; c++)
+				{
+					var tile = new Tile()
+					{
+						Sprite = SpriteAtlas[c, r],
+						XmlElement = GetTileXml(currentTileID)
+					};
+					Tiles[c, r] = tile;
+					TileMap._BuildTile(tile);
+					currentTileID++;
+				}
+			}
+		}
+
+		private XmlElement GetTileXml(int tileID)
+		{
+			return XmlDocument.SelectSingleNode($"./tileset/tile[@id='{tileID}']") as XmlElement;
+		}
+
+		private Vector2 Index2Coord(int index)
+		{
+			var row = 0;
+			var col = 0;
+
+			if (index >= 0 && index <= (RowCount * ColumnCount) - 1)
+			{
+				row = (int)((float)index / (float)(ColumnCount));
+				col = index % ColumnCount;
+			}
+
+			return new Vector2(col, row);
 		}
 	}
 }

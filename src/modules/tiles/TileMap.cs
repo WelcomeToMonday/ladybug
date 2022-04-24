@@ -265,6 +265,17 @@ namespace Ladybug.Tiles
 		}
 
 		/// <summary>
+		/// Handle the process of building a tile
+		/// </summary>
+		/// <param name="tile"></param>
+		protected virtual void BuildTile(Tile tile)
+		{
+			// To be overridden by derived classes
+		}
+
+		internal void _BuildTile(Tile tile) => BuildTile(tile);
+
+		/// <summary>
 		/// Handle the process of building an object
 		/// </summary>
 		/// <param name="layerNode"></param>

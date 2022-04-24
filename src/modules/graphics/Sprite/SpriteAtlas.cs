@@ -58,34 +58,7 @@ namespace Ladybug.Graphics
 		/// Returns a <see cref="Sprite"/> stored in this SpriteAtlas
 		/// </summary>
 		/// <value></value>
-		public Sprite this[int i]
-		{
-			get
-			{
-				/*
-				var row = 0;
-				var col = 0;
-
-				if (i >= 0 && i <= (_rows * _cols) - 1)
-				{
-					row = (int)((float)i / (float)(_cols));
-					col = i % _cols;
-				}
-				*/
-				/*
-				Rectangle frame = new Rectangle(
-					(int)(SpriteWidth * col),
-					(int)(SpriteHeight * row),
-					(int)(SpriteWidth),
-					(int)(SpriteHeight)
-				);
-
-				return new Sprite(_sourceTexture, frame);
-				*/
-				//return this[col, row];
-				return this[Index2Coord(i)];
-			}
-		}
+		public Sprite this[int i] => this[Index2Coord(i)];
 
 		/// <summary>
 		/// Returns a <see cref="Sprite"/> stored in this SpriteAtlas
