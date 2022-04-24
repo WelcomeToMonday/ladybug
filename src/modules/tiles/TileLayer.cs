@@ -32,7 +32,7 @@ namespace Ladybug.Tiles
 			{
 				foreach (XmlElement prop in propNode.SelectNodes("./property"))
 				{
-					Properties.TryAdd(node.Attributes["name"].Value, node.Attributes["value"].Value);
+					Properties.TryAdd(prop.Attributes["name"].Value, prop.Attributes["value"].Value);
 					BuildCustomProperty(prop);
 				}
 			}
@@ -114,14 +114,14 @@ namespace Ladybug.Tiles
 						var pos = GetTilePosition(col, row);
 
 						spriteBatch.Draw(
-							tile.Texture,
+							tile.Sprite.Texture,
 							new Rectangle(
 								(int)pos.X,
 								(int)pos.Y,
 								tileSet.TileWidth,
 								tileSet.TileHeight
 							),
-							tile.Frame,
+							tile.Sprite.Frame,
 							Color.White
 						);
 					}
