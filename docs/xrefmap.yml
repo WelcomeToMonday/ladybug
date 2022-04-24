@@ -7972,6 +7972,38 @@ references:
   commentId: F:Ladybug.Tiles.Orientation.Orthogonal
   fullName: Ladybug.Tiles.Orientation.Orthogonal
   nameWithType: Orientation.Orthogonal
+- uid: Ladybug.Tiles.Tile
+  name: Tile
+  href: api/Ladybug.Tiles.Tile.html
+  commentId: T:Ladybug.Tiles.Tile
+  fullName: Ladybug.Tiles.Tile
+  nameWithType: Tile
+- uid: Ladybug.Tiles.Tile.Sprite
+  name: Sprite
+  href: api/Ladybug.Tiles.Tile.html#Ladybug_Tiles_Tile_Sprite
+  commentId: P:Ladybug.Tiles.Tile.Sprite
+  fullName: Ladybug.Tiles.Tile.Sprite
+  nameWithType: Tile.Sprite
+- uid: Ladybug.Tiles.Tile.Sprite*
+  name: Sprite
+  href: api/Ladybug.Tiles.Tile.html#Ladybug_Tiles_Tile_Sprite_
+  commentId: Overload:Ladybug.Tiles.Tile.Sprite
+  isSpec: "True"
+  fullName: Ladybug.Tiles.Tile.Sprite
+  nameWithType: Tile.Sprite
+- uid: Ladybug.Tiles.Tile.XmlElement
+  name: XmlElement
+  href: api/Ladybug.Tiles.Tile.html#Ladybug_Tiles_Tile_XmlElement
+  commentId: P:Ladybug.Tiles.Tile.XmlElement
+  fullName: Ladybug.Tiles.Tile.XmlElement
+  nameWithType: Tile.XmlElement
+- uid: Ladybug.Tiles.Tile.XmlElement*
+  name: XmlElement
+  href: api/Ladybug.Tiles.Tile.html#Ladybug_Tiles_Tile_XmlElement_
+  commentId: Overload:Ladybug.Tiles.Tile.XmlElement
+  isSpec: "True"
+  fullName: Ladybug.Tiles.Tile.XmlElement
+  nameWithType: Tile.XmlElement
 - uid: Ladybug.Tiles.TileLayer
   name: TileLayer
   href: api/Ladybug.Tiles.TileLayer.html
@@ -8133,6 +8165,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Tiles.TileMap.BuildObject
   nameWithType: TileMap.BuildObject
+- uid: Ladybug.Tiles.TileMap.BuildTile(Ladybug.Tiles.Tile)
+  name: BuildTile(Tile)
+  href: api/Ladybug.Tiles.TileMap.html#Ladybug_Tiles_TileMap_BuildTile_Ladybug_Tiles_Tile_
+  commentId: M:Ladybug.Tiles.TileMap.BuildTile(Ladybug.Tiles.Tile)
+  fullName: Ladybug.Tiles.TileMap.BuildTile(Ladybug.Tiles.Tile)
+  nameWithType: TileMap.BuildTile(Tile)
+- uid: Ladybug.Tiles.TileMap.BuildTile*
+  name: BuildTile
+  href: api/Ladybug.Tiles.TileMap.html#Ladybug_Tiles_TileMap_BuildTile_
+  commentId: Overload:Ladybug.Tiles.TileMap.BuildTile
+  isSpec: "True"
+  fullName: Ladybug.Tiles.TileMap.BuildTile
+  nameWithType: TileMap.BuildTile
 - uid: Ladybug.Tiles.TileMap.Content
   name: Content
   href: api/Ladybug.Tiles.TileMap.html#Ladybug_Tiles_TileMap_Content
@@ -8366,6 +8411,15 @@ references:
   isSpec: "True"
   fullName: Ladybug.Tiles.TileSet.FirstGID
   nameWithType: TileSet.FirstGID
+- uid: Ladybug.Tiles.TileSet.Item(Microsoft.Xna.Framework.Vector2)
+  name: Item[Vector2]
+  href: api/Ladybug.Tiles.TileSet.html#Ladybug_Tiles_TileSet_Item_Microsoft_Xna_Framework_Vector2_
+  commentId: P:Ladybug.Tiles.TileSet.Item(Microsoft.Xna.Framework.Vector2)
+  name.vb: Item(Vector2)
+  fullName: Ladybug.Tiles.TileSet.Item[Microsoft.Xna.Framework.Vector2]
+  fullName.vb: Ladybug.Tiles.TileSet.Item(Microsoft.Xna.Framework.Vector2)
+  nameWithType: TileSet.Item[Vector2]
+  nameWithType.vb: TileSet.Item(Vector2)
 - uid: Ladybug.Tiles.TileSet.Item(System.Int32)
   name: Item[Int32]
   href: api/Ladybug.Tiles.TileSet.html#Ladybug_Tiles_TileSet_Item_System_Int32_
@@ -8508,6 +8562,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.Tiles.TileSet.TileRange
   nameWithType: TileSet.TileRange
+- uid: Ladybug.Tiles.TileSet.Tiles
+  name: Tiles
+  href: api/Ladybug.Tiles.TileSet.html#Ladybug_Tiles_TileSet_Tiles
+  commentId: P:Ladybug.Tiles.TileSet.Tiles
+  fullName: Ladybug.Tiles.TileSet.Tiles
+  nameWithType: TileSet.Tiles
+- uid: Ladybug.Tiles.TileSet.Tiles*
+  name: Tiles
+  href: api/Ladybug.Tiles.TileSet.html#Ladybug_Tiles_TileSet_Tiles_
+  commentId: Overload:Ladybug.Tiles.TileSet.Tiles
+  isSpec: "True"
+  fullName: Ladybug.Tiles.TileSet.Tiles
+  nameWithType: TileSet.Tiles
 - uid: Ladybug.Tiles.TileSet.TileWidth
   name: TileWidth
   href: api/Ladybug.Tiles.TileSet.html#Ladybug_Tiles_TileSet_TileWidth
