@@ -45,7 +45,7 @@ namespace Ladybug
 		public readonly int R { get; }
 		public readonly int S { get; }
 
-		public int Length => (int)(Math.Abs(Q) + Math.Abs(R) + Math.Abs(S) / 2);
+		public int Length => (int)((Math.Abs(Q) + Math.Abs(R) + Math.Abs(S)) / 2);
 
 		public static Hexagon operator +(Hexagon a, Hexagon b) => a.Add(b);
 		public static Hexagon operator -(Hexagon a, Hexagon b) => a.Subtract(b);
