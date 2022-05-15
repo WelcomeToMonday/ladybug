@@ -8,6 +8,12 @@ namespace Ladybug
 	/// </summary>
 	public struct FHex
 	{
+		/// <summary>
+		/// Create a fractional hex coordinate
+		/// </summary>
+		/// <param name="q"></param>
+		/// <param name="r"></param>
+		/// <param name="s"></param>
 		public FHex(double q, double r, double s)
 		{
 			Q = q;
@@ -20,10 +26,28 @@ namespace Ladybug
 			}
 		}
 
+		/// <summary>
+		/// Q axis position
+		/// </summary>
+		/// <value></value>
 		public readonly double Q { get; }
+
+		/// <summary>
+		/// R axis position
+		/// </summary>
+		/// <value></value>
 		public readonly double R { get; }
+
+		/// <summary>
+		/// S axis position
+		/// </summary>
+		/// <value></value>
 		public readonly double S { get; }
 
+		/// <summary>
+		/// Get the closest non-fractional Hex coordinate
+		/// </summary>
+		/// <returns></returns>
 		public Hex Round()
 		{
 			int qi = (int)(Math.Round(Q));
@@ -50,6 +74,12 @@ namespace Ladybug
 			return new Hex(qi, ri, si);
 		}
 
+		/// <summary>
+		/// Linearly interpolate to the given FHex
+		/// </summary>
+		/// <param name="b"></param>
+		/// <param name="t"></param>
+		/// <returns></returns>
 		public FHex Lerp(FHex b, double t)
 		=> new FHex(Q * (1.0 - t) + b.Q * t, R * (1.0 - t) + b.R * t, S * (1.0 - t) + b.S * t);
 	}
