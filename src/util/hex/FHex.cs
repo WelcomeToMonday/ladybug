@@ -1,3 +1,4 @@
+// Based on articles found at http://www.redblobgames.com/grids/hexagons/
 using System;
 
 namespace Ladybug
