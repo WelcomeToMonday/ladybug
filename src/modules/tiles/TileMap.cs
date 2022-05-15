@@ -21,7 +21,11 @@ namespace Ladybug.Tiles
 		/// <summary>
 		/// Isometric tile orientation
 		/// </summary>
-		Isometric
+		Isometric,
+		/// <summary>
+		/// Hexagonal tile orientation
+		/// </summary>
+		Hexagonal
 	}
 
 	/// <summary>
@@ -186,6 +190,9 @@ namespace Ladybug.Tiles
 				case "isometric":
 					Orientation = Orientation.Isometric;
 					break;
+				case "hexagonal":
+					Orientation = Orientation.Hexagonal;
+					break;
 			}
 
 			foreach (XmlAttribute att in mapNode.Attributes)
@@ -337,6 +344,12 @@ namespace Ladybug.Tiles
 					res = new Vector2(
 						(int)(side * (TileWidth / 2)),
 						(int)(side * (TileHeight / 2))
+					);
+					break;
+				case Orientation.Hexagonal:
+					res = new Vector2(
+						(Width * TileWidth) + (TileWidth / 2),
+						Height * TileHeight
 					);
 					break;
 			}
