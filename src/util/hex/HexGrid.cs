@@ -9,20 +9,16 @@ namespace Ladybug
 	{
 		private HexMatrix _matrix;
 
-		public HexGrid(Vector2 origin, Vector2 dimensions, Vector2 hexSize, HexOffset offset = Hex.DEFAULT_OFFSET, HexOrientation orientation = Hex.DEFAULT_ORIENTATION)
+		public HexGrid(HexOrientation orientation = Hex.DEFAULT_ORIENTATION, HexOffset offset = Hex.DEFAULT_OFFSET)
 		{
-			Origin = origin;
-			Dimensions = dimensions;
-			HexSize = hexSize;
 			Orientation = orientation;
 			Offset = offset;
 			_matrix = GetMatrix();
-			Generate();
 		}
 
-		public Vector2 Origin { get; private set; }
-		public Vector2 Dimensions { get; private set; }
-		public Vector2 HexSize { get; private set; }
+		public Vector2 Origin { get; private set; } = Vector2.Zero;
+		public Vector2 Dimensions { get; private set; } = Vector2.Zero;
+		public Vector2 HexSize { get; private set; } = Vector2.Zero;
 
 		public HexTransform[,] Grid { get; private set; }
 
@@ -30,7 +26,35 @@ namespace Ladybug
 
 		public HexOffset Offset { get; private set; } = Hex.DEFAULT_OFFSET;
 
-		private void Generate()
+		public HexGrid WithDimensions(int x, int y) => WithDimensions(new Vector2(x, y));
+		public HexGrid WithDimensions(Vector2 dimensions)
+		{
+			Dimensions = dimensions;
+			return this;
+		}
+
+		public HexGrid WithOrigin(int x, int y) => WithOrigin(new Vector2(x, y));
+		public HexGrid WithOrigin(Vector2 origin)
+		{
+			Origin = origin;
+			return this;
+		}
+
+		public HexGrid WithHexSize(int x, int y) => WithHexSize(new Vector2(x, y));
+		public HexGrid WithHexSize(Vector2 size)
+		{
+			HexSize = size;
+			return this;
+		}
+
+		public HexGrid WithHexBounds(int x, int y) => WithHexBounds(new Vector2(x, y));
+		public HexGrid WithHexBounds(Vector2 bounds)
+		{
+			HexSize = HexTransform.BoundsToSize(bounds, Orientation);
+			return this;
+		}
+		
+		public HexGrid Generate()
 		{
 			var cols = (int)Dimensions.X;
 			var rows = (int)Dimensions.Y;
@@ -42,13 +66,15 @@ namespace Ladybug
 				{
 					var h = Hex.FromOffset(col, row, Offset, Orientation);
 					var loc = HexToPixel(h);
-					//var bounds = new Rectangle(loc.ToPoint(), HexSize.ToPoint());
-					//var t = new HexTransform(bounds);
-					var t = new HexTransform(HexSize, Orientation);
-					t.SetPosition(loc);
+
+					
+					var tb = new Rectangle(loc.ToPoint(), HexTransform.SizeToBounds(HexSize, Orientation).ToPoint());
+					var t = new HexTransform(tb, Orientation);
 					Grid[col, row] = t;
 				}
 			}
+
+			return this;
 		}
 
 		public Vector2 HexToPixel(Hex hx)

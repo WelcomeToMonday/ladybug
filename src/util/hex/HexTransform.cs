@@ -7,44 +7,29 @@ namespace Ladybug
 {
 	public class HexTransform
 	{
-		public HexTransform(Rectangle outerBounds, HexOrientation orientation = Hex.DEFAULT_ORIENTATION)
-		{
-			OuterBounds = outerBounds;
-			Orientation = orientation;
-		}
-
-		public HexTransform(Vector2 size, HexOrientation orientation = Hex.DEFAULT_ORIENTATION)
-		{
-			OuterBounds = new Rectangle();
-			Orientation = orientation;
-			SetSize(size);
-		}
-
-		public HexOrientation Orientation { get; set; } = Hex.DEFAULT_ORIENTATION;
-
-		public Vector2 Location => OuterBounds.Location.ToVector2();
-
-		public Rectangle OuterBounds { get; set; } // outer rectangular bounds
-
-		public Vector2 Size { get; set; }
-
-		public Polygon InnerBounds { get; } // inner hexagonal bounds // todo
-
-		public void SetPosition(int x, int y) => SetPosition(new Vector2(x, y));
-
-		public void SetPosition(Vector2 pos)
-		{
-			OuterBounds = new Rectangle((int)pos.X, (int)pos.Y, OuterBounds.Width, OuterBounds.Height);
-		}
-
-		public void SetSize(int x, int y) => SetSize(new Vector2(x, y));
-
-		public void SetSize(Vector2 size)
+		public static Vector2 BoundsToSize(Vector2 bounds, HexOrientation orientation)
 		{
 			double width = 0;
 			double height = 0;
+			switch (orientation)
+			{
+				case HexOrientation.Point:
+					width = bounds.X / Math.Sqrt(3);
+					height = bounds.Y / 2;
+					break;
+				case HexOrientation.Flat:
+					width = bounds.X / 2;
+					height = bounds.Y / Math.Sqrt(3);
+					break;
+			}
+			return new Vector2((float)width, (float)height);
+		}
 
-			switch (Orientation)
+		public static Vector2 SizeToBounds(Vector2 size, HexOrientation orientation)
+		{
+			double width = 0;
+			double height = 0;
+			switch (orientation)
 			{
 				case HexOrientation.Point:
 					width = Math.Sqrt(3) * size.X;
@@ -55,8 +40,42 @@ namespace Ladybug
 					height = Math.Sqrt(3) * size.Y;
 					break;
 			}
+			return new Vector2((float)width, (float)height);
+		}
 
-			OuterBounds = new Rectangle(OuterBounds.Location.X, OuterBounds.Location.Y, (int)width, (int)height);
+		public HexTransform()
+		{
+			Bounds = Rectangle.Empty;
+			Orientation = Hex.DEFAULT_ORIENTATION;
+		}
+
+		public HexTransform(Rectangle bounds, HexOrientation orientation = Hex.DEFAULT_ORIENTATION)
+		{
+			Bounds = bounds;
+			Orientation = orientation;
+		}
+
+		public HexOrientation Orientation { get; set; } = Hex.DEFAULT_ORIENTATION;
+
+		public Vector2 Location
+		{
+			get => Bounds.Location.ToVector2();
+			set
+			{
+				Bounds = new Rectangle((int)value.X, (int)value.Y, Bounds.Width, Bounds.Height);
+			}
+		}
+
+		public Rectangle Bounds { get; set; } // outer rectangular bounds
+
+		public Vector2 Size
+		{
+			get => BoundsToSize(new Vector2(Bounds.X, Bounds.Y), Orientation);
+			set
+			{
+				var b = SizeToBounds(value, Orientation);
+				Bounds = new Rectangle(Bounds.Location, new Point((int)b.X, (int)b.Y));
+			}
 		}
 	}
 }
