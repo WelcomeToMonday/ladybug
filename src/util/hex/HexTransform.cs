@@ -60,14 +60,7 @@ namespace Ladybug
 			return new Vector2((float)width, (float)height);
 		}
 
-		/// <summary>
-		/// Create a HexTransform with default bounds and orientation
-		/// </summary>
-		public HexTransform()
-		{
-			Bounds = Rectangle.Empty;
-			Orientation = Hex.DEFAULT_ORIENTATION;
-		}
+		private Hexagon _hexagon;
 
 		/// <summary>
 		/// Create a HexTransform with given bounds and orientation
@@ -84,7 +77,19 @@ namespace Ladybug
 		/// Orientation of the HexTransform
 		/// </summary>
 		/// <value></value>
-		public HexOrientation Orientation { get; set; } = Hex.DEFAULT_ORIENTATION;
+		public HexOrientation Orientation
+		{
+			get => m_Orientation;
+			set
+			{
+				if (m_Orientation != value)
+				{
+					m_Orientation = value;
+					_hexagon = new Hexagon(Location + new Vector2(Size.X, Size.Y), Size, m_Orientation);
+				}
+			}
+		}
+		private HexOrientation m_Orientation = Hex.DEFAULT_ORIENTATION;
 
 		/// <summary>
 		/// Location of the HexTransform
@@ -103,7 +108,19 @@ namespace Ladybug
 		/// Bounds of the HexTransform
 		/// </summary>
 		/// <value></value>
-		public Rectangle Bounds { get; set; } // outer rectangular bounds
+		public Rectangle Bounds
+		{
+			get => m_Bounds;
+			set
+			{
+				if (m_Bounds != value)
+				{
+					m_Bounds = value;
+					_hexagon = new Hexagon(Location + new Vector2(Size.X, Size.Y), Size, Orientation);
+				}
+			}
+		}
+		private Rectangle m_Bounds = Rectangle.Empty;
 
 		/// <summary>
 		/// Size of the HexTransform
@@ -118,5 +135,12 @@ namespace Ladybug
 				Bounds = new Rectangle(Bounds.Location, new Point((int)b.X, (int)b.Y));
 			}
 		}
+
+		/// <summary>
+		/// Check if the given point is within this HexTransform's hexagonal bounds
+		/// </summary>
+		/// <param name="point"></param>
+		/// <returns></returns>
+		public bool Contains(Vector2 point) => _hexagon.ContainsVector(point);
 	}
 }

@@ -34,7 +34,7 @@ namespace Ladybug
 		/// The vertices of the polygon
 		/// </summary>
 		/// <value></value>
-		public Vector2[] Points { get; private set; }
+		public Vector2[] Points { get; protected set; }
 
 		/// <summary>
 		/// Returns <c>true</c> if the given vector lies within the bounds of the polygon
