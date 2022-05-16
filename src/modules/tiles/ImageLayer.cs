@@ -48,8 +48,8 @@ namespace Ladybug.Tiles
 
 			int.TryParse(imageNode.Attributes["width"].Value, out int width);
 			int.TryParse(imageNode.Attributes["height"].Value, out int height);
-			int.TryParse(XmlElement.Attributes["offsetx"].Value, out int offsetx);
-			int.TryParse(XmlElement.Attributes["offsety"].Value, out int offsety);
+			int.TryParse(XmlElement.Attributes["offsetx"]?.Value, out int offsetx);
+			int.TryParse(XmlElement.Attributes["offsety"]?.Value, out int offsety);
 
 			Bounds = new Rectangle(offsetx, offsety, width, height);
 		}

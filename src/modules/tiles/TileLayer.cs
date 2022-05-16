@@ -11,6 +11,7 @@ namespace Ladybug.Tiles
 	/// </summary>
 	public class TileLayer
 	{
+		private HexGrid _hexGrid;
 		/// <summary>
 		/// Create a TileLayer
 		/// </summary>
@@ -152,9 +153,28 @@ namespace Ladybug.Tiles
 					+ new Vector2(-row * (TileMap.TileWidth/2), row * (TileMap.TileHeight/2)) // row offset
 					+ new Vector2(col * TileMap.TileWidth / 2, col * TileMap.TileHeight / 2); // col offset
 					break;
+				case Orientation.Hexagonal:
+					var g = GetHexGrid();
+					res = g.Grid[col, row].Bounds.Location.ToVector2();
+					break;
 			}
 
 			return res;
+		}
+
+		private HexGrid GetHexGrid()
+		{
+			if (_hexGrid != null)
+			{
+				return _hexGrid;
+			}
+
+			_hexGrid = new HexGrid(HexOrientation.Point)
+				.WithDimensions(TileMap.Width, TileMap.Height)
+				.WithHexBounds(TileMap.TileWidth, TileMap.TileHeight)
+				.Generate();
+
+			return _hexGrid;
 		}
 	}
 }
