@@ -1934,6 +1934,24 @@ references:
   commentId: M:Ladybug.ECS.ECS.CreateEntity
   fullName: Ladybug.ECS.ECS.CreateEntity()
   nameWithType: ECS.CreateEntity()
+- uid: Ladybug.ECS.ECS.CreateEntity(Ladybug.ECS.Entity@,System.Action{Ladybug.ECS.Entity})
+  name: CreateEntity(out Entity, Action<Entity>)
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_CreateEntity_Ladybug_ECS_Entity__System_Action_Ladybug_ECS_Entity__
+  commentId: M:Ladybug.ECS.ECS.CreateEntity(Ladybug.ECS.Entity@,System.Action{Ladybug.ECS.Entity})
+  name.vb: CreateEntity(ByRef Entity, Action(Of Entity))
+  fullName: Ladybug.ECS.ECS.CreateEntity(out Ladybug.ECS.Entity, System.Action<Ladybug.ECS.Entity>)
+  fullName.vb: Ladybug.ECS.ECS.CreateEntity(ByRef Ladybug.ECS.Entity, System.Action(Of Ladybug.ECS.Entity))
+  nameWithType: ECS.CreateEntity(out Entity, Action<Entity>)
+  nameWithType.vb: ECS.CreateEntity(ByRef Entity, Action(Of Entity))
+- uid: Ladybug.ECS.ECS.CreateEntity(System.Action{Ladybug.ECS.Entity})
+  name: CreateEntity(Action<Entity>)
+  href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_CreateEntity_System_Action_Ladybug_ECS_Entity__
+  commentId: M:Ladybug.ECS.ECS.CreateEntity(System.Action{Ladybug.ECS.Entity})
+  name.vb: CreateEntity(Action(Of Entity))
+  fullName: Ladybug.ECS.ECS.CreateEntity(System.Action<Ladybug.ECS.Entity>)
+  fullName.vb: Ladybug.ECS.ECS.CreateEntity(System.Action(Of Ladybug.ECS.Entity))
+  nameWithType: ECS.CreateEntity(Action<Entity>)
+  nameWithType.vb: ECS.CreateEntity(Action(Of Entity))
 - uid: Ladybug.ECS.ECS.CreateEntity*
   name: CreateEntity
   href: api/Ladybug.ECS.ECS.html#Ladybug_ECS_ECS_CreateEntity_

@@ -203,6 +203,27 @@ namespace Ladybug.ECS
 			return res;
 		}
 
+
+		/// <summary>
+		/// Creates a new <see cref="Ladybug.ECS.Entity"/> to be managed by this ECS and performs the provided action on the new Entity
+		/// </summary>
+		/// <param name="action">Action to be performed on the new Entity. Useful for adding components</param>
+		/// <returns>Reference to the ECS</returns>
+		public ECS CreateEntity(Action<Entity> action) => CreateEntity(out Entity e, action);
+
+		/// <summary>
+		/// Creates a new <see cref="Ladybug.ECS.Entity"/> to be managed by this ECS and performs the provided action on the new Entity
+		/// </summary>
+		/// <param name="entity">Out reference to new Entity object</param>
+		/// <param name="action">Action to be performed on the new Entity. Useful for adding components</param>
+		/// <returns>Reference to the ECS</returns>
+		public ECS CreateEntity(out Entity entity, Action<Entity> action)
+		{
+			entity = CreateEntity();
+			action(entity);
+			return this;
+		}
+
 		/// <summary>
 		/// Removes the given <see cref="Ladybug.ECS.Entity"/> from this ECS
 		/// </summary>

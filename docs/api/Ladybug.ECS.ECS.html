@@ -62,7 +62,7 @@
                       </div>
                     
                     </div>
-
+                    
 
                     <div class="sidebar-item-separator"></div>
 
@@ -305,10 +305,116 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_CreateEntity_Ladybug_ECS_Entity__System_Action_Ladybug_ECS_Entity__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.CreateEntity(Ladybug.ECS.Entity%40%2CSystem.Action%7BLadybug.ECS.Entity%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L220">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_ECS_CreateEntity_" data-uid="Ladybug.ECS.ECS.CreateEntity*"></a>
+  <h4 id="Ladybug_ECS_ECS_CreateEntity_Ladybug_ECS_Entity__System_Action_Ladybug_ECS_Entity__" data-uid="Ladybug.ECS.ECS.CreateEntity(Ladybug.ECS.Entity@,System.Action{Ladybug.ECS.Entity})">CreateEntity(out Entity, Action&lt;Entity&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Ladybug.ECS.Entity.html">Entity</a> to be managed by this ECS and performs the provided action on the new Entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ECS CreateEntity(out Entity entity, Action&lt;Entity&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.Entity.html">Entity</a></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Out reference to new Entity object</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Ladybug.ECS.Entity.html">Entity</a>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be performed on the new Entity. Useful for adding components</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a></td>
+        <td><p>Reference to the ECS</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_CreateEntity_System_Action_Ladybug_ECS_Entity__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.CreateEntity(System.Action%7BLadybug.ECS.Entity%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L212">View Source</a>
+  </span>
+  <a id="Ladybug_ECS_ECS_CreateEntity_" data-uid="Ladybug.ECS.ECS.CreateEntity*"></a>
+  <h4 id="Ladybug_ECS_ECS_CreateEntity_System_Action_Ladybug_ECS_Entity__" data-uid="Ladybug.ECS.ECS.CreateEntity(System.Action{Ladybug.ECS.Entity})">CreateEntity(Action&lt;Entity&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Ladybug.ECS.Entity.html">Entity</a> to be managed by this ECS and performs the provided action on the new Entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ECS CreateEntity(Action&lt;Entity&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Ladybug.ECS.Entity.html">Entity</a>&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be performed on the new Entity. Useful for adding components</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ladybug.ECS.ECS.html">ECS</a></td>
+        <td><p>Reference to the ECS</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_Draw_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.Draw(Microsoft.Xna.Framework.GameTime%2CMicrosoft.Xna.Framework.Graphics.SpriteBatch)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L331">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L352">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_Draw_" data-uid="Ladybug.ECS.ECS.Draw*"></a>
   <h4 id="Ladybug_ECS_ECS_Draw_Microsoft_Xna_Framework_GameTime_Microsoft_Xna_Framework_Graphics_SpriteBatch_" data-uid="Ladybug.ECS.ECS.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">Draw(GameTime, SpriteBatch)</h4>
@@ -364,7 +470,7 @@ ECS Destructor</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_FindAllComponents__1.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.FindAllComponents%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L278">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L299">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_FindAllComponents_" data-uid="Ladybug.ECS.ECS.FindAllComponents*"></a>
   <h4 id="Ladybug_ECS_ECS_FindAllComponents__1" data-uid="Ladybug.ECS.ECS.FindAllComponents``1">FindAllComponents&lt;T&gt;()</h4>
@@ -413,7 +519,7 @@ ECS Destructor</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_Initialize.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L265">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L286">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_Initialize_" data-uid="Ladybug.ECS.ECS.Initialize*"></a>
   <h4 id="Ladybug_ECS_ECS_Initialize" data-uid="Ladybug.ECS.ECS.Initialize">Initialize()</h4>
@@ -506,7 +612,7 @@ Entity.Initialize() called on them individually</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_RemoveEntity_Ladybug_ECS_Entity_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.RemoveEntity(Ladybug.ECS.Entity)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L210">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L231">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_RemoveEntity_" data-uid="Ladybug.ECS.ECS.RemoveEntity*"></a>
   <h4 id="Ladybug_ECS_ECS_RemoveEntity_Ladybug_ECS_Entity_" data-uid="Ladybug.ECS.ECS.RemoveEntity(Ladybug.ECS.Entity)">RemoveEntity(Entity)</h4>
@@ -540,7 +646,7 @@ Entity.Initialize() called on them individually</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_RequestDrawSort_Ladybug_ECS_Component_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.RequestDrawSort(Ladybug.ECS.Component)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L356">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L377">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_RequestDrawSort_" data-uid="Ladybug.ECS.ECS.RequestDrawSort*"></a>
   <h4 id="Ladybug_ECS_ECS_RequestDrawSort_Ladybug_ECS_Component_" data-uid="Ladybug.ECS.ECS.RequestDrawSort(Ladybug.ECS.Component)">RequestDrawSort(Component)</h4>
@@ -578,7 +684,7 @@ property is modified</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_TryFindEntity_System_String_Ladybug_ECS_Entity__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.TryFindEntity(System.String%2CLadybug.ECS.Entity%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L239">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L260">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_TryFindEntity_" data-uid="Ladybug.ECS.ECS.TryFindEntity*"></a>
   <h4 id="Ladybug_ECS_ECS_TryFindEntity_System_String_Ladybug_ECS_Entity__" data-uid="Ladybug.ECS.ECS.TryFindEntity(System.String,Ladybug.ECS.Entity@)">TryFindEntity(String, out Entity)</h4>
@@ -639,7 +745,7 @@ the same name (use id overload instead if this is the case).</p>
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_TryFindEntity_System_UInt64_Ladybug_ECS_Entity__.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.TryFindEntity(System.UInt64%2CLadybug.ECS.Entity%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L251">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L272">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_TryFindEntity_" data-uid="Ladybug.ECS.ECS.TryFindEntity*"></a>
   <h4 id="Ladybug_ECS_ECS_TryFindEntity_System_UInt64_Ladybug_ECS_Entity__" data-uid="Ladybug.ECS.ECS.TryFindEntity(System.UInt64,Ladybug.ECS.Entity@)">TryFindEntity(UInt64, out Entity)</h4>
@@ -752,7 +858,7 @@ for processing the given <a class="xref" href="Ladybug.ECS.Component.html">Compo
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_Unload.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.Unload%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L296">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L317">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_Unload_" data-uid="Ladybug.ECS.ECS.Unload*"></a>
   <h4 id="Ladybug_ECS_ECS_Unload" data-uid="Ladybug.ECS.ECS.Unload">Unload()</h4>
@@ -768,7 +874,7 @@ for processing the given <a class="xref" href="Ladybug.ECS.Component.html">Compo
     <a href="https://github.com/WelcomeToMonday/ladybug/new/documentation/docs-src/apidoc/new?filename=Ladybug_ECS_ECS_Update_Microsoft_Xna_Framework_GameTime_.md&amp;value=---%0Auid%3A%20Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L309">View Source</a>
+    <a href="https://github.com/WelcomeToMonday/ladybug/blob/main/src/modules/ecs/ECS.cs/#L330">View Source</a>
   </span>
   <a id="Ladybug_ECS_ECS_Update_" data-uid="Ladybug.ECS.ECS.Update*"></a>
   <h4 id="Ladybug_ECS_ECS_Update_Microsoft_Xna_Framework_GameTime_" data-uid="Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)">Update(GameTime)</h4>

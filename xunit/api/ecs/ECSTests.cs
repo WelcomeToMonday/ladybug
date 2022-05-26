@@ -117,5 +117,61 @@ namespace Ladybug.Tests.ECS
 			Assert.True(testComponent.DrawCalled);
 			Assert.True(testComponent.PostDrawCalled);
 		}
+
+		[Fact]
+		public void TestAddComponents()
+		{
+			ECSystem system = null;
+			TestComponent component1 = null;
+			TestComponent component2 = null;
+
+			Entity entity1 = null;
+			Entity entity2 = null;
+
+			var scene = Scene.Compose();
+			scene
+				.OnInitialize(() =>
+				{
+					system = new ECSystem(scene);
+					system.RegisterComponentSystem<TestComponent, TestComponentSystem>();
+
+					system
+					.CreateEntity(out entity1, (e) =>
+					{
+						e.AddComponent<TestComponent>(out component1);
+					})
+					.CreateEntity((e) =>
+					{
+						e.AddComponent<TestComponent>(out component2);
+					})
+					.Initialize();
+
+				entity2 = component2.Entity;
+
+				})
+				.OnUpdate((GameTime gameTime) =>
+				{
+					system.Update(gameTime);
+				})
+				.OnDraw((GameTime gameTime) =>
+				{
+					system.Draw(gameTime, scene.SpriteBatch);
+				});
+
+			using (var game = new Game())
+			{
+				game.LoadScene(scene);
+				game.RunOneFrame();
+			}
+
+			Assert.NotNull(system);
+			Assert.NotNull(component1);
+			Assert.NotNull(component2);
+			Assert.NotNull(entity1);
+			Assert.NotNull(entity2);
+
+			Assert.Equal(entity1, component1.Entity);
+			Assert.Equal(entity2, component2.Entity);
+		}
 	}
 }
