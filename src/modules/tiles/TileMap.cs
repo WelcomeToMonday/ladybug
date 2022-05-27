@@ -97,13 +97,13 @@ namespace Ladybug.Tiles
 		public Dictionary<string, string> Properties { get; private set; } = new Dictionary<string, string>();
 
 		/// <summary>
-		/// The height of the TileMap's bounds, in pixels
+		/// The height of the TileMap's bounds, in tiles
 		/// </summary>
 		/// <returns></returns>
 		public int Height => int.Parse(Properties["height"]);
 
 		/// <summary>
-		/// The width of the TileMap's bounds, in pixels
+		/// The width of the TileMap's bounds, in tiles
 		/// </summary>
 		/// <returns></returns>
 		public int Width => int.Parse(Properties["width"]);
@@ -349,7 +349,7 @@ namespace Ladybug.Tiles
 				case Orientation.Hexagonal:
 					res = new Vector2(
 						(Width * TileWidth) + (TileWidth / 2),
-						Height * TileHeight
+						(Height * TileHeight * 0.75f) + (TileHeight * 0.25f)
 					);
 					break;
 			}
