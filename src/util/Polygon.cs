@@ -34,7 +34,7 @@ namespace Ladybug
 		public Vector2[] Points { get; protected set; }
 
 		/// <summary>
-		/// The mathematical center of the polygon, considered the average position of all of its points
+		/// The mathematical center of the polygon, constructed from the average position of all of its points
 		/// </summary>
 		public Vector2 Centroid
 		{
@@ -55,6 +55,23 @@ namespace Ladybug
 				return new Vector2(x, y);
 			}
 		}
+
+		/// <summary>
+		/// Bounding rectangle which contains the entirety of the polygon
+		/// </summary>
+		/// <value></value>
+		public Rectangle Bounds
+		{
+			get
+			{
+				if (m_Bounds == null)
+				{
+					m_Bounds = GetBounds();
+				}
+				return m_Bounds;
+			}
+		}
+		private Rectangle m_Bounds;
 
 		/// <summary>
 		/// Returns <c>true</c> if the given vector lies within the bounds of the polygon
@@ -149,6 +166,42 @@ namespace Ladybug
 				});
 
 			Points = p.ToArray();
+		}
+
+		private Rectangle GetBounds()
+		{
+			var p = Points[0];
+
+			var minX = p.X;
+			var maxX = p.X;
+
+			var minY = p.Y;
+			var maxY = p.Y;
+
+			foreach (var point in Points)
+			{
+				if (minX > point.X)
+				{
+					minX = point.X;
+				}
+
+				if (minY > point.Y)
+				{
+					minY = point.Y;
+				}
+
+				if (maxX < point.X)
+				{
+					maxX = point.X;
+				}
+
+				if (maxY < point.Y)
+				{
+					maxY = point.Y;
+				}
+			}
+
+			return new Rectangle((int)minX, (int)minY, (int)(maxX - minX), (int)(maxY - minY));
 		}
 	}
 }
