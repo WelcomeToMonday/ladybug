@@ -1,3 +1,6 @@
+// References:
+// Point-in-Polygon detection: https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,8 +83,36 @@ namespace Ladybug
 		/// <returns></returns>
 		public virtual bool ContainsVector(Vector2 vector)
 		{
-			// todo: replace w/ raycast algo
+			if (!Bounds.Contains(vector))
+			{
+				return false;
+			}
+
+			var extreme = new Vector2(Bounds.Right + 10, vector.Y);
+
+			int count = 0;
+			int i = 0;
+			var n = Points.Length;
+			do
+			{
+				int next = (i + 1) % n;
+
+				if (Line.Intersects(Points[i], Points[next], vector, extreme))
+				{
+					if (Line.GetSectionOrientation(Points[i], vector, Points[next]) == 0)
+					{
+						return Line.Contains(Points[i], vector, Points[next]);
+					}
+					count++;
+				}
+				i = next;
+			} 
+			while (i != 0);
+
+			return count % 2 == 1;
+
 			// - may want to save this somewhere as it is handy for any convex poly
+			/*
 			bool res = false;
 
 			int j = Points.Length - 1;
@@ -97,6 +128,7 @@ namespace Ladybug
 				j = i;
 			}
 			return res;
+			*/
 		}
 
 		/// <summary>

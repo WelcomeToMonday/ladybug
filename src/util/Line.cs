@@ -1,3 +1,6 @@
+// References:
+// Point-in-Polygon detection: https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/
+
 using System;
 
 using Microsoft.Xna.Framework;
@@ -18,6 +21,64 @@ namespace Ladybug
 		public static bool Contains(Vector2 v, Vector2 p, Vector2 q)
 		{
 			return new Line(p, q).Contains(v);
+		}
+
+		public static bool Intersects(Line l1, Line l2)
+		=> Intersects(l1.P, l1.Q, l2.P, l2.Q);
+
+		public static bool Intersects(Vector2 p1, Vector2 q1, Vector2 p2, Vector2 q2)
+		{
+			var o1 = GetSectionOrientation(p1, q1, p2);
+			var o2 = GetSectionOrientation(p1, q1, q2);
+			var o3 = GetSectionOrientation(p2, q2, p1);
+			var o4 = GetSectionOrientation(p2, q2, q1);
+
+			if (o1 != o2 && o3 != o4)
+			{
+				return true;
+			}
+
+			if (o1 == 0 && Contains(p1, p2, q1))
+			{
+				return true;
+			}
+
+			if (o2 == 0 && Contains(p1, q2, q1))
+			{
+				return true;
+			}
+
+			if (o3 == 0 && Contains(p2, p1, q2))
+			{
+				return true;
+			}
+
+			if (o4 == 0 && Contains(p2, q1, q2))
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// Utility method. Finds orientation of ordered triplet of vectors.
+		/// </summary>
+		/// <param name="p"></param>
+		/// <param name="q"></param>
+		/// <param name="r"></param>
+		/// <remarks>Used in segment intersection detection</remarks>
+		/// <returns>0 if points are colinear. 1 if clockwise. 2 if counterclockwise</returns>
+		public static int GetSectionOrientation(Vector2 p, Vector2 q, Vector2 r)
+		{
+			int val = (int)((q.Y - p.Y) * (r.X - q.X) - (q.X - p.X) * (r.Y - q.Y));
+
+			if (val == 0)
+			{
+				return 0; // colinear
+			}
+
+			return (val > 0) ? 1 : 2; // clockwise or counterclock wise
 		}
 
 		/// <summary>
@@ -50,6 +111,7 @@ namespace Ladybug
 		/// <returns></returns>
 		public bool Contains(Vector2 v)
 		{
+			// todo: be sure to test this with non-colinear v
 			return (
 				P.X <= MathF.Max(v.X, Q.X) &&
 				P.X >= MathF.Min(v.X, Q.X) &&
@@ -57,5 +119,10 @@ namespace Ladybug
 				P.Y >= MathF.Min(v.Y, Q.Y)
 				);
 		}
+
+		public bool Intersects(Vector2 p, Vector2 q) => Intersects(this.P, this.Q, p, q);
+
+		public bool Intersects(Line l) => Intersects(this, l);
+
 	}
 }
