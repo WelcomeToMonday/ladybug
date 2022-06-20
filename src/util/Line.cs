@@ -111,13 +111,29 @@ namespace Ladybug
 		/// <returns></returns>
 		public bool Contains(Vector2 v)
 		{
-			// todo: be sure to test this with non-colinear v
-			return (
-				P.X <= MathF.Max(v.X, Q.X) &&
-				P.X >= MathF.Min(v.X, Q.X) &&
-				P.Y <= MathF.Max(v.Y, Q.Y) &&
-				P.Y >= MathF.Min(v.Y, Q.Y)
-				);
+			var dxc = v.X - P.X;
+			var dyc = v.Y - P.Y;
+
+			var dxl = Q.X - P.X;
+			var dyl = Q.Y - P.Y;
+
+			if ((dxc * dyl - dyc * dxl) != 0)
+			{
+				return false;
+			}
+
+			if (MathF.Abs(dxl) >= MathF.Abs(dyl))
+			{
+				return dxl > 0 ?
+					P.X <= v.X && v.X <= Q.X :
+	 				Q.X <= v.X && v.X <= P.X;
+			}
+			else
+			{
+				return dyl > 0 ?
+					P.Y <= v.Y && v.Y <= Q.Y :
+					Q.Y <= v.Y && v.Y <= P.Y;
+			}
 		}
 
 		public bool Intersects(Vector2 p, Vector2 q) => Intersects(this.P, this.Q, p, q);
