@@ -141,6 +141,6 @@ namespace Ladybug
 		/// </summary>
 		/// <param name="point"></param>
 		/// <returns></returns>
-		public bool Contains(Vector2 point) => _hexagon.ContainsVector(point);
+		public bool Contains(Vector2 point) => _hexagon.Contains(point);
 	}
 }

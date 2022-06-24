@@ -67,7 +67,7 @@ namespace Ladybug
 		{
 			get
 			{
-				if (m_Bounds == null)
+				if (m_Bounds.IsEmpty)
 				{
 					m_Bounds = GetBounds();
 				}
@@ -81,9 +81,27 @@ namespace Ladybug
 		/// </summary>
 		/// <param name="vector"></param>
 		/// <returns></returns>
-		public virtual bool ContainsVector(Vector2 vector)
+		public virtual bool Contains(Vector2 vector)
 		{
-			if (!Bounds.Contains(vector))
+			// https://stackoverflow.com/questions/4243042/c-sharp-point-in-polygon
+			var polygon = Points;
+			var testPoint = vector;
+			bool result = false;
+			int j = polygon.Count() - 1;
+			for (int i = 0; i < polygon.Count(); i++)
+			{
+				if (polygon[i].Y < testPoint.Y && polygon[j].Y >= testPoint.Y || polygon[j].Y < testPoint.Y && polygon[i].Y >= testPoint.Y)
+				{
+					if (polygon[i].X + (testPoint.Y - polygon[i].Y) / (polygon[j].Y - polygon[i].Y) * (polygon[j].X - polygon[i].X) < testPoint.X)
+					{
+						result = !result;
+					}
+				}
+				j = i;
+			}
+			return result;
+			/*
+			if (!Bounds.Contains(vector, true))
 			{
 				return false;
 			}
@@ -101,8 +119,9 @@ namespace Ladybug
 				{
 					if (Line.GetSectionOrientation(Points[i], vector, Points[next]) == 0)
 					{
-						return Line.Contains(Points[i], vector, Points[next]);
+						return Line.Contains(vector, Points[i], Points[next]);
 					}
+
 					count++;
 				}
 				i = next;
@@ -110,24 +129,6 @@ namespace Ladybug
 			while (i != 0);
 
 			return count % 2 == 1;
-
-			// - may want to save this somewhere as it is handy for any convex poly
-			/*
-			bool res = false;
-
-			int j = Points.Length - 1;
-			for (int i = 0; i < Points.Length; i++)
-			{
-				if (Points[i].Y < vector.Y && Points[j].Y >= vector.Y || Points[j].Y < vector.Y && Points[i].Y >= vector.Y)
-				{
-					if (Points[i].X + (vector.Y - Points[i].Y) / (Points[j].Y - Points[i].Y) * (Points[j].X - Points[i].X) < vector.X)
-					{
-						res = !res;
-					}
-				}
-				j = i;
-			}
-			return res;
 			*/
 		}
 

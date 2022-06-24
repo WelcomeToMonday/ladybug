@@ -26,8 +26,20 @@ namespace Ladybug
 		public static bool Intersects(Line l1, Line l2)
 		=> Intersects(l1.P, l1.Q, l2.P, l2.Q);
 
+		// todo: audit this.
+		// see: https://stackoverflow.com/questions/3838329/how-can-i-check-if-two-segments-intersect
 		public static bool Intersects(Vector2 p1, Vector2 q1, Vector2 p2, Vector2 q2)
 		{
+			// Handle edge case for passing through vertices
+			if (p1.Y > q1.Y)
+			{
+				q1 = new Vector2(q1.X, q1.Y + 0.01f);
+			}
+			else if (p1.Y < q1.Y)
+			{
+				q1 = new Vector2(q1.X, q1.Y - 0.01f);
+			}
+
 			var o1 = GetSectionOrientation(p1, q1, p2);
 			var o2 = GetSectionOrientation(p1, q1, q2);
 			var o3 = GetSectionOrientation(p2, q2, p1);
@@ -38,22 +50,26 @@ namespace Ladybug
 				return true;
 			}
 
-			if (o1 == 0 && Contains(p1, p2, q1))
+			//if (o1 == 0 && Contains(p1, p2, q1))
+			if (o1 == 0 && Contains(p2, p1, q1))
 			{
 				return true;
 			}
 
-			if (o2 == 0 && Contains(p1, q2, q1))
+			//if (o2 == 0 && Contains(p1, q2, q1))
+			if (o2 == 0 && Contains(q2, p1, q1))
 			{
 				return true;
 			}
 
-			if (o3 == 0 && Contains(p2, p1, q2))
+			//if (o3 == 0 && Contains(p2, p1, q2)) //check this
+			if (o3 == 0 && Contains(p1, p2, q2))
 			{
 				return true;
 			}
 
-			if (o4 == 0 && Contains(p2, q1, q2))
+			//if (o4 == 0 && Contains(p2, q1, q2))
+			if (o4 == 0 && Contains(q1, p2, q2))
 			{
 				return true;
 			}
@@ -139,6 +155,11 @@ namespace Ladybug
 		public bool Intersects(Vector2 p, Vector2 q) => Intersects(this.P, this.Q, p, q);
 
 		public bool Intersects(Line l) => Intersects(this, l);
+
+		public override int GetHashCode()
+		{
+			return (P, Q).GetHashCode();
+		}
 
 	}
 }
