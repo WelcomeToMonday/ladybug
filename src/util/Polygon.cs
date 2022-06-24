@@ -84,15 +84,14 @@ namespace Ladybug
 		public virtual bool Contains(Vector2 vector)
 		{
 			// https://stackoverflow.com/questions/4243042/c-sharp-point-in-polygon
-			var polygon = Points;
-			var testPoint = vector;
+
 			bool result = false;
-			int j = polygon.Count() - 1;
-			for (int i = 0; i < polygon.Count(); i++)
+			int j = Points.Count() - 1;
+			for (int i = 0; i < Points.Count(); i++)
 			{
-				if (polygon[i].Y < testPoint.Y && polygon[j].Y >= testPoint.Y || polygon[j].Y < testPoint.Y && polygon[i].Y >= testPoint.Y)
+				if (Points[i].Y < vector.Y && Points[j].Y >= vector.Y || Points[j].Y < vector.Y && Points[i].Y >= vector.Y)
 				{
-					if (polygon[i].X + (testPoint.Y - polygon[i].Y) / (polygon[j].Y - polygon[i].Y) * (polygon[j].X - polygon[i].X) < testPoint.X)
+					if (Points[i].X + (vector.Y - Points[i].Y) / (Points[j].Y - Points[i].Y) * (Points[j].X - Points[i].X) < vector.X)
 					{
 						result = !result;
 					}
@@ -100,36 +99,6 @@ namespace Ladybug
 				j = i;
 			}
 			return result;
-			/*
-			if (!Bounds.Contains(vector, true))
-			{
-				return false;
-			}
-
-			var extreme = new Vector2(Bounds.Right + 10, vector.Y);
-
-			int count = 0;
-			int i = 0;
-			var n = Points.Length;
-			do
-			{
-				int next = (i + 1) % n;
-
-				if (Line.Intersects(Points[i], Points[next], vector, extreme))
-				{
-					if (Line.GetSectionOrientation(Points[i], vector, Points[next]) == 0)
-					{
-						return Line.Contains(vector, Points[i], Points[next]);
-					}
-
-					count++;
-				}
-				i = next;
-			} 
-			while (i != 0);
-
-			return count % 2 == 1;
-			*/
 		}
 
 		/// <summary>
