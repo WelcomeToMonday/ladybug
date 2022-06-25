@@ -228,5 +228,81 @@ namespace Ladybug
 			}
 			return res;
 		}
+
+		/// <summary>
+		/// Converts a Rectangle to a Polygon using the rectangle's corners
+		/// as its vectors
+		/// </summary>
+		/// <param name="r"></param>
+		/// <returns></returns>
+		public static Polygon ToPolygon(this Rectangle r)
+		{
+			return new Polygon(
+				new Vector2(r.Left, r.Top),
+				new Vector2(r.Right, r.Top),
+				new Vector2(r.Right, r.Bottom),
+				new Vector2(r.Left, r.Bottom)
+			);
+		}
+
+		/// <summary>
+		/// Checks if given position lies within the rectangle
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="pos"></param>
+		/// <param name="includeAllEdges"></param>
+		/// <returns></returns>
+		public static bool Contains(this Rectangle r, Point pos, bool includeAllEdges)
+		=> r.Contains(pos.X, pos.Y, includeAllEdges);
+
+		/// <summary>
+		/// Checks if given position lies within the rectangle
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="pos"></param>
+		/// <param name="includeAllEdges"></param>
+		/// <returns></returns>
+		public static bool Contains(this Rectangle r, Vector2 pos, bool includeAllEdges)
+		=> r.Contains(pos.X, pos.Y, includeAllEdges);
+
+		/// <summary>
+		/// Checks if given position lies within the rectangle
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="includeAllEdges"></param>
+		/// <returns></returns>
+		public static bool Contains(this Rectangle r, float x, float y, bool includeAllEdges)
+		{
+			if (includeAllEdges)
+			{
+				return ((((r.X <= x) && (x <= (r.X + r.Width))) && (r.Y <= y)) && (y <= (r.Y + r.Height)));
+			}
+			else
+			{
+				return r.Contains(x, y);
+			}
+		}
+
+		/// <summary>
+		/// Checks if given position lies within the rectangle
+		/// </summary>
+		/// <param name="r"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="includeAllEdges"></param>
+		/// <returns></returns>
+		public static bool Contains(this Rectangle r, int x, int y, bool includeAllEdges)
+		{
+			if (includeAllEdges)
+			{
+				return ((((r.X <= x) && (x <= (r.X + r.Width))) && (r.Y <= y)) && (y <= (r.Y + r.Height)));
+			}
+			else
+			{
+				return r.Contains(x, y);
+			}
+		}
 	}
 }
