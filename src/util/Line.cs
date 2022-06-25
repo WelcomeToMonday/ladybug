@@ -23,11 +23,25 @@ namespace Ladybug
 			return new Line(p, q).Contains(v);
 		}
 
+		/// <summary>
+		/// Returns true if lines l1 and l2 intersect
+		/// </summary>
+		/// <param name="l1"></param>
+		/// <param name="l2"></param>
+		/// <returns></returns>
 		public static bool Intersects(Line l1, Line l2)
 		=> Intersects(l1.P, l1.Q, l2.P, l2.Q);
 
 		// todo: audit this.
 		// see: https://stackoverflow.com/questions/3838329/how-can-i-check-if-two-segments-intersect
+		/// <summary>
+		/// Returns true of lines p1q1 and p2q2 intersect
+		/// </summary>
+		/// <param name="p1"></param>
+		/// <param name="q1"></param>
+		/// <param name="p2"></param>
+		/// <param name="q2"></param>
+		/// <returns></returns>
 		public static bool Intersects(Vector2 p1, Vector2 q1, Vector2 p2, Vector2 q2)
 		{
 			// Handle edge case for passing through vertices
@@ -152,14 +166,25 @@ namespace Ladybug
 			}
 		}
 
+		/// <summary>
+		/// Returns true if this line intersects with line pq
+		/// </summary>
+		/// <param name="p"></param>
+		/// <param name="q"></param>
+		/// <returns></returns>
 		public bool Intersects(Vector2 p, Vector2 q) => Intersects(this.P, this.Q, p, q);
 
+		/// <summary>
+		/// Returns true if this line intersects with line l
+		/// </summary>
+		/// <param name="l"></param>
+		/// <returns></returns>
 		public bool Intersects(Line l) => Intersects(this, l);
 
+		/// <inheritdoc />
 		public override int GetHashCode()
 		{
 			return (P, Q).GetHashCode();
 		}
-
 	}
 }
