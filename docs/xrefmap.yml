@@ -7526,6 +7526,127 @@ references:
   isSpec: "True"
   fullName: Ladybug.Legacy.UI.UIStateChangeEvent.OldState
   nameWithType: UIStateChangeEvent.OldState
+- uid: Ladybug.Line
+  name: Line
+  href: api/Ladybug.Line.html
+  commentId: T:Ladybug.Line
+  fullName: Ladybug.Line
+  nameWithType: Line
+- uid: Ladybug.Line.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  name: Line(Vector2, Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.Line(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.Line(Vector2, Vector2)
+- uid: Ladybug.Line.#ctor*
+  name: Line
+  href: api/Ladybug.Line.html#Ladybug_Line__ctor_
+  commentId: Overload:Ladybug.Line.#ctor
+  isSpec: "True"
+  fullName: Ladybug.Line.Line
+  nameWithType: Line.Line
+- uid: Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2)
+  name: Contains(Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line_Contains_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.Contains(Vector2)
+- uid: Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  name: Contains(Vector2, Vector2, Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line_Contains_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.Contains(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.Contains(Vector2, Vector2, Vector2)
+- uid: Ladybug.Line.Contains*
+  name: Contains
+  href: api/Ladybug.Line.html#Ladybug_Line_Contains_
+  commentId: Overload:Ladybug.Line.Contains
+  isSpec: "True"
+  fullName: Ladybug.Line.Contains
+  nameWithType: Line.Contains
+- uid: Ladybug.Line.GetHashCode
+  name: GetHashCode()
+  href: api/Ladybug.Line.html#Ladybug_Line_GetHashCode
+  commentId: M:Ladybug.Line.GetHashCode
+  fullName: Ladybug.Line.GetHashCode()
+  nameWithType: Line.GetHashCode()
+- uid: Ladybug.Line.GetHashCode*
+  name: GetHashCode
+  href: api/Ladybug.Line.html#Ladybug_Line_GetHashCode_
+  commentId: Overload:Ladybug.Line.GetHashCode
+  isSpec: "True"
+  fullName: Ladybug.Line.GetHashCode
+  nameWithType: Line.GetHashCode
+- uid: Ladybug.Line.GetSectionOrientation(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  name: GetSectionOrientation(Vector2, Vector2, Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line_GetSectionOrientation_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.GetSectionOrientation(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.GetSectionOrientation(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.GetSectionOrientation(Vector2, Vector2, Vector2)
+- uid: Ladybug.Line.GetSectionOrientation*
+  name: GetSectionOrientation
+  href: api/Ladybug.Line.html#Ladybug_Line_GetSectionOrientation_
+  commentId: Overload:Ladybug.Line.GetSectionOrientation
+  isSpec: "True"
+  fullName: Ladybug.Line.GetSectionOrientation
+  nameWithType: Line.GetSectionOrientation
+- uid: Ladybug.Line.Intersects(Ladybug.Line)
+  name: Intersects(Line)
+  href: api/Ladybug.Line.html#Ladybug_Line_Intersects_Ladybug_Line_
+  commentId: M:Ladybug.Line.Intersects(Ladybug.Line)
+  fullName: Ladybug.Line.Intersects(Ladybug.Line)
+  nameWithType: Line.Intersects(Line)
+- uid: Ladybug.Line.Intersects(Ladybug.Line,Ladybug.Line)
+  name: Intersects(Line, Line)
+  href: api/Ladybug.Line.html#Ladybug_Line_Intersects_Ladybug_Line_Ladybug_Line_
+  commentId: M:Ladybug.Line.Intersects(Ladybug.Line,Ladybug.Line)
+  fullName: Ladybug.Line.Intersects(Ladybug.Line, Ladybug.Line)
+  nameWithType: Line.Intersects(Line, Line)
+- uid: Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  name: Intersects(Vector2, Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line_Intersects_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.Intersects(Vector2, Vector2)
+- uid: Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  name: Intersects(Vector2, Vector2, Vector2, Vector2)
+  href: api/Ladybug.Line.html#Ladybug_Line_Intersects_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Line.Intersects(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  nameWithType: Line.Intersects(Vector2, Vector2, Vector2, Vector2)
+- uid: Ladybug.Line.Intersects*
+  name: Intersects
+  href: api/Ladybug.Line.html#Ladybug_Line_Intersects_
+  commentId: Overload:Ladybug.Line.Intersects
+  isSpec: "True"
+  fullName: Ladybug.Line.Intersects
+  nameWithType: Line.Intersects
+- uid: Ladybug.Line.P
+  name: P
+  href: api/Ladybug.Line.html#Ladybug_Line_P
+  commentId: P:Ladybug.Line.P
+  fullName: Ladybug.Line.P
+  nameWithType: Line.P
+- uid: Ladybug.Line.P*
+  name: P
+  href: api/Ladybug.Line.html#Ladybug_Line_P_
+  commentId: Overload:Ladybug.Line.P
+  isSpec: "True"
+  fullName: Ladybug.Line.P
+  nameWithType: Line.P
+- uid: Ladybug.Line.Q
+  name: Q
+  href: api/Ladybug.Line.html#Ladybug_Line_Q
+  commentId: P:Ladybug.Line.Q
+  fullName: Ladybug.Line.Q
+  nameWithType: Line.Q
+- uid: Ladybug.Line.Q*
+  name: Q
+  href: api/Ladybug.Line.html#Ladybug_Line_Q_
+  commentId: Overload:Ladybug.Line.Q
+  isSpec: "True"
+  fullName: Ladybug.Line.Q
+  nameWithType: Line.Q
 - uid: Ladybug.Pathfinding
   name: Ladybug.Pathfinding
   href: api/Ladybug.Pathfinding.html
@@ -7920,19 +8041,45 @@ references:
   isSpec: "True"
   fullName: Ladybug.Polygon.Polygon
   nameWithType: Polygon.Polygon
-- uid: Ladybug.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
-  name: ContainsVector(Vector2)
-  href: api/Ladybug.Polygon.html#Ladybug_Polygon_ContainsVector_Microsoft_Xna_Framework_Vector2_
-  commentId: M:Ladybug.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
-  fullName: Ladybug.Polygon.ContainsVector(Microsoft.Xna.Framework.Vector2)
-  nameWithType: Polygon.ContainsVector(Vector2)
-- uid: Ladybug.Polygon.ContainsVector*
-  name: ContainsVector
-  href: api/Ladybug.Polygon.html#Ladybug_Polygon_ContainsVector_
-  commentId: Overload:Ladybug.Polygon.ContainsVector
+- uid: Ladybug.Polygon.Bounds
+  name: Bounds
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Bounds
+  commentId: P:Ladybug.Polygon.Bounds
+  fullName: Ladybug.Polygon.Bounds
+  nameWithType: Polygon.Bounds
+- uid: Ladybug.Polygon.Bounds*
+  name: Bounds
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Bounds_
+  commentId: Overload:Ladybug.Polygon.Bounds
   isSpec: "True"
-  fullName: Ladybug.Polygon.ContainsVector
-  nameWithType: Polygon.ContainsVector
+  fullName: Ladybug.Polygon.Bounds
+  nameWithType: Polygon.Bounds
+- uid: Ladybug.Polygon.Centroid
+  name: Centroid
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Centroid
+  commentId: P:Ladybug.Polygon.Centroid
+  fullName: Ladybug.Polygon.Centroid
+  nameWithType: Polygon.Centroid
+- uid: Ladybug.Polygon.Centroid*
+  name: Centroid
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Centroid_
+  commentId: Overload:Ladybug.Polygon.Centroid
+  isSpec: "True"
+  fullName: Ladybug.Polygon.Centroid
+  nameWithType: Polygon.Centroid
+- uid: Ladybug.Polygon.Contains(Microsoft.Xna.Framework.Vector2)
+  name: Contains(Vector2)
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Contains_Microsoft_Xna_Framework_Vector2_
+  commentId: M:Ladybug.Polygon.Contains(Microsoft.Xna.Framework.Vector2)
+  fullName: Ladybug.Polygon.Contains(Microsoft.Xna.Framework.Vector2)
+  nameWithType: Polygon.Contains(Vector2)
+- uid: Ladybug.Polygon.Contains*
+  name: Contains
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_Contains_
+  commentId: Overload:Ladybug.Polygon.Contains
+  isSpec: "True"
+  fullName: Ladybug.Polygon.Contains
+  nameWithType: Polygon.Contains
 - uid: Ladybug.Polygon.Points
   name: Points
   href: api/Ladybug.Polygon.html#Ladybug_Polygon_Points
@@ -7946,6 +8093,38 @@ references:
   isSpec: "True"
   fullName: Ladybug.Polygon.Points
   nameWithType: Polygon.Points
+- uid: Ladybug.Polygon.SortPoints
+  name: SortPoints()
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_SortPoints
+  commentId: M:Ladybug.Polygon.SortPoints
+  fullName: Ladybug.Polygon.SortPoints()
+  nameWithType: Polygon.SortPoints()
+- uid: Ladybug.Polygon.SortPoints*
+  name: SortPoints
+  href: api/Ladybug.Polygon.html#Ladybug_Polygon_SortPoints_
+  commentId: Overload:Ladybug.Polygon.SortPoints
+  isSpec: "True"
+  fullName: Ladybug.Polygon.SortPoints
+  nameWithType: Polygon.SortPoints
+- uid: Ladybug.PolygonExtensions
+  name: PolygonExtensions
+  href: api/Ladybug.PolygonExtensions.html
+  commentId: T:Ladybug.PolygonExtensions
+  fullName: Ladybug.PolygonExtensions
+  nameWithType: PolygonExtensions
+- uid: Ladybug.PolygonExtensions.ToRectangle(Ladybug.Polygon,System.Boolean)
+  name: ToRectangle(Polygon, Boolean)
+  href: api/Ladybug.PolygonExtensions.html#Ladybug_PolygonExtensions_ToRectangle_Ladybug_Polygon_System_Boolean_
+  commentId: M:Ladybug.PolygonExtensions.ToRectangle(Ladybug.Polygon,System.Boolean)
+  fullName: Ladybug.PolygonExtensions.ToRectangle(Ladybug.Polygon, System.Boolean)
+  nameWithType: PolygonExtensions.ToRectangle(Polygon, Boolean)
+- uid: Ladybug.PolygonExtensions.ToRectangle*
+  name: ToRectangle
+  href: api/Ladybug.PolygonExtensions.html#Ladybug_PolygonExtensions_ToRectangle_
+  commentId: Overload:Ladybug.PolygonExtensions.ToRectangle
+  isSpec: "True"
+  fullName: Ladybug.PolygonExtensions.ToRectangle
+  nameWithType: PolygonExtensions.ToRectangle
 - uid: Ladybug.PolyMesh
   name: PolyMesh
   href: api/Ladybug.PolyMesh.html
@@ -7977,6 +8156,37 @@ references:
   commentId: T:Ladybug.RectangleExtensions
   fullName: Ladybug.RectangleExtensions
   nameWithType: RectangleExtensions
+- uid: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Point,System.Boolean)
+  name: Contains(Rectangle, Point, Boolean)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_Contains_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Point_System_Boolean_
+  commentId: M:Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Point,System.Boolean)
+  fullName: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Point, System.Boolean)
+  nameWithType: RectangleExtensions.Contains(Rectangle, Point, Boolean)
+- uid: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2,System.Boolean)
+  name: Contains(Rectangle, Vector2, Boolean)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_Contains_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Vector2_System_Boolean_
+  commentId: M:Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2,System.Boolean)
+  fullName: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Vector2, System.Boolean)
+  nameWithType: RectangleExtensions.Contains(Rectangle, Vector2, Boolean)
+- uid: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32,System.Boolean)
+  name: Contains(Rectangle, Int32, Int32, Boolean)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_Contains_Microsoft_Xna_Framework_Rectangle_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,System.Int32,System.Int32,System.Boolean)
+  fullName: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle, System.Int32, System.Int32, System.Boolean)
+  nameWithType: RectangleExtensions.Contains(Rectangle, Int32, Int32, Boolean)
+- uid: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,System.Single,System.Single,System.Boolean)
+  name: Contains(Rectangle, Single, Single, Boolean)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_Contains_Microsoft_Xna_Framework_Rectangle_System_Single_System_Single_System_Boolean_
+  commentId: M:Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle,System.Single,System.Single,System.Boolean)
+  fullName: Ladybug.RectangleExtensions.Contains(Microsoft.Xna.Framework.Rectangle, System.Single, System.Single, System.Boolean)
+  nameWithType: RectangleExtensions.Contains(Rectangle, Single, Single, Boolean)
+- uid: Ladybug.RectangleExtensions.Contains*
+  name: Contains
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_Contains_
+  commentId: Overload:Ladybug.RectangleExtensions.Contains
+  isSpec: "True"
+  fullName: Ladybug.RectangleExtensions.Contains
+  nameWithType: RectangleExtensions.Contains
 - uid: Ladybug.RectangleExtensions.CopyAtOffset(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Vector2)
   name: CopyAtOffset(Rectangle, Vector2)
   href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_CopyAtOffset_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Vector2_
@@ -8041,6 +8251,19 @@ references:
   isSpec: "True"
   fullName: Ladybug.RectangleExtensions.PointInBounds
   nameWithType: RectangleExtensions.PointInBounds
+- uid: Ladybug.RectangleExtensions.ToPolygon(Microsoft.Xna.Framework.Rectangle)
+  name: ToPolygon(Rectangle)
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_ToPolygon_Microsoft_Xna_Framework_Rectangle_
+  commentId: M:Ladybug.RectangleExtensions.ToPolygon(Microsoft.Xna.Framework.Rectangle)
+  fullName: Ladybug.RectangleExtensions.ToPolygon(Microsoft.Xna.Framework.Rectangle)
+  nameWithType: RectangleExtensions.ToPolygon(Rectangle)
+- uid: Ladybug.RectangleExtensions.ToPolygon*
+  name: ToPolygon
+  href: api/Ladybug.RectangleExtensions.html#Ladybug_RectangleExtensions_ToPolygon_
+  commentId: Overload:Ladybug.RectangleExtensions.ToPolygon
+  isSpec: "True"
+  fullName: Ladybug.RectangleExtensions.ToPolygon
+  nameWithType: RectangleExtensions.ToPolygon
 - uid: Ladybug.ResourceCatalog
   name: ResourceCatalog
   href: api/Ladybug.ResourceCatalog.html
